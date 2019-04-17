@@ -59,9 +59,9 @@
 		3891FD6822678292005B186F = {
 			isa = PBXGroup;
 			children = (
+				3891FD7222678292005B186F /* Products */,
 				3891FD7322678292005B186F /* WeightScale */,
 				3891FD8822678294005B186F /* WeightScaleTests */,
-				3891FD7222678292005B186F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,11 +78,11 @@
 			isa = PBXGroup;
 			children = (
 				3891FD7422678292005B186F /* AppDelegate.swift */,
-				3891FD7622678292005B186F /* ViewController.swift */,
 				3891FD7B22678294005B186F /* Assets.xcassets */,
-				3891FD7D22678294005B186F /* LaunchScreen.storyboard */,
 				3891FD8022678294005B186F /* Info.plist */,
+				3891FD7D22678294005B186F /* LaunchScreen.storyboard */,
 				3891FD94226787BD005B186F /* main.swift */,
+				3891FD7622678292005B186F /* ViewController.swift */,
 			);
 			path = WeightScale;
 			sourceTree = "<group>";
@@ -90,8 +90,8 @@
 		3891FD8822678294005B186F /* WeightScaleTests */ = {
 			isa = PBXGroup;
 			children = (
-				3891FD8922678294005B186F /* WeightScaleTests.swift */,
 				3891FD8B22678294005B186F /* Info.plist */,
+				3891FD8922678294005B186F /* WeightScaleTests.swift */,
 			);
 			path = WeightScaleTests;
 			sourceTree = "<group>";
@@ -177,8 +177,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */,
 				3891FD7C22678294005B186F /* Assets.xcassets in Resources */,
+				3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,9 +196,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3891FD7722678292005B186F /* ViewController.swift in Sources */,
 				3891FD7522678292005B186F /* AppDelegate.swift in Sources */,
 				3891FD95226787BD005B186F /* main.swift in Sources */,
+				3891FD7722678292005B186F /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
