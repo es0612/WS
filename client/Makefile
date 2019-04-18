@@ -15,3 +15,6 @@ bootstrap:
 
 update:
 	@carthage update --platform iOS --no-use-binaries --cache-builds
+
+ci:
+	bootstrap unit-tests
