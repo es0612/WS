@@ -11,10 +11,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
 
-        let viewController = ViewController()
-        viewController.view.backgroundColor = .red
+        let rootViewController = InputViewController()
+        rootViewController.view.backgroundColor = .white
 
-        window?.rootViewController = viewController
+        window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
 
         return true

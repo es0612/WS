@@ -22,6 +22,8 @@
 		38B3671C22692F7B0009E42F /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B3670E2268D2BD0009E42F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38B3671D22692F820009E42F /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367102268D2D10009E42F /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38B3671E22692F870009E42F /* Succinct.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367122268D2FD0009E42F /* Succinct.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3671F226931270009E42F /* InputViewControllerSpec.swift */; };
+		38B36722226931F40009E42F /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B36721226931F40009E42F /* InputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		38B3670E2268D2BD0009E42F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		38B367102268D2D10009E42F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		38B367122268D2FD0009E42F /* Succinct.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Succinct.framework; path = Carthage/Build/iOS/Succinct.framework; sourceTree = "<group>"; };
+		38B3671F226931270009E42F /* InputViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewControllerSpec.swift; sourceTree = "<group>"; };
+		38B36721226931F40009E42F /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				3891FD7D22678294005B186F /* LaunchScreen.storyboard */,
 				3891FD94226787BD005B186F /* main.swift */,
 				3891FD7622678292005B186F /* ViewController.swift */,
+				38B36721226931F40009E42F /* InputViewController.swift */,
 			);
 			path = WeightScale;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			children = (
 				3891FD8B22678294005B186F /* Info.plist */,
 				3891FD8922678294005B186F /* WeightScaleTests.swift */,
+				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
 			);
 			path = WeightScaleTests;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 				3891FD7522678292005B186F /* AppDelegate.swift in Sources */,
 				3891FD95226787BD005B186F /* main.swift in Sources */,
 				3891FD7722678292005B186F /* ViewController.swift in Sources */,
+				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */,
 				3891FD8A22678294005B186F /* WeightScaleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
