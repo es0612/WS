@@ -19,9 +19,9 @@
 		38B3670F2268D2BD0009E42F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670E2268D2BD0009E42F /* Nimble.framework */; };
 		38B367112268D2D10009E42F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367102268D2D10009E42F /* Quick.framework */; };
 		38B367132268D2FD0009E42F /* Succinct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367122268D2FD0009E42F /* Succinct.framework */; };
-		38B367172268D46E0009E42F /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367162268D46E0009E42F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		38B367192268D4820009E42F /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367182268D4820009E42F /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		38B3671B2268D48F0009E42F /* Succinct.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B3671A2268D48F0009E42F /* Succinct.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38B3671C22692F7B0009E42F /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B3670E2268D2BD0009E42F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38B3671D22692F820009E42F /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367102268D2D10009E42F /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38B3671E22692F870009E42F /* Succinct.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367122268D2FD0009E42F /* Succinct.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +41,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				38B367172268D46E0009E42F /* Nimble.framework in CopyFiles */,
-				38B367192268D4820009E42F /* Quick.framework in CopyFiles */,
-				38B3671B2268D48F0009E42F /* Succinct.framework in CopyFiles */,
+				38B3671C22692F7B0009E42F /* Nimble.framework in CopyFiles */,
+				38B3671D22692F820009E42F /* Quick.framework in CopyFiles */,
+				38B3671E22692F870009E42F /* Succinct.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,9 +66,6 @@
 		38B3670E2268D2BD0009E42F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		38B367102268D2D10009E42F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		38B367122268D2FD0009E42F /* Succinct.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Succinct.framework; path = Carthage/Build/iOS/Succinct.framework; sourceTree = "<group>"; };
-		38B367162268D46E0009E42F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		38B367182268D4820009E42F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		38B3671A2268D48F0009E42F /* Succinct.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Succinct.framework; path = Carthage/Build/iOS/Succinct.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +99,6 @@
 				3891FD7222678292005B186F /* Products */,
 				3891FD7322678292005B186F /* WeightScale */,
 				3891FD8822678294005B186F /* WeightScaleTests */,
-				38B367162268D46E0009E42F /* Nimble.framework */,
-				38B367182268D4820009E42F /* Quick.framework */,
-				38B3671A2268D48F0009E42F /* Succinct.framework */,
 			);
 			sourceTree = "<group>";
 		};
