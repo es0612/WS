@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
-		3891FD7722678292005B186F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7622678292005B186F /* ViewController.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
-		3891FD8A22678294005B186F /* WeightScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD8922678294005B186F /* WeightScaleTests.swift */; };
 		3891FD95226787BD005B186F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD94226787BD005B186F /* main.swift */; };
 		38B367092268D1FB0009E42F /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367082268D1FB0009E42F /* BrightFutures.framework */; };
 		38B3670B2268D20B0009E42F /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670A2268D20B0009E42F /* Charts.framework */; };
@@ -54,12 +52,10 @@
 /* Begin PBXFileReference section */
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3891FD7622678292005B186F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3891FD7B22678294005B186F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3891FD7E22678294005B186F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3891FD8022678294005B186F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3891FD8522678294005B186F /* WeightScaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightScaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3891FD8922678294005B186F /* WeightScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightScaleTests.swift; sourceTree = "<group>"; };
 		3891FD8B22678294005B186F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3891FD94226787BD005B186F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		38B367082268D1FB0009E42F /* BrightFutures.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BrightFutures.framework; path = Carthage/Build/iOS/BrightFutures.framework; sourceTree = "<group>"; };
@@ -123,7 +119,6 @@
 				3891FD8022678294005B186F /* Info.plist */,
 				3891FD7D22678294005B186F /* LaunchScreen.storyboard */,
 				3891FD94226787BD005B186F /* main.swift */,
-				3891FD7622678292005B186F /* ViewController.swift */,
 				38B36721226931F40009E42F /* InputViewController.swift */,
 			);
 			path = WeightScale;
@@ -133,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				3891FD8B22678294005B186F /* Info.plist */,
-				3891FD8922678294005B186F /* WeightScaleTests.swift */,
 				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
 			);
 			path = WeightScaleTests;
@@ -281,7 +275,6 @@
 			files = (
 				3891FD7522678292005B186F /* AppDelegate.swift in Sources */,
 				3891FD95226787BD005B186F /* main.swift in Sources */,
-				3891FD7722678292005B186F /* ViewController.swift in Sources */,
 				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */,
-				3891FD8A22678294005B186F /* WeightScaleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
