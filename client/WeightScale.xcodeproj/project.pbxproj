@@ -146,9 +146,11 @@
 				TargetAttributes = {
 					3891FD7022678292005B186F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					3891FD8422678294005B186F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 3891FD7022678292005B186F;
 					};
 				};
@@ -361,7 +363,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ema.WeightScale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -379,7 +381,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ema.WeightScale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -399,7 +401,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ema.WeightScaleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeightScale.app/WeightScale";
 			};
@@ -420,7 +422,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ema.WeightScaleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeightScale.app/WeightScale";
 			};
