@@ -13,6 +13,15 @@
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
 		3891FD8A22678294005B186F /* WeightScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD8922678294005B186F /* WeightScaleTests.swift */; };
 		3891FD95226787BD005B186F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD94226787BD005B186F /* main.swift */; };
+		38B367092268D1FB0009E42F /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367082268D1FB0009E42F /* BrightFutures.framework */; };
+		38B3670B2268D20B0009E42F /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670A2268D20B0009E42F /* Charts.framework */; };
+		38B3670D2268D22C0009E42F /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670C2268D22C0009E42F /* PureLayout.framework */; };
+		38B3670F2268D2BD0009E42F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670E2268D2BD0009E42F /* Nimble.framework */; };
+		38B367112268D2D10009E42F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367102268D2D10009E42F /* Quick.framework */; };
+		38B367132268D2FD0009E42F /* Succinct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367122268D2FD0009E42F /* Succinct.framework */; };
+		38B367172268D46E0009E42F /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367162268D46E0009E42F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38B367192268D4820009E42F /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367182268D4820009E42F /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38B3671B2268D48F0009E42F /* Succinct.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B3671A2268D48F0009E42F /* Succinct.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +34,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		38B367152268D4440009E42F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				38B367172268D46E0009E42F /* Nimble.framework in CopyFiles */,
+				38B367192268D4820009E42F /* Quick.framework in CopyFiles */,
+				38B3671B2268D48F0009E42F /* Succinct.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +60,15 @@
 		3891FD8922678294005B186F /* WeightScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightScaleTests.swift; sourceTree = "<group>"; };
 		3891FD8B22678294005B186F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3891FD94226787BD005B186F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		38B367082268D1FB0009E42F /* BrightFutures.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BrightFutures.framework; path = Carthage/Build/iOS/BrightFutures.framework; sourceTree = "<group>"; };
+		38B3670A2268D20B0009E42F /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+		38B3670C2268D22C0009E42F /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
+		38B3670E2268D2BD0009E42F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		38B367102268D2D10009E42F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		38B367122268D2FD0009E42F /* Succinct.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Succinct.framework; path = Carthage/Build/iOS/Succinct.framework; sourceTree = "<group>"; };
+		38B367162268D46E0009E42F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		38B367182268D4820009E42F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		38B3671A2268D48F0009E42F /* Succinct.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Succinct.framework; path = Carthage/Build/iOS/Succinct.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B367092268D1FB0009E42F /* BrightFutures.framework in Frameworks */,
+				38B3670B2268D20B0009E42F /* Charts.framework in Frameworks */,
+				38B3670D2268D22C0009E42F /* PureLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B3670F2268D2BD0009E42F /* Nimble.framework in Frameworks */,
+				38B367112268D2D10009E42F /* Quick.framework in Frameworks */,
+				38B367132268D2FD0009E42F /* Succinct.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,9 +98,13 @@
 		3891FD6822678292005B186F = {
 			isa = PBXGroup;
 			children = (
+				38B367072268D1FB0009E42F /* Frameworks */,
 				3891FD7222678292005B186F /* Products */,
 				3891FD7322678292005B186F /* WeightScale */,
 				3891FD8822678294005B186F /* WeightScaleTests */,
+				38B367162268D46E0009E42F /* Nimble.framework */,
+				38B367182268D4820009E42F /* Quick.framework */,
+				38B3671A2268D48F0009E42F /* Succinct.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +139,19 @@
 			path = WeightScaleTests;
 			sourceTree = "<group>";
 		};
+		38B367072268D1FB0009E42F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38B367082268D1FB0009E42F /* BrightFutures.framework */,
+				38B3670A2268D20B0009E42F /* Charts.framework */,
+				38B3670E2268D2BD0009E42F /* Nimble.framework */,
+				38B3670C2268D22C0009E42F /* PureLayout.framework */,
+				38B367102268D2D10009E42F /* Quick.framework */,
+				38B367122268D2FD0009E42F /* Succinct.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +162,7 @@
 				3891FD6D22678292005B186F /* Sources */,
 				3891FD6E22678292005B186F /* Frameworks */,
 				3891FD6F22678292005B186F /* Resources */,
+				38B367062268D1870009E42F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -123,6 +180,7 @@
 				3891FD8122678294005B186F /* Sources */,
 				3891FD8222678294005B186F /* Frameworks */,
 				3891FD8322678294005B186F /* Resources */,
+				38B367152268D4440009E42F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -192,6 +250,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		38B367062268D1870009E42F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/BrightFutures.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PureLayout.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3891FD6D22678292005B186F /* Sources */ = {
@@ -356,6 +437,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UUD4WPFJTD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WeightScale/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -374,6 +459,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UUD4WPFJTD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WeightScale/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -393,6 +482,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UUD4WPFJTD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WeightScaleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -414,6 +507,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UUD4WPFJTD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WeightScaleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
