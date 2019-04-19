@@ -117,9 +117,9 @@
 				3891FD7422678292005B186F /* AppDelegate.swift */,
 				3891FD7B22678294005B186F /* Assets.xcassets */,
 				3891FD8022678294005B186F /* Info.plist */,
+				38B36721226931F40009E42F /* InputViewController.swift */,
 				3891FD7D22678294005B186F /* LaunchScreen.storyboard */,
 				3891FD94226787BD005B186F /* main.swift */,
-				38B36721226931F40009E42F /* InputViewController.swift */,
 			);
 			path = WeightScale;
 			sourceTree = "<group>";
@@ -274,8 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3891FD7522678292005B186F /* AppDelegate.swift in Sources */,
-				3891FD95226787BD005B186F /* main.swift in Sources */,
 				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
+				3891FD95226787BD005B186F /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
