@@ -7,10 +7,12 @@ import Succinct
 class InputViewControllerSpec: QuickSpec {
     override func spec() {
         describe("Input view controller に関するテスト") {
+            var spyRouter: SpyRouter!
             var inputViewController: InputViewController!
 
             beforeEach {
-                inputViewController = InputViewController()
+                spyRouter = SpyRouter()
+                inputViewController = InputViewController(router: spyRouter)
             }
 
             it("OKボタンが見える") {
@@ -39,6 +41,13 @@ class InputViewControllerSpec: QuickSpec {
                 expect(inputTextField?.keyboardType).to(equal(.numberPad))
             }
 
+            it("OKボタンをタップしたとき,リスト画面に遷移する") {
+                inputViewController.tapButton(withExactText: "OK")
+
+
+                expect(spyRouter.showListViewController_wasCalled).to(beTrue())
+
+            }
         }
     }
 }

@@ -1,7 +1,14 @@
 import UIKit
 import PureLayout
 
+protocol Router {
+    func showListViewController()
+}
+
 class InputViewController: UIViewController {
+    // MARK: - Initialization
+    private let router: Router?
+
     // MARK: - Views
     private let inputForm: UIStackView
     private let OkButton: UIButton
@@ -12,12 +19,13 @@ class InputViewController: UIViewController {
     private var didSetupConstraints: Bool = false
 
     // MARK: - Initialization
-    init() {
+    init(router: Router? = nil) {
+        self.router = router
+
         inputForm = UIStackView.newAutoLayout()
         OkButton = UIButton(type: .system)
         inputTextField = UITextField.newAutoLayout()
         kgLabel = UILabel.newAutoLayout()
-
 
         super.init(nibName: nil, bundle: nil)
 
@@ -49,6 +57,7 @@ class InputViewController: UIViewController {
 
     func viewConfigurations() {
         OkButton.setTitle("OK", for: .normal)
+        OkButton.addTarget(self, action: #selector(didTapOkButton), for: .touchUpInside)
 
         inputTextField.placeholder = "00.0"
         inputTextField.keyboardType = .numberPad
@@ -56,5 +65,9 @@ class InputViewController: UIViewController {
         kgLabel.text = "kg"
 
         inputForm.axis = .vertical
+    }
+
+    @objc func didTapOkButton() {
+        router?.showListViewController()
     }
 }
