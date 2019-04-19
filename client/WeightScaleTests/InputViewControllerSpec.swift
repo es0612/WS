@@ -31,6 +31,14 @@ class InputViewControllerSpec: QuickSpec {
                     .to(beTrue())
             }
 
+            it("体重を入力するとき数字で入力できる") {
+                let inputTextField = inputViewController
+                    .findTextField(withExactPlaceholderText: "00.0")
+
+
+                expect(inputTextField?.keyboardType).to(equal(.numberPad))
+            }
+
         }
     }
 }

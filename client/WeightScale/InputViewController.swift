@@ -49,7 +49,10 @@ class InputViewController: UIViewController {
 
     func viewConfigurations() {
         OkButton.setTitle("OK", for: .normal)
+
         inputTextField.placeholder = "00.0"
+        inputTextField.keyboardType = .numberPad
+
         kgLabel.text = "kg"
 
         inputForm.axis = .vertical
