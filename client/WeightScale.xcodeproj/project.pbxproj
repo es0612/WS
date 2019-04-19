@@ -22,6 +22,7 @@
 		38B3671E22692F870009E42F /* Succinct.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367122268D2FD0009E42F /* Succinct.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3671F226931270009E42F /* InputViewControllerSpec.swift */; };
 		38B36722226931F40009E42F /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B36721226931F40009E42F /* InputViewController.swift */; };
+		38B367242269E3E80009E42F /* SpyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B367232269E3E80009E42F /* SpyRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		38B367122268D2FD0009E42F /* Succinct.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Succinct.framework; path = Carthage/Build/iOS/Succinct.framework; sourceTree = "<group>"; };
 		38B3671F226931270009E42F /* InputViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewControllerSpec.swift; sourceTree = "<group>"; };
 		38B36721226931F40009E42F /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		38B367232269E3E80009E42F /* SpyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			children = (
 				3891FD8B22678294005B186F /* Info.plist */,
 				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
+				38B367232269E3E80009E42F /* SpyRouter.swift */,
 			);
 			path = WeightScaleTests;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */,
+				38B367242269E3E80009E42F /* SpyRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
