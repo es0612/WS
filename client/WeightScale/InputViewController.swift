@@ -21,19 +21,8 @@ class InputViewController: UIViewController {
 
         super.init(nibName: nil, bundle: nil)
 
-
-        view.addSubview(inputForm)
-
-        OkButton.setTitle("OK", for: .normal)
-        inputForm.addArrangedSubview(OkButton)
-
-        inputTextField.placeholder = "00.0"
-        inputForm.addArrangedSubview(inputTextField)
-
-        kgLabel.text = "kg"
-        inputForm.addArrangedSubview(kgLabel)
-
-        inputForm.axis = .vertical
+        addSubviews()
+        viewConfigurations()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -47,5 +36,22 @@ class InputViewController: UIViewController {
             didSetupConstraints = true
         }
         super.updateViewConstraints()
+    }
+
+    func addSubviews(){
+        view.addSubview(inputForm)
+
+        inputForm.addArrangedSubview(OkButton)
+        inputForm.addArrangedSubview(inputTextField)
+        inputForm.addArrangedSubview(kgLabel)
+
+    }
+
+    func viewConfigurations() {
+        OkButton.setTitle("OK", for: .normal)
+        inputTextField.placeholder = "00.0"
+        kgLabel.text = "kg"
+
+        inputForm.axis = .vertical
     }
 }
