@@ -1,19 +1,29 @@
 WeghtScale
 ====
 
-Overview
-
-体重を管理するiOSアプリ
+体重を管理するiOSアプリケーション
 
 ## Description
 
+下記の機能のみを実装するシンプルなアプリケーション
+- 体重入力
+- 一覧表示
+- グラフ表示
+- push通知
+
 ## Demo
+
+簡易アニメーションを貼る予定
 
 ## Requirement
 
-## Usage
+github "Thomvis/BrightFutures"
+github "PureLayout/PureLayout"
+github "danielgindi/Charts"
 
-## Install
+github "Quick/Quick"
+github "Quick/Nimble"
+github "derekleerock/Succinct"
 
 ## Licence
 
