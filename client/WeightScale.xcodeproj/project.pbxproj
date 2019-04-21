@@ -124,14 +124,9 @@
 		3891FD7322678292005B186F /* WeightScale */ = {
 			isa = PBXGroup;
 			children = (
-				3891FD7422678292005B186F /* AppDelegate.swift */,
-				3891FD7B22678294005B186F /* Assets.xcassets */,
-				3891FD8022678294005B186F /* Info.plist */,
-				38B36721226931F40009E42F /* InputViewController.swift */,
-				3891FD7D22678294005B186F /* LaunchScreen.storyboard */,
-				3891FD94226787BD005B186F /* main.swift */,
+				38B36730226CC6790009E42F /* UI */,
+				38B3672F226CC66B0009E42F /* Application */,
 				38B36729226CA1430009E42F /* NavigationRouter.swift */,
-				38B3672B226CA2170009E42F /* ListViewController.swift */,
 			);
 			path = WeightScale;
 			sourceTree = "<group>";
@@ -139,11 +134,10 @@
 		3891FD8822678294005B186F /* WeightScaleTests */ = {
 			isa = PBXGroup;
 			children = (
-				3891FD8B22678294005B186F /* Info.plist */,
-				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
+				38B36732226CC6D30009E42F /* Application */,
+				38B36731226CC6C30009E42F /* UI */,
 				38B367232269E3E80009E42F /* SpyRouter.swift */,
 				38B367272269E7F30009E42F /* NavigationRouterSpec.swift */,
-				38B3672D226CA4340009E42F /* AppDelegateSpec.swift */,
 			);
 			path = WeightScaleTests;
 			sourceTree = "<group>";
@@ -159,6 +153,44 @@
 				38B367122268D2FD0009E42F /* Succinct.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		38B3672F226CC66B0009E42F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3891FD7422678292005B186F /* AppDelegate.swift */,
+				3891FD7B22678294005B186F /* Assets.xcassets */,
+				3891FD8022678294005B186F /* Info.plist */,
+				3891FD7D22678294005B186F /* LaunchScreen.storyboard */,
+				3891FD94226787BD005B186F /* main.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		38B36730226CC6790009E42F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				38B36721226931F40009E42F /* InputViewController.swift */,
+				38B3672B226CA2170009E42F /* ListViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		38B36731226CC6C30009E42F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		38B36732226CC6D30009E42F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				38B3672D226CA4340009E42F /* AppDelegateSpec.swift */,
+				3891FD8B22678294005B186F /* Info.plist */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,7 +487,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = WeightScale/Info.plist;
+				INFOPLIST_FILE = WeightScale/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,7 +509,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = WeightScale/Info.plist;
+				INFOPLIST_FILE = WeightScale/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,7 +532,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = WeightScaleTests/Info.plist;
+				INFOPLIST_FILE = WeightScaleTests/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,7 +557,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = WeightScaleTests/Info.plist;
+				INFOPLIST_FILE = WeightScaleTests/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
