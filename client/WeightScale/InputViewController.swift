@@ -1,13 +1,9 @@
 import UIKit
 import PureLayout
 
-protocol Router {
-    func showListViewController()
-}
-
 class InputViewController: UIViewController {
     // MARK: - Initialization
-    private let router: Router?
+    private let router: Router
 
     // MARK: - Views
     private let inputForm: UIStackView
@@ -19,7 +15,7 @@ class InputViewController: UIViewController {
     private var didSetupConstraints: Bool = false
 
     // MARK: - Initialization
-    init(router: Router? = nil) {
+    init(router: Router) {
         self.router = router
 
         inputForm = UIStackView.newAutoLayout()
@@ -65,9 +61,11 @@ class InputViewController: UIViewController {
         kgLabel.text = "kg"
 
         inputForm.axis = .vertical
+
+        view.backgroundColor = .white
     }
 
     @objc func didTapOkButton() {
-        router?.showListViewController()
+        router.showListScreen()
     }
 }
