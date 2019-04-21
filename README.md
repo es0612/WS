@@ -3,6 +3,7 @@ WeghtScale
 
 体重を管理するiOSアプリケーション
 
+
 ## Description
 
 下記の機能のみを実装するシンプルなアプリケーション
@@ -11,23 +12,28 @@ WeghtScale
 - グラフ表示
 - push通知
 
+
 ## Demo
 
 簡易アニメーションを貼る予定
 
+
 ## Requirement
 
-github "Thomvis/BrightFutures"
-github "PureLayout/PureLayout"
-github "danielgindi/Charts"
+- github "Thomvis/BrightFutures"
+- github "PureLayout/PureLayout"
+- github "danielgindi/Charts"
 
-github "Quick/Quick"
-github "Quick/Nimble"
-github "derekleerock/Succinct"
+
+- github "Quick/Quick"
+- github "Quick/Nimble"
+- github "derekleerock/Succinct"
+
 
 ## Licence
 
 see ./LICENSE
+
 
 ## Author
 
