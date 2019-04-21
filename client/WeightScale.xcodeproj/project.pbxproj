@@ -23,6 +23,10 @@
 		38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3671F226931270009E42F /* InputViewControllerSpec.swift */; };
 		38B36722226931F40009E42F /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B36721226931F40009E42F /* InputViewController.swift */; };
 		38B367242269E3E80009E42F /* SpyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B367232269E3E80009E42F /* SpyRouter.swift */; };
+		38B367282269E7F30009E42F /* NavigationRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B367272269E7F30009E42F /* NavigationRouterSpec.swift */; };
+		38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B36729226CA1430009E42F /* NavigationRouter.swift */; };
+		38B3672C226CA2170009E42F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3672B226CA2170009E42F /* ListViewController.swift */; };
+		38B3672E226CA4340009E42F /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3672D226CA4340009E42F /* AppDelegateSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,10 @@
 		38B3671F226931270009E42F /* InputViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewControllerSpec.swift; sourceTree = "<group>"; };
 		38B36721226931F40009E42F /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		38B367232269E3E80009E42F /* SpyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyRouter.swift; sourceTree = "<group>"; };
+		38B367272269E7F30009E42F /* NavigationRouterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouterSpec.swift; sourceTree = "<group>"; };
+		38B36729226CA1430009E42F /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		38B3672B226CA2170009E42F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		38B3672D226CA4340009E42F /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,8 @@
 				38B36721226931F40009E42F /* InputViewController.swift */,
 				3891FD7D22678294005B186F /* LaunchScreen.storyboard */,
 				3891FD94226787BD005B186F /* main.swift */,
+				38B36729226CA1430009E42F /* NavigationRouter.swift */,
+				38B3672B226CA2170009E42F /* ListViewController.swift */,
 			);
 			path = WeightScale;
 			sourceTree = "<group>";
@@ -132,6 +142,8 @@
 				3891FD8B22678294005B186F /* Info.plist */,
 				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
 				38B367232269E3E80009E42F /* SpyRouter.swift */,
+				38B367272269E7F30009E42F /* NavigationRouterSpec.swift */,
+				38B3672D226CA4340009E42F /* AppDelegateSpec.swift */,
 			);
 			path = WeightScaleTests;
 			sourceTree = "<group>";
@@ -278,6 +290,8 @@
 			files = (
 				3891FD7522678292005B186F /* AppDelegate.swift in Sources */,
 				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
+				38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */,
+				38B3672C226CA2170009E42F /* ListViewController.swift in Sources */,
 				3891FD95226787BD005B186F /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */,
+				38B367282269E7F30009E42F /* NavigationRouterSpec.swift in Sources */,
 				38B367242269E3E80009E42F /* SpyRouter.swift in Sources */,
+				38B3672E226CA4340009E42F /* AppDelegateSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
