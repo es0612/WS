@@ -2,6 +2,15 @@ import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var router: Router?
+
+    convenience override init() {
+        self.init(router: NavigationRouter())
+    }
+
+    init(router: Router) {
+        self.router = router
+    }
 
     func application(
         _ application: UIApplication,
@@ -11,10 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
 
-        let router = NavigationRouter()
-        router.setup()
+        router?.setup()
 
-        window?.rootViewController = router.rootViewController
+        window?.rootViewController = router?.rootViewController
         window?.makeKeyAndVisible()
 
         return true
