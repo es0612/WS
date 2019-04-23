@@ -4,13 +4,13 @@ import UIKit
 class SpyRouter: Router {
     var rootViewController: UIViewController?
 
-    private(set) var setup_wasCalled = false
-    func setup() {
-        setup_wasCalled = true
+    private(set) var showInputScreen_wasCalled = false
+    func showInputScreen() {
+        showInputScreen_wasCalled = true
     }
-
-    private(set) var showListViewController_wasCalled = false
+    
+    private(set) var showListScreen_wasCalled = false
     func showListScreen() {
-        showListViewController_wasCalled = true
+        showListScreen_wasCalled = true
     }
 }

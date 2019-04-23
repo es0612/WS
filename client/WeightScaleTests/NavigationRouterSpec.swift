@@ -9,10 +9,10 @@ class NavigationRouterSpec: QuickSpec {
         describe("Navigation router に関するテスト") {
 
             it("Input画面を初期表示する"){
-let router = NavigationRouter()
+                let router = NavigationRouter()
 
 
-                router.setup()
+                router.showInputScreen()
 
 
                 expect(router.rootViewController).to(beAKindOf(InputViewController.self))
