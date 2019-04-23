@@ -19,7 +19,7 @@ class AppDelegateSpec: QuickSpec {
 
 
 
-                expect(spyRouter.setup_wasCalled)
+                expect(spyRouter.showInputScreen_wasCalled)
                     .to(beTrue())
            }
         }

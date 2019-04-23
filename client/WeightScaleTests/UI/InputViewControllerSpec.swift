@@ -45,7 +45,7 @@ class InputViewControllerSpec: QuickSpec {
                 inputViewController.tapButton(withExactText: "OK")
 
 
-                expect(spyRouter.showListViewController_wasCalled).to(beTrue())
+                expect(spyRouter.showListScreen_wasCalled).to(beTrue())
 
             }
         }

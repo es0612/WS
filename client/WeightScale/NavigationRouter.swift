@@ -2,14 +2,14 @@ import UIKit
 
 protocol Router {
     var rootViewController: UIViewController? { get }
-    func setup()
+    func showInputScreen()
     func showListScreen()
 }
 
 class NavigationRouter: Router {
     var rootViewController: UIViewController?
 
-    func setup() {
+    func showInputScreen() {
         rootViewController = InputViewController(router: self)
     }
 
