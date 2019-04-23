@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3814998A226F4DA4001B2E71 /* ListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -55,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerSpec.swift; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891FD7B22678294005B186F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,8 +126,8 @@
 		3891FD7322678292005B186F /* WeightScale */ = {
 			isa = PBXGroup;
 			children = (
-				38B36730226CC6790009E42F /* UI */,
 				38B3672F226CC66B0009E42F /* Application */,
+				38B36730226CC6790009E42F /* UI */,
 				38B36729226CA1430009E42F /* NavigationRouter.swift */,
 			);
 			path = WeightScale;
@@ -136,8 +138,8 @@
 			children = (
 				38B36732226CC6D30009E42F /* Application */,
 				38B36731226CC6C30009E42F /* UI */,
-				38B367232269E3E80009E42F /* SpyRouter.swift */,
 				38B367272269E7F30009E42F /* NavigationRouterSpec.swift */,
+				38B367232269E3E80009E42F /* SpyRouter.swift */,
 			);
 			path = WeightScaleTests;
 			sourceTree = "<group>";
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
+				38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -322,9 +325,9 @@
 			files = (
 				3891FD7522678292005B186F /* AppDelegate.swift in Sources */,
 				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
-				38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */,
 				38B3672C226CA2170009E42F /* ListViewController.swift in Sources */,
 				3891FD95226787BD005B186F /* main.swift in Sources */,
+				38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,10 +335,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B3672E226CA4340009E42F /* AppDelegateSpec.swift in Sources */,
 				38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */,
+				3814998A226F4DA4001B2E71 /* ListViewControllerSpec.swift in Sources */,
 				38B367282269E7F30009E42F /* NavigationRouterSpec.swift in Sources */,
 				38B367242269E3E80009E42F /* SpyRouter.swift in Sources */,
-				38B3672E226CA4340009E42F /* AppDelegateSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
