@@ -8,17 +8,20 @@ class AppDelegateSpec: QuickSpec {
     override func spec() {
         describe("App Delegate に関するテスト") {
             it("アプリ起動時にInput画面を初期表示する") {
-            let appDelegate = AppDelegate()
+                let spyRouter = SpyRouter()
+                let appDelegate = AppDelegate(router: spyRouter)
 
 
-            let _ = appDelegate.application(
-                UIApplication.shared,
-                didFinishLaunchingWithOptions: nil
-            )
+                let _ = appDelegate.application(
+                    UIApplication.shared,
+                    didFinishLaunchingWithOptions: nil
+                )
 
 
-            expect(appDelegate.window?.rootViewController).to(beAKindOf(InputViewController.self))
-            }
+
+                expect(spyRouter.setup_wasCalled)
+                    .to(beTrue())
+           }
         }
     }
 }
