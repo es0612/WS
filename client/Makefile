@@ -18,3 +18,6 @@ update:
 
 ci:
 	bootstrap unit-tests
+
+beta:
+	@/usr/bin/time fastlane beta
