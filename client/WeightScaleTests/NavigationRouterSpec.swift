@@ -9,7 +9,7 @@ class NavigationRouterSpec: QuickSpec {
         describe("Navigation router に関するテスト") {
 
             it("Input画面を初期表示する"){
-                let router = NavigationRouter()
+                let router = NavigationRouter(animated: false)
 
 
                 router.showInputScreen()
@@ -20,7 +20,7 @@ class NavigationRouterSpec: QuickSpec {
 
             describe("tab barについてのテスト") {
                 it("List画面を初期表示する") {
-                    let router = NavigationRouter()
+                    let router = NavigationRouter(animated: false)
                     router.rootViewController = UIViewController()
 
                     let window = UIWindow(frame: UIScreen.main.bounds)
@@ -36,7 +36,7 @@ class NavigationRouterSpec: QuickSpec {
                 }
 
                 it("設定画面を表示する") {
-                    let router = NavigationRouter()
+                    let router = NavigationRouter(animated: false)
                     router.rootViewController = UIViewController()
 
                     let window = UIWindow(frame: UIScreen.main.bounds)

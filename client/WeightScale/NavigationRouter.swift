@@ -8,7 +8,15 @@ protocol Router {
 }
 
 class NavigationRouter: Router {
+    // MARK: - Properties
     var rootViewController: UIViewController?
+
+    // MARK: - Injected Dependencies
+    private let animated: Bool
+
+    init(animated: Bool) {
+        self.animated = animated
+    }
 
     func showInputScreen() {
         rootViewController = InputViewController(router: self)
@@ -21,7 +29,7 @@ class NavigationRouter: Router {
         listNavController.viewControllers = [listViewController]
 
 
-        rootViewController?.present(listNavController, animated: false, completion: nil)
+        rootViewController?.present(listNavController, animated: animated, completion: nil)
     }
 
     func showMainTabBarScreen() {
@@ -47,9 +55,9 @@ class NavigationRouter: Router {
         let tabBarController = UITabBarController(nibName: nil, bundle: nil)
 
         tabBarController.setViewControllers(
-            [listNavController, settingNavController], animated: false
+            [listNavController, settingNavController], animated: animated
         )
 
-        rootViewController?.present(tabBarController, animated: false, completion: nil)
+        rootViewController?.present(tabBarController, animated: animated, completion: nil)
     }
 }
