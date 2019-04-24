@@ -342,11 +342,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				381D4F7B2270B628009F7E53 /* SettingViewControllerSpec.swift in Sources */,
 				38B3672E226CA4340009E42F /* AppDelegateSpec.swift in Sources */,
 				38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */,
 				3814998A226F4DA4001B2E71 /* ListViewControllerSpec.swift in Sources */,
 				38B367282269E7F30009E42F /* NavigationRouterSpec.swift in Sources */,
+				381D4F7B2270B628009F7E53 /* SettingViewControllerSpec.swift in Sources */,
 				38B367242269E3E80009E42F /* SpyRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

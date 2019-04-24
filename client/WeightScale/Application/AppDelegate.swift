@@ -5,7 +5,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var router: Router?
 
     convenience override init() {
-        self.init(router: NavigationRouter())
+        self.init(router: NavigationRouter(animated: true))
     }
 
     init(router: Router) {
