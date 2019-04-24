@@ -35,7 +35,23 @@ class NavigationRouterSpec: QuickSpec {
                     expect(tabBarController.displayedTab(isAKindOf: ListViewController.self)).to(beTrue())
                 }
 
+                it("設定画面を表示する") {
+                    let router = NavigationRouter()
+                    router.rootViewController = UIViewController()
 
+                    let window = UIWindow(frame: UIScreen.main.bounds)
+                    window.makeKeyAndVisible()
+                    window.rootViewController = router.rootViewController
+
+
+                    router.showMainTabBarScreen()
+
+
+                    let tabBarController = router.rootViewController?.presentedViewController as! UITabBarController
+
+                    tabBarController.selectTab(withTitle: "設定")
+                    expect(tabBarController.displayedTab(isAKindOf: SettingViewController.self)).to(beTrue())
+                }
                 
             }
 

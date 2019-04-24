@@ -34,10 +34,20 @@ class NavigationRouter: Router {
             title: "リスト", image: nil, selectedImage: nil
         )
 
+
+        let settingViewController = SettingViewController()
+
+        let settingNavController = UINavigationController()
+        settingNavController.viewControllers = [settingViewController]
+        settingNavController.tabBarItem = UITabBarItem(
+            title: "設定", image: nil, selectedImage: nil
+        )
+
+
         let tabBarController = UITabBarController(nibName: nil, bundle: nil)
 
         tabBarController.setViewControllers(
-            [listNavController], animated: false
+            [listNavController, settingNavController], animated: false
         )
 
         rootViewController?.present(tabBarController, animated: false, completion: nil)

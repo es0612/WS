@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3814998A226F4DA4001B2E71 /* ListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */; };
+		381D4F792270B28F009F7E53 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F782270B28F009F7E53 /* SettingViewController.swift */; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerSpec.swift; sourceTree = "<group>"; };
+		381D4F782270B28F009F7E53 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891FD7B22678294005B186F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				38B36721226931F40009E42F /* InputViewController.swift */,
 				38B3672B226CA2170009E42F /* ListViewController.swift */,
+				381D4F782270B28F009F7E53 /* SettingViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				38B3672C226CA2170009E42F /* ListViewController.swift in Sources */,
 				3891FD95226787BD005B186F /* main.swift in Sources */,
 				38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */,
+				381D4F792270B28F009F7E53 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
