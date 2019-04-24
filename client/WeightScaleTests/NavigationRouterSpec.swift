@@ -18,20 +18,25 @@ class NavigationRouterSpec: QuickSpec {
                 expect(router.rootViewController).to(beAKindOf(InputViewController.self))
             }
 
-            it("List画面を表示する") {
-                let router = NavigationRouter()
-                router.rootViewController = UIViewController()
+            describe("tab barについてのテスト") {
+                it("List画面を初期表示する") {
+                    let router = NavigationRouter()
+                    router.rootViewController = UIViewController()
 
-                let window = UIWindow(frame: UIScreen.main.bounds)
-                window.makeKeyAndVisible()
-                window.rootViewController = router.rootViewController
-
-
-                router.showListScreen()
+                    let window = UIWindow(frame: UIScreen.main.bounds)
+                    window.makeKeyAndVisible()
+                    window.rootViewController = router.rootViewController
 
 
-                expect(router.rootViewController?.presentedViewController).to(beAKindOf(ListViewController.self))
+                    router.showMainTabBarScreen()
+
+                    
+                    let tabBarController = router.rootViewController?.presentedViewController as! UITabBarController
+                    expect(tabBarController.selectedViewController).to(beAKindOf(UINavigationController.self))
+                }
+                
             }
+
         }
     }
 }

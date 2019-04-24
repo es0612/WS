@@ -41,11 +41,11 @@ class InputViewControllerSpec: QuickSpec {
                 expect(inputTextField?.keyboardType).to(equal(.numberPad))
             }
 
-            it("OKボタンをタップしたとき,リスト画面に遷移する") {
+            it("OKボタンをタップしたとき,メイン画面に遷移する") {
                 inputViewController.tapButton(withExactText: "OK")
 
 
-                expect(spyRouter.showListScreen_wasCalled).to(beTrue())
+                expect(spyRouter.showMainTabBarScreen_wasCalled).to(beTrue())
 
             }
         }

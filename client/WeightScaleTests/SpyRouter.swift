@@ -13,4 +13,9 @@ class SpyRouter: Router {
     func showListScreen() {
         showListScreen_wasCalled = true
     }
+
+    private(set) var showMainTabBarScreen_wasCalled = false
+    func showMainTabBarScreen() {
+        showMainTabBarScreen_wasCalled = true
+    }
 }
