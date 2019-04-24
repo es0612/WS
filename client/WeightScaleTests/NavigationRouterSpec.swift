@@ -52,6 +52,24 @@ class NavigationRouterSpec: QuickSpec {
                     tabBarController.selectTab(withTitle: "設定")
                     expect(tabBarController.displayedTab(isAKindOf: SettingViewController.self)).to(beTrue())
                 }
+
+                it("グラフ画面を表示する") {
+                    let router = NavigationRouter(animated: false)
+                    router.rootViewController = UIViewController()
+
+                    let window = UIWindow(frame: UIScreen.main.bounds)
+                    window.makeKeyAndVisible()
+                    window.rootViewController = router.rootViewController
+
+
+                    router.showMainTabBarScreen()
+
+
+                    let tabBarController = router.rootViewController?.presentedViewController as! UITabBarController
+
+                    tabBarController.selectTab(withTitle: "グラフ")
+                    expect(tabBarController.displayedTab(isAKindOf: GraphViewController.self)).to(beTrue())
+                }
                 
             }
 
