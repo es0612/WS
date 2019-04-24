@@ -14,6 +14,7 @@ class NavigationRouter: Router {
     // MARK: - Injected Dependencies
     private let animated: Bool
 
+    // MARK: - Initialization
     init(animated: Bool) {
         self.animated = animated
     }
@@ -51,11 +52,20 @@ class NavigationRouter: Router {
             title: "設定", image: nil, selectedImage: nil
         )
 
+        let graphViewController = GraphViewController()
+
+        let graphNavController = UINavigationController()
+        graphNavController.viewControllers = [graphViewController]
+        graphNavController.tabBarItem = UITabBarItem(
+            title: "グラフ", image: nil, selectedImage: nil
+        )
+
 
         let tabBarController = UITabBarController(nibName: nil, bundle: nil)
 
         tabBarController.setViewControllers(
-            [listNavController, settingNavController], animated: animated
+            [listNavController, settingNavController, graphNavController],
+            animated: animated
         )
 
         rootViewController?.present(tabBarController, animated: animated, completion: nil)

@@ -10,6 +10,7 @@
 		3814998A226F4DA4001B2E71 /* ListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */; };
 		381D4F792270B28F009F7E53 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F782270B28F009F7E53 /* SettingViewController.swift */; };
 		381D4F7B2270B628009F7E53 /* SettingViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */; };
+		381D4F7D22711AA2009F7E53 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F7C22711AA2009F7E53 /* GraphViewController.swift */; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -61,6 +62,7 @@
 		38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerSpec.swift; sourceTree = "<group>"; };
 		381D4F782270B28F009F7E53 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewControllerSpec.swift; sourceTree = "<group>"; };
+		381D4F7C22711AA2009F7E53 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891FD7B22678294005B186F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				38B36721226931F40009E42F /* InputViewController.swift */,
 				38B3672B226CA2170009E42F /* ListViewController.swift */,
 				381D4F782270B28F009F7E53 /* SettingViewController.swift */,
+				381D4F7C22711AA2009F7E53 /* GraphViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			files = (
 				3891FD7522678292005B186F /* AppDelegate.swift in Sources */,
 				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
+				381D4F7D22711AA2009F7E53 /* GraphViewController.swift in Sources */,
 				38B3672C226CA2170009E42F /* ListViewController.swift in Sources */,
 				3891FD95226787BD005B186F /* main.swift in Sources */,
 				38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */,
