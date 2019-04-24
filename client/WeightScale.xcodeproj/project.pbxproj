@@ -191,10 +191,10 @@
 		38B36731226CC6C30009E42F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				381D4F7E22711E24009F7E53 /* GraphViewControllerSpec.swift */,
 				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
 				38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */,
 				381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */,
-				381D4F7E22711E24009F7E53 /* GraphViewControllerSpec.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -350,12 +350,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				38B3672E226CA4340009E42F /* AppDelegateSpec.swift in Sources */,
+				381D4F7F22711E24009F7E53 /* GraphViewControllerSpec.swift in Sources */,
 				38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */,
 				3814998A226F4DA4001B2E71 /* ListViewControllerSpec.swift in Sources */,
 				38B367282269E7F30009E42F /* NavigationRouterSpec.swift in Sources */,
 				381D4F7B2270B628009F7E53 /* SettingViewControllerSpec.swift in Sources */,
 				38B367242269E3E80009E42F /* SpyRouter.swift in Sources */,
-				381D4F7F22711E24009F7E53 /* GraphViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

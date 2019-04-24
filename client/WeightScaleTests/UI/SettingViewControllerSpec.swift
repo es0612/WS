@@ -13,6 +13,14 @@ class SettingViewControllerSpec: QuickSpec {
 
                 expect(settingViewController.title).to(equal("設定"))
             }
+
+            it("目標体重のラベルが見える") {
+                let settingViewController = SettingViewController()
+                expect(settingViewController
+                    .hasLabel(withExactText: "目標体重"))
+                    .to(beTrue())
+            }
+
         }
     }
 }
