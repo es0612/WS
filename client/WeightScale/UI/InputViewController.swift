@@ -66,6 +66,6 @@ class InputViewController: UIViewController {
     }
 
     @objc func didTapOkButton() {
-        router.showListScreen()
+        router.showMainTabBarScreen()
     }
 }
