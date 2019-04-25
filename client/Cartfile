@@ -1,3 +1,4 @@
 github "Thomvis/BrightFutures"
 github "PureLayout/PureLayout"
 github "danielgindi/Charts"
+github "realm/realm-cocoa"

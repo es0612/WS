@@ -12,6 +12,8 @@
 		381D4F7B2270B628009F7E53 /* SettingViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */; };
 		381D4F7D22711AA2009F7E53 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F7C22711AA2009F7E53 /* GraphViewController.swift */; };
 		381D4F7F22711E24009F7E53 /* GraphViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F7E22711E24009F7E53 /* GraphViewControllerSpec.swift */; };
+		381D4F8222720391009F7E53 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381D4F8122720391009F7E53 /* RealmSwift.framework */; };
+		381D4F84227204ED009F7E53 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381D4F83227204ED009F7E53 /* Realm.framework */; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -65,6 +67,8 @@
 		381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewControllerSpec.swift; sourceTree = "<group>"; };
 		381D4F7C22711AA2009F7E53 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		381D4F7E22711E24009F7E53 /* GraphViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewControllerSpec.swift; sourceTree = "<group>"; };
+		381D4F8122720391009F7E53 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		381D4F83227204ED009F7E53 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891FD7B22678294005B186F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				38B367092268D1FB0009E42F /* BrightFutures.framework in Frameworks */,
 				38B3670B2268D20B0009E42F /* Charts.framework in Frameworks */,
 				38B3670D2268D22C0009E42F /* PureLayout.framework in Frameworks */,
+				381D4F84227204ED009F7E53 /* Realm.framework in Frameworks */,
+				381D4F8222720391009F7E53 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +118,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		381D4F8022720216009F7E53 /* WeightScaleThirdPartyAPITests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WeightScaleThirdPartyAPITests;
+			sourceTree = "<group>";
+		};
 		3891FD6822678292005B186F = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +132,7 @@
 				3891FD7222678292005B186F /* Products */,
 				3891FD7322678292005B186F /* WeightScale */,
 				3891FD8822678294005B186F /* WeightScaleTests */,
+				381D4F8022720216009F7E53 /* WeightScaleThirdPartyAPITests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +174,8 @@
 				38B3670E2268D2BD0009E42F /* Nimble.framework */,
 				38B3670C2268D22C0009E42F /* PureLayout.framework */,
 				38B367102268D2D10009E42F /* Quick.framework */,
+				381D4F83227204ED009F7E53 /* Realm.framework */,
+				381D4F8122720391009F7E53 /* RealmSwift.framework */,
 				38B367122268D2FD0009E42F /* Succinct.framework */,
 			);
 			name = Frameworks;
@@ -319,6 +335,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/BrightFutures.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PureLayout.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 			);
 			outputFileListPaths = (
 			);
