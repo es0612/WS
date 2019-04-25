@@ -40,16 +40,7 @@ class NavigationRouter: Router {
         listNavController.viewControllers = [listViewController]
 
         listNavController.tabBarItem = UITabBarItem(
-            title: "リスト", image: nil, selectedImage: nil
-        )
-
-
-        let settingViewController = SettingViewController()
-
-        let settingNavController = UINavigationController()
-        settingNavController.viewControllers = [settingViewController]
-        settingNavController.tabBarItem = UITabBarItem(
-            title: "設定", image: nil, selectedImage: nil
+            title: "リスト", image: UIImage(assetIdentifier: .listIcon), selectedImage: nil
         )
 
         let graphViewController = GraphViewController()
@@ -57,17 +48,40 @@ class NavigationRouter: Router {
         let graphNavController = UINavigationController()
         graphNavController.viewControllers = [graphViewController]
         graphNavController.tabBarItem = UITabBarItem(
-            title: "グラフ", image: nil, selectedImage: nil
+            title: "グラフ", image: UIImage(assetIdentifier: .graphIcon), selectedImage: nil
+        )
+
+        let settingViewController = SettingViewController()
+
+        let settingNavController = UINavigationController()
+        settingNavController.viewControllers = [settingViewController]
+        settingNavController.tabBarItem = UITabBarItem(
+            title: "設定", image: UIImage(assetIdentifier: .settingIcon), selectedImage: nil
         )
 
 
         let tabBarController = UITabBarController(nibName: nil, bundle: nil)
 
         tabBarController.setViewControllers(
-            [listNavController, settingNavController, graphNavController],
+            [listNavController,
+             graphNavController,
+             settingNavController],
             animated: animated
         )
 
         rootViewController?.present(tabBarController, animated: animated, completion: nil)
+    }
+}
+
+extension UIImage {
+    enum AssetIdentifier: String {
+        case listIcon
+        case graphIcon
+        case settingIcon
+        case inputIcon
+    }
+
+    convenience init(assetIdentifier: AssetIdentifier) {
+        self.init(named: assetIdentifier.rawValue)!
     }
 }
