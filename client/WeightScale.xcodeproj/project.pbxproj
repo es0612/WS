@@ -14,6 +14,7 @@
 		381D4F7F22711E24009F7E53 /* GraphViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F7E22711E24009F7E53 /* GraphViewControllerSpec.swift */; };
 		381D4F8222720391009F7E53 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381D4F8122720391009F7E53 /* RealmSwift.framework */; };
 		381D4F84227204ED009F7E53 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381D4F83227204ED009F7E53 /* Realm.framework */; };
+		381D4F8C22720656009F7E53 /* WeightScaleThirdPartyAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F8B22720656009F7E53 /* WeightScaleThirdPartyAPITests.swift */; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -37,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		381D4F8E22720656009F7E53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3891FD6922678292005B186F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3891FD7022678292005B186F;
+			remoteInfo = WeightScale;
+		};
 		3891FD8622678294005B186F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3891FD6922678292005B186F /* Project object */;
@@ -69,6 +77,9 @@
 		381D4F7E22711E24009F7E53 /* GraphViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewControllerSpec.swift; sourceTree = "<group>"; };
 		381D4F8122720391009F7E53 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		381D4F83227204ED009F7E53 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		381D4F8922720656009F7E53 /* WeightScaleThirdPartyAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightScaleThirdPartyAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		381D4F8B22720656009F7E53 /* WeightScaleThirdPartyAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightScaleThirdPartyAPITests.swift; sourceTree = "<group>"; };
+		381D4F8D22720656009F7E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891FD7B22678294005B186F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +104,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		381D4F8622720656009F7E53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3891FD6E22678292005B186F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -118,9 +136,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		381D4F8022720216009F7E53 /* WeightScaleThirdPartyAPITests */ = {
+		381D4F8A22720656009F7E53 /* WeightScaleThirdPartyAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				381D4F8D22720656009F7E53 /* Info.plist */,
+				381D4F8B22720656009F7E53 /* WeightScaleThirdPartyAPITests.swift */,
 			);
 			path = WeightScaleThirdPartyAPITests;
 			sourceTree = "<group>";
@@ -132,7 +152,7 @@
 				3891FD7222678292005B186F /* Products */,
 				3891FD7322678292005B186F /* WeightScale */,
 				3891FD8822678294005B186F /* WeightScaleTests */,
-				381D4F8022720216009F7E53 /* WeightScaleThirdPartyAPITests */,
+				381D4F8A22720656009F7E53 /* WeightScaleThirdPartyAPITests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +161,7 @@
 			children = (
 				3891FD7122678292005B186F /* WeightScale.app */,
 				3891FD8522678294005B186F /* WeightScaleTests.xctest */,
+				381D4F8922720656009F7E53 /* WeightScaleThirdPartyAPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,6 +248,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		381D4F8822720656009F7E53 /* WeightScaleThirdPartyAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 381D4F9222720656009F7E53 /* Build configuration list for PBXNativeTarget "WeightScaleThirdPartyAPITests" */;
+			buildPhases = (
+				381D4F8522720656009F7E53 /* Sources */,
+				381D4F8622720656009F7E53 /* Frameworks */,
+				381D4F8722720656009F7E53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				381D4F8F22720656009F7E53 /* PBXTargetDependency */,
+			);
+			name = WeightScaleThirdPartyAPITests;
+			productName = WeightScaleThirdPartyAPITests;
+			productReference = 381D4F8922720656009F7E53 /* WeightScaleThirdPartyAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3891FD7022678292005B186F /* WeightScale */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3891FD8E22678294005B186F /* Build configuration list for PBXNativeTarget "WeightScale" */;
@@ -270,10 +309,14 @@
 		3891FD6922678292005B186F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Ema Shinya";
 				TargetAttributes = {
+					381D4F8822720656009F7E53 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 3891FD7022678292005B186F;
+					};
 					3891FD7022678292005B186F = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
@@ -300,11 +343,19 @@
 			targets = (
 				3891FD7022678292005B186F /* WeightScale */,
 				3891FD8422678294005B186F /* WeightScaleTests */,
+				381D4F8822720656009F7E53 /* WeightScaleThirdPartyAPITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		381D4F8722720656009F7E53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3891FD6F22678292005B186F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,6 +400,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		381D4F8522720656009F7E53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				381D4F8C22720656009F7E53 /* WeightScaleThirdPartyAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3891FD6D22678292005B186F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,6 +439,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		381D4F8F22720656009F7E53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3891FD7022678292005B186F /* WeightScale */;
+			targetProxy = 381D4F8E22720656009F7E53 /* PBXContainerItemProxy */;
+		};
 		3891FD8722678294005B186F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3891FD7022678292005B186F /* WeightScale */;
@@ -399,6 +463,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		381D4F9022720656009F7E53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UUD4WPFJTD;
+				INFOPLIST_FILE = WeightScaleThirdPartyAPITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ema.WeightScaleThirdPartyAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeightScale.app/WeightScale";
+			};
+			name = Debug;
+		};
+		381D4F9122720656009F7E53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UUD4WPFJTD;
+				INFOPLIST_FILE = WeightScaleThirdPartyAPITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ema.WeightScaleThirdPartyAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeightScale.app/WeightScale";
+			};
+			name = Release;
+		};
 		3891FD8C22678294005B186F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -520,7 +626,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = UUD4WPFJTD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -544,7 +650,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = UUD4WPFJTD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -616,6 +722,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		381D4F9222720656009F7E53 /* Build configuration list for PBXNativeTarget "WeightScaleThirdPartyAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				381D4F9022720656009F7E53 /* Debug */,
+				381D4F9122720656009F7E53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3891FD6C22678292005B186F /* Build configuration list for PBXProject "WeightScale" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
