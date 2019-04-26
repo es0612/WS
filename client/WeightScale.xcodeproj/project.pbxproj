@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381103CF227311CB00A4D008 /* UserDefaultsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381103CE227311CB00A4D008 /* UserDefaultsSpec.swift */; };
+		381103D02273133300A4D008 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670E2268D2BD0009E42F /* Nimble.framework */; };
+		381103D12273134300A4D008 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367102268D2D10009E42F /* Quick.framework */; };
+		381103D32273136D00A4D008 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367102268D2D10009E42F /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		381103D42273137400A4D008 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B3670E2268D2BD0009E42F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		381103D622731BDD00A4D008 /* ChartsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381103D522731BDD00A4D008 /* ChartsSpec.swift */; };
+		381103D8227321DF00A4D008 /* RealmSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381103D7227321DF00A4D008 /* RealmSpec.swift */; };
 		3814998A226F4DA4001B2E71 /* ListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */; };
 		381D4F792270B28F009F7E53 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F782270B28F009F7E53 /* SettingViewController.swift */; };
 		381D4F7B2270B628009F7E53 /* SettingViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */; };
@@ -14,7 +21,6 @@
 		381D4F7F22711E24009F7E53 /* GraphViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F7E22711E24009F7E53 /* GraphViewControllerSpec.swift */; };
 		381D4F8222720391009F7E53 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381D4F8122720391009F7E53 /* RealmSwift.framework */; };
 		381D4F84227204ED009F7E53 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381D4F83227204ED009F7E53 /* Realm.framework */; };
-		381D4F8C22720656009F7E53 /* WeightScaleThirdPartyAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F8B22720656009F7E53 /* WeightScaleThirdPartyAPITests.swift */; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -55,6 +61,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		381103D22273134900A4D008 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				381103D42273137400A4D008 /* Nimble.framework in CopyFiles */,
+				381103D32273136D00A4D008 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38B367152268D4440009E42F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,6 +87,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		381103CE227311CB00A4D008 /* UserDefaultsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSpec.swift; sourceTree = "<group>"; };
+		381103D522731BDD00A4D008 /* ChartsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsSpec.swift; sourceTree = "<group>"; };
+		381103D7227321DF00A4D008 /* RealmSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSpec.swift; sourceTree = "<group>"; };
 		38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerSpec.swift; sourceTree = "<group>"; };
 		381D4F782270B28F009F7E53 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -78,7 +98,6 @@
 		381D4F8122720391009F7E53 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		381D4F83227204ED009F7E53 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		381D4F8922720656009F7E53 /* WeightScaleThirdPartyAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightScaleThirdPartyAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		381D4F8B22720656009F7E53 /* WeightScaleThirdPartyAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightScaleThirdPartyAPITests.swift; sourceTree = "<group>"; };
 		381D4F8D22720656009F7E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				381103D12273134300A4D008 /* Quick.framework in Frameworks */,
+				381103D02273133300A4D008 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				381D4F8D22720656009F7E53 /* Info.plist */,
-				381D4F8B22720656009F7E53 /* WeightScaleThirdPartyAPITests.swift */,
+				381103CE227311CB00A4D008 /* UserDefaultsSpec.swift */,
+				381103D522731BDD00A4D008 /* ChartsSpec.swift */,
+				381103D7227321DF00A4D008 /* RealmSpec.swift */,
 			);
 			path = WeightScaleThirdPartyAPITests;
 			sourceTree = "<group>";
@@ -255,6 +278,7 @@
 				381D4F8522720656009F7E53 /* Sources */,
 				381D4F8622720656009F7E53 /* Frameworks */,
 				381D4F8722720656009F7E53 /* Resources */,
+				381103D22273134900A4D008 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -404,7 +428,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				381D4F8C22720656009F7E53 /* WeightScaleThirdPartyAPITests.swift in Sources */,
+				381103D8227321DF00A4D008 /* RealmSpec.swift in Sources */,
+				381103CF227311CB00A4D008 /* UserDefaultsSpec.swift in Sources */,
+				381103D622731BDD00A4D008 /* ChartsSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +495,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UUD4WPFJTD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WeightScaleThirdPartyAPITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -490,6 +520,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UUD4WPFJTD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WeightScaleThirdPartyAPITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
