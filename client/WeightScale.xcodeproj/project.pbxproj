@@ -127,8 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				381103D12273134300A4D008 /* Quick.framework in Frameworks */,
 				381103D02273133300A4D008 /* Nimble.framework in Frameworks */,
+				381103D12273134300A4D008 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,10 +160,10 @@
 		381D4F8A22720656009F7E53 /* WeightScaleThirdPartyAPITests */ = {
 			isa = PBXGroup;
 			children = (
-				381D4F8D22720656009F7E53 /* Info.plist */,
-				381103CE227311CB00A4D008 /* UserDefaultsSpec.swift */,
 				381103D522731BDD00A4D008 /* ChartsSpec.swift */,
+				381D4F8D22720656009F7E53 /* Info.plist */,
 				381103D7227321DF00A4D008 /* RealmSpec.swift */,
+				381103CE227311CB00A4D008 /* UserDefaultsSpec.swift */,
 			);
 			path = WeightScaleThirdPartyAPITests;
 			sourceTree = "<group>";
@@ -428,9 +428,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				381103D622731BDD00A4D008 /* ChartsSpec.swift in Sources */,
 				381103D8227321DF00A4D008 /* RealmSpec.swift in Sources */,
 				381103CF227311CB00A4D008 /* UserDefaultsSpec.swift in Sources */,
-				381103D622731BDD00A4D008 /* ChartsSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
