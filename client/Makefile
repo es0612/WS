@@ -10,6 +10,14 @@ sort:
 
 tests: sort unit-tests
 
+third-party-tests:
+	@/usr/bin/time xcodebuild \
+	-project "WeightScale.xcodeproj" \
+	-scheme "WeightScaleThirdPartyAPITests" \
+	-destination "platform=iOS Simulator,name=iPhone Xʀ,OS=latest" \
+	build test
+
+
 bootstrap:
 	@carthage bootstrap --platform iOS --no-use-binaries --cache-builds
 
