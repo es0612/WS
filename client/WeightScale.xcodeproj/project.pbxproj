@@ -25,6 +25,7 @@
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
 		3891FD95226787BD005B186F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD94226787BD005B186F /* main.swift */; };
+		38A1351222767C9C002C09CE /* UserNotificationsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A1351122767C9C002C09CE /* UserNotificationsSpec.swift */; };
 		38B367092268D1FB0009E42F /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367082268D1FB0009E42F /* BrightFutures.framework */; };
 		38B3670B2268D20B0009E42F /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670A2268D20B0009E42F /* Charts.framework */; };
 		38B3670D2268D22C0009E42F /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670C2268D22C0009E42F /* PureLayout.framework */; };
@@ -107,6 +108,7 @@
 		3891FD8522678294005B186F /* WeightScaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightScaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD8B22678294005B186F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3891FD94226787BD005B186F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		38A1351122767C9C002C09CE /* UserNotificationsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationsSpec.swift; sourceTree = "<group>"; };
 		38B367082268D1FB0009E42F /* BrightFutures.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BrightFutures.framework; path = Carthage/Build/iOS/BrightFutures.framework; sourceTree = "<group>"; };
 		38B3670A2268D20B0009E42F /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		38B3670C2268D22C0009E42F /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				381D4F8D22720656009F7E53 /* Info.plist */,
 				381103D7227321DF00A4D008 /* RealmSpec.swift */,
 				381103CE227311CB00A4D008 /* UserDefaultsSpec.swift */,
+				38A1351122767C9C002C09CE /* UserNotificationsSpec.swift */,
 			);
 			path = WeightScaleThirdPartyAPITests;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				381103D622731BDD00A4D008 /* ChartsSpec.swift in Sources */,
 				381103D8227321DF00A4D008 /* RealmSpec.swift in Sources */,
 				381103CF227311CB00A4D008 /* UserDefaultsSpec.swift in Sources */,
+				38A1351222767C9C002C09CE /* UserNotificationsSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
