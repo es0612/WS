@@ -30,6 +30,7 @@ class GraphViewController: UIViewController {
 
             didSetupConstraints = true
         }
+
         super.updateViewConstraints()
     }
 
@@ -46,6 +47,7 @@ fileprivate extension GraphViewController {
         view.backgroundColor = .white
 
         chartView.noDataText = "体重データがありません"
+        updateViewConstraints()
 
     }
 }
