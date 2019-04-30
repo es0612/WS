@@ -11,8 +11,11 @@ class InputViewController: UIViewController {
     private let inputTextField: UITextField
     private let kgLabel: UILabel
 
+    private let weightPicker: UIPickerView
+
     // MARK: - Properties
     private var didSetupConstraints: Bool = false
+    private let pickerDataArray:[Double] = (10...1000).map {(Double($0) * 0.1)}
 
     // MARK: - Initialization
     init(router: Router) {
@@ -22,6 +25,8 @@ class InputViewController: UIViewController {
         OkButton = UIButton(type: .system)
         inputTextField = UITextField.newAutoLayout()
         kgLabel = UILabel.newAutoLayout()
+
+        weightPicker = UIPickerView.newAutoLayout()
 
         super.init(nibName: nil, bundle: nil)
 
@@ -45,9 +50,9 @@ class InputViewController: UIViewController {
     func addSubviews(){
         view.addSubview(inputForm)
 
-        inputForm.addArrangedSubview(OkButton)
         inputForm.addArrangedSubview(inputTextField)
         inputForm.addArrangedSubview(kgLabel)
+        inputForm.addArrangedSubview(OkButton)
 
     }
 
@@ -56,16 +61,41 @@ class InputViewController: UIViewController {
         OkButton.addTarget(self, action: #selector(didTapOkButton), for: .touchUpInside)
 
         inputTextField.placeholder = "00.0"
-        inputTextField.keyboardType = .numberPad
+        inputTextField.inputView = weightPicker
 
         kgLabel.text = "kg"
 
         inputForm.axis = .vertical
 
         view.backgroundColor = .white
+
+        weightPicker.dataSource = self
+        weightPicker.delegate = self
+        weightPicker.selectRow(490, inComponent: 0, animated: true)
     }
 
     @objc func didTapOkButton() {
         router.showMainTabBarScreen()
+    }
+}
+
+extension InputViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerDataArray.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(format: "%.1f", pickerDataArray[row])
+    }
+}
+
+extension InputViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        inputTextField.text = String(format: "%.1f", pickerDataArray[row])
+        inputTextField.resignFirstResponder()
     }
 }

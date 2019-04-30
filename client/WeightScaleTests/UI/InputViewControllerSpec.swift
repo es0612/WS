@@ -33,12 +33,20 @@ class InputViewControllerSpec: QuickSpec {
                     .to(beTrue())
             }
 
-            it("体重を入力するとき数字で入力できる") {
+//            it("体重を入力するとき数字で入力できる") {
+//                let inputTextField = inputViewController
+//                    .findTextField(withExactPlaceholderText: "00.0")
+//
+//
+//                expect(inputTextField?.keyboardType).to(equal(.numberPad))
+//            }
+
+            it("体重を入力するときpickerで入力できる") {
                 let inputTextField = inputViewController
                     .findTextField(withExactPlaceholderText: "00.0")
 
 
-                expect(inputTextField?.keyboardType).to(equal(.numberPad))
+                expect(inputTextField?.inputView).to(beAKindOf(UIPickerView.self))
             }
 
             it("OKボタンをタップしたとき,メイン画面に遷移する") {
