@@ -46,6 +46,7 @@
 		38BE159D22793F0A00F97649 /* LocalWeightRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE159C22793F0A00F97649 /* LocalWeightRepositorySpec.swift */; };
 		38BE15A022793F8800F97649 /* LocalWeightRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE159F22793F8800F97649 /* LocalWeightRepository.swift */; };
 		38BE15A2227974DC00F97649 /* StubRealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15A1227974DC00F97649 /* StubRealmWrapper.swift */; };
+		38BE15A422797B0400F97649 /* LocalRealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15A322797B0400F97649 /* LocalRealmWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		38BE159C22793F0A00F97649 /* LocalWeightRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeightRepositorySpec.swift; sourceTree = "<group>"; };
 		38BE159F22793F8800F97649 /* LocalWeightRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeightRepository.swift; sourceTree = "<group>"; };
 		38BE15A1227974DC00F97649 /* StubRealmWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRealmWrapper.swift; sourceTree = "<group>"; };
+		38BE15A322797B0400F97649 /* LocalRealmWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRealmWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 		38BE159E22793F7300F97649 /* Weight */ = {
 			isa = PBXGroup;
 			children = (
+				38BE15A322797B0400F97649 /* LocalRealmWrapper.swift */,
 				38BE159F22793F8800F97649 /* LocalWeightRepository.swift */,
 			);
 			path = Weight;
@@ -474,6 +477,7 @@
 				381D4F7D22711AA2009F7E53 /* GraphViewController.swift in Sources */,
 				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
 				38B3672C226CA2170009E42F /* ListViewController.swift in Sources */,
+				38BE15A422797B0400F97649 /* LocalRealmWrapper.swift in Sources */,
 				38BE15A022793F8800F97649 /* LocalWeightRepository.swift in Sources */,
 				3891FD95226787BD005B186F /* main.swift in Sources */,
 				38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */,

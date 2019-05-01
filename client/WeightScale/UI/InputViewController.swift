@@ -8,7 +8,7 @@ protocol WeightRepository {
 class InputViewController: UIViewController {
     // MARK: - Injected Dependencies
     private let router: Router
-    private let weightRepository: WeightRepository?
+    private let weightRepository: WeightRepository
 
     // MARK: - Views
     private let inputForm: UIStackView
@@ -25,7 +25,7 @@ class InputViewController: UIViewController {
 
     // MARK: - Initialization
     init(router: Router,
-         weightRepository: WeightRepository? = nil
+         weightRepository: WeightRepository
         ) {
         self.router = router
         self.weightRepository = weightRepository
@@ -108,7 +108,7 @@ class InputViewController: UIViewController {
     @objc func didTapOkButton() {
         if let WeightString = inputTextField.text {
             if let inputWeignt = Double(WeightString) {
-                weightRepository?.saveData(weight: inputWeignt)
+                weightRepository.saveData(weight: inputWeignt)
                 router.showMainTabBarScreen()
             }
         }

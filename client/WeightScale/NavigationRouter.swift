@@ -20,7 +20,12 @@ class NavigationRouter: Router {
     }
 
     func showInputScreen() {
-        rootViewController = InputViewController(router: self)
+        rootViewController = InputViewController(
+            router: self,
+            weightRepository: LocalWeightRepository(
+                realmWrapper: LocalRealmWrapper()
+            )
+        )
     }
 
     func showListScreen() {

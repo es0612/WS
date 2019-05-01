@@ -6,9 +6,9 @@ protocol RealmWrapper {
 }
 
 class LocalWeightRepository: WeightRepository {
-    private var realmWrapper: RealmWrapper?
+    private var realmWrapper: RealmWrapper
 
-    init(realmWrapper: RealmWrapper? = nil) {
+    init(realmWrapper: RealmWrapper) {
         self.realmWrapper = realmWrapper
     }
 
@@ -18,7 +18,7 @@ class LocalWeightRepository: WeightRepository {
         todaysWeight.weight = weight
         todaysWeight.created = Date()
 
-        realmWrapper?.saveData(weightData: todaysWeight)
+        realmWrapper.saveData(weightData: todaysWeight)
     }
 }
 
