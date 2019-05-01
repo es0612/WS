@@ -3,7 +3,6 @@ import UIKit
 protocol Router {
     var rootViewController: UIViewController? { get }
     func showInputScreen()
-    func showListScreen()
     func showMainTabBarScreen()
 }
 
@@ -26,20 +25,6 @@ class NavigationRouter: Router {
                 realmWrapper: LocalRealmWrapper()
             )
         )
-    }
-
-    func showListScreen() {
-        let listViewController = ListViewController(
-            weightRepository: LocalWeightRepository(
-                realmWrapper: LocalRealmWrapper()
-            )
-        )
-
-        let listNavController = UINavigationController()
-        listNavController.viewControllers = [listViewController]
-
-
-        rootViewController?.present(listNavController, animated: animated, completion: nil)
     }
 
     func showMainTabBarScreen() {
