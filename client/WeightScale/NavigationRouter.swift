@@ -29,7 +29,11 @@ class NavigationRouter: Router {
     }
 
     func showListScreen() {
-        let listViewController = ListViewController()
+        let listViewController = ListViewController(
+            weightRepository: LocalWeightRepository(
+                realmWrapper: LocalRealmWrapper()
+            )
+        )
 
         let listNavController = UINavigationController()
         listNavController.viewControllers = [listViewController]
@@ -39,7 +43,11 @@ class NavigationRouter: Router {
     }
 
     func showMainTabBarScreen() {
-        let listViewController = ListViewController()
+        let listViewController = ListViewController(
+            weightRepository: LocalWeightRepository(
+                realmWrapper: LocalRealmWrapper()
+            )
+        )
 
         let listNavController = UINavigationController()
         listNavController.viewControllers = [listViewController]
