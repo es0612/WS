@@ -9,11 +9,6 @@ class SpyRouter: Router {
         showInputScreen_wasCalled = true
     }
     
-    private(set) var showListScreen_wasCalled = false
-    func showListScreen() {
-        showListScreen_wasCalled = true
-    }
-
     private(set) var showMainTabBarScreen_wasCalled = false
     func showMainTabBarScreen() {
         showMainTabBarScreen_wasCalled = true
