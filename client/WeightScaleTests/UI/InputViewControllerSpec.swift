@@ -46,7 +46,7 @@ class InputViewControllerSpec: QuickSpec {
             }
 
 
-            context("OKボタンをタップしたとき") {
+            context("体重を入力して、OKボタンをタップしたとき") {
                 beforeEach {
                     let inputTextField =
                         inputViewController.findTextField(
@@ -57,13 +57,35 @@ class InputViewControllerSpec: QuickSpec {
                     inputViewController.tapButton(withExactText: "OK")
                 }
 
-                it("OKボタンをタップしたとき、データを保存する") {
+                it("データを保存する") {
                     expect(stubWeightRepository.saveData_argutment_weight)
                         .to(equal(50.0))
                 }
 
-                it("OKボタンをタップしたとき,メイン画面に遷移する") {
+                it("メイン画面に遷移する") {
                     expect(spyRouter.showMainTabBarScreen_wasCalled).to(beTrue())
+
+                }
+            }
+
+            context("体重を入力しないで、OKボタンをタップしたとき") {
+                beforeEach {
+                    let inputTextField =
+                        inputViewController.findTextField(
+                            withExactPlaceholderText: "00.0"
+                    )
+                    inputTextField?.text = ""
+
+                    inputViewController.tapButton(withExactText: "OK")
+                }
+
+                it("データを保存しない") {
+                    expect(stubWeightRepository.saveData_argutment_weight)
+                        .to(equal(-1.0))
+                }
+
+                it("メイン画面に遷移しない") {
+                    expect(spyRouter.showMainTabBarScreen_wasCalled).to(beFalse())
 
                 }
             }
