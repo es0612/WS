@@ -12,6 +12,7 @@ class InputViewController: UIViewController {
     private let kgLabel: UILabel
 
     private let weightPicker: UIPickerView
+    private let weightPickerToolbar: UIToolbar
 
     // MARK: - Properties
     private var didSetupConstraints: Bool = false
@@ -27,8 +28,11 @@ class InputViewController: UIViewController {
         kgLabel = UILabel.newAutoLayout()
 
         weightPicker = UIPickerView.newAutoLayout()
+        weightPickerToolbar = UIToolbar.newAutoLayout()
+
 
         super.init(nibName: nil, bundle: nil)
+
 
         addSubviews()
         viewConfigurations()
@@ -72,10 +76,33 @@ class InputViewController: UIViewController {
         weightPicker.dataSource = self
         weightPicker.delegate = self
         weightPicker.selectRow(490, inComponent: 0, animated: true)
+
+        weightPickerToolbar.autoresizingMask = .flexibleHeight
+        weightPickerToolbar.barStyle = .default
+        weightPickerToolbar.barTintColor = UIColor.lightGray
+        weightPickerToolbar.isTranslucent = false
+
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+
+        let doneButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(didTapPickerDoneButton)
+        )
+
+        doneButton.tintColor = UIColor.white
+
+        weightPickerToolbar.items = [flexSpace, doneButton]
+
+        inputTextField.inputAccessoryView = weightPickerToolbar
     }
 
     @objc func didTapOkButton() {
         router.showMainTabBarScreen()
+    }
+
+    @objc func didTapPickerDoneButton() {
+        inputTextField.resignFirstResponder()
     }
 }
 
@@ -96,6 +123,5 @@ extension InputViewController: UIPickerViewDataSource {
 extension InputViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         inputTextField.text = String(format: "%.1f", pickerDataArray[row])
-        inputTextField.resignFirstResponder()
     }
 }
