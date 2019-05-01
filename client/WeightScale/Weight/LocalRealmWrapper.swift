@@ -9,4 +9,8 @@ class LocalRealmWrapper: RealmWrapper {
         }
     }
 
+    func loadData() {
+
+    }
+
 }

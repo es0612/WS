@@ -3,6 +3,7 @@ import PureLayout
 
 protocol WeightRepository {
     func saveData(weight: Double)
+    func loadData()
 }
 
 class InputViewController: UIViewController {

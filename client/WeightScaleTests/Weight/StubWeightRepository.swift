@@ -5,4 +5,9 @@ class StubWeightRepository: WeightRepository  {
     func saveData(weight: Double) {
         saveData_argutment_weight = weight
     }
+
+    private(set) var loadData_wasCalled = false
+    func loadData() {
+        loadData_wasCalled = true
+    }
 }

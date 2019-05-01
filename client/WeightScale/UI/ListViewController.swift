@@ -1,7 +1,10 @@
 import  UIKit
 
 class ListViewController: UIViewController {
-    init() {
+    private var weightRepository: WeightRepository?
+
+    init(weightRepository: WeightRepository? = nil) {
+        self.weightRepository = weightRepository
 
         super.init(nibName: nil, bundle: nil)
         self.title = "リスト"
@@ -10,6 +13,10 @@ class ListViewController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLoad() {
+        weightRepository?.loadData()
     }
     
 }

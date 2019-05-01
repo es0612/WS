@@ -3,6 +3,7 @@ import RealmSwift
 
 protocol RealmWrapper {
     func saveData(weightData: WeightData)
+    func loadData()
 }
 
 class LocalWeightRepository: WeightRepository {
@@ -19,6 +20,10 @@ class LocalWeightRepository: WeightRepository {
         todaysWeight.created = Date()
 
         realmWrapper.saveData(weightData: todaysWeight)
+    }
+
+    func loadData() {
+        realmWrapper.loadData()
     }
 }
 
