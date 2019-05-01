@@ -42,6 +42,7 @@
 		38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B36729226CA1430009E42F /* NavigationRouter.swift */; };
 		38B3672C226CA2170009E42F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3672B226CA2170009E42F /* ListViewController.swift */; };
 		38B3672E226CA4340009E42F /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3672D226CA4340009E42F /* AppDelegateSpec.swift */; };
+		38BE159A2279367100F97649 /* StubWeightRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15992279367100F97649 /* StubWeightRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		38B36729226CA1430009E42F /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		38B3672B226CA2170009E42F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		38B3672D226CA4340009E42F /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
+		38BE15992279367100F97649 /* StubWeightRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubWeightRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
 				38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */,
 				381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */,
+				38BE15992279367100F97649 /* StubWeightRepository.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				38B367282269E7F30009E42F /* NavigationRouterSpec.swift in Sources */,
 				381D4F7B2270B628009F7E53 /* SettingViewControllerSpec.swift in Sources */,
 				38B367242269E3E80009E42F /* SpyRouter.swift in Sources */,
+				38BE159A2279367100F97649 /* StubWeightRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

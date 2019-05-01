@@ -8,11 +8,15 @@ class InputViewControllerSpec: QuickSpec {
     override func spec() {
         describe("Input view controller に関するテスト") {
             var spyRouter: SpyRouter!
+            var stubWeightRepository: StubWeightRepository!
             var inputViewController: InputViewController!
 
             beforeEach {
                 spyRouter = SpyRouter()
-                inputViewController = InputViewController(router: spyRouter)
+                stubWeightRepository = StubWeightRepository()
+                inputViewController = InputViewController(
+                    router: spyRouter,
+                    weightRepository: stubWeightRepository)
             }
 
             it("OKボタンが見える") {
@@ -41,12 +45,27 @@ class InputViewControllerSpec: QuickSpec {
                 expect(inputTextField?.inputView).to(beAKindOf(UIPickerView.self))
             }
 
-            it("OKボタンをタップしたとき,メイン画面に遷移する") {
-                inputViewController.tapButton(withExactText: "OK")
 
+            context("OKボタンをタップしたとき") {
+                beforeEach {
+                    let inputTextField =
+                        inputViewController.findTextField(
+                            withExactPlaceholderText: "00.0"
+                    )
+                    inputTextField?.text = "50.0"
 
-                expect(spyRouter.showMainTabBarScreen_wasCalled).to(beTrue())
+                    inputViewController.tapButton(withExactText: "OK")
+                }
 
+                it("OKボタンをタップしたとき、データを保存する") {
+                    expect(stubWeightRepository.saveData_argutment_weight)
+                        .to(equal(50.0))
+                }
+
+                it("OKボタンをタップしたとき,メイン画面に遷移する") {
+                    expect(spyRouter.showMainTabBarScreen_wasCalled).to(beTrue())
+
+                }
             }
         }
     }
