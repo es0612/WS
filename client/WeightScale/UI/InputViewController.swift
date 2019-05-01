@@ -1,9 +1,14 @@
 import UIKit
 import PureLayout
 
+protocol WeightRepository {
+    func saveData(weight: Double)
+}
+
 class InputViewController: UIViewController {
-    // MARK: - Initialization
+    // MARK: - Injected Dependencies
     private let router: Router
+    private let weightRepository: WeightRepository?
 
     // MARK: - Views
     private let inputForm: UIStackView
@@ -19,8 +24,11 @@ class InputViewController: UIViewController {
     private let pickerDataArray:[Double] = (10...1000).map {(Double($0) * 0.1)}
 
     // MARK: - Initialization
-    init(router: Router) {
+    init(router: Router,
+         weightRepository: WeightRepository? = nil
+        ) {
         self.router = router
+        self.weightRepository = weightRepository
 
         inputForm = UIStackView.newAutoLayout()
         OkButton = UIButton(type: .system)
@@ -98,7 +106,12 @@ class InputViewController: UIViewController {
     }
 
     @objc func didTapOkButton() {
-        router.showMainTabBarScreen()
+        if let WeightString = inputTextField.text {
+            if let inputWeignt = Double(WeightString) {
+                weightRepository?.saveData(weight: inputWeignt)
+                router.showMainTabBarScreen()
+            }
+        }
     }
 
     @objc func didTapPickerDoneButton() {
