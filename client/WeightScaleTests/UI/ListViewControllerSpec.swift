@@ -12,8 +12,19 @@ class ListViewControllerSpec: QuickSpec {
 
             beforeEach {
                 stubWeightRepository = StubWeightRepository()
-                listViewController = ListViewController(weightRepository: stubWeightRepository)
+
+                let expectedWeightData = WeightData()
+                expectedWeightData.dateString = "2019/5/1"
+                expectedWeightData.weight = 50.0
+
+                stubWeightRepository.loadData_returnValue =
+                    [expectedWeightData]
+
+                listViewController = ListViewController(
+                    weightRepository: stubWeightRepository
+                )
             }
+            
             it("タイトルが見える") {
                 expect(listViewController.title)
                     .to(equal("リスト"))
@@ -22,6 +33,8 @@ class ListViewControllerSpec: QuickSpec {
             it("体重データを読み込んで表示する") {
                 expect(stubWeightRepository.loadData_wasCalled)
                     .to(beTrue())
+                expect(listViewController.hasLabel(withExactText: "2019/5/1")).to(beTrue())
+                expect(listViewController.hasLabel(withExactText: "50.0")).to(beTrue())
             }
         }
     }
