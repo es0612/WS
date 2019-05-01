@@ -5,4 +5,9 @@ class StubRealmWrapper: RealmWrapper {
     func saveData(weightData: WeightData) {
         saveData_argument_weightData = weightData
     }
+
+    private(set) var loadData_wasCalled = false
+    func loadData() {
+        loadData_wasCalled = true
+    }
 }
