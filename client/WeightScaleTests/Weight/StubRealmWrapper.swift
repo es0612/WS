@@ -7,7 +7,9 @@ class StubRealmWrapper: RealmWrapper {
     }
 
     private(set) var loadData_wasCalled = false
-    func loadData() {
+    var loadData_returnValue: [WeightData] = []
+    func loadData() -> [WeightData]  {
         loadData_wasCalled = true
+        return loadData_returnValue
     }
 }

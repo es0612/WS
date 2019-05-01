@@ -3,7 +3,7 @@ import RealmSwift
 
 protocol RealmWrapper {
     func saveData(weightData: WeightData)
-    func loadData()
+    func loadData() -> [WeightData]
 }
 
 class LocalWeightRepository: WeightRepository {
@@ -22,8 +22,8 @@ class LocalWeightRepository: WeightRepository {
         realmWrapper.saveData(weightData: todaysWeight)
     }
 
-    func loadData() {
-        realmWrapper.loadData()
+    func loadData() -> [WeightData] {
+        return realmWrapper.loadData()
     }
 }
 
