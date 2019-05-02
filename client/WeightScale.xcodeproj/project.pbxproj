@@ -208,9 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				38B3672F226CC66B0009E42F /* Application */,
+				38BE15A7227A7FC900F97649 /* Components */,
 				38B36730226CC6790009E42F /* UI */,
-				38BE159E22793F7300F97649 /* Weight */,
-				38B36729226CA1430009E42F /* NavigationRouter.swift */,
 			);
 			path = WeightScale;
 			sourceTree = "<group>";
@@ -219,10 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				38B36732226CC6D30009E42F /* Application */,
+				38BE15AA227A801F00F97649 /* Components */,
 				38B36731226CC6C30009E42F /* UI */,
-				38BE159B22793EAF00F97649 /* Weight */,
-				38B367272269E7F30009E42F /* NavigationRouterSpec.swift */,
-				38B367232269E3E80009E42F /* SpyRouter.swift */,
 			);
 			path = WeightScaleTests;
 			sourceTree = "<group>";
@@ -257,11 +254,11 @@
 		38B36730226CC6790009E42F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				38BE15A9227A800B00F97649 /* Template */,
 				381D4F7C22711AA2009F7E53 /* GraphViewController.swift */,
 				38B36721226931F40009E42F /* InputViewController.swift */,
 				38B3672B226CA2170009E42F /* ListViewController.swift */,
 				381D4F782270B28F009F7E53 /* SettingViewController.swift */,
-				38BE15A5227A5E4800F97649 /* TemplateViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -303,6 +300,49 @@
 				38BE159F22793F8800F97649 /* LocalWeightRepository.swift */,
 			);
 			path = Weight;
+			sourceTree = "<group>";
+		};
+		38BE15A7227A7FC900F97649 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				38BE15A8227A7FF300F97649 /* Router */,
+				38BE159E22793F7300F97649 /* Weight */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		38BE15A8227A7FF300F97649 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				38B36729226CA1430009E42F /* NavigationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		38BE15A9227A800B00F97649 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				38BE15A5227A5E4800F97649 /* TemplateViewController.swift */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		38BE15AA227A801F00F97649 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				38BE15AB227A803500F97649 /* Router */,
+				38BE159B22793EAF00F97649 /* Weight */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		38BE15AB227A803500F97649 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				38B367272269E7F30009E42F /* NavigationRouterSpec.swift */,
+				38B367232269E3E80009E42F /* SpyRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
