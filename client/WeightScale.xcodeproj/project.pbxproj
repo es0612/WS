@@ -48,6 +48,15 @@
 		38BE15A2227974DC00F97649 /* StubRealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15A1227974DC00F97649 /* StubRealmWrapper.swift */; };
 		38BE15A422797B0400F97649 /* LocalRealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15A322797B0400F97649 /* LocalRealmWrapper.swift */; };
 		38BE15A6227A5E4800F97649 /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15A5227A5E4800F97649 /* TemplateViewController.swift */; };
+		38BE15AD227ACE0400F97649 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15AC227ACE0400F97649 /* SettingTableViewCell.swift */; };
+		38BE15B1227ACE9200F97649 /* WeightListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15B0227ACE9200F97649 /* WeightListTableViewCell.swift */; };
+		38BE15B4227AD25F00F97649 /* UIView+LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15B3227AD25F00F97649 /* UIView+LineChartView.swift */; };
+		38BE15B6227AD29C00F97649 /* UIViewController+LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15B5227AD29C00F97649 /* UIViewController+LineChartView.swift */; };
+		38BE15B8227AD39200F97649 /* UITabBarController+selectTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15B7227AD39200F97649 /* UITabBarController+selectTab.swift */; };
+		38BE15BA227AD3F200F97649 /* UITabBarController+displayedTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15B9227AD3F200F97649 /* UITabBarController+displayedTab.swift */; };
+		38BE15BF227AD58F00F97649 /* UIImage+AssetIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15BE227AD58F00F97649 /* UIImage+AssetIdentifier.swift */; };
+		38BE15C1227AD60F00F97649 /* WeightData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15C0227AD60F00F97649 /* WeightData.swift */; };
+		38BE15C4227AD6F000F97649 /* WeightTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15C3227AD6F000F97649 /* WeightTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +143,15 @@
 		38BE15A1227974DC00F97649 /* StubRealmWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRealmWrapper.swift; sourceTree = "<group>"; };
 		38BE15A322797B0400F97649 /* LocalRealmWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRealmWrapper.swift; sourceTree = "<group>"; };
 		38BE15A5227A5E4800F97649 /* TemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
+		38BE15AC227ACE0400F97649 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		38BE15B0227ACE9200F97649 /* WeightListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightListTableViewCell.swift; sourceTree = "<group>"; };
+		38BE15B3227AD25F00F97649 /* UIView+LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LineChartView.swift"; sourceTree = "<group>"; };
+		38BE15B5227AD29C00F97649 /* UIViewController+LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LineChartView.swift"; sourceTree = "<group>"; };
+		38BE15B7227AD39200F97649 /* UITabBarController+selectTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+selectTab.swift"; sourceTree = "<group>"; };
+		38BE15B9227AD3F200F97649 /* UITabBarController+displayedTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+displayedTab.swift"; sourceTree = "<group>"; };
+		38BE15BE227AD58F00F97649 /* UIImage+AssetIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AssetIdentifier.swift"; sourceTree = "<group>"; };
+		38BE15C0227AD60F00F97649 /* WeightData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightData.swift; sourceTree = "<group>"; };
+		38BE15C3227AD6F000F97649 /* WeightTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,9 +192,9 @@
 		381D4F8A22720656009F7E53 /* WeightScaleThirdPartyAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				38BE15C2227AD6D900F97649 /* Realm */,
 				381103D522731BDD00A4D008 /* ChartsSpec.swift */,
 				381D4F8D22720656009F7E53 /* Info.plist */,
-				381103D7227321DF00A4D008 /* RealmSpec.swift */,
 				381103CE227311CB00A4D008 /* UserDefaultsSpec.swift */,
 				38A1351122767C9C002C09CE /* UserNotificationsSpec.swift */,
 			);
@@ -254,11 +272,11 @@
 		38B36730226CC6790009E42F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				38BE15AF227ACE7200F97649 /* List */,
+				38BE15AE227ACE5000F97649 /* Setting */,
 				38BE15A9227A800B00F97649 /* Template */,
 				381D4F7C22711AA2009F7E53 /* GraphViewController.swift */,
 				38B36721226931F40009E42F /* InputViewController.swift */,
-				38B3672B226CA2170009E42F /* ListViewController.swift */,
-				381D4F782270B28F009F7E53 /* SettingViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -266,7 +284,7 @@
 		38B36731226CC6C30009E42F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				381D4F7E22711E24009F7E53 /* GraphViewControllerSpec.swift */,
+				38BE15B2227AD23600F97649 /* Graph */,
 				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
 				38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */,
 				381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */,
@@ -298,6 +316,7 @@
 			children = (
 				38BE15A322797B0400F97649 /* LocalRealmWrapper.swift */,
 				38BE159F22793F8800F97649 /* LocalWeightRepository.swift */,
+				38BE15C0227AD60F00F97649 /* WeightData.swift */,
 			);
 			path = Weight;
 			sourceTree = "<group>";
@@ -315,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				38B36729226CA1430009E42F /* NavigationRouter.swift */,
+				38BE15BE227AD58F00F97649 /* UIImage+AssetIdentifier.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -341,8 +361,47 @@
 			children = (
 				38B367272269E7F30009E42F /* NavigationRouterSpec.swift */,
 				38B367232269E3E80009E42F /* SpyRouter.swift */,
+				38BE15B9227AD3F200F97649 /* UITabBarController+displayedTab.swift */,
+				38BE15B7227AD39200F97649 /* UITabBarController+selectTab.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		38BE15AE227ACE5000F97649 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				38BE15AC227ACE0400F97649 /* SettingTableViewCell.swift */,
+				381D4F782270B28F009F7E53 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		38BE15AF227ACE7200F97649 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				38B3672B226CA2170009E42F /* ListViewController.swift */,
+				38BE15B0227ACE9200F97649 /* WeightListTableViewCell.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		38BE15B2227AD23600F97649 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				381D4F7E22711E24009F7E53 /* GraphViewControllerSpec.swift */,
+				38BE15B3227AD25F00F97649 /* UIView+LineChartView.swift */,
+				38BE15B5227AD29C00F97649 /* UIViewController+LineChartView.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		38BE15C2227AD6D900F97649 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				381103D7227321DF00A4D008 /* RealmSpec.swift */,
+				38BE15C3227AD6F000F97649 /* WeightTest.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,6 +568,7 @@
 				381103D8227321DF00A4D008 /* RealmSpec.swift in Sources */,
 				381103CF227311CB00A4D008 /* UserDefaultsSpec.swift in Sources */,
 				38A1351222767C9C002C09CE /* UserNotificationsSpec.swift in Sources */,
+				38BE15C4227AD6F000F97649 /* WeightTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,8 +584,12 @@
 				38BE15A022793F8800F97649 /* LocalWeightRepository.swift in Sources */,
 				3891FD95226787BD005B186F /* main.swift in Sources */,
 				38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */,
+				38BE15AD227ACE0400F97649 /* SettingTableViewCell.swift in Sources */,
 				381D4F792270B28F009F7E53 /* SettingViewController.swift in Sources */,
 				38BE15A6227A5E4800F97649 /* TemplateViewController.swift in Sources */,
+				38BE15BF227AD58F00F97649 /* UIImage+AssetIdentifier.swift in Sources */,
+				38BE15C1227AD60F00F97649 /* WeightData.swift in Sources */,
+				38BE15B1227ACE9200F97649 /* WeightListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +607,10 @@
 				38B367242269E3E80009E42F /* SpyRouter.swift in Sources */,
 				38BE15A2227974DC00F97649 /* StubRealmWrapper.swift in Sources */,
 				38BE159A2279367100F97649 /* StubWeightRepository.swift in Sources */,
+				38BE15BA227AD3F200F97649 /* UITabBarController+displayedTab.swift in Sources */,
+				38BE15B8227AD39200F97649 /* UITabBarController+selectTab.swift in Sources */,
+				38BE15B4227AD25F00F97649 /* UIView+LineChartView.swift in Sources */,
+				38BE15B6227AD29C00F97649 /* UIViewController+LineChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

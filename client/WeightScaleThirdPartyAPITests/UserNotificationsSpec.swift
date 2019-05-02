@@ -35,7 +35,6 @@ extension UserNotificationsSpec: UNUserNotificationCenterDelegate {
                 } else {
                     print("通知拒否")
                 }
-
         })
     }
 
@@ -45,7 +44,9 @@ extension UserNotificationsSpec: UNUserNotificationCenterDelegate {
         //        notificationTime.minute = 0
         //        let trigger = UNCalendarNotificationTrigger(dateMatching: notificationTime, repeats: true)
 
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(
+            timeInterval: 10, repeats: false
+        )
 
 
         let content = UNMutableNotificationContent()
@@ -54,10 +55,14 @@ extension UserNotificationsSpec: UNUserNotificationCenterDelegate {
         content.sound = UNNotificationSound.default
 
 
-        let request = UNNotificationRequest(identifier: "uuid", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        let request = UNNotificationRequest(
+            identifier: "uuid", content: content, trigger: trigger
+        )
+        UNUserNotificationCenter.current()
+            .add(request, withCompletionHandler: nil)
 
 
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current()
+            .removeAllPendingNotificationRequests()
     }
 }

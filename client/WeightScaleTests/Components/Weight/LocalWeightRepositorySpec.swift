@@ -38,9 +38,10 @@ class LocalWeightRepositorySpec: QuickSpec {
                 let actualWeightDataList = weightRepository.loadData()
 
 
-                expect(realmWrapper.loadData_wasCalled).to(beTrue())
-
-                    expect(actualWeightDataList).to(equal([expectedWeightData]))
+                expect(realmWrapper.loadData_wasCalled)
+                    .to(beTrue())
+                expect(actualWeightDataList)
+                    .to(equal([expectedWeightData]))
             }
         }
     }

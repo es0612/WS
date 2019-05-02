@@ -9,9 +9,6 @@ class SettingViewController: TemplateViewController{
         settingTableView = UITableView.newAutoLayout()
 
         super.init()
-
-        addSubviews()
-        viewConfigurations()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -31,14 +28,18 @@ class SettingViewController: TemplateViewController{
         title = "設定"
         view.backgroundColor = .white
 
+        tableViewConfiguration()
+    }
+}
 
+extension SettingViewController {
+    func tableViewConfiguration() {
         settingTableView.register(
             SettingTableViewCell.self,
             forCellReuseIdentifier: String(
                 describing: SettingTableViewCell.self
             )
         )
-
         settingTableView.dataSource = self
         settingTableView.delegate = self
 
@@ -46,7 +47,6 @@ class SettingViewController: TemplateViewController{
         updateViewConstraints()
     }
 }
-
 extension SettingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -64,24 +64,6 @@ extension SettingViewController: UITableViewDataSource {
 
         return cell
     }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
 }
 
-extension SettingViewController: UITableViewDelegate {
-}
-
-
-class SettingTableViewCell: UITableViewCell {
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default,
-                   reuseIdentifier: reuseIdentifier
-        )
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+extension SettingViewController: UITableViewDelegate {}

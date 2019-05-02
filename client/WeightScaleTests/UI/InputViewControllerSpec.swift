@@ -42,7 +42,8 @@ class InputViewControllerSpec: QuickSpec {
                     .findTextField(withExactPlaceholderText: "00.0")
 
 
-                expect(inputTextField?.inputView).to(beAKindOf(UIPickerView.self))
+                expect(inputTextField?.inputView)
+                    .to(beAKindOf(UIPickerView.self))
             }
 
 
@@ -64,7 +65,6 @@ class InputViewControllerSpec: QuickSpec {
 
                 it("メイン画面に遷移する") {
                     expect(spyRouter.showMainTabBarScreen_wasCalled).to(beTrue())
-
                 }
             }
 
@@ -86,7 +86,6 @@ class InputViewControllerSpec: QuickSpec {
 
                 it("メイン画面に遷移しない") {
                     expect(spyRouter.showMainTabBarScreen_wasCalled).to(beFalse())
-
                 }
             }
         }
