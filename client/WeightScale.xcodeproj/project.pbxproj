@@ -47,6 +47,7 @@
 		38BE15A022793F8800F97649 /* LocalWeightRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE159F22793F8800F97649 /* LocalWeightRepository.swift */; };
 		38BE15A2227974DC00F97649 /* StubRealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15A1227974DC00F97649 /* StubRealmWrapper.swift */; };
 		38BE15A422797B0400F97649 /* LocalRealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15A322797B0400F97649 /* LocalRealmWrapper.swift */; };
+		38BE15A6227A5E4800F97649 /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15A5227A5E4800F97649 /* TemplateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		38BE159F22793F8800F97649 /* LocalWeightRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeightRepository.swift; sourceTree = "<group>"; };
 		38BE15A1227974DC00F97649 /* StubRealmWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRealmWrapper.swift; sourceTree = "<group>"; };
 		38BE15A322797B0400F97649 /* LocalRealmWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRealmWrapper.swift; sourceTree = "<group>"; };
+		38BE15A5227A5E4800F97649 /* TemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 				38B36721226931F40009E42F /* InputViewController.swift */,
 				38B3672B226CA2170009E42F /* ListViewController.swift */,
 				381D4F782270B28F009F7E53 /* SettingViewController.swift */,
+				38BE15A5227A5E4800F97649 /* TemplateViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				3891FD95226787BD005B186F /* main.swift in Sources */,
 				38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */,
 				381D4F792270B28F009F7E53 /* SettingViewController.swift in Sources */,
+				38BE15A6227A5E4800F97649 /* TemplateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

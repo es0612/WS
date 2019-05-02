@@ -1,17 +1,14 @@
 import UIKit
 
-class SettingViewController: UIViewController{
+class SettingViewController: TemplateViewController{
     // MARK: - Views
     private let settingTableView: UITableView
 
-    // MARK: - Properties
-    private var didSetupConstraints: Bool = false
-
     // MARK: - Initialization
-    init() {
+    override init() {
         settingTableView = UITableView.newAutoLayout()
 
-        super.init(nibName: nil, bundle: nil)
+        super.init()
 
         addSubviews()
         viewConfigurations()
@@ -21,30 +18,25 @@ class SettingViewController: UIViewController{
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func updateViewConstraints() {
-        if didSetupConstraints == false {
-            settingTableView.autoPinEdgesToSuperviewSafeArea()
-
-            didSetupConstraints = true
-        }
-        super.updateViewConstraints()
-
-
+    override func configureConstraints() {
+        settingTableView.autoPinEdgesToSuperviewSafeArea()
     }
 
-    func addSubviews(){
+    override func addSubviews(){
         view.addSubview(settingTableView)
 
     }
 
-    func viewConfigurations() {
+    override func viewConfigurations() {
         title = "設定"
         view.backgroundColor = .white
 
 
         settingTableView.register(
             SettingTableViewCell.self,
-            forCellReuseIdentifier: String(describing: SettingTableViewCell.self)
+            forCellReuseIdentifier: String(
+                describing: SettingTableViewCell.self
+            )
         )
 
         settingTableView.dataSource = self
@@ -61,9 +53,15 @@ extension SettingViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SettingTableViewCell.self), for: indexPath) as! SettingTableViewCell
+        
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: String(describing: SettingTableViewCell.self),
+            for: indexPath
+            ) as! SettingTableViewCell
 
         cell.backgroundColor = UIColor.white
+        cell.textLabel?.text = "目標体重"
+
         return cell
     }
 
@@ -77,18 +75,13 @@ extension SettingViewController: UITableViewDelegate {
 
 
 class SettingTableViewCell: UITableViewCell {
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default,
                    reuseIdentifier: reuseIdentifier
         )
-
-        textLabel?.text = "目標体重"
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-
 }
