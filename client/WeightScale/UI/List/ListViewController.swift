@@ -1,6 +1,6 @@
 import  UIKit
 
-class ListViewController: UIViewController {
+class ListViewController: TemplateViewController {
     // MARK: - Injected Dependencies
     private var weightRepository: WeightRepository
 
@@ -8,7 +8,6 @@ class ListViewController: UIViewController {
     private let weightListTableView: UITableView
 
     // MARK: - Properties
-    private var didSetupConstraints: Bool = false
     private var weightDataList: [WeightData] = []
 
     // MARK: - Initialization
@@ -17,50 +16,49 @@ class ListViewController: UIViewController {
 
         weightListTableView = UITableView.newAutoLayout()
 
-
-        super.init(nibName: nil, bundle: nil)
-
-
-        addSubviews()
-        viewConfigurations()
+        super.init()
     }
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func updateViewConstraints() {
-        if didSetupConstraints == false {
-            weightListTableView.autoPinEdgesToSuperviewSafeArea()
-
-            didSetupConstraints = true
-        }
-        super.updateViewConstraints()
+    // MARK: - Override Methods
+    override func configureConstraints() {
+        weightListTableView.autoPinEdgesToSuperviewSafeArea()
     }
 
     override func viewDidLoad() {
         weightDataList = weightRepository.loadData()
     }
 
-    func addSubviews(){
+    override func addSubviews(){
         view.addSubview(weightListTableView)
     }
 
-    func viewConfigurations() {
+    override func viewConfigurations() {
         title = "リスト"
         view.backgroundColor = .white
 
-        weightListTableView.register(WeightListTableViewCell.self, forCellReuseIdentifier: String(describing: WeightListTableViewCell.self))
+        tableViewConfiguration()
+    }
+}
+
+// MARK: - Private Methods
+private extension ListViewController {
+    func tableViewConfiguration() {
+        weightListTableView.register(
+            WeightListTableViewCell.self,
+            forCellReuseIdentifier: String(describing: WeightListTableViewCell.self)
+        )
 
         weightListTableView.dataSource = self
         weightListTableView.delegate = self
     }
 }
 
-
+// MARK: - Table View DataSource Methods
 extension ListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView,
-                   numberOfRowsInSection section: Int)
+    func tableView(_ tableView: UITableView,numberOfRowsInSection section: Int)
         -> Int {
 
         return weightDataList.count
@@ -82,17 +80,5 @@ extension ListViewController: UITableViewDataSource {
     }
 }
 
-extension ListViewController: UITableViewDelegate {
-}
-
-class WeightListTableViewCell: UITableViewCell {
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .value1,
-                   reuseIdentifier: reuseIdentifier
-        )
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+// MARK: - Table View Delegate Methods
+extension ListViewController: UITableViewDelegate {}

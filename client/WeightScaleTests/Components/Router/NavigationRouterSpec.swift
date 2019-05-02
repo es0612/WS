@@ -68,36 +68,3 @@ class NavigationRouterSpec: QuickSpec {
         }
     }
 }
-
-extension UITabBarController {
-    func selectTab(withTitle searchTitle: String) {
-        if let tabBarItems = tabBar.items {
-            for index in 0..<tabBarItems.count {
-                let tabBarItem = tabBarItems[index]
-
-                if tabBarItem.title == searchTitle {
-                    selectedIndex = index
-                    continue
-                }
-            }
-        }
-    }
-
-    func displayedTab(isAKindOf compareClass: AnyClass) -> Bool {
-        if
-            let navController = selectedViewController as? UINavigationController,
-            let topViewController = navController.topViewController
-        {
-            return topViewController.isKind(of: compareClass)
-        }
-
-        if let selectedViewController = selectedViewController {
-            return selectedViewController.isKind(of: compareClass)
-        }
-
-        return false
-    }
-}
-
-
-

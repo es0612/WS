@@ -46,7 +46,6 @@ class UserDefaultsSpec: QuickSpec {
                 expect(count).to(equal(2))
             }
 
-
             it("保存したデータを削除する") {
                 for (key, _) in userDefaults.dictionaryRepresentation() {
                     if key.prefix(4) == "test" {
@@ -61,6 +60,7 @@ class UserDefaultsSpec: QuickSpec {
                         count += 1
                     }
                 }
+
 
                 expect(count).to(equal(0))
             }
