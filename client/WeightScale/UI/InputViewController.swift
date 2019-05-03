@@ -60,6 +60,10 @@ class InputViewController: UIViewController {
         super.updateViewConstraints()
     }
 
+    override func viewDidLoad() {
+        inputTextField.text = "50.0"
+    }
+
     func addSubviews(){
         view.addSubview(inputForm)
 
