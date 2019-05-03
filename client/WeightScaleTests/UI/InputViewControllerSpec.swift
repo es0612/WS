@@ -31,6 +31,12 @@ class InputViewControllerSpec: QuickSpec {
                     .to(beTrue())
             }
 
+            it("入力欄に初期値が見える") {
+                expect(inputViewController
+                    .hasTextField(withExactText: "50.0"))
+                    .to(beTrue())
+            }
+
             it("kgのラベルが見える") {
                 expect(inputViewController
                     .hasLabel(withExactText: "kg"))
