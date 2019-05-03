@@ -2,7 +2,7 @@ import UIKit
 
 class SettingTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default,
+        super.init(style: .value1,
                    reuseIdentifier: reuseIdentifier
         )
     }
