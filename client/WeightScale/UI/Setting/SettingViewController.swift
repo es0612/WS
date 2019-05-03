@@ -22,6 +22,7 @@ class SettingViewController: TemplateViewController{
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Override Methods
     override func configureConstraints() {
         settingTableView.autoPinEdgesToSuperviewSafeArea()
     }
@@ -41,7 +42,8 @@ class SettingViewController: TemplateViewController{
     }
 }
 
-extension SettingViewController {
+// MARK: - Private Methods
+private extension SettingViewController {
     func tableViewConfiguration() {
         settingTableView.register(
             SettingTableViewCell.self,
@@ -56,6 +58,8 @@ extension SettingViewController {
         updateViewConstraints()
     }
 }
+
+// MARK: - Table View DataSource Methods
 extension SettingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
         -> Int {
@@ -97,8 +101,8 @@ extension SettingViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - Table View Delegate Methods
 extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
     }
 }
