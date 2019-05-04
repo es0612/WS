@@ -51,13 +51,31 @@ class GraphViewController: TemplateViewController {
 fileprivate extension GraphViewController {
     func chartViewConfiguration() {
         chartView.noDataText = "体重データがありません"
+
+        chartView.xAxis.labelPosition = .bottom
+        chartView.rightAxis.enabled = false
+
+        chartView.xAxis.granularity = 1
+
+        let rotationAngle = 40
+        chartView.xAxis.labelRotationAngle = .init(rotationAngle)
+
+        chartView.legend.drawInside = true
+        chartView.legend.verticalAlignment = .top
     }
 
     func drawChart(weightDataList: [WeightData]) {
         var dataForChart: [Double] = []
+        var daysForXAxis: [String] = []
+
         weightDataList.forEach { weightData in
             dataForChart.append(weightData.weight)
+            daysForXAxis.append(weightData.dateString)
         }
+
+        chartView.xAxis.valueFormatter
+            = IndexAxisValueFormatter(values: daysForXAxis)
+
 
         var entries = [ChartDataEntry]()
         for (i, d) in dataForChart.enumerated() {
@@ -65,6 +83,9 @@ fileprivate extension GraphViewController {
         }
 
         let dataSet = LineChartDataSet(entries: entries, label: "my weight")
+
+        dataSet.mode = .cubicBezier
+        dataSet.drawFilledEnabled = true
 
         chartView.data = LineChartData(dataSet: dataSet)
     }
