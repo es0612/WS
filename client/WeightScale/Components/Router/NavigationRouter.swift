@@ -18,6 +18,7 @@ class NavigationRouter: Router {
         self.animated = animated
     }
 
+    // MARK: - Public Methods
     func showInputScreen() {
         rootViewController = InputViewController(
             router: self,
@@ -41,7 +42,11 @@ class NavigationRouter: Router {
             title: "リスト", image: UIImage(assetIdentifier: .listIcon), selectedImage: nil
         )
 
-        let graphViewController = GraphViewController()
+        let graphViewController = GraphViewController(
+            weightRepository: LocalWeightRepository(
+                realmWrapper: LocalRealmWrapper()
+            )
+        )
 
         let graphNavController = UINavigationController()
         graphNavController.viewControllers = [graphViewController]

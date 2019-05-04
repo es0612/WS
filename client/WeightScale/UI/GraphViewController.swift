@@ -3,13 +3,13 @@ import Charts
 
 class GraphViewController: TemplateViewController {
     // MARK: - Injected Dependencies
-    private var weightRepository: WeightRepository?
+    private var weightRepository: WeightRepository
 
     // MARK: - Views
     var chartView: LineChartView
 
     // MARK: - Initialization
-    init(weightRepository: WeightRepository? = nil) {
+    init(weightRepository: WeightRepository) {
         self.weightRepository = weightRepository
 
         chartView = LineChartView()
@@ -23,15 +23,15 @@ class GraphViewController: TemplateViewController {
 
     // MARK: - Override Methods
     override func viewDidLoad() {
-        if let weightDataList
-            = weightRepository?.loadData() {
+        let weightDataList
+            = weightRepository.loadData()
 
-            drawChart(weightDataList: weightDataList)
-        }
+        drawChart(weightDataList: weightDataList)
+
     }
 
     override func configureConstraints() {
-        chartView.autoPinEdgesToSuperviewEdges()
+        chartView.autoPinEdgesToSuperviewSafeArea()
     }
 
     override func addSubviews(){
