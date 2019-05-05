@@ -54,7 +54,11 @@ class NavigationRouter: Router {
             title: "グラフ", image: UIImage(assetIdentifier: .graphIcon), selectedImage: nil
         )
 
-        let settingViewController = SettingViewController()
+        let settingViewController = SettingViewController(
+            targetWeightRepository: LocalTargetWeightRepository(
+                userDefaultsWrapper: LocalUserDefaultsWrapper()
+            )
+        )
 
         let settingNavController = UINavigationController()
         settingNavController.viewControllers = [settingViewController]
