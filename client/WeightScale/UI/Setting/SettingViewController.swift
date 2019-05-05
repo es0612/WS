@@ -91,7 +91,8 @@ private extension SettingViewController {
         )
 
         let doneButton = UIBarButtonItem(
-            barButtonSystemItem: .done,
+            title: "OK",
+            style: .done,
             target: self,
             action: #selector(didTapPickerDoneButton)
         )
@@ -105,6 +106,7 @@ private extension SettingViewController {
 // MARK: - Actions
 extension SettingViewController {
     @objc func didTapPickerDoneButton() {
+        settingTableView.reloadData()
         textFieldForPicker.resignFirstResponder()
     }
 }
@@ -128,7 +130,11 @@ extension SettingViewController: UITableViewDataSource {
             cell.textLabel?.text = sectionMembers[indexPath.section][indexPath.row]
 
             if indexPath.section == 0 {
-                cell.detailTextLabel?.text = "50.0"
+                cell.detailTextLabel?.text = String(
+                    format: "%.1f",
+                    WeightPickerView.Constants
+                        .pickerDataArray[targetWeightPicker.selectedRow]
+                )
             }
 
             return cell
@@ -185,10 +191,7 @@ extension SettingViewController: UIPickerViewDataSource {
 // MARK: - Picker View Delegate Methods
 extension SettingViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        textFieldForPicker.text = String(
-            format: "%.1f",
-            WeightPickerView.Constants.pickerDataArray[row]
-        )
+        pickerView.selectRow(row, inComponent: component, animated: false)
     }
 }
 
@@ -199,11 +202,10 @@ class WeightPickerView: UIPickerView {
             = (10...1000).map {(Double($0) * 0.1)}
     }
 
-    private(set) var selectedValue: Double = 0
+    private(set) var selectedRow: Int = 0
 
     // MARK: - Public Methods
     func selectRowFor(weight: Double) {
-        var selectedRow = -1
         for row in 0 ..< Constants.pickerDataArray.count {
             if weight == Constants.pickerDataArray[row] {
                 selectedRow = row
@@ -211,9 +213,11 @@ class WeightPickerView: UIPickerView {
             }
         }
 
-        if selectedRow >= 0 {
-            selectRow(selectedRow, inComponent: 0, animated: false)
-            selectedValue = weight
-        }
+        selectRow(selectedRow, inComponent: 0, animated: false)
+    }
+
+    override func selectRow(_ row: Int, inComponent component: Int, animated: Bool) {
+        super.selectRow(row, inComponent: component, animated: animated)
+        selectedRow = row
     }
 }

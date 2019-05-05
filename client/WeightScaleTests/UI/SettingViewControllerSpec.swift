@@ -80,10 +80,52 @@ class SettingViewControllerSpec: QuickSpec {
                     .inputView as! WeightPickerView
 
 
-                expect(pickerView.selectedValue)
+                expect(WeightPickerView.Constants
+                    .pickerDataArray[pickerView.selectedRow])
                     .to(equal(50.0))
+            }
+
+            it("目標体重を更新できる") {
+                let textField = settingViewController
+                    .findTextField(withExactPlaceholderText: "Target Weight")
+                let pickerView = textField?.inputView as! WeightPickerView
+
+
+                settingViewController.tapCell(withExactText: "目標体重")
+                pickerView.selectRowFor(weight: 48.0)
+                textField?.inputAccessoryView?.findBarButtonItem(title: "OK")?.tap()
+
+
+                expect(settingViewController.hasLabel(withExactText: "48.0")).to(beTrue())
             }
         }
     }
 }
 
+extension UIView {
+    func findBarButtonItem(title searchTitle: String) -> UIBarButtonItem? {
+        if let toolbar = self as? UIToolbar {
+            for barButtonItem in toolbar.items ?? [] {
+                if barButtonItem.title == searchTitle {
+                    return barButtonItem
+                }
+            }
+        }
+
+        for subview in subviews {
+            if let toolbar = subview as? UIToolbar {
+                for barButtonItem in toolbar.items ?? [] {
+                    if barButtonItem.title == searchTitle {
+                        return barButtonItem
+                    }
+                }
+            }
+
+            if let barButtonItem = subview.findBarButtonItem(title: searchTitle) {
+                return barButtonItem
+            }
+        }
+
+        return nil
+    }
+}
