@@ -68,6 +68,7 @@ class InputViewController: TemplateViewController {
     override func viewConfigurations() {
         inputTextField.placeholder = "00.0"
         inputTextField.inputView = weightPicker
+        inputTextField.inputAccessoryView = weightPickerToolbar
 
         kgLabel.text = "kg"
         
@@ -110,8 +111,6 @@ fileprivate extension InputViewController {
         doneButton.tintColor = UIColor.white
 
         weightPickerToolbar.items = [flexSpace, doneButton]
-
-        inputTextField.inputAccessoryView = weightPickerToolbar
     }
 }
 
