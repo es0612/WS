@@ -2,7 +2,7 @@ import UIKit
 
 class SettingViewController: TemplateViewController{
     // MARK: - Injected Dependencies
-    private var targetWeightRepository: TargetWeightRepository?
+    private var targetWeightRepository: TargetWeightRepository
 
     // MARK: - Views
     private let settingTableView: UITableView
@@ -19,7 +19,7 @@ class SettingViewController: TemplateViewController{
     private var sectionMembers = [[String]]()
 
     // MARK: - Initialization
-    init(targetWeightRepository: TargetWeightRepository? = nil) {
+    init(targetWeightRepository: TargetWeightRepository) {
         self.targetWeightRepository = targetWeightRepository
 
         settingTableView = UITableView(frame: .zero, style: .grouped)
@@ -111,7 +111,7 @@ private extension SettingViewController {
 // MARK: - Actions
 extension SettingViewController {
     @objc func didTapPickerDoneButton() {
-        targetWeightRepository?.saveTargetWeight(
+        targetWeightRepository.saveTargetWeight(
             weight: WeightPickerView.Constants
             .pickerDataArray[targetWeightPicker.selectedRow]
         )
