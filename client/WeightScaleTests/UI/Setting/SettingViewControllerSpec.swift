@@ -8,9 +8,17 @@ class SettingViewControllerSpec: QuickSpec {
     override func spec() {
         describe("setting view controller に関するテスト") {
             var settingViewController: SettingViewController!
+            var stubTargetWeightRepository: StubTargetWeightRepository!
 
             beforeEach {
-                settingViewController = SettingViewController()
+                stubTargetWeightRepository
+                    = StubTargetWeightRepository()
+
+                settingViewController
+                    = SettingViewController(
+                        targetWeightRepository:
+                        stubTargetWeightRepository
+                )
             }
 
             it("タイトルが見える") {
@@ -87,7 +95,18 @@ class SettingViewControllerSpec: QuickSpec {
                     textField?.inputAccessoryView?.findBarButtonItem(title: "OK")?.tap()
 
 
-                    expect(settingViewController.hasLabel(withExactText: "48.0")).to(beTrue())
+                    expect(settingViewController.hasLabel(withExactText: "48.0"))
+                        .to(beTrue())
+                }
+
+                it("目標体重を保存できる") {
+                    settingViewController.tapCell(withExactText: "目標体重")
+                    pickerView.selectRowFor(weight: 48.0)
+                    textField?.inputAccessoryView?.findBarButtonItem(title: "OK")?.tap()
+
+
+                    expect(stubTargetWeightRepository.saveTargetWeight_argutment_weight)
+                        .to(equal(48.0))
                 }
             }
         }

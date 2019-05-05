@@ -59,6 +59,11 @@
 		38BE15C4227AD6F000F97649 /* WeightTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15C3227AD6F000F97649 /* WeightTest.swift */; };
 		38BE15C7227EA00200F97649 /* UIView+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15C6227EA00200F97649 /* UIView+UIBarButtonItem.swift */; };
 		38BE15C9227EA06F00F97649 /* WeightPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15C8227EA06F00F97649 /* WeightPickerView.swift */; };
+		38BE15CC227EAB2D00F97649 /* StubTargetWeightRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15CB227EAB2D00F97649 /* StubTargetWeightRepository.swift */; };
+		38BE15CE227EAE9C00F97649 /* LocalTargetWeightRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15CD227EAE9C00F97649 /* LocalTargetWeightRepositorySpec.swift */; };
+		38BE15D0227EAF9800F97649 /* StubUserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15CF227EAF9800F97649 /* StubUserDefaultsWrapper.swift */; };
+		38BE15D3227EAFC500F97649 /* LocalTargetWeightRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15D2227EAFC500F97649 /* LocalTargetWeightRepository.swift */; };
+		38BE15D5227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15D4227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +161,11 @@
 		38BE15C3227AD6F000F97649 /* WeightTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTest.swift; sourceTree = "<group>"; };
 		38BE15C6227EA00200F97649 /* UIView+UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+UIBarButtonItem.swift"; sourceTree = "<group>"; };
 		38BE15C8227EA06F00F97649 /* WeightPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightPickerView.swift; sourceTree = "<group>"; };
+		38BE15CB227EAB2D00F97649 /* StubTargetWeightRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubTargetWeightRepository.swift; sourceTree = "<group>"; };
+		38BE15CD227EAE9C00F97649 /* LocalTargetWeightRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTargetWeightRepositorySpec.swift; sourceTree = "<group>"; };
+		38BE15CF227EAF9800F97649 /* StubUserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubUserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		38BE15D2227EAFC500F97649 /* LocalTargetWeightRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTargetWeightRepository.swift; sourceTree = "<group>"; };
+		38BE15D4227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserDefaultsWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				38BE15A8227A7FF300F97649 /* Router */,
+				38BE15D1227EAFB400F97649 /* TargetWeight */,
 				38BE159E22793F7300F97649 /* Weight */,
 			);
 			path = Components;
@@ -355,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				38BE15AB227A803500F97649 /* Router */,
+				38BE15CA227EAB1B00F97649 /* TargetWeight */,
 				38BE159B22793EAF00F97649 /* Weight */,
 			);
 			path = Components;
@@ -416,6 +428,25 @@
 				38BE15C6227EA00200F97649 /* UIView+UIBarButtonItem.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		38BE15CA227EAB1B00F97649 /* TargetWeight */ = {
+			isa = PBXGroup;
+			children = (
+				38BE15CD227EAE9C00F97649 /* LocalTargetWeightRepositorySpec.swift */,
+				38BE15CB227EAB2D00F97649 /* StubTargetWeightRepository.swift */,
+				38BE15CF227EAF9800F97649 /* StubUserDefaultsWrapper.swift */,
+			);
+			path = TargetWeight;
+			sourceTree = "<group>";
+		};
+		38BE15D1227EAFB400F97649 /* TargetWeight */ = {
+			isa = PBXGroup;
+			children = (
+				38BE15D2227EAFC500F97649 /* LocalTargetWeightRepository.swift */,
+				38BE15D4227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift */,
+			);
+			path = TargetWeight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -595,6 +626,8 @@
 				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
 				38B3672C226CA2170009E42F /* ListViewController.swift in Sources */,
 				38BE15A422797B0400F97649 /* LocalRealmWrapper.swift in Sources */,
+				38BE15D3227EAFC500F97649 /* LocalTargetWeightRepository.swift in Sources */,
+				38BE15D5227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift in Sources */,
 				38BE15A022793F8800F97649 /* LocalWeightRepository.swift in Sources */,
 				3891FD95226787BD005B186F /* main.swift in Sources */,
 				38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */,
@@ -616,11 +649,14 @@
 				381D4F7F22711E24009F7E53 /* GraphViewControllerSpec.swift in Sources */,
 				38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */,
 				3814998A226F4DA4001B2E71 /* ListViewControllerSpec.swift in Sources */,
+				38BE15CE227EAE9C00F97649 /* LocalTargetWeightRepositorySpec.swift in Sources */,
 				38BE159D22793F0A00F97649 /* LocalWeightRepositorySpec.swift in Sources */,
 				38B367282269E7F30009E42F /* NavigationRouterSpec.swift in Sources */,
 				381D4F7B2270B628009F7E53 /* SettingViewControllerSpec.swift in Sources */,
 				38B367242269E3E80009E42F /* SpyRouter.swift in Sources */,
 				38BE15A2227974DC00F97649 /* StubRealmWrapper.swift in Sources */,
+				38BE15CC227EAB2D00F97649 /* StubTargetWeightRepository.swift in Sources */,
+				38BE15D0227EAF9800F97649 /* StubUserDefaultsWrapper.swift in Sources */,
 				38BE159A2279367100F97649 /* StubWeightRepository.swift in Sources */,
 				38BE15BA227AD3F200F97649 /* UITabBarController+displayedTab.swift in Sources */,
 				38BE15B8227AD39200F97649 /* UITabBarController+selectTab.swift in Sources */,
