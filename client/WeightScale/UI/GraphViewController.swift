@@ -7,12 +7,14 @@ class GraphViewController: TemplateViewController {
 
     // MARK: - Views
     var chartView: LineChartView
+    var targetWeightLabel: UILabel
 
     // MARK: - Initialization
     init(weightRepository: WeightRepository) {
         self.weightRepository = weightRepository
 
-        chartView = LineChartView()
+        chartView = LineChartView.newAutoLayout()
+        targetWeightLabel = UILabel.newAutoLayout()
 
         super.init()
     }
@@ -31,11 +33,21 @@ class GraphViewController: TemplateViewController {
     }
 
     override func configureConstraints() {
-        chartView.autoPinEdgesToSuperviewSafeArea()
+        chartView.autoPinEdgesToSuperviewSafeArea(
+            with: .zero, excludingEdge: .bottom
+        )
+
+        targetWeightLabel
+            .autoPinEdge(.top, to: .bottom, of: chartView)
+        targetWeightLabel
+            .autoPinEdgesToSuperviewSafeArea(
+                with: .zero, excludingEdge: .top
+        )
     }
 
     override func addSubviews(){
         view.addSubview(chartView)
+        view.addSubview(targetWeightLabel)
     }
 
     override func viewConfigurations() {
@@ -43,6 +55,8 @@ class GraphViewController: TemplateViewController {
         view.backgroundColor = .white
 
         chartViewConfiguration()
+
+        targetWeightLabel.text = "目標体重"
 
     }
 }

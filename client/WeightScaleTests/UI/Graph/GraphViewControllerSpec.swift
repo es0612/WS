@@ -69,6 +69,15 @@ class GraphViewControllerSpec: QuickSpec {
                         .to(equal(0))
                 }
             }
+
+            describe("目標体重の表示に関するテスト") {
+                it("目標体重ラベルが見える") {
+                    graphViewController = GraphViewController(weightRepository: stubWeightRepository)
+
+
+                    expect(graphViewController.hasLabel(withExactText: "目標体重")).to(beTrue())
+                }
+            }
         }
     }
 }
