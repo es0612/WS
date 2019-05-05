@@ -13,6 +13,8 @@ class SettingViewControllerSpec: QuickSpec {
             beforeEach {
                 stubTargetWeightRepository
                     = StubTargetWeightRepository()
+                stubTargetWeightRepository
+                    .loadTargetWeight_returnValue = 50.0
 
                 settingViewController
                     = SettingViewController(
@@ -91,7 +93,10 @@ class SettingViewControllerSpec: QuickSpec {
 
                 it("目標体重を更新できる") {
                     settingViewController.tapCell(withExactText: "目標体重")
-                    pickerView.selectRowFor(weight: 48.0)
+
+                    stubTargetWeightRepository
+                        .loadTargetWeight_returnValue = 48.0
+
                     textField?.inputAccessoryView?.findBarButtonItem(title: "OK")?.tap()
 
 
