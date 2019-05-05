@@ -21,6 +21,8 @@ class SettingViewControllerSpec: QuickSpec {
                         targetWeightRepository:
                         stubTargetWeightRepository
                 )
+
+                settingViewController.viewWillAppear(false)
             }
 
             it("タイトルが見える") {
