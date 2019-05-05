@@ -1,9 +1,6 @@
 protocol TargetWeightRepository {
     func saveTargetWeight(weight: Double)
-}
-
-protocol UserDefaultsWrapper {
-    func saveData(key: String, value: Double)
+    func loadTargetWeight() -> Double
 }
 
 class LocalTargetWeightRepository: TargetWeightRepository {
@@ -16,5 +13,9 @@ class LocalTargetWeightRepository: TargetWeightRepository {
     func saveTargetWeight(weight: Double) {
         userDefaultsWrapper
             .saveData(key: "target_weight", value: weight)
+    }
+
+    func loadTargetWeight() -> Double {
+        return userDefaultsWrapper.loadData(key: "target_weight")
     }
 }

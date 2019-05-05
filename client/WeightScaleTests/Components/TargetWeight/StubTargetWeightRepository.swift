@@ -5,5 +5,10 @@ class StubTargetWeightRepository: TargetWeightRepository {
     func saveTargetWeight(weight: Double) {
         saveTargetWeight_argutment_weight = weight
     }
+
+    var loadTargetWeight_returnValue = -1.0
+    func loadTargetWeight() -> Double {
+        return loadTargetWeight_returnValue
+    }
 }
 

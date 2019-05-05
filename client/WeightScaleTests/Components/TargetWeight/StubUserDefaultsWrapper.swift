@@ -8,4 +8,11 @@ class StubUserDefaultsWrapper: UserDefaultsWrapper {
         saveData_argument_key = key
         saveData_argument_value = value
     }
+
+    private(set) var loadData_argument_key: String = ""
+    var loadData_returnValue = -1.0
+    func loadData(key: String) -> Double {
+        loadData_argument_key = key
+        return loadData_returnValue
+    }
 }

@@ -40,6 +40,14 @@ class SettingViewController: TemplateViewController{
         settingTableView.autoPinEdgesToSuperviewSafeArea()
     }
 
+    override func viewDidLoad() {
+        let targetWeight
+            = targetWeightRepository.loadTargetWeight()
+
+        targetWeightPicker
+            .selectRowFor(weight: targetWeight)
+    }
+
     override func addSubviews(){
         view.addSubview(settingTableView)
         view.addSubview(textFieldForPicker)
@@ -74,15 +82,11 @@ private extension SettingViewController {
         )
         settingTableView.dataSource = self
         settingTableView.delegate = self
-
-
-        updateViewConstraints()
     }
 
     func pickerViewConfiguration() {
         targetWeightPicker.dataSource = self
         targetWeightPicker.delegate = self
-        targetWeightPicker.selectRowFor(weight: 50.0)
     }
 
     func pickerToolbarConfiguration() {
@@ -141,8 +145,8 @@ extension SettingViewController: UITableViewDataSource {
             if indexPath.section == 0 {
                 cell.detailTextLabel?.text = String(
                     format: "%.1f",
-                    WeightPickerView.Constants
-                        .pickerDataArray[targetWeightPicker.selectedRow]
+                    targetWeightRepository
+                        .loadTargetWeight()
                 )
             }
 

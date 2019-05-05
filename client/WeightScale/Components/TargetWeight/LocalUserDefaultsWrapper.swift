@@ -1,5 +1,10 @@
 import Foundation
 
+protocol UserDefaultsWrapper {
+    func saveData(key: String, value: Double)
+    func loadData(key: String) -> Double
+}
+
 class LocalUserDefaultsWrapper: UserDefaultsWrapper {
     private let userDefaults = UserDefaults.standard
 
