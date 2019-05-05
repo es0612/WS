@@ -40,7 +40,7 @@ class SettingViewController: TemplateViewController{
         settingTableView.autoPinEdgesToSuperviewSafeArea()
     }
 
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
         let targetWeight
             = targetWeightRepository.loadTargetWeight()
 
