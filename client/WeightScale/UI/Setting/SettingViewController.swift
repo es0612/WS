@@ -4,6 +4,10 @@ class SettingViewController: TemplateViewController{
     // MARK: - Views
     private let settingTableView: UITableView
 
+    private let textFieldForPicker: UITextField
+    private let targetWeightPicker: WeightPickerView
+    private let targetWeightPickerToolbar: UIToolbar
+
     // MARK: - Properties
     private let sections = ["設定", "通知"]
     private let settingSection = ["目標体重"]
@@ -11,10 +15,14 @@ class SettingViewController: TemplateViewController{
 
     private var sectionMembers = [[String]]()
 
-
     // MARK: - Initialization
     override init() {
         settingTableView = UITableView(frame: .zero, style: .grouped)
+
+        textFieldForPicker = UITextField.newAutoLayout()
+        targetWeightPicker = WeightPickerView.newAutoLayout()
+        targetWeightPickerToolbar = UIToolbar.newAutoLayout()
+
         super.init()
     }
 
@@ -29,7 +37,7 @@ class SettingViewController: TemplateViewController{
 
     override func addSubviews(){
         view.addSubview(settingTableView)
-
+        view.addSubview(textFieldForPicker)
     }
 
     override func viewConfigurations() {
@@ -39,6 +47,14 @@ class SettingViewController: TemplateViewController{
         sectionMembers = [settingSection, notificationSection]
 
         tableViewConfiguration()
+
+        textFieldForPicker.placeholder = "Target Weight"
+        textFieldForPicker.isHidden = true
+        textFieldForPicker.inputView = targetWeightPicker
+        textFieldForPicker.inputAccessoryView = targetWeightPickerToolbar
+
+        pickerViewConfiguration()
+        pickerToolbarConfiguration()
     }
 }
 
@@ -57,7 +73,42 @@ private extension SettingViewController {
 
         updateViewConstraints()
     }
+
+    func pickerViewConfiguration() {
+        targetWeightPicker.dataSource = self
+        targetWeightPicker.delegate = self
+        targetWeightPicker.selectRowFor(weight: 50.0)
+    }
+
+    func pickerToolbarConfiguration() {
+        targetWeightPickerToolbar.autoresizingMask = .flexibleHeight
+        targetWeightPickerToolbar.barStyle = .default
+        targetWeightPickerToolbar.barTintColor = UIColor.lightGray
+        targetWeightPickerToolbar.isTranslucent = false
+
+        let flexSpace = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace, target: nil, action: nil
+        )
+
+        let doneButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(didTapPickerDoneButton)
+        )
+
+        doneButton.tintColor = UIColor.white
+
+        targetWeightPickerToolbar.items = [flexSpace, doneButton]
+    }
 }
+
+// MARK: - Actions
+extension SettingViewController {
+    @objc func didTapPickerDoneButton() {
+        textFieldForPicker.resignFirstResponder()
+    }
+}
+
 
 // MARK: - Table View DataSource Methods
 extension SettingViewController: UITableViewDataSource {
@@ -104,5 +155,65 @@ extension SettingViewController: UITableViewDataSource {
 // MARK: - Table View Delegate Methods
 extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            textFieldForPicker.becomeFirstResponder()
+        }
+    }
+}
+
+// MARK: - Picker View DataSource Methods
+extension SettingViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView)
+        -> Int {
+            return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int)
+        -> Int {
+            return WeightPickerView.Constants.pickerDataArray.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)
+        -> String? {
+            return String(
+                format: "%.1f",
+                WeightPickerView.Constants.pickerDataArray[row]
+            )
+    }
+}
+
+// MARK: - Picker View Delegate Methods
+extension SettingViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        textFieldForPicker.text = String(
+            format: "%.1f",
+            WeightPickerView.Constants.pickerDataArray[row]
+        )
+    }
+}
+
+class WeightPickerView: UIPickerView {
+    // MARK: - Properties
+    struct Constants {
+        static let pickerDataArray: [Double]
+            = (10...1000).map {(Double($0) * 0.1)}
+    }
+
+    private(set) var selectedValue: Double = 0
+
+    // MARK: - Public Methods
+    func selectRowFor(weight: Double) {
+        var selectedRow = -1
+        for row in 0 ..< Constants.pickerDataArray.count {
+            if weight == Constants.pickerDataArray[row] {
+                selectedRow = row
+                break
+            }
+        }
+
+        if selectedRow >= 0 {
+            selectRow(selectedRow, inComponent: 0, animated: false)
+            selectedValue = weight
+        }
     }
 }
