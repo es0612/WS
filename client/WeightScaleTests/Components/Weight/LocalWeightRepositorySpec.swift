@@ -1,12 +1,11 @@
 import Nimble
 import Quick
-import Succinct
 
 @testable import WeightScale
 
 class LocalWeightRepositorySpec: QuickSpec {
     override func spec() {
-        describe("Realm Weight Repository に関するテスト") {
+        describe("Local Weight Repository に関するテスト") {
             var realmWrapper: StubRealmWrapper!
             var weightRepository: LocalWeightRepository!
 
