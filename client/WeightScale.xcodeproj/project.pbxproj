@@ -57,6 +57,8 @@
 		38BE15BF227AD58F00F97649 /* UIImage+AssetIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15BE227AD58F00F97649 /* UIImage+AssetIdentifier.swift */; };
 		38BE15C1227AD60F00F97649 /* WeightData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15C0227AD60F00F97649 /* WeightData.swift */; };
 		38BE15C4227AD6F000F97649 /* WeightTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15C3227AD6F000F97649 /* WeightTest.swift */; };
+		38BE15C7227EA00200F97649 /* UIView+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15C6227EA00200F97649 /* UIView+UIBarButtonItem.swift */; };
+		38BE15C9227EA06F00F97649 /* WeightPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15C8227EA06F00F97649 /* WeightPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +154,8 @@
 		38BE15BE227AD58F00F97649 /* UIImage+AssetIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AssetIdentifier.swift"; sourceTree = "<group>"; };
 		38BE15C0227AD60F00F97649 /* WeightData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightData.swift; sourceTree = "<group>"; };
 		38BE15C3227AD6F000F97649 /* WeightTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTest.swift; sourceTree = "<group>"; };
+		38BE15C6227EA00200F97649 /* UIView+UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+UIBarButtonItem.swift"; sourceTree = "<group>"; };
+		38BE15C8227EA06F00F97649 /* WeightPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,9 +289,9 @@
 			isa = PBXGroup;
 			children = (
 				38BE15B2227AD23600F97649 /* Graph */,
+				38BE15C5227E9FCD00F97649 /* Setting */,
 				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
 				38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */,
-				381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -372,6 +376,7 @@
 			children = (
 				38BE15AC227ACE0400F97649 /* SettingTableViewCell.swift */,
 				381D4F782270B28F009F7E53 /* SettingViewController.swift */,
+				38BE15C8227EA06F00F97649 /* WeightPickerView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -402,6 +407,15 @@
 				38BE15C3227AD6F000F97649 /* WeightTest.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		38BE15C5227E9FCD00F97649 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */,
+				38BE15C6227EA00200F97649 /* UIView+UIBarButtonItem.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -590,6 +604,7 @@
 				38BE15BF227AD58F00F97649 /* UIImage+AssetIdentifier.swift in Sources */,
 				38BE15C1227AD60F00F97649 /* WeightData.swift in Sources */,
 				38BE15B1227ACE9200F97649 /* WeightListTableViewCell.swift in Sources */,
+				38BE15C9227EA06F00F97649 /* WeightPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +625,7 @@
 				38BE15BA227AD3F200F97649 /* UITabBarController+displayedTab.swift in Sources */,
 				38BE15B8227AD39200F97649 /* UITabBarController+selectTab.swift in Sources */,
 				38BE15B4227AD25F00F97649 /* UIView+LineChartView.swift in Sources */,
+				38BE15C7227EA00200F97649 /* UIView+UIBarButtonItem.swift in Sources */,
 				38BE15B6227AD29C00F97649 /* UIViewController+LineChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
