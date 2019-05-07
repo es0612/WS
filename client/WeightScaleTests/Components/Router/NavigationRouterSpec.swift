@@ -13,7 +13,8 @@ class NavigationRouterSpec: QuickSpec {
                 router.showInputScreen()
 
 
-                expect(router.rootViewController)
+                let navController = router.rootViewController as! UINavigationController
+                expect(navController.viewControllers.first)
                     .to(beAKindOf(InputViewController.self))
             }
 
