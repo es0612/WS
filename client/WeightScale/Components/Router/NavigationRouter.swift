@@ -45,6 +45,9 @@ class NavigationRouter: Router {
         let graphViewController = GraphViewController(
             weightRepository: LocalWeightRepository(
                 realmWrapper: LocalRealmWrapper()
+            ),
+            targetWeightRepository: LocalTargetWeightRepository(
+                userDefaultsWrapper: LocalUserDefaultsWrapper()
             )
         )
 
