@@ -20,12 +20,17 @@ class NavigationRouter: Router {
 
     // MARK: - Public Methods
     func showInputScreen() {
-        rootViewController = InputViewController(
+        let inputViewController = InputViewController(
             router: self,
             weightRepository: LocalWeightRepository(
                 realmWrapper: LocalRealmWrapper()
             )
         )
+
+        let inputNavController = UINavigationController()
+        inputNavController.viewControllers = [inputViewController]
+
+        rootViewController = inputNavController
     }
 
     func showMainTabBarScreen() {

@@ -19,6 +19,10 @@ class InputViewControllerSpec: QuickSpec {
                     weightRepository: stubWeightRepository)
             }
 
+            it("タイトルが見える") {
+                expect(inputViewController.title).to(equal("入力"))
+            }
+
             it("OKボタンが見える") {
                 expect(inputViewController
                     .hasButton(withExactText: "OK"))

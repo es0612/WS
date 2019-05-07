@@ -66,6 +66,8 @@ class InputViewController: TemplateViewController {
     }
 
     override func viewConfigurations() {
+        self.title = "入力"
+
         inputTextField.placeholder = "00.0"
         inputTextField.inputView = weightPicker
         inputTextField.inputAccessoryView = weightPickerToolbar
