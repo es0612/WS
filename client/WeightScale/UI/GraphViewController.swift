@@ -4,17 +4,22 @@ import Charts
 class GraphViewController: TemplateViewController {
     // MARK: - Injected Dependencies
     private var weightRepository: WeightRepository
+    private var targetWeightRepository: TargetWeightRepository
 
     // MARK: - Views
     var chartView: LineChartView
     var targetWeightLabel: UILabel
+    var targetWeightValueLabel: UILabel
 
     // MARK: - Initialization
-    init(weightRepository: WeightRepository) {
+    init(weightRepository: WeightRepository,
+         targetWeightRepository: TargetWeightRepository) {
         self.weightRepository = weightRepository
+        self.targetWeightRepository = targetWeightRepository
 
         chartView = LineChartView.newAutoLayout()
         targetWeightLabel = UILabel.newAutoLayout()
+        targetWeightValueLabel = UILabel.newAutoLayout()
 
         super.init()
     }
@@ -30,6 +35,10 @@ class GraphViewController: TemplateViewController {
 
         drawChart(weightDataList: weightDataList)
 
+        targetWeightValueLabel.text = String(
+            format: "%.1f",
+            targetWeightRepository.loadTargetWeight()
+        )
     }
 
     override func configureConstraints() {
@@ -40,14 +49,24 @@ class GraphViewController: TemplateViewController {
         targetWeightLabel
             .autoPinEdge(.top, to: .bottom, of: chartView)
         targetWeightLabel
-            .autoPinEdgesToSuperviewSafeArea(
-                with: .zero, excludingEdge: .top
-        )
+            .autoPinEdge(toSuperviewSafeArea: .left)
+        targetWeightLabel
+            .autoPinEdge(toSuperviewSafeArea: .bottom)
+
+        targetWeightValueLabel
+            .autoPinEdge(.top, to: .bottom, of: chartView)
+        targetWeightValueLabel
+            .autoPinEdge(.left, to: .right, of: targetWeightLabel)
+        targetWeightValueLabel
+            .autoPinEdge(toSuperviewSafeArea: .right)
+        targetWeightValueLabel
+            .autoPinEdge(toSuperviewSafeArea: .bottom)
     }
 
     override func addSubviews(){
         view.addSubview(chartView)
         view.addSubview(targetWeightLabel)
+        view.addSubview(targetWeightValueLabel)
     }
 
     override func viewConfigurations() {

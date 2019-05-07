@@ -10,10 +10,16 @@ class GraphViewControllerSpec: QuickSpec {
     override func spec() {
         describe("graph view controller に関するテスト") {
             var stubWeightRepository: StubWeightRepository!
+            var stubTargetWeightRepository: StubTargetWeightRepository!
             var graphViewController: GraphViewController!
 
             beforeEach {
-                stubWeightRepository = StubWeightRepository()
+                stubWeightRepository
+                    = StubWeightRepository()
+                stubTargetWeightRepository
+                    = StubTargetWeightRepository()
+                stubTargetWeightRepository
+                    .loadTargetWeight_returnValue = 40.0
             }
 
             describe("体重データがあるとき") {
@@ -25,7 +31,9 @@ class GraphViewControllerSpec: QuickSpec {
                     stubWeightRepository.loadData_returnValue =
                         [expectedWeightData]
 
-                    graphViewController = GraphViewController(weightRepository: stubWeightRepository)
+                    graphViewController = GraphViewController(
+                        weightRepository: stubWeightRepository,
+                        targetWeightRepository: stubTargetWeightRepository)
                 }
 
                 it("タイトルが見える") {
@@ -54,7 +62,9 @@ class GraphViewControllerSpec: QuickSpec {
                 beforeEach {
                     stubWeightRepository.loadData_returnValue = []
 
-                    graphViewController = GraphViewController(weightRepository: stubWeightRepository)
+                    graphViewController = GraphViewController(
+                        weightRepository: stubWeightRepository,
+                        targetWeightRepository: stubTargetWeightRepository)
                 }
                 
                 it("体重データを読み込む") {
@@ -72,10 +82,24 @@ class GraphViewControllerSpec: QuickSpec {
 
             describe("目標体重の表示に関するテスト") {
                 it("目標体重ラベルが見える") {
-                    graphViewController = GraphViewController(weightRepository: stubWeightRepository)
+                    graphViewController = GraphViewController(
+                        weightRepository: stubWeightRepository,
+                        targetWeightRepository: stubTargetWeightRepository)
 
 
-                    expect(graphViewController.hasLabel(withExactText: "目標体重")).to(beTrue())
+                    expect(graphViewController.hasLabel(withExactText: "目標体重"))
+                        .to(beTrue())
+                }
+
+                it("目標体重の数値が見える") {
+                    graphViewController = GraphViewController(
+                        weightRepository: stubWeightRepository,
+                        targetWeightRepository: stubTargetWeightRepository)
+
+
+                    expect(graphViewController.hasLabel(withExactText: "40.0"))
+                        .to(beTrue())
+
                 }
             }
         }
