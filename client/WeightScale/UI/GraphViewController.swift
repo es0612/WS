@@ -32,12 +32,14 @@ class GraphViewController: TemplateViewController {
     override func viewDidLoad() {
         let weightDataList
             = weightRepository.loadData()
+        let targetWeight = targetWeightRepository.loadTargetWeight()
 
-        drawChart(weightDataList: weightDataList)
+        drawChart(
+            weightDataList: weightDataList, targetWeight: targetWeight
+        )
 
         targetWeightValueLabel.text = String(
-            format: "%.1f",
-            targetWeightRepository.loadTargetWeight()
+            format: "%.1f", targetWeight
         )
     }
 
@@ -97,29 +99,48 @@ fileprivate extension GraphViewController {
         chartView.legend.verticalAlignment = .top
     }
 
-    func drawChart(weightDataList: [WeightData]) {
-        var dataForChart: [Double] = []
+    func drawChart(weightDataList: [WeightData], targetWeight: Double) {
+        var dataForWeight: [Double] = []
         var daysForXAxis: [String] = []
 
+        var dataForTargetWeight: [Double] = []
+
         weightDataList.forEach { weightData in
-            dataForChart.append(weightData.weight)
+            dataForWeight.append(weightData.weight)
             daysForXAxis.append(weightData.dateString)
+
+            dataForTargetWeight.append(targetWeight)
         }
 
         chartView.xAxis.valueFormatter
             = IndexAxisValueFormatter(values: daysForXAxis)
 
 
-        var entries = [ChartDataEntry]()
-        for (i, d) in dataForChart.enumerated() {
-            entries.append(ChartDataEntry(x: Double(i), y: d))
+        var weightEntries = [ChartDataEntry]()
+        for (i, d) in dataForWeight.enumerated() {
+            weightEntries.append(ChartDataEntry(x: Double(i), y: d))
         }
 
-        let dataSet = LineChartDataSet(entries: entries, label: "my weight")
+        let weightDataSet
+            = LineChartDataSet(entries: weightEntries, label: "my weight")
 
-        dataSet.mode = .cubicBezier
-        dataSet.drawFilledEnabled = true
 
-        chartView.data = LineChartData(dataSet: dataSet)
+        var targetWeightEntries = [ChartDataEntry]()
+        for (i, d) in dataForTargetWeight.enumerated() {
+            targetWeightEntries.append(ChartDataEntry(x: Double(i), y: d))
+        }
+
+        let targetWeightDataSet
+            = LineChartDataSet(entries: targetWeightEntries, label: "target Weight")
+
+        targetWeightDataSet.setColor(.green)
+        targetWeightDataSet.setCircleColor(.green)
+
+
+        var dataSets = [LineChartDataSet]()
+        dataSets.append(weightDataSet)
+        dataSets.append(targetWeightDataSet)
+
+        chartView.data = LineChartData(dataSets: dataSets)
     }
 }

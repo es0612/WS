@@ -46,15 +46,17 @@ class GraphViewControllerSpec: QuickSpec {
                         .to(beTrue())
                 }
 
-                it("体重データを読み込んで表示する") {
+                it("体重データと目標体重を読み込んで表示する") {
                     expect(stubWeightRepository.loadData_wasCalled)
+                        .to(beTrue())
+                    expect(stubTargetWeightRepository.loadTargetWeight_wasCalled)
                         .to(beTrue())
 
 
                     let chartView
                         = graphViewController.view.findLineChartView()
                     expect(chartView?.lineData?.entryCount)
-                        .to(equal(1))
+                        .to(equal(2))
                 }
             }
 
