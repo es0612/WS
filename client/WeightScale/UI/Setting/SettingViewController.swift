@@ -148,6 +148,10 @@ extension SettingViewController: UITableViewDataSource {
                     targetWeightRepository
                         .loadTargetWeight()
                 )
+            } else {
+                if indexPath.row == 0 {
+                    cell.accessoryView = UISwitch(frame: .zero)
+                }
             }
 
             return cell
