@@ -41,6 +41,13 @@ class ListViewController: TemplateViewController {
         view.backgroundColor = .white
 
         tableViewConfiguration()
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(assetIdentifier: .inputIcon),
+            style: .plain,
+            target: self,
+            action: nil
+        )
     }
 }
 
