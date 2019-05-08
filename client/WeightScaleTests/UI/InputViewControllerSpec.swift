@@ -29,6 +29,14 @@ class InputViewControllerSpec: QuickSpec {
                     .to(beTrue())
             }
 
+            it("ナビゲーションバーにキャンセルボタンが見える") {
+                let barButtonItem
+                    = inputViewController.navigationItem.leftBarButtonItem
+
+
+                expect(barButtonItem!.title).to(equal("キャンセル"))
+            }
+
             it("入力欄が見える") {
                 expect(inputViewController
                     .hasTextField(withExactPlaceholderText: "00.0"))

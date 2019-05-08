@@ -83,6 +83,13 @@ class InputViewController: TemplateViewController {
 
         pickerViewConfiguration()
         pickerToolbarConfiguration()
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "キャンセル",
+            style: .plain,
+            target: self,
+            action: #selector(didTapCancelButton)
+        )
     }
 }
 
@@ -129,6 +136,10 @@ extension InputViewController {
 
     @objc func didTapPickerDoneButton() {
         inputTextField.resignFirstResponder()
+    }
+
+    @objc func didTapCancelButton() {
+
     }
 }
 
