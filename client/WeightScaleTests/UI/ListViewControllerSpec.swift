@@ -36,6 +36,14 @@ class ListViewControllerSpec: QuickSpec {
                 expect(listViewController.hasLabel(withExactText: "2019/5/1")).to(beTrue())
                 expect(listViewController.hasLabel(withExactText: "50.0")).to(beTrue())
             }
+
+            it("ナビゲーションバーに入力ボタンが見える") {
+                let barButtonItem
+                    = listViewController.navigationItem.rightBarButtonItem
+
+
+                expect(barButtonItem?.image).to(equal(UIImage(assetIdentifier: .inputIcon)))
+            }
         }
     }
 }
