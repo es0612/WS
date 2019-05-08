@@ -45,6 +45,13 @@ class SettingViewControllerSpec: QuickSpec {
                     .to(beTrue())
             }
 
+            xit("通知ON/OFFスイッチが見える") {
+                let notificationSwitch = settingViewController.findSwitch(containedInView: UITableViewCell.self)
+
+
+                expect(notificationSwitch).notTo(beNil())
+            }
+
             xit("セクション名が見える") {
                 expect(settingViewController
                     .hasLabel(withExactText: "設定"))
