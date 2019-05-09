@@ -23,7 +23,8 @@ class NavigationRouter: Router {
         let listViewController = ListViewController(
             weightRepository: LocalWeightRepository(
                 realmWrapper: LocalRealmWrapper()
-            )
+            ),
+            router: self
         )
 
         let listNavController = UINavigationController()
