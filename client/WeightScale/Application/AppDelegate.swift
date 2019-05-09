@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
 
-        router?.showInputScreen()
+        router?.showMainTabBarScreen()
 
         window?.rootViewController = router?.rootViewController
         window?.makeKeyAndVisible()

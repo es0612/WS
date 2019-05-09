@@ -2,8 +2,8 @@ import UIKit
 
 protocol Router {
     var rootViewController: UIViewController? { get }
-    func showInputScreen()
     func showMainTabBarScreen()
+    func showInputScreen()
 }
 
 class NavigationRouter: Router {
@@ -19,20 +19,6 @@ class NavigationRouter: Router {
     }
 
     // MARK: - Public Methods
-    func showInputScreen() {
-        let inputViewController = InputViewController(
-            router: self,
-            weightRepository: LocalWeightRepository(
-                realmWrapper: LocalRealmWrapper()
-            )
-        )
-
-        let inputNavController = UINavigationController()
-        inputNavController.viewControllers = [inputViewController]
-
-        rootViewController = inputNavController
-    }
-
     func showMainTabBarScreen() {
         let listViewController = ListViewController(
             weightRepository: LocalWeightRepository(
@@ -84,6 +70,20 @@ class NavigationRouter: Router {
             animated: animated
         )
 
-        rootViewController?.present(tabBarController, animated: animated, completion: nil)
+        rootViewController = tabBarController
+    }
+
+    func showInputScreen() {
+        let inputViewController = InputViewController(
+            router: self,
+            weightRepository: LocalWeightRepository(
+                realmWrapper: LocalRealmWrapper()
+            )
+        )
+
+        let inputNavController = UINavigationController()
+        inputNavController.viewControllers = [inputViewController]
+
+        rootViewController?.present(inputNavController, animated: animated, completion: nil)
     }
 }
