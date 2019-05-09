@@ -3,6 +3,7 @@ import  UIKit
 class ListViewController: TemplateViewController {
     // MARK: - Injected Dependencies
     private var weightRepository: WeightRepository
+    private var router: Router
 
     // MARK: - Views
     private let weightListTableView: UITableView
@@ -11,8 +12,9 @@ class ListViewController: TemplateViewController {
     private var weightDataList: [WeightData] = []
 
     // MARK: - Initialization
-    init(weightRepository: WeightRepository) {
+    init(weightRepository: WeightRepository, router: Router) {
         self.weightRepository = weightRepository
+        self.router = router
 
         weightListTableView = UITableView.newAutoLayout()
 
@@ -46,8 +48,15 @@ class ListViewController: TemplateViewController {
             image: UIImage(assetIdentifier: .inputIcon),
             style: .plain,
             target: self,
-            action: nil
+            action: #selector(didTapInputButton)
         )
+    }
+}
+
+// MARK: - Public Methods
+extension ListViewController {
+    @objc func didTapInputButton() {
+        router.showInputScreen()
     }
 }
 

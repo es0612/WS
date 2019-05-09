@@ -8,10 +8,12 @@ class ListViewControllerSpec: QuickSpec {
     override func spec() {
         describe("List view controller に関するテスト") {
             var stubWeightRepository: StubWeightRepository!
+            var spyRouter: SpyRouter!
             var listViewController: ListViewController!
 
             beforeEach {
                 stubWeightRepository = StubWeightRepository()
+                spyRouter = SpyRouter()
 
                 let expectedWeightData = WeightData()
                 expectedWeightData.dateString = "2019/5/1"
@@ -21,7 +23,8 @@ class ListViewControllerSpec: QuickSpec {
                     [expectedWeightData]
 
                 listViewController = ListViewController(
-                    weightRepository: stubWeightRepository
+                    weightRepository: stubWeightRepository,
+                    router: spyRouter
                 )
             }
             
@@ -33,16 +36,33 @@ class ListViewControllerSpec: QuickSpec {
             it("体重データを読み込んで表示する") {
                 expect(stubWeightRepository.loadData_wasCalled)
                     .to(beTrue())
-                expect(listViewController.hasLabel(withExactText: "2019/5/1")).to(beTrue())
-                expect(listViewController.hasLabel(withExactText: "50.0")).to(beTrue())
+                expect(listViewController.hasLabel(withExactText: "2019/5/1"))
+                    .to(beTrue())
+                expect(listViewController.hasLabel(withExactText: "50.0"))
+                    .to(beTrue())
             }
 
-            it("ナビゲーションバーに入力ボタンが見える") {
-                let barButtonItem
-                    = listViewController.navigationItem.rightBarButtonItem
+            describe("入力ボタンに関するテスト") {
+                var barButtonItem: UIBarButtonItem!
+
+                beforeEach {
+                    barButtonItem = listViewController
+                        .navigationItem
+                        .rightBarButtonItem
+                }
+
+                it("ナビゲーションバーに入力ボタンが見える") {
+                    expect(barButtonItem?.image)
+                        .to(equal(UIImage(assetIdentifier: .inputIcon)))
+                }
+
+                it("入力ボタンを押すと入力画面に遷移する") {
+                    barButtonItem?.tap()
 
 
-                expect(barButtonItem?.image).to(equal(UIImage(assetIdentifier: .inputIcon)))
+                    expect(spyRouter.showInputScreen_wasCalled)
+                        .to(beTrue())
+                }
             }
         }
     }
