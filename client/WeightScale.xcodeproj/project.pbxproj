@@ -65,6 +65,7 @@
 		38BE15D3227EAFC500F97649 /* LocalTargetWeightRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15D2227EAFC500F97649 /* LocalTargetWeightRepository.swift */; };
 		38BE15D5227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15D4227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift */; };
 		38BE15D72285903200F97649 /* RunLoop+advance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15D62285903200F97649 /* RunLoop+advance.swift */; };
+		38BE15DA2285C40F00F97649 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15D92285C40F00F97649 /* DateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,7 @@
 		38BE15D2227EAFC500F97649 /* LocalTargetWeightRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTargetWeightRepository.swift; sourceTree = "<group>"; };
 		38BE15D4227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		38BE15D62285903200F97649 /* RunLoop+advance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RunLoop+advance.swift"; sourceTree = "<group>"; };
+		38BE15D92285C40F00F97649 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +342,7 @@
 		38BE15A7227A7FC900F97649 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				38BE15D82285C3FC00F97649 /* Date */,
 				38BE15A8227A7FF300F97649 /* Router */,
 				38BE15D1227EAFB400F97649 /* TargetWeight */,
 				38BE159E22793F7300F97649 /* Weight */,
@@ -450,6 +453,14 @@
 				38BE15D4227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift */,
 			);
 			path = TargetWeight;
+			sourceTree = "<group>";
+		};
+		38BE15D82285C3FC00F97649 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				38BE15D92285C40F00F97649 /* DateManager.swift */,
+			);
+			path = Date;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -625,6 +636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3891FD7522678292005B186F /* AppDelegate.swift in Sources */,
+				38BE15DA2285C40F00F97649 /* DateManager.swift in Sources */,
 				381D4F7D22711AA2009F7E53 /* GraphViewController.swift in Sources */,
 				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
 				38B3672C226CA2170009E42F /* ListViewController.swift in Sources */,
