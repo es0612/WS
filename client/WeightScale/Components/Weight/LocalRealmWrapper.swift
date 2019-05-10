@@ -23,6 +23,10 @@ class LocalRealmWrapper: RealmWrapper {
     }
 
     func getTodayData() -> WeightData? {
-        return nil
+        let weightDataList = realmDB
+            .objects(WeightData.self)
+            .filter("dateString == %@", DateManager.getToday())
+
+        return weightDataList.first
     }
 }
