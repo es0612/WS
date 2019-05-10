@@ -1,11 +1,6 @@
 import UIKit
 import PureLayout
 
-protocol WeightRepository {
-    func saveData(weight: Double)
-    func loadData() -> [WeightData]
-}
-
 class InputViewController: TemplateViewController {
     // MARK: - Injected Dependencies
     private let router: Router

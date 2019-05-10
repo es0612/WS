@@ -12,4 +12,11 @@ class StubWeightRepository: WeightRepository  {
         loadData_wasCalled = true
         return loadData_returnValue
     }
+
+    private(set) var checkInputOfToday_wasCalled = false
+    var checkInputOfToday_returnValue = false
+    func checkInputOfToday() -> Bool {
+        checkInputOfToday_wasCalled = true
+        return checkInputOfToday_returnValue
+    }
 }

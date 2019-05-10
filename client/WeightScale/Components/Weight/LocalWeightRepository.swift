@@ -1,11 +1,13 @@
 import Foundation
 
-protocol RealmWrapper {
-    func saveData(weightData: WeightData)
+protocol WeightRepository {
+    func saveData(weight: Double)
     func loadData() -> [WeightData]
+    func checkInputOfToday() -> Bool
 }
 
 class LocalWeightRepository: WeightRepository {
+
     private var realmWrapper: RealmWrapper
 
     init(realmWrapper: RealmWrapper) {
@@ -23,6 +25,10 @@ class LocalWeightRepository: WeightRepository {
 
     func loadData() -> [WeightData] {
         return realmWrapper.loadData()
+    }
+
+    func checkInputOfToday() -> Bool {
+        return false
     }
 }
 

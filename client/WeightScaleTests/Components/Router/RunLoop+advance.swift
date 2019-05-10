@@ -1,6 +1,6 @@
 import Foundation
 
-private let oneHundredthOfASecond: TimeInterval = 0.5
+private let oneHundredthOfASecond: TimeInterval = 1.0
 
 extension RunLoop {
     static func advance(
