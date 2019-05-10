@@ -23,14 +23,14 @@ class LocalWeightRepositorySpec: QuickSpec {
                 expect(realmWrapper.putData_argument_weightData?.weight)
                     .to(equal(50.0))
                 expect(realmWrapper.putData_argument_weightData?.dateString)
-                    .to(equal(weightRepository.getToday()))
+                    .to(equal(DateManager.getToday()))
             }
 
             it("データを全件読み込む") {
                 let expectedWeightData = WeightData()
                 expectedWeightData.weight = 50.0
                 expectedWeightData.dateString
-                    = weightRepository.getToday()
+                    = DateManager.getToday()
 
                 realmWrapper.getAllData_returnValue
                     = [expectedWeightData]
@@ -50,7 +50,7 @@ class LocalWeightRepositorySpec: QuickSpec {
                     let expectedWeightData = WeightData()
                     expectedWeightData.weight = 60.0
                     expectedWeightData.dateString
-                        = weightRepository.getToday()
+                        = DateManager.getToday()
 
                     realmWrapper.getTodayData_returnValue
                         = expectedWeightData

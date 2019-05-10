@@ -16,7 +16,7 @@ class LocalWeightRepository: WeightRepository {
 
     func saveData(weight: Double) {
         let todaysWeight = WeightData()
-        todaysWeight.dateString = getToday()
+        todaysWeight.dateString = DateManager.getToday()
         todaysWeight.weight = weight
         todaysWeight.created = Date()
 
@@ -33,14 +33,5 @@ class LocalWeightRepository: WeightRepository {
         }
         
         return false
-    }
-}
-
-extension LocalWeightRepository {
-    func getToday(format:String = "yyyy/MM/dd") -> String {
-        let now = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        return formatter.string(from: now as Date)
     }
 }
