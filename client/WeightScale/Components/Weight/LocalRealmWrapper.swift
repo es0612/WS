@@ -1,5 +1,10 @@
 import RealmSwift
 
+protocol RealmWrapper {
+    func saveData(weightData: WeightData)
+    func loadData() -> [WeightData]
+}
+
 class LocalRealmWrapper: RealmWrapper {
     private let realmDB = try! Realm()
 

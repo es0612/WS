@@ -30,6 +30,12 @@ class ListViewController: TemplateViewController {
         weightListTableView.autoPinEdgesToSuperviewSafeArea()
     }
 
+    override func viewDidLoad() {
+        if weightRepository.checkInputOfToday() {
+            router.showInputScreen()
+        }
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         weightDataList = weightRepository.loadData()
         weightListTableView.reloadData()
