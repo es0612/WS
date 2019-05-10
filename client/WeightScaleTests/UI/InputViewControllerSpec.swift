@@ -37,6 +37,15 @@ class InputViewControllerSpec: QuickSpec {
                 expect(barButtonItem!.title).to(equal("キャンセル"))
             }
 
+            it("キャンセルボタンを押すとリスト画面が見える") {
+                let barButtonItem
+                    = inputViewController.navigationItem.leftBarButtonItem
+
+
+                barButtonItem?.tap()
+                expect(spyRouter.dismissInputScreen_wasCalled).to(beTrue())
+            }
+
             it("入力欄が見える") {
                 expect(inputViewController
                     .hasTextField(withExactPlaceholderText: "00.0"))
@@ -82,7 +91,7 @@ class InputViewControllerSpec: QuickSpec {
                 }
 
                 it("メイン画面に遷移する") {
-                    expect(spyRouter.showMainTabBarScreen_wasCalled).to(beTrue())
+                    expect(spyRouter.dismissInputScreen_wasCalled).to(beTrue())
                 }
             }
 
@@ -103,7 +112,7 @@ class InputViewControllerSpec: QuickSpec {
                 }
 
                 it("メイン画面に遷移しない") {
-                    expect(spyRouter.showMainTabBarScreen_wasCalled).to(beFalse())
+                    expect(spyRouter.dismissInputScreen_wasCalled).to(beFalse())
                 }
             }
         }

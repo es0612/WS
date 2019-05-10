@@ -66,6 +66,37 @@ class NavigationRouterSpec: QuickSpec {
                 expect(navController?.viewControllers.first)
                     .to(beAKindOf(InputViewController.self))
             }
+
+            it("input画面から初期画面に戻る") {
+                let router = NavigationRouter(animated: false)
+                router.rootViewController = UITabBarController(nibName: nil, bundle: nil)
+
+                let window = UIWindow(frame: UIScreen.main.bounds)
+                window.makeKeyAndVisible()
+                window.rootViewController = router.rootViewController
+
+
+                router.showInputScreen()
+                router.dismissInputScreen()
+                RunLoop.advance()
+
+
+                let presentedViewController = router.rootViewController?.presentedViewController
+
+                expect(presentedViewController)
+                    .to(beNil())
+            }
         }
+    }
+}
+
+private let oneHundredthOfASecond: TimeInterval = 0.5
+
+extension RunLoop {
+    static func advance(
+        by timeInterval: TimeInterval = oneHundredthOfASecond
+        ) {
+        let stopDate = Date().addingTimeInterval(timeInterval)
+        main.run(until: stopDate)
     }
 }

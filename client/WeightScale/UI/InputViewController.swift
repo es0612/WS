@@ -129,7 +129,7 @@ extension InputViewController {
         if let WeightString = inputTextField.text {
             if let inputWeignt = Double(WeightString) {
                 weightRepository.saveData(weight: inputWeignt)
-                router.showMainTabBarScreen()
+                router.dismissInputScreen()
             }
         }
     }
@@ -139,7 +139,7 @@ extension InputViewController {
     }
 
     @objc func didTapCancelButton() {
-
+        router.dismissInputScreen()
     }
 }
 

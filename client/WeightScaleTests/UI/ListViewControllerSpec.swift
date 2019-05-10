@@ -26,6 +26,8 @@ class ListViewControllerSpec: QuickSpec {
                     weightRepository: stubWeightRepository,
                     router: spyRouter
                 )
+
+                listViewController.viewWillAppear(false)
             }
             
             it("タイトルが見える") {
