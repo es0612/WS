@@ -20,14 +20,18 @@ class LocalWeightRepository: WeightRepository {
         todaysWeight.weight = weight
         todaysWeight.created = Date()
 
-        realmWrapper.saveData(weightData: todaysWeight)
+        realmWrapper.putData(weightData: todaysWeight)
     }
 
     func loadData() -> [WeightData] {
-        return realmWrapper.loadData()
+        return realmWrapper.getAllData()
     }
 
     func checkInputOfToday() -> Bool {
+        if let _ = realmWrapper.getTodayData() {
+            return true
+        }
+        
         return false
     }
 }

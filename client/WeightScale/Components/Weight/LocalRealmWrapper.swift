@@ -1,23 +1,28 @@
 import RealmSwift
 
 protocol RealmWrapper {
-    func saveData(weightData: WeightData)
-    func loadData() -> [WeightData]
+    func putData(weightData: WeightData)
+    func getAllData() -> [WeightData]
+    func getTodayData() -> WeightData?
 }
 
 class LocalRealmWrapper: RealmWrapper {
+
     private let realmDB = try! Realm()
 
-    func saveData(weightData: WeightData) {
+    func putData(weightData: WeightData) {
         try! realmDB.write{
             realmDB.add(weightData, update: true)
         }
     }
 
-    func loadData() -> [WeightData] {
+    func getAllData() -> [WeightData] {
         let weightDataList = realmDB.objects(WeightData.self)
 
         return Array(weightDataList)
     }
 
+    func getTodayData() -> WeightData? {
+        return nil
+    }
 }

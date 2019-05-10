@@ -20,27 +20,56 @@ class LocalWeightRepositorySpec: QuickSpec {
                 weightRepository.saveData(weight: 50.0)
 
 
-                expect(realmWrapper.saveData_argument_weightData?.weight)
+                expect(realmWrapper.putData_argument_weightData?.weight)
                     .to(equal(50.0))
-                expect(realmWrapper.saveData_argument_weightData?.dateString)
+                expect(realmWrapper.putData_argument_weightData?.dateString)
                     .to(equal(weightRepository.getToday()))
             }
 
-            it("データを読み込む") {
+            it("データを全件読み込む") {
                 let expectedWeightData = WeightData()
                 expectedWeightData.weight = 50.0
-                expectedWeightData.dateString = weightRepository.getToday()
+                expectedWeightData.dateString
+                    = weightRepository.getToday()
 
-                realmWrapper.loadData_returnValue = [expectedWeightData]
+                realmWrapper.getAllData_returnValue
+                    = [expectedWeightData]
 
 
                 let actualWeightDataList = weightRepository.loadData()
 
 
-                expect(realmWrapper.loadData_wasCalled)
+                expect(realmWrapper.getAllData_wasCalled)
                     .to(beTrue())
                 expect(actualWeightDataList)
                     .to(equal([expectedWeightData]))
+            }
+
+            describe("今日の体重データがあるか確認する") {
+                it("今日の体重データがある") {
+                    let expectedWeightData = WeightData()
+                    expectedWeightData.weight = 60.0
+                    expectedWeightData.dateString
+                        = weightRepository.getToday()
+
+                    realmWrapper.getTodayData_returnValue
+                        = expectedWeightData
+
+
+                    let checkResult = weightRepository.checkInputOfToday()
+
+                    
+                    expect(realmWrapper.getTodayData_wasCalled).to(beTrue())
+                    expect(checkResult).to(beTrue())
+                }
+
+                it("今日の体重データがない") {
+                    realmWrapper.getTodayData_returnValue = nil
+
+
+                    expect(weightRepository.checkInputOfToday())
+                        .to(beFalse())
+                }
             }
         }
     }
