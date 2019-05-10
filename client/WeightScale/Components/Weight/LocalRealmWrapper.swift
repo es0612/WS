@@ -29,4 +29,12 @@ class LocalRealmWrapper: RealmWrapper {
 
         return weightDataList.first
     }
+
+    func getMostRecentData() -> WeightData? {
+        let weightDataList = realmDB
+            .objects(WeightData.self)
+            .sorted(byKeyPath: "created", ascending: false)
+
+        return weightDataList.first
+    }
 }
