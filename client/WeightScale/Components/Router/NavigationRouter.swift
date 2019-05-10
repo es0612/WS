@@ -4,6 +4,7 @@ protocol Router {
     var rootViewController: UIViewController? { get }
     func showMainTabBarScreen()
     func showInputScreen()
+    func dismissInputScreen()
 }
 
 class NavigationRouter: Router {
@@ -86,5 +87,12 @@ class NavigationRouter: Router {
         inputNavController.viewControllers = [inputViewController]
 
         rootViewController?.present(inputNavController, animated: animated, completion: nil)
+    }
+
+    func dismissInputScreen() {
+        rootViewController?.dismiss(
+            animated: animated,
+            completion: nil
+        )
     }
 }

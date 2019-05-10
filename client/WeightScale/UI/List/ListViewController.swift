@@ -30,8 +30,9 @@ class ListViewController: TemplateViewController {
         weightListTableView.autoPinEdgesToSuperviewSafeArea()
     }
 
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
         weightDataList = weightRepository.loadData()
+        weightListTableView.reloadData()
     }
 
     override func addSubviews(){
