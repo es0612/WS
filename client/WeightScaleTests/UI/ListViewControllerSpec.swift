@@ -16,26 +16,28 @@ class ListViewControllerSpec: QuickSpec {
                 spyRouter = SpyRouter()
             }
 
-            it("アプリ起動時に今日の体重を入力してない場合、入力画面へ遷移する") {
+            it("今日の体重を入力してない場合、入力画面へ遷移する") {
                 stubWeightRepository
-                    .checkInputOfToday_returnValue = true
+                    .checkInputOfToday_returnValue = false
 
                 listViewController = ListViewController(
                     weightRepository: stubWeightRepository,
                     router: spyRouter
                 )
 
+                listViewController.viewWillAppear(false)
 
+                
                 expect(stubWeightRepository.checkInputOfToday_wasCalled)
                     .to(beTrue())
                 expect(spyRouter.showInputScreen_wasCalled)
                     .to(beTrue())
             }
 
-            describe("リスト画面を表示する") {
+            describe("今日の体重を入力済みの場合、リスト画面を表示する") {
                 beforeEach {
                     stubWeightRepository
-                        .checkInputOfToday_returnValue = false
+                        .checkInputOfToday_returnValue = true
 
                     let expectedWeightData = WeightData()
                     expectedWeightData.dateString = "2019/5/1"

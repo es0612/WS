@@ -61,7 +61,7 @@ class RealmSpec: QuickSpec {
                 todaysWeight.weight = 60.0
                 todaysWeight.created = Date()
 
-                var DBItems = realmDB.objects(WeightTest.self).filter("id = 1")
+                var DBItems = realmDB.objects(WeightTest.self).filter("id == 1")
                 let updateWeight = WeightTest()
 
                 if let unwrapedId = DBItems.first?.id  {
