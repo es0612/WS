@@ -32,6 +32,8 @@ class ListViewController: TemplateViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         weightDataList = weightRepository.loadData()
+        weightDataList.reverse()
+
         weightListTableView.reloadData()
 
         if !weightRepository.checkInputOfToday() {
