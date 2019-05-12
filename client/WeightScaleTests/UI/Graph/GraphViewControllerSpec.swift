@@ -22,18 +22,13 @@ class GraphViewControllerSpec: QuickSpec {
                     .loadTargetWeight_returnValue = 40.0
             }
 
-            describe("体重データがあるとき") {
+            describe("画面の基本情報の表示を確認") {
                 beforeEach {
-                    let expectedWeightData = WeightData()
-                    expectedWeightData.dateString = "2019/5/1"
-                    expectedWeightData.weight = 50.0
-
-                    stubWeightRepository.loadData_returnValue =
-                        [expectedWeightData]
-
                     graphViewController = GraphViewController(
                         weightRepository: stubWeightRepository,
                         targetWeightRepository: stubTargetWeightRepository)
+
+                    graphViewController.viewWillAppear(false)
                 }
 
                 it("タイトルが見える") {
@@ -46,13 +41,41 @@ class GraphViewControllerSpec: QuickSpec {
                         .to(beTrue())
                 }
 
-                it("体重データと目標体重を読み込んで表示する") {
-                    expect(stubWeightRepository.loadData_wasCalled)
+                it("目標体重ラベルが見える") {
+                    expect(graphViewController.hasLabel(withExactText: "目標体重"))
                         .to(beTrue())
+                }
+
+                it("目標体重の数値が見える") {
                     expect(stubTargetWeightRepository.loadTargetWeight_wasCalled)
                         .to(beTrue())
+                    expect(graphViewController.hasLabel(withExactText: "40.0"))
+                        .to(beTrue())
+                }
+            }
 
+            describe("体重データがあるとき") {
+                beforeEach {
+                    let expectedWeightData = WeightData()
+                    expectedWeightData.dateString = "2019/5/1"
+                    expectedWeightData.weight = 50.0
 
+                    stubWeightRepository.loadData_returnValue =
+                        [expectedWeightData]
+
+                    graphViewController = GraphViewController(
+                        weightRepository: stubWeightRepository,
+                        targetWeightRepository: stubTargetWeightRepository)
+
+                    graphViewController.viewWillAppear(false)
+                }
+
+                it("体重データを読み込む") {
+                    expect(stubWeightRepository.loadData_wasCalled)
+                        .to(beTrue())
+                }
+
+                it("体重データをグラフに表示する(目標体重も)") {
                     let chartView
                         = graphViewController.view.findLineChartView()
                     expect(chartView?.lineData?.entryCount)
@@ -67,6 +90,8 @@ class GraphViewControllerSpec: QuickSpec {
                     graphViewController = GraphViewController(
                         weightRepository: stubWeightRepository,
                         targetWeightRepository: stubTargetWeightRepository)
+
+                    graphViewController.viewWillAppear(false)
                 }
                 
                 it("体重データを読み込む") {
@@ -79,29 +104,6 @@ class GraphViewControllerSpec: QuickSpec {
                         = graphViewController.view.findLineChartView()
                     expect(chartView?.lineData?.entryCount)
                         .to(equal(0))
-                }
-            }
-
-            describe("目標体重の表示に関するテスト") {
-                it("目標体重ラベルが見える") {
-                    graphViewController = GraphViewController(
-                        weightRepository: stubWeightRepository,
-                        targetWeightRepository: stubTargetWeightRepository)
-
-
-                    expect(graphViewController.hasLabel(withExactText: "目標体重"))
-                        .to(beTrue())
-                }
-
-                it("目標体重の数値が見える") {
-                    graphViewController = GraphViewController(
-                        weightRepository: stubWeightRepository,
-                        targetWeightRepository: stubTargetWeightRepository)
-
-
-                    expect(graphViewController.hasLabel(withExactText: "40.0"))
-                        .to(beTrue())
-
                 }
             }
         }
