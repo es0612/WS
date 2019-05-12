@@ -17,6 +17,9 @@ class InputViewControllerSpec: QuickSpec {
                 inputViewController = InputViewController(
                     router: spyRouter,
                     weightRepository: stubWeightRepository)
+
+
+                inputViewController.viewWillAppear(false)
             }
 
             it("タイトルが見える") {
@@ -76,7 +79,7 @@ class InputViewControllerSpec: QuickSpec {
                         .getMostRecentWeight_returnValue = nil
 
 
-                    inputViewController.viewDidLoad()
+                    inputViewController.viewWillAppear(false)
 
 
                     expect(inputTextField?.text).to(equal("50.0"))
@@ -87,7 +90,7 @@ class InputViewControllerSpec: QuickSpec {
                         .getMostRecentWeight_returnValue = 51.0
 
 
-                    inputViewController.viewDidLoad()
+                    inputViewController.viewWillAppear(false)
 
 
                     expect(inputTextField?.text).to(equal("51.0"))
@@ -96,6 +99,21 @@ class InputViewControllerSpec: QuickSpec {
                 it("体重を入力するときpickerで入力できる") {
                     expect(inputTextField?.inputView)
                         .to(beAKindOf(UIPickerView.self))
+                }
+
+                it("ピッカーの初期値に直近の体重が見える") {
+                    let pickerView = inputTextField.inputView as? WeightPickerView
+                    stubWeightRepository
+                        .getMostRecentWeight_returnValue = 51.0
+
+
+                    inputViewController.viewWillAppear(false)
+
+
+                    let expectedWeight = WeightPickerView
+                        .Constants
+                        .pickerDataArray[(pickerView?.selectedRow)!]
+                    expect(expectedWeight).to(equal(51.0))
                 }
 
                 context("体重を入力して、OKボタンをタップしたとき") {
