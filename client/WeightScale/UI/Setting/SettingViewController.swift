@@ -19,6 +19,7 @@ class SettingViewController: TemplateViewController{
     private let notificationOnOffLabel: UILabel
     private let notificationSwitch: UISwitch
     private let notificationTimeButton: UIButton
+    private let notificationTimeLabel: UILabel
 
     // MARK: - Initialization
     init(targetWeightRepository: TargetWeightRepository) {
@@ -38,6 +39,7 @@ class SettingViewController: TemplateViewController{
         notificationOnOffLabel = UILabel.newAutoLayout()
         notificationSwitch = UISwitch.newAutoLayout()
         notificationTimeButton = UIButton(type: .system)
+        notificationTimeLabel = UILabel.newAutoLayout()
 
         super.init()
     }
@@ -76,6 +78,7 @@ class SettingViewController: TemplateViewController{
         settingStackView.addArrangedSubview(notificationOnOffLabel)
         settingStackView.addArrangedSubview(notificationSwitch)
         settingStackView.addArrangedSubview(notificationTimeButton)
+        settingStackView.addArrangedSubview(notificationTimeLabel)
 
         settingStackView.axis = .vertical
     }
@@ -93,7 +96,8 @@ class SettingViewController: TemplateViewController{
         notificationSectionLabel.text = "通知"
         notificationOnOffLabel.text = "ON/OFF"
         notificationTimeButton.setTitle("通知時間", for: .normal)
-
+        notificationTimeLabel.text = "17:00"
+        
 
         textFieldForPickerConfiguration()
         pickerViewConfiguration()
