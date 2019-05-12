@@ -66,6 +66,8 @@
 		38BE15D5227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15D4227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift */; };
 		38BE15D72285903200F97649 /* RunLoop+advance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15D62285903200F97649 /* RunLoop+advance.swift */; };
 		38BE15DA2285C40F00F97649 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15D92285C40F00F97649 /* DateManager.swift */; };
+		38BE15DC22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15DB22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift */; };
+		38BE15DE22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15DD22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,8 @@
 		38BE15D4227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		38BE15D62285903200F97649 /* RunLoop+advance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RunLoop+advance.swift"; sourceTree = "<group>"; };
 		38BE15D92285C40F00F97649 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		38BE15DB22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingVC+UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
+		38BE15DD22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingVC+UIPickerViewDataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,11 +294,12 @@
 		38B36730226CC6790009E42F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				38BE15E122882B9C00F97649 /* Graph */,
+				38BE15E022882B9500F97649 /* Input */,
 				38BE15AF227ACE7200F97649 /* List */,
 				38BE15AE227ACE5000F97649 /* Setting */,
 				38BE15A9227A800B00F97649 /* Template */,
-				381D4F7C22711AA2009F7E53 /* GraphViewController.swift */,
-				38B36721226931F40009E42F /* InputViewController.swift */,
+				38BE15DF22882B2C00F97649 /* WeightPicker */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -303,9 +308,9 @@
 			isa = PBXGroup;
 			children = (
 				38BE15B2227AD23600F97649 /* Graph */,
+				38BE15E222882BB400F97649 /* Input */,
+				38BE15E322882BBB00F97649 /* List */,
 				38BE15C5227E9FCD00F97649 /* Setting */,
-				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
-				38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -393,8 +398,9 @@
 			isa = PBXGroup;
 			children = (
 				38BE15AC227ACE0400F97649 /* SettingTableViewCell.swift */,
+				38BE15DD22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift */,
+				38BE15DB22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift */,
 				381D4F782270B28F009F7E53 /* SettingViewController.swift */,
-				38BE15C8227EA06F00F97649 /* WeightPickerView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -461,6 +467,46 @@
 				38BE15D92285C40F00F97649 /* DateManager.swift */,
 			);
 			path = Date;
+			sourceTree = "<group>";
+		};
+		38BE15DF22882B2C00F97649 /* WeightPicker */ = {
+			isa = PBXGroup;
+			children = (
+				38BE15C8227EA06F00F97649 /* WeightPickerView.swift */,
+			);
+			path = WeightPicker;
+			sourceTree = "<group>";
+		};
+		38BE15E022882B9500F97649 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				38B36721226931F40009E42F /* InputViewController.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		38BE15E122882B9C00F97649 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				381D4F7C22711AA2009F7E53 /* GraphViewController.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		38BE15E222882BB400F97649 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				38B3671F226931270009E42F /* InputViewControllerSpec.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		38BE15E322882BBB00F97649 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -647,6 +693,8 @@
 				3891FD95226787BD005B186F /* main.swift in Sources */,
 				38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */,
 				38BE15AD227ACE0400F97649 /* SettingTableViewCell.swift in Sources */,
+				38BE15DE22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift in Sources */,
+				38BE15DC22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift in Sources */,
 				381D4F792270B28F009F7E53 /* SettingViewController.swift in Sources */,
 				38BE15A6227A5E4800F97649 /* TemplateViewController.swift in Sources */,
 				38BE15BF227AD58F00F97649 /* UIImage+AssetIdentifier.swift in Sources */,
