@@ -29,32 +29,9 @@ class InputViewControllerSpec: QuickSpec {
                     .to(beTrue())
             }
 
-            it("ナビゲーションバーにキャンセルボタンが見える") {
-                let barButtonItem
-                    = inputViewController.navigationItem.leftBarButtonItem
-
-
-                expect(barButtonItem!.title).to(equal("キャンセル"))
-            }
-
-            it("キャンセルボタンを押すとリスト画面が見える") {
-                let barButtonItem
-                    = inputViewController.navigationItem.leftBarButtonItem
-
-
-                barButtonItem?.tap()
-                expect(spyRouter.dismissInputScreen_wasCalled).to(beTrue())
-            }
-
             it("入力欄が見える") {
                 expect(inputViewController
                     .hasTextField(withExactPlaceholderText: "00.0"))
-                    .to(beTrue())
-            }
-
-            it("入力欄に初期値が見える") {
-                expect(inputViewController
-                    .hasTextField(withExactText: "50.0"))
                     .to(beTrue())
             }
 
@@ -64,55 +41,95 @@ class InputViewControllerSpec: QuickSpec {
                     .to(beTrue())
             }
 
-            it("体重を入力するときpickerで入力できる") {
-                let inputTextField = inputViewController
-                    .findTextField(withExactPlaceholderText: "00.0")
+            describe("ナビゲーションバーについて") {
+                var barButtonItem: UIBarButtonItem!
 
-
-                expect(inputTextField?.inputView)
-                    .to(beAKindOf(UIPickerView.self))
-            }
-
-
-            context("体重を入力して、OKボタンをタップしたとき") {
                 beforeEach {
-                    let inputTextField =
-                        inputViewController.findTextField(
-                            withExactPlaceholderText: "00.0"
-                    )
-                    inputTextField?.text = "50.0"
-
-                    inputViewController.tapButton(withExactText: "OK")
+                    barButtonItem = inputViewController
+                        .navigationItem
+                        .leftBarButtonItem
                 }
 
-                it("データを保存する") {
-                    expect(stubWeightRepository.saveData_argutment_weight)
-                        .to(equal(50.0))
+                it("キャンセルボタンが見える") {
+                    expect(barButtonItem!.title).to(equal("キャンセル"))
                 }
 
-                it("メイン画面に遷移する") {
-                    expect(spyRouter.dismissInputScreen_wasCalled).to(beTrue())
+                it("キャンセルボタンを押すとリスト画面が見える") {
+                    barButtonItem?.tap()
+
+
+                    expect(spyRouter.dismissInputScreen_wasCalled)
+                        .to(beTrue())
                 }
             }
 
-            context("体重を入力しないで、OKボタンをタップしたとき") {
+            describe("体重入力欄について") {
+                var inputTextField: UITextField!
+
                 beforeEach {
-                    let inputTextField =
-                        inputViewController.findTextField(
-                            withExactPlaceholderText: "00.0"
-                    )
-                    inputTextField?.text = ""
-
-                    inputViewController.tapButton(withExactText: "OK")
+                    inputTextField = inputViewController
+                        .findTextField(withExactPlaceholderText: "00.0")
                 }
 
-                it("データを保存しない") {
-                    expect(stubWeightRepository.saveData_argutment_weight)
-                        .to(equal(-1.0))
+                it("入力欄にデフォルト初期値が見える") {
+                    stubWeightRepository
+                        .getMostRecentWeight_returnValue = nil
+
+
+                    inputViewController.viewDidLoad()
+
+
+                    expect(inputTextField?.text).to(equal("50.0"))
                 }
 
-                it("メイン画面に遷移しない") {
-                    expect(spyRouter.dismissInputScreen_wasCalled).to(beFalse())
+                it("入力欄に初期値として直近の体重が見える") {
+                    stubWeightRepository
+                        .getMostRecentWeight_returnValue = 51.0
+
+
+                    inputViewController.viewDidLoad()
+
+
+                    expect(inputTextField?.text).to(equal("51.0"))
+                }
+
+                it("体重を入力するときpickerで入力できる") {
+                    expect(inputTextField?.inputView)
+                        .to(beAKindOf(UIPickerView.self))
+                }
+
+                context("体重を入力して、OKボタンをタップしたとき") {
+                    beforeEach {
+                        inputTextField?.text = "50.0"
+
+                        inputViewController.tapButton(withExactText: "OK")
+                    }
+
+                    it("データを保存する") {
+                        expect(stubWeightRepository.saveData_argutment_weight)
+                            .to(equal(50.0))
+                    }
+
+                    it("メイン画面に遷移する") {
+                        expect(spyRouter.dismissInputScreen_wasCalled).to(beTrue())
+                    }
+                }
+
+                context("体重を入力しないで、OKボタンをタップしたとき") {
+                    beforeEach {
+                        inputTextField?.text = ""
+
+                        inputViewController.tapButton(withExactText: "OK")
+                    }
+
+                    it("データを保存しない") {
+                        expect(stubWeightRepository.saveData_argutment_weight)
+                            .to(equal(-1.0))
+                    }
+
+                    it("メイン画面に遷移しない") {
+                        expect(spyRouter.dismissInputScreen_wasCalled).to(beFalse())
+                    }
                 }
             }
         }

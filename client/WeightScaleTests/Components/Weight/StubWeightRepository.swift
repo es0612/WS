@@ -19,4 +19,9 @@ class StubWeightRepository: WeightRepository  {
         checkInputOfToday_wasCalled = true
         return checkInputOfToday_returnValue
     }
+
+    var getMostRecentWeight_returnValue: Double? = -1.0
+    func getMostRecentWeight() -> Double? {
+        return getMostRecentWeight_returnValue
+    }
 }

@@ -4,6 +4,7 @@ protocol WeightRepository {
     func saveData(weight: Double)
     func loadData() -> [WeightData]
     func checkInputOfToday() -> Bool
+    func getMostRecentWeight() -> Double?
 }
 
 class LocalWeightRepository: WeightRepository {
@@ -33,5 +34,9 @@ class LocalWeightRepository: WeightRepository {
         }
         
         return false
+    }
+
+    func getMostRecentWeight() -> Double? {
+        return nil
     }
 }
