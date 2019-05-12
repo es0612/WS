@@ -49,7 +49,13 @@ class InputViewController: TemplateViewController {
     }
 
     override func viewDidLoad() {
-        inputTextField.text = "50.0"
+        if let meybeRecentWeight = weightRepository.getMostRecentWeight() {
+            inputTextField.text
+                = String(format: "%.1f", meybeRecentWeight)
+        }
+        else {
+            inputTextField.text = "50.0"
+        }
     }
 
     override func addSubviews(){
@@ -142,17 +148,17 @@ extension InputViewController {
 extension InputViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView)
         -> Int {
-        return 1
+            return 1
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int)
         -> Int {
-        return pickerDataArray.count
+            return pickerDataArray.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)
         -> String? {
-        return String(format: "%.1f", pickerDataArray[row])
+            return String(format: "%.1f", pickerDataArray[row])
     }
 }
 
