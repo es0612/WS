@@ -71,6 +71,33 @@ class LocalWeightRepositorySpec: QuickSpec {
                         .to(beFalse())
                 }
             }
+
+            describe("直近の体重データを取得する") {
+                it("直近の体重データがある") {
+                    let expectedWeightData = WeightData()
+                    expectedWeightData.weight = 70.0
+                    expectedWeightData.dateString
+                        = DateManager.getToday()
+
+                    realmWrapper.getMostRecentData_returnValue
+                        = expectedWeightData
+
+
+                    let actualResult = weightRepository.getMostRecentWeight()
+
+
+                    expect(realmWrapper.getMostRecentData_wasCalled).to(beTrue())
+                    expect(actualResult).to(equal(expectedWeightData.weight))
+                }
+
+                it("直近の体重データがない") {
+                    realmWrapper.getMostRecentData_returnValue = nil
+
+
+                    expect(weightRepository.getMostRecentWeight())
+                        .to(beNil())
+                }
+            }
         }
     }
 }
