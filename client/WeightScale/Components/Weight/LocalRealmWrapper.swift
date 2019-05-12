@@ -18,7 +18,9 @@ class LocalRealmWrapper: RealmWrapper {
     }
 
     func getAllData() -> [WeightData] {
-        let weightDataList = realmDB.objects(WeightData.self)
+        let weightDataList = realmDB
+            .objects(WeightData.self)
+            .sorted(byKeyPath: "created", ascending: false)
 
         return Array(weightDataList)
     }
