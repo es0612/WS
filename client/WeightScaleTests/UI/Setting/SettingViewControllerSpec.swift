@@ -131,6 +131,10 @@ class SettingViewControllerSpec: QuickSpec {
                     expect(settingViewController
                         .hasButton(withExactText: "通知時間")).to(beTrue())
                 }
+
+                it("通知時間の時刻が見える") {
+                    expect(settingViewController.hasLabel(withExactText: "17:00")).to(beTrue())
+                }
             }
         }
     }
