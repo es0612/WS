@@ -37,6 +37,6 @@ class LocalWeightRepository: WeightRepository {
     }
 
     func getMostRecentWeight() -> Double? {
-        return nil
+        return realmWrapper.getMostRecentData()?.weight
     }
 }

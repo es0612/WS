@@ -4,6 +4,7 @@ protocol RealmWrapper {
     func putData(weightData: WeightData)
     func getAllData() -> [WeightData]
     func getTodayData() -> WeightData?
+    func getMostRecentData() -> WeightData?
 }
 
 class LocalRealmWrapper: RealmWrapper {

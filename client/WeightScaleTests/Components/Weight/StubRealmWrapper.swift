@@ -19,4 +19,11 @@ class StubRealmWrapper: RealmWrapper {
         getTodayData_wasCalled = true
         return getTodayData_returnValue
     }
+
+    private(set) var getMostRecentData_wasCalled = false
+    var getMostRecentData_returnValue: WeightData? = nil
+    func getMostRecentData() -> WeightData? {
+        getMostRecentData_wasCalled = true
+        return getMostRecentData_returnValue
+    }
 }
