@@ -147,28 +147,3 @@ extension InputViewController {
         router.dismissInputScreen()
     }
 }
-
-// MARK: - Picker View DataSource Methods
-extension InputViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView)
-        -> Int {
-            return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int)
-        -> Int {
-            return WeightPickerView.Constants.pickerDataArray.count
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)
-        -> String? {
-            return String(format: "%.1f", WeightPickerView.Constants.pickerDataArray[row])
-    }
-}
-
-// MARK: - Picker View Delegate Methods
-extension InputViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        pickerView.selectRow(row, inComponent: component, animated: false)
-    }
-}

@@ -21,6 +21,8 @@
 		381D4F7F22711E24009F7E53 /* GraphViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F7E22711E24009F7E53 /* GraphViewControllerSpec.swift */; };
 		381D4F8222720391009F7E53 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381D4F8122720391009F7E53 /* RealmSwift.framework */; };
 		381D4F84227204ED009F7E53 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381D4F83227204ED009F7E53 /* Realm.framework */; };
+		3828369E22884EB1009AB799 /* InputVC+UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828369D22884EB1009AB799 /* InputVC+UIPickerViewDelegate.swift */; };
+		382836A022884EC1009AB799 /* InputVC+UIPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828369F22884EC1009AB799 /* InputVC+UIPickerViewDataSource.swift */; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -126,6 +128,8 @@
 		381D4F83227204ED009F7E53 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		381D4F8922720656009F7E53 /* WeightScaleThirdPartyAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightScaleThirdPartyAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		381D4F8D22720656009F7E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3828369D22884EB1009AB799 /* InputVC+UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputVC+UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
+		3828369F22884EC1009AB799 /* InputVC+UIPickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputVC+UIPickerViewDataSource.swift"; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891FD7B22678294005B186F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -480,6 +484,8 @@
 		38BE15E022882B9500F97649 /* Input */ = {
 			isa = PBXGroup;
 			children = (
+				3828369F22884EC1009AB799 /* InputVC+UIPickerViewDataSource.swift */,
+				3828369D22884EB1009AB799 /* InputVC+UIPickerViewDelegate.swift */,
 				38B36721226931F40009E42F /* InputViewController.swift */,
 			);
 			path = Input;
@@ -684,6 +690,8 @@
 				3891FD7522678292005B186F /* AppDelegate.swift in Sources */,
 				38BE15DA2285C40F00F97649 /* DateManager.swift in Sources */,
 				381D4F7D22711AA2009F7E53 /* GraphViewController.swift in Sources */,
+				382836A022884EC1009AB799 /* InputVC+UIPickerViewDataSource.swift in Sources */,
+				3828369E22884EB1009AB799 /* InputVC+UIPickerViewDelegate.swift in Sources */,
 				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
 				38B3672C226CA2170009E42F /* ListViewController.swift in Sources */,
 				38BE15A422797B0400F97649 /* LocalRealmWrapper.swift in Sources */,
