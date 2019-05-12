@@ -5,28 +5,39 @@ class SettingViewController: TemplateViewController{
     private var targetWeightRepository: TargetWeightRepository
 
     // MARK: - Views
-    private let settingTableView: UITableView
+    private let settingStackView: UIStackView
 
     private let textFieldForPicker: UITextField
     private let targetWeightPicker: WeightPickerView
     private let targetWeightPickerToolbar: UIToolbar
 
-    // MARK: - Properties
-    private let sections = ["設定", "通知"]
-    private let settingSection = ["目標体重"]
-    private let notificationSection = ["ON/OFF","通知時間"]
+    private let sectionLabel: UILabel
+    private let headerButton: UIButton
+    private let valueLabel: UILabel
 
-    private var sectionMembers = [[String]]()
+    private let notificationSectionLabel: UILabel
+    private let notificationOnOffLabel: UILabel
+    private let notificationSwitch: UISwitch
+    private let notificationTimeButton: UIButton
 
     // MARK: - Initialization
     init(targetWeightRepository: TargetWeightRepository) {
         self.targetWeightRepository = targetWeightRepository
 
-        settingTableView = UITableView(frame: .zero, style: .grouped)
+        settingStackView = UIStackView.newAutoLayout()
 
         textFieldForPicker = UITextField.newAutoLayout()
         targetWeightPicker = WeightPickerView.newAutoLayout()
         targetWeightPickerToolbar = UIToolbar.newAutoLayout()
+
+        sectionLabel = UILabel.newAutoLayout()
+        headerButton = UIButton(type: .system)
+        valueLabel = UILabel.newAutoLayout()
+
+        notificationSectionLabel = UILabel.newAutoLayout()
+        notificationOnOffLabel = UILabel.newAutoLayout()
+        notificationSwitch = UISwitch.newAutoLayout()
+        notificationTimeButton = UIButton(type: .system)
 
         super.init()
     }
@@ -37,7 +48,7 @@ class SettingViewController: TemplateViewController{
 
     // MARK: - Override Methods
     override func configureConstraints() {
-        settingTableView.autoPinEdgesToSuperviewSafeArea()
+        settingStackView.autoPinEdgesToSuperviewSafeArea(with: .zero, excludingEdge: .bottom)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,26 +57,45 @@ class SettingViewController: TemplateViewController{
 
         targetWeightPicker
             .selectRowFor(weight: targetWeight)
+
+        valueLabel.text =
+            String(format: "%.1f", targetWeight)
     }
 
     override func addSubviews(){
-        view.addSubview(settingTableView)
         view.addSubview(textFieldForPicker)
+
+        view.addSubview(settingStackView)
+
+        settingStackView.addArrangedSubview(sectionLabel)
+        settingStackView.addArrangedSubview(headerButton)
+
+        settingStackView.addArrangedSubview(valueLabel)
+
+        settingStackView.addArrangedSubview(notificationSectionLabel)
+        settingStackView.addArrangedSubview(notificationOnOffLabel)
+        settingStackView.addArrangedSubview(notificationSwitch)
+        settingStackView.addArrangedSubview(notificationTimeButton)
+
+        settingStackView.axis = .vertical
     }
 
     override func viewConfigurations() {
         title = "設定"
         view.backgroundColor = .white
 
-        sectionMembers = [settingSection, notificationSection]
+        sectionLabel.text = "個人設定"
 
-        tableViewConfiguration()
+        headerButton.setTitle("目標体重", for: .normal)
 
-        textFieldForPicker.placeholder = "Target Weight"
-        textFieldForPicker.isHidden = true
-        textFieldForPicker.inputView = targetWeightPicker
-        textFieldForPicker.inputAccessoryView = targetWeightPickerToolbar
+        headerButton.addTarget(self, action: #selector(didTapTargetWeightButton), for: .touchUpInside)
 
+        notificationSectionLabel.text = "通知"
+        notificationOnOffLabel.text = "ON/OFF"
+        notificationTimeButton.setTitle("通知時間", for: .normal)
+
+
+        textFieldForPickerConfiguration()
         pickerViewConfiguration()
         pickerToolbarConfiguration()
     }
@@ -73,15 +103,12 @@ class SettingViewController: TemplateViewController{
 
 // MARK: - Private Methods
 private extension SettingViewController {
-    func tableViewConfiguration() {
-        settingTableView.register(
-            SettingTableViewCell.self,
-            forCellReuseIdentifier: String(
-                describing: SettingTableViewCell.self
-            )
-        )
-        settingTableView.dataSource = self
-        settingTableView.delegate = self
+    func textFieldForPickerConfiguration() {
+        textFieldForPicker.placeholder = "Target Weight"
+        textFieldForPicker.isHidden = true
+
+        textFieldForPicker.inputView = targetWeightPicker
+        textFieldForPicker.inputAccessoryView = targetWeightPickerToolbar
     }
 
     func pickerViewConfiguration() {
@@ -119,67 +146,12 @@ extension SettingViewController {
             weight: WeightPickerView.Constants
             .pickerDataArray[targetWeightPicker.selectedRow]
         )
-        settingTableView.reloadData()
+
+        valueLabel.text = String(format: "%.1f", targetWeightRepository.loadTargetWeight())
         textFieldForPicker.resignFirstResponder()
     }
-}
 
-
-// MARK: - Table View DataSource Methods
-extension SettingViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
-        -> Int {
-            return sectionMembers[section].count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
-        -> UITableViewCell {
-
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: String(describing: SettingTableViewCell.self),
-                for: indexPath
-                ) as! SettingTableViewCell
-
-            cell.textLabel?.text = sectionMembers[indexPath.section][indexPath.row]
-
-            if indexPath.section == 0 {
-                cell.detailTextLabel?.text = String(
-                    format: "%.1f",
-                    targetWeightRepository
-                        .loadTargetWeight()
-                )
-            } else {
-                if indexPath.row == 0 {
-                    cell.accessoryView = UISwitch(frame: .zero)
-                }
-            }
-
-            return cell
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int)
-        -> UIView? {
-            let sectionLabel = UILabel()
-            sectionLabel.text = sections[section]
-            sectionLabel.backgroundColor = .clear
-
-            return sectionLabel
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40.0
-    }
-}
-
-// MARK: - Table View Delegate Methods
-extension SettingViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            textFieldForPicker.becomeFirstResponder()
-        }
+    @objc func didTapTargetWeightButton() {
+        textFieldForPicker.becomeFirstResponder()
     }
 }

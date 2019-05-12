@@ -50,7 +50,6 @@
 		38BE15A2227974DC00F97649 /* StubRealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15A1227974DC00F97649 /* StubRealmWrapper.swift */; };
 		38BE15A422797B0400F97649 /* LocalRealmWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15A322797B0400F97649 /* LocalRealmWrapper.swift */; };
 		38BE15A6227A5E4800F97649 /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15A5227A5E4800F97649 /* TemplateViewController.swift */; };
-		38BE15AD227ACE0400F97649 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15AC227ACE0400F97649 /* SettingTableViewCell.swift */; };
 		38BE15B1227ACE9200F97649 /* WeightListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15B0227ACE9200F97649 /* WeightListTableViewCell.swift */; };
 		38BE15B4227AD25F00F97649 /* UIView+LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15B3227AD25F00F97649 /* UIView+LineChartView.swift */; };
 		38BE15B6227AD29C00F97649 /* UIViewController+LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15B5227AD29C00F97649 /* UIViewController+LineChartView.swift */; };
@@ -158,7 +157,6 @@
 		38BE15A1227974DC00F97649 /* StubRealmWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRealmWrapper.swift; sourceTree = "<group>"; };
 		38BE15A322797B0400F97649 /* LocalRealmWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRealmWrapper.swift; sourceTree = "<group>"; };
 		38BE15A5227A5E4800F97649 /* TemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
-		38BE15AC227ACE0400F97649 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		38BE15B0227ACE9200F97649 /* WeightListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightListTableViewCell.swift; sourceTree = "<group>"; };
 		38BE15B3227AD25F00F97649 /* UIView+LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LineChartView.swift"; sourceTree = "<group>"; };
 		38BE15B5227AD29C00F97649 /* UIViewController+LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LineChartView.swift"; sourceTree = "<group>"; };
@@ -401,7 +399,6 @@
 		38BE15AE227ACE5000F97649 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				38BE15AC227ACE0400F97649 /* SettingTableViewCell.swift */,
 				38BE15DD22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift */,
 				38BE15DB22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift */,
 				381D4F782270B28F009F7E53 /* SettingViewController.swift */,
@@ -700,7 +697,6 @@
 				38BE15A022793F8800F97649 /* LocalWeightRepository.swift in Sources */,
 				3891FD95226787BD005B186F /* main.swift in Sources */,
 				38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */,
-				38BE15AD227ACE0400F97649 /* SettingTableViewCell.swift in Sources */,
 				38BE15DE22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift in Sources */,
 				38BE15DC22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift in Sources */,
 				381D4F792270B28F009F7E53 /* SettingViewController.swift in Sources */,
