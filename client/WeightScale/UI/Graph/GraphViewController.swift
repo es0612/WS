@@ -29,7 +29,7 @@ class GraphViewController: TemplateViewController {
     }
 
     // MARK: - Override Methods
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
         let weightDataList
             = weightRepository.loadData()
         let targetWeight = targetWeightRepository.loadTargetWeight()
