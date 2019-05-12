@@ -13,12 +13,7 @@ class InputViewController: TemplateViewController {
     private let OkButton: UIButton
 
     private let weightPickerToolbar: UIToolbar
-    private let weightPicker: UIPickerView
-
-
-    // MARK: - Properties
-    private let pickerDataArray:[Double]
-        = (10...1000).map {(Double($0) * 0.1)}
+    private let weightPicker: WeightPickerView
 
     // MARK: - Initialization
     init(router: Router,
@@ -33,7 +28,7 @@ class InputViewController: TemplateViewController {
         OkButton = UIButton(type: .system)
 
         weightPickerToolbar = UIToolbar.newAutoLayout()
-        weightPicker = UIPickerView.newAutoLayout()
+        weightPicker = WeightPickerView.newAutoLayout()
 
 
         super.init()
@@ -48,13 +43,15 @@ class InputViewController: TemplateViewController {
         inputForm.autoPinEdgesToSuperviewSafeArea(with: .zero, excludingEdge: .bottom)
     }
 
-    override func viewDidLoad() {
-        if let meybeRecentWeight = weightRepository.getMostRecentWeight() {
+    override func viewWillAppear(_ animated: Bool) {
+        if let mostRecentWeight = weightRepository.getMostRecentWeight() {
             inputTextField.text
-                = String(format: "%.1f", meybeRecentWeight)
+                = String(format: "%.1f", mostRecentWeight)
+            weightPicker.selectRowFor(weight: mostRecentWeight)
         }
         else {
             inputTextField.text = "50.0"
+            weightPicker.selectRowFor(weight: 50.0)
         }
     }
 
@@ -99,7 +96,6 @@ fileprivate extension InputViewController {
     func pickerViewConfiguration() {
         weightPicker.dataSource = self
         weightPicker.delegate = self
-        weightPicker.selectRow(490, inComponent: 0, animated: true)
     }
 
     func pickerToolbarConfiguration() {
@@ -136,6 +132,14 @@ extension InputViewController {
     }
 
     @objc func didTapPickerDoneButton() {
+        let weightString = String(
+            format: "%.1f",
+            WeightPickerView
+                .Constants
+                .pickerDataArray[weightPicker.selectedRow]
+        )
+
+        inputTextField.text = weightString
         inputTextField.resignFirstResponder()
     }
 
@@ -153,18 +157,18 @@ extension InputViewController: UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int)
         -> Int {
-            return pickerDataArray.count
+            return WeightPickerView.Constants.pickerDataArray.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)
         -> String? {
-            return String(format: "%.1f", pickerDataArray[row])
+            return String(format: "%.1f", WeightPickerView.Constants.pickerDataArray[row])
     }
 }
 
 // MARK: - Picker View Delegate Methods
 extension InputViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        inputTextField.text = String(format: "%.1f", pickerDataArray[row])
+        pickerView.selectRow(row, inComponent: component, animated: false)
     }
 }
