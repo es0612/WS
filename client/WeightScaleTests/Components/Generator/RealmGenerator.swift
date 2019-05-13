@@ -10,12 +10,12 @@ class RealmGenerator: QuickSpec {
         "Realmのテストデータを生成する(必要に応じてフォーカスして使う)"
         ) {
             var realmDB: Realm!
-            
+
             beforeEach {
                 realmDB = try! Realm()
             }
 
-            it("データをすべて削除する") {
+            xit("データをすべて削除する") {
                 var DBItems = realmDB.objects(WeightData.self)
 
                 try! realmDB.write{
@@ -28,7 +28,7 @@ class RealmGenerator: QuickSpec {
                 expect(DBItems.count).to(equal(0))
             }
 
-            it("データを１０件生成する") {
+            xit("データを１０件生成する") {
                 let dataList = [
                     ["2019/01/01", 60.0, Date()],
                     ["2019/01/02", 60.5, Date()],
