@@ -1,14 +1,16 @@
 import UIKit
 
-class TemplateViewController: UIViewController {
+class TemplateView: UIView {
     // MARK: - Properties
     private var didSetupConstraints: Bool = false
+    private var didFinishLayoutSubviews: Bool = false
 
     // MARK: - Initialization
-    init() {
-        super.init(nibName: nil, bundle: nil)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
 
-        view.setNeedsUpdateConstraints()
+        translatesAutoresizingMaskIntoConstraints
+            = false
 
         addSubviews()
         viewConfigurations()
@@ -19,16 +21,30 @@ class TemplateViewController: UIViewController {
     }
 
     // MARK: - Override Methods
-    override func updateViewConstraints() {
+    override func updateConstraints() {
         if didSetupConstraints == false {
             configureConstraints()
 
             didSetupConstraints = true
         }
-        super.updateViewConstraints()
+
+        super.updateConstraints()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        if didFinishLayoutSubviews == false {
+            didLayoutSubviews()
+
+            didFinishLayoutSubviews = true
+        }
     }
 
     func configureConstraints() {
+    }
+
+    func didLayoutSubviews() {
     }
 
     func addSubviews() {
