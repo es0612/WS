@@ -72,6 +72,10 @@ class NavigationRouter: Router {
             animated: animated
         )
 
+        listNavController.navigationBar.applyStyle(.main)
+        graphNavController.navigationBar.applyStyle(.main)
+        settingNavController.navigationBar.applyStyle(.main)
+        
         rootViewController = tabBarController
     }
 
@@ -86,7 +90,13 @@ class NavigationRouter: Router {
         let inputNavController = UINavigationController()
         inputNavController.viewControllers = [inputViewController]
 
-        rootViewController?.present(inputNavController, animated: animated, completion: nil)
+        inputNavController.navigationBar.applyStyle(.main)
+
+        rootViewController?.present(
+            inputNavController,
+            animated: animated,
+            completion: nil
+        )
     }
 
     func dismissInputScreen() {

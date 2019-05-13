@@ -77,8 +77,6 @@ class InputViewController: TemplateViewController {
 
         inputForm.axis = .vertical
 
-        view.backgroundColor = .white
-
         pickerViewConfiguration()
         pickerToolbarConfiguration()
 
@@ -88,6 +86,10 @@ class InputViewController: TemplateViewController {
             target: self,
             action: #selector(didTapCancelButton)
         )
+    }
+
+    override func applyStyles() {
+        view.backgroundColor = UIColor.background.main
     }
 }
 

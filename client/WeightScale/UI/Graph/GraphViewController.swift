@@ -80,6 +80,10 @@ class GraphViewController: TemplateViewController {
         targetWeightLabel.text = "目標体重"
 
     }
+
+    override func applyStyles() {
+        view.backgroundColor = UIColor.background.main
+    }
 }
 
 // MARK: - Private methods

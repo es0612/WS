@@ -64,11 +64,14 @@ class SettingViewController: TemplateViewController{
 
     override func viewConfigurations() {
         title = "設定"
-        view.backgroundColor = .white
 
         textFieldForPickerConfiguration()
         pickerViewConfiguration()
         pickerToolbarConfiguration()
+    }
+
+    override func applyStyles() {
+        view.backgroundColor = UIColor.background.main
     }
 }
 
