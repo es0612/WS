@@ -58,6 +58,11 @@ class ListViewController: TemplateViewController {
             action: #selector(didTapInputButton)
         )
     }
+
+    override func applyStyles() {
+        view.backgroundColor = UIColor.background.main
+        weightListTableView.backgroundColor = UIColor.background.main
+    }
 }
 
 // MARK: - Public Methods
