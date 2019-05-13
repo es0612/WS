@@ -23,6 +23,9 @@
 		381D4F84227204ED009F7E53 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381D4F83227204ED009F7E53 /* Realm.framework */; };
 		3828369E22884EB1009AB799 /* InputVC+UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828369D22884EB1009AB799 /* InputVC+UIPickerViewDelegate.swift */; };
 		382836A022884EC1009AB799 /* InputVC+UIPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828369F22884EC1009AB799 /* InputVC+UIPickerViewDataSource.swift */; };
+		382836A222898A24009AB799 /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382836A122898A24009AB799 /* TemplateView.swift */; };
+		382836A422898BCF009AB799 /* PersonalSettingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382836A322898BCF009AB799 /* PersonalSettingsSectionView.swift */; };
+		382836A62289947B009AB799 /* NotificationSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382836A52289947B009AB799 /* NotificationSectionView.swift */; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -129,6 +132,9 @@
 		381D4F8D22720656009F7E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3828369D22884EB1009AB799 /* InputVC+UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputVC+UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
 		3828369F22884EC1009AB799 /* InputVC+UIPickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputVC+UIPickerViewDataSource.swift"; sourceTree = "<group>"; };
+		382836A122898A24009AB799 /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
+		382836A322898BCF009AB799 /* PersonalSettingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalSettingsSectionView.swift; sourceTree = "<group>"; };
+		382836A52289947B009AB799 /* NotificationSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSectionView.swift; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891FD7B22678294005B186F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -369,6 +375,7 @@
 		38BE15A9227A800B00F97649 /* Template */ = {
 			isa = PBXGroup;
 			children = (
+				382836A122898A24009AB799 /* TemplateView.swift */,
 				38BE15A5227A5E4800F97649 /* TemplateViewController.swift */,
 			);
 			path = Template;
@@ -399,6 +406,8 @@
 		38BE15AE227ACE5000F97649 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				382836A52289947B009AB799 /* NotificationSectionView.swift */,
+				382836A322898BCF009AB799 /* PersonalSettingsSectionView.swift */,
 				38BE15DD22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift */,
 				38BE15DB22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift */,
 				381D4F782270B28F009F7E53 /* SettingViewController.swift */,
@@ -697,9 +706,12 @@
 				38BE15A022793F8800F97649 /* LocalWeightRepository.swift in Sources */,
 				3891FD95226787BD005B186F /* main.swift in Sources */,
 				38B3672A226CA1440009E42F /* NavigationRouter.swift in Sources */,
+				382836A62289947B009AB799 /* NotificationSectionView.swift in Sources */,
+				382836A422898BCF009AB799 /* PersonalSettingsSectionView.swift in Sources */,
 				38BE15DE22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift in Sources */,
 				38BE15DC22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift in Sources */,
 				381D4F792270B28F009F7E53 /* SettingViewController.swift in Sources */,
+				382836A222898A24009AB799 /* TemplateView.swift in Sources */,
 				38BE15A6227A5E4800F97649 /* TemplateViewController.swift in Sources */,
 				38BE15BF227AD58F00F97649 /* UIImage+AssetIdentifier.swift in Sources */,
 				38BE15C1227AD60F00F97649 /* WeightData.swift in Sources */,
