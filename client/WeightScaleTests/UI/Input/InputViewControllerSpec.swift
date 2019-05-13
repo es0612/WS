@@ -54,7 +54,7 @@ class InputViewControllerSpec: QuickSpec {
                 }
 
                 it("キャンセルボタンが見える") {
-                    expect(barButtonItem!.title).to(equal("キャンセル"))
+                    expect(barButtonItem!.title).to(equal("< キャンセル"))
                 }
 
                 it("キャンセルボタンを押すとリスト画面が見える") {

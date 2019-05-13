@@ -32,6 +32,7 @@
 		3891FD95226787BD005B186F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD94226787BD005B186F /* main.swift */; };
 		3898691922899E65002D9A38 /* UIColor+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898691822899E65002D9A38 /* UIColor+Style.swift */; };
 		3898691B2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898691A2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift */; };
+		3898691E228A2336002D9A38 /* RealmGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898691D228A2336002D9A38 /* RealmGenerator.swift */; };
 		38A1351222767C9C002C09CE /* UserNotificationsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A1351122767C9C002C09CE /* UserNotificationsSpec.swift */; };
 		38B367092268D1FB0009E42F /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367082268D1FB0009E42F /* BrightFutures.framework */; };
 		38B3670B2268D20B0009E42F /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670A2268D20B0009E42F /* Charts.framework */; };
@@ -147,6 +148,7 @@
 		3891FD94226787BD005B186F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3898691822899E65002D9A38 /* UIColor+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Style.swift"; sourceTree = "<group>"; };
 		3898691A2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+ApplyStyle.swift"; sourceTree = "<group>"; };
+		3898691D228A2336002D9A38 /* RealmGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGenerator.swift; sourceTree = "<group>"; };
 		38A1351122767C9C002C09CE /* UserNotificationsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationsSpec.swift; sourceTree = "<group>"; };
 		38B367082268D1FB0009E42F /* BrightFutures.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BrightFutures.framework; path = Carthage/Build/iOS/BrightFutures.framework; sourceTree = "<group>"; };
 		38B3670A2268D20B0009E42F /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
@@ -285,6 +287,14 @@
 			path = WeightScaleTests;
 			sourceTree = "<group>";
 		};
+		3898691C228A2311002D9A38 /* Generator */ = {
+			isa = PBXGroup;
+			children = (
+				3898691D228A2336002D9A38 /* RealmGenerator.swift */,
+			);
+			path = Generator;
+			sourceTree = "<group>";
+		};
 		38B367072268D1FB0009E42F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +408,7 @@
 		38BE15AA227A801F00F97649 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3898691C228A2311002D9A38 /* Generator */,
 				38BE15AB227A803500F97649 /* Router */,
 				38BE15CA227EAB1B00F97649 /* TargetWeight */,
 				38BE159B22793EAF00F97649 /* Weight */,
@@ -747,6 +758,7 @@
 				38BE15CE227EAE9C00F97649 /* LocalTargetWeightRepositorySpec.swift in Sources */,
 				38BE159D22793F0A00F97649 /* LocalWeightRepositorySpec.swift in Sources */,
 				38B367282269E7F30009E42F /* NavigationRouterSpec.swift in Sources */,
+				3898691E228A2336002D9A38 /* RealmGenerator.swift in Sources */,
 				38BE15D72285903200F97649 /* RunLoop+advance.swift in Sources */,
 				381D4F7B2270B628009F7E53 /* SettingViewControllerSpec.swift in Sources */,
 				38B367242269E3E80009E42F /* SpyRouter.swift in Sources */,

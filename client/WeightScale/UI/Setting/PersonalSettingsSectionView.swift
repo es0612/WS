@@ -21,12 +21,12 @@ class PersonalSettingsSectionView: TemplateView {
 
     // MARK: - Override Methods
     override func configureConstraints() {
-        autoSetDimension(.height, toSize: 48.0)
+        autoSetDimension(.height, toSize: 60.0)
 
         sectionLabel.autoPinEdge(toSuperviewEdge: .top)
         sectionLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 18.0)
 
-        headerButton.autoPinEdge(.top, to: .bottom, of: sectionLabel)
+        headerButton.autoPinEdge(.top, to: .bottom, of: sectionLabel, withOffset: 12.0)
         headerButton.autoPinEdge(toSuperviewEdge: .left, withInset: 18.0)
         headerButton.autoPinEdge(toSuperviewEdge: .right, withInset: 18.0)
         headerButton.autoPinEdge(toSuperviewEdge: .bottom)

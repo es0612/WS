@@ -25,18 +25,18 @@ class NotificationSectionView: TemplateView {
 
     // MARK: - Override Methods
     override func configureConstraints() {
-        autoSetDimension(.height, toSize: 72.0)
+        autoSetDimension(.height, toSize: 90.0)
 
         sectionLabel.autoPinEdge(toSuperviewEdge: .top)
         sectionLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 18.0)
 
-        notificationOnOffLabel.autoPinEdge(.top, to: .bottom, of: sectionLabel)
+        notificationOnOffLabel.autoPinEdge(.top, to: .bottom, of: sectionLabel, withOffset: 12.0)
         notificationOnOffLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 18.0)
 
-        notificationSwitch.autoPinEdge(.top, to: .bottom, of: sectionLabel)
-        notificationSwitch.autoPinEdge(toSuperviewEdge: .right, withInset: 18.0)
+        notificationSwitch.autoPinEdge(.top, to: .bottom, of: sectionLabel, withOffset: 12.0)
+        notificationSwitch.autoPinEdge(toSuperviewEdge: .right, withInset: 36.0)
 
-        notificationTimeButton.autoPinEdge(.top, to: .bottom, of: notificationOnOffLabel)
+        notificationTimeButton.autoPinEdge(.top, to: .bottom, of: notificationOnOffLabel, withOffset: 12.0)
         notificationTimeButton.autoPinEdge(toSuperviewEdge: .left, withInset: 18.0)
         notificationTimeButton.autoPinEdge(toSuperviewEdge: .right, withInset: 18.0)
         notificationTimeButton.autoPinEdge(toSuperviewEdge: .bottom)
