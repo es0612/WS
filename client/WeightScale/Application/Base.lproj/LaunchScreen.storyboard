@@ -18,20 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Weight  Scale" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hSf-6m-28i">
-                                <rect key="frame" x="134" y="513" width="146" height="29"/>
-                                <color key="textColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="Iw0-qD-8zV">
-                                <rect key="frame" x="-241" y="293" width="896" height="220"/>
+                                <rect key="frame" x="-241" y="323" width="896" height="160"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.54117647058823526" green="0.94901960784313721" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hSf-6m-28i" firstAttribute="top" secondItem="Iw0-qD-8zV" secondAttribute="bottom" id="GLC-gS-tui"/>
-                            <constraint firstItem="hSf-6m-28i" firstAttribute="centerX" secondItem="Iw0-qD-8zV" secondAttribute="centerX" id="ND5-RF-kmq"/>
                             <constraint firstItem="Iw0-qD-8zV" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1:1" id="QdB-8m-KmG"/>
                             <constraint firstItem="Iw0-qD-8zV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UZs-8n-6IF"/>
                             <constraint firstItem="Iw0-qD-8zV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-50" id="yDH-pg-F1k"/>
@@ -45,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splash" width="220" height="220"/>
+        <image name="splash" width="181" height="160"/>
     </resources>
 </document>
