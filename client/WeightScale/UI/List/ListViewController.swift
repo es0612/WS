@@ -62,6 +62,7 @@ class ListViewController: TemplateViewController {
     override func applyStyles() {
         view.backgroundColor = UIColor.background.main
         weightListTableView.backgroundColor = UIColor.background.main
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.icon.selected
     }
 }
 
