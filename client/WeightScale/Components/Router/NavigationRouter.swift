@@ -75,6 +75,8 @@ class NavigationRouter: Router {
         listNavController.navigationBar.applyStyle(.main)
         graphNavController.navigationBar.applyStyle(.main)
         settingNavController.navigationBar.applyStyle(.main)
+
+        tabBarController.tabBar.applyStyle(.main)
         
         rootViewController = tabBarController
     }
@@ -104,5 +106,11 @@ class NavigationRouter: Router {
             animated: animated,
             completion: nil
         )
+    }
+}
+
+extension UINavigationController {
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
