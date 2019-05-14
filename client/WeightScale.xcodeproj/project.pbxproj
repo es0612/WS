@@ -36,6 +36,7 @@
 		38986920228A2C89002D9A38 /* UserDefaultsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898691F228A2C89002D9A38 /* UserDefaultsGenerator.swift */; };
 		38986922228AF875002D9A38 /* UIFont+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38986921228AF875002D9A38 /* UIFont+Style.swift */; };
 		38986924228B063C002D9A38 /* UITabBar+ApplyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38986923228B063C002D9A38 /* UITabBar+ApplyStyle.swift */; };
+		38986926228B752B002D9A38 /* WeightChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38986925228B752B002D9A38 /* WeightChartView.swift */; };
 		38A1351222767C9C002C09CE /* UserNotificationsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A1351122767C9C002C09CE /* UserNotificationsSpec.swift */; };
 		38B367092268D1FB0009E42F /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367082268D1FB0009E42F /* BrightFutures.framework */; };
 		38B3670B2268D20B0009E42F /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670A2268D20B0009E42F /* Charts.framework */; };
@@ -155,6 +156,7 @@
 		3898691F228A2C89002D9A38 /* UserDefaultsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsGenerator.swift; sourceTree = "<group>"; };
 		38986921228AF875002D9A38 /* UIFont+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Style.swift"; sourceTree = "<group>"; };
 		38986923228B063C002D9A38 /* UITabBar+ApplyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+ApplyStyle.swift"; sourceTree = "<group>"; };
+		38986925228B752B002D9A38 /* WeightChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightChartView.swift; sourceTree = "<group>"; };
 		38A1351122767C9C002C09CE /* UserNotificationsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationsSpec.swift; sourceTree = "<group>"; };
 		38B367082268D1FB0009E42F /* BrightFutures.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BrightFutures.framework; path = Carthage/Build/iOS/BrightFutures.framework; sourceTree = "<group>"; };
 		38B3670A2268D20B0009E42F /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
@@ -535,6 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				381D4F7C22711AA2009F7E53 /* GraphViewController.swift */,
+				38986925228B752B002D9A38 /* WeightChartView.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				38BE15BF227AD58F00F97649 /* UIImage+AssetIdentifier.swift in Sources */,
 				3898691B2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift in Sources */,
 				38986924228B063C002D9A38 /* UITabBar+ApplyStyle.swift in Sources */,
+				38986926228B752B002D9A38 /* WeightChartView.swift in Sources */,
 				38BE15C1227AD60F00F97649 /* WeightData.swift in Sources */,
 				38BE15B1227ACE9200F97649 /* WeightListTableViewCell.swift in Sources */,
 				38BE15C9227EA06F00F97649 /* WeightPickerView.swift in Sources */,

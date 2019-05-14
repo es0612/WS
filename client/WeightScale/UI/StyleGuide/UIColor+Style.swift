@@ -19,4 +19,11 @@ extension UIColor {
         static let normal
             = UIColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
     }
+
+    struct graph {
+        static let weightLine
+            = UIColor(red: 0.61, green: 0.95, blue: 0.85, alpha: 1)
+        static let targetWeightLine
+            = UIColor(red: 0.97, green: 1, blue: 0.68, alpha: 1)
+    }
 }
