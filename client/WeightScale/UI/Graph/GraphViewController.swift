@@ -1,5 +1,4 @@
 import UIKit
-import Charts
 
 class GraphViewController: TemplateViewController {
     // MARK: - Injected Dependencies
@@ -7,7 +6,7 @@ class GraphViewController: TemplateViewController {
     private var targetWeightRepository: TargetWeightRepository
 
     // MARK: - Views
-    var chartView: LineChartView
+    var chartView: WeightChartView
     var targetWeightLabel: UILabel
     var targetWeightValueLabel: UILabel
 
@@ -17,7 +16,7 @@ class GraphViewController: TemplateViewController {
         self.weightRepository = weightRepository
         self.targetWeightRepository = targetWeightRepository
 
-        chartView = LineChartView.newAutoLayout()
+        chartView = WeightChartView.newAutoLayout()
         targetWeightLabel = UILabel.newAutoLayout()
         targetWeightValueLabel = UILabel.newAutoLayout()
 
@@ -34,7 +33,7 @@ class GraphViewController: TemplateViewController {
             = weightRepository.loadData()
         let targetWeight = targetWeightRepository.loadTargetWeight()
 
-        drawChart(
+        chartView.drawChart(
             weightDataList: weightDataList, targetWeight: targetWeight
         )
 
@@ -49,14 +48,14 @@ class GraphViewController: TemplateViewController {
         )
 
         targetWeightLabel
-            .autoPinEdge(.top, to: .bottom, of: chartView)
+            .autoPinEdge(.top, to: .bottom, of: chartView, withOffset: 10.0)
         targetWeightLabel
             .autoPinEdge(toSuperviewSafeArea: .left)
         targetWeightLabel
             .autoPinEdge(toSuperviewSafeArea: .bottom)
 
         targetWeightValueLabel
-            .autoPinEdge(.top, to: .bottom, of: chartView)
+            .autoPinEdge(.top, to: .bottom, of: chartView, withOffset: 10.0)
         targetWeightValueLabel
             .autoPinEdge(.left, to: .right, of: targetWeightLabel)
         targetWeightValueLabel
@@ -75,7 +74,7 @@ class GraphViewController: TemplateViewController {
         title = "グラフ"
         view.backgroundColor = .white
 
-        chartViewConfiguration()
+        chartView.chartViewConfiguration()
 
         targetWeightLabel.text = "目標体重"
 
@@ -83,68 +82,5 @@ class GraphViewController: TemplateViewController {
 
     override func applyStyles() {
         view.backgroundColor = UIColor.background.main
-    }
-}
-
-// MARK: - Private methods
-fileprivate extension GraphViewController {
-    func chartViewConfiguration() {
-        chartView.noDataText = "体重データがありません"
-
-        chartView.xAxis.labelPosition = .bottom
-        chartView.rightAxis.enabled = false
-
-        chartView.xAxis.granularity = 1
-
-        let rotationAngle = 40
-        chartView.xAxis.labelRotationAngle = .init(rotationAngle)
-
-        chartView.legend.drawInside = true
-        chartView.legend.verticalAlignment = .top
-    }
-
-    func drawChart(weightDataList: [WeightData], targetWeight: Double) {
-        var dataForWeight: [Double] = []
-        var daysForXAxis: [String] = []
-
-        var dataForTargetWeight: [Double] = []
-
-        weightDataList.forEach { weightData in
-            dataForWeight.append(weightData.weight)
-            daysForXAxis.append(weightData.dateString)
-
-            dataForTargetWeight.append(targetWeight)
-        }
-
-        chartView.xAxis.valueFormatter
-            = IndexAxisValueFormatter(values: daysForXAxis)
-
-
-        var weightEntries = [ChartDataEntry]()
-        for (i, d) in dataForWeight.enumerated() {
-            weightEntries.append(ChartDataEntry(x: Double(i), y: d))
-        }
-
-        let weightDataSet
-            = LineChartDataSet(entries: weightEntries, label: "my weight")
-
-
-        var targetWeightEntries = [ChartDataEntry]()
-        for (i, d) in dataForTargetWeight.enumerated() {
-            targetWeightEntries.append(ChartDataEntry(x: Double(i), y: d))
-        }
-
-        let targetWeightDataSet
-            = LineChartDataSet(entries: targetWeightEntries, label: "target Weight")
-
-        targetWeightDataSet.setColor(.green)
-        targetWeightDataSet.setCircleColor(.green)
-
-
-        var dataSets = [LineChartDataSet]()
-        dataSets.append(weightDataSet)
-        dataSets.append(targetWeightDataSet)
-
-        chartView.data = LineChartData(dataSets: dataSets)
     }
 }
