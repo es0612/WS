@@ -6,7 +6,6 @@ extension UILabel {
     }
 }
 
-
 enum UILabelStyle {
     case forInput
 

@@ -112,17 +112,12 @@ class InputViewController: TemplateViewController {
         weightPickerToolbar.barTintColor
             = UIColor.picker.bar
 
-        dateLabel.applyStyle(.forInput)
-
-        inputTextField.font = UIFont.textField
-        inputTextField.textColor
-            = UIColor.text.inputField
-
-        kgLabel.applyStyle(.forInput)
-
         navigationItem.leftBarButtonItem?.tintColor
             = UIColor.text.cancel
 
+        dateLabel.applyStyle(.forInput)
+        inputTextField.applyStyle(.input)
+        kgLabel.applyStyle(.forInput)
         OkButton.applyStyle(.normal)
     }
 }
