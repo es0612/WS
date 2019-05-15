@@ -81,6 +81,7 @@
 		38BE15DE22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15DD22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift */; };
 		38E2C9B7228C3EAF005CC530 /* UIButton+ApplyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2C9B6228C3EAF005CC530 /* UIButton+ApplyStyle.swift */; };
 		38E2C9B9228CC585005CC530 /* UILabel+ApplyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2C9B8228CC584005CC530 /* UILabel+ApplyStyle.swift */; };
+		38E2C9BB228CC7EC005CC530 /* UITextField+ApplyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2C9BA228CC7EC005CC530 /* UITextField+ApplyStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,7 @@
 		38BE15DD22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingVC+UIPickerViewDataSource.swift"; sourceTree = "<group>"; };
 		38E2C9B6228C3EAF005CC530 /* UIButton+ApplyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ApplyStyle.swift"; sourceTree = "<group>"; };
 		38E2C9B8228CC584005CC530 /* UILabel+ApplyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ApplyStyle.swift"; sourceTree = "<group>"; };
+		38E2C9BA228CC7EC005CC530 /* UITextField+ApplyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+ApplyStyle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 				38E2C9B8228CC584005CC530 /* UILabel+ApplyStyle.swift */,
 				3898691A2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift */,
 				38986923228B063C002D9A38 /* UITabBar+ApplyStyle.swift */,
+				38E2C9BA228CC7EC005CC530 /* UITextField+ApplyStyle.swift */,
 			);
 			path = StyleGuide;
 			sourceTree = "<group>";
@@ -763,6 +766,7 @@
 				38E2C9B9228CC585005CC530 /* UILabel+ApplyStyle.swift in Sources */,
 				3898691B2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift in Sources */,
 				38986924228B063C002D9A38 /* UITabBar+ApplyStyle.swift in Sources */,
+				38E2C9BB228CC7EC005CC530 /* UITextField+ApplyStyle.swift in Sources */,
 				38986926228B752B002D9A38 /* WeightChartView.swift in Sources */,
 				38BE15C1227AD60F00F97649 /* WeightData.swift in Sources */,
 				38BE15B1227ACE9200F97649 /* WeightListTableViewCell.swift in Sources */,
