@@ -30,6 +30,11 @@ class InputViewControllerSpec: QuickSpec {
                 expect(inputViewController.title).to(equal("入力"))
             }
 
+            it("今日の日付が見える") {
+                expect(inputViewController
+                    .hasLabel(withExactText: DateManager.getToday())).to(beTrue())
+            }
+
             it("OKボタンが見える") {
                 expect(inputViewController
                     .hasButton(withExactText: "O K"))
