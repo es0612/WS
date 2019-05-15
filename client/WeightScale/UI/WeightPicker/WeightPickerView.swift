@@ -4,7 +4,7 @@ class WeightPickerView: UIPickerView {
     // MARK: - Properties
     struct Constants {
         static let pickerDataArray: [Double]
-            = (10...1000).map {(Double($0) * 0.1)}
+            = (10...1000).map {(Double($0) / 10)}
     }
 
     private(set) var selectedRow: Int = 0
@@ -21,13 +21,20 @@ class WeightPickerView: UIPickerView {
     // MARK: - Public Methods
     func selectRowFor(weight: Double) {
         for row in 0 ..< Constants.pickerDataArray.count {
-            if weight == Constants.pickerDataArray[row] {
+            let pickerWeight
+                = roundByFirstDecimalPlace(number: Constants.pickerDataArray[row])
+
+            if weight == pickerWeight {
                 selectedRow = row
                 break
             }
         }
 
         selectRow(selectedRow, inComponent: 0, animated: false)
+    }
+
+    func roundByFirstDecimalPlace(number: Double) -> Double {
+        return round(number * 10) / 10
     }
 
     // MARK: - Override Methods
