@@ -114,16 +114,16 @@ class InputViewControllerSpec: QuickSpec {
                 it("ピッカーの初期値に直近の体重が見える") {
                     let pickerView = inputTextField.inputView as? WeightPickerView
                     stubWeightRepository
-                        .getMostRecentWeight_returnValue = 51.0
+                        .getMostRecentWeight_returnValue = 50.3
 
 
                     inputViewController.viewWillAppear(false)
 
 
-                    let expectedWeight = WeightPickerView
+                    let actualWeight = WeightPickerView
                         .Constants
                         .pickerDataArray[(pickerView?.selectedRow)!]
-                    expect(expectedWeight).to(equal(51.0))
+                    expect(actualWeight).to(equal(50.3))
                 }
 
                 context("体重を入力して、OKボタンをタップしたとき") {
