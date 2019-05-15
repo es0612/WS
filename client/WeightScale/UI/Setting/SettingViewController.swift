@@ -72,6 +72,11 @@ class SettingViewController: TemplateViewController{
 
     override func applyStyles() {
         view.backgroundColor = UIColor.background.main
+
+        targetWeightPicker.backgroundColor
+            = UIColor.picker.main
+        targetWeightPickerToolbar.barTintColor
+            = UIColor.picker.bar
     }
 }
 

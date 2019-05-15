@@ -26,4 +26,11 @@ extension UIColor {
         static let targetWeightLine
             = UIColor(red: 0.97, green: 1, blue: 0.68, alpha: 1)
     }
+
+    struct picker {
+        static let bar
+            = UIColor(red: 0.66, green: 0.89, blue: 0.75, alpha: 1)
+        static let main
+            = UIColor(red: 0.75, green: 1, blue: 0.79, alpha: 0.9)
+    }
 }
