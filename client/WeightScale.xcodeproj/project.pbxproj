@@ -80,6 +80,7 @@
 		38BE15DC22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15DB22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift */; };
 		38BE15DE22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15DD22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift */; };
 		38E2C9B7228C3EAF005CC530 /* UIButton+ApplyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2C9B6228C3EAF005CC530 /* UIButton+ApplyStyle.swift */; };
+		38E2C9B9228CC585005CC530 /* UILabel+ApplyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2C9B8228CC584005CC530 /* UILabel+ApplyStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,7 @@
 		38BE15DB22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingVC+UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
 		38BE15DD22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingVC+UIPickerViewDataSource.swift"; sourceTree = "<group>"; };
 		38E2C9B6228C3EAF005CC530 /* UIButton+ApplyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ApplyStyle.swift"; sourceTree = "<group>"; };
+		38E2C9B8228CC584005CC530 /* UILabel+ApplyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ApplyStyle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				38E2C9B6228C3EAF005CC530 /* UIButton+ApplyStyle.swift */,
 				3898691822899E65002D9A38 /* UIColor+Style.swift */,
 				38986921228AF875002D9A38 /* UIFont+Style.swift */,
+				38E2C9B8228CC584005CC530 /* UILabel+ApplyStyle.swift */,
 				3898691A2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift */,
 				38986923228B063C002D9A38 /* UITabBar+ApplyStyle.swift */,
 			);
@@ -757,6 +760,7 @@
 				3898691922899E65002D9A38 /* UIColor+Style.swift in Sources */,
 				38986922228AF875002D9A38 /* UIFont+Style.swift in Sources */,
 				38BE15BF227AD58F00F97649 /* UIImage+AssetIdentifier.swift in Sources */,
+				38E2C9B9228CC585005CC530 /* UILabel+ApplyStyle.swift in Sources */,
 				3898691B2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift in Sources */,
 				38986924228B063C002D9A38 /* UITabBar+ApplyStyle.swift in Sources */,
 				38986926228B752B002D9A38 /* WeightChartView.swift in Sources */,
