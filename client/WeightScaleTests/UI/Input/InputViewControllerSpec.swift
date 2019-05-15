@@ -10,6 +10,7 @@ class InputViewControllerSpec: QuickSpec {
             var spyRouter: SpyRouter!
             var stubWeightRepository: StubWeightRepository!
             var inputViewController: InputViewController!
+            var inputTextField: UITextField!
 
             beforeEach {
                 spyRouter = SpyRouter()
@@ -20,6 +21,9 @@ class InputViewControllerSpec: QuickSpec {
 
 
                 inputViewController.viewWillAppear(false)
+
+                inputTextField = inputViewController
+                    .findTextField(withExactPlaceholderText: "00.0")
             }
 
             it("タイトルが見える") {
@@ -57,6 +61,14 @@ class InputViewControllerSpec: QuickSpec {
                     expect(barButtonItem!.title).to(equal("< キャンセル"))
                 }
 
+                it("キャンセルボタンを押すとピッカーが見えなくなる") {
+                    barButtonItem?.tap()
+
+
+                    expect(inputTextField.isFirstResponder)
+                        .to(beFalse())
+                }
+
                 it("キャンセルボタンを押すとリスト画面が見える") {
                     barButtonItem?.tap()
 
@@ -67,13 +79,6 @@ class InputViewControllerSpec: QuickSpec {
             }
 
             describe("体重入力欄について") {
-                var inputTextField: UITextField!
-
-                beforeEach {
-                    inputTextField = inputViewController
-                        .findTextField(withExactPlaceholderText: "00.0")
-                }
-
                 it("入力欄にデフォルト初期値が見える") {
                     stubWeightRepository
                         .getMostRecentWeight_returnValue = nil
