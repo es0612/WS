@@ -7,7 +7,6 @@ class InputViewController: TemplateViewController {
     private let weightRepository: WeightRepository
 
     // MARK: - Views
-    private let inputForm: UIStackView
     private let inputTextField: UITextField
     private let kgLabel: UILabel
     private let OkButton: UIButton
@@ -22,7 +21,6 @@ class InputViewController: TemplateViewController {
         self.router = router
         self.weightRepository = weightRepository
 
-        inputForm = UIStackView.newAutoLayout()
         inputTextField = UITextField.newAutoLayout()
         kgLabel = UILabel.newAutoLayout()
         OkButton = UIButton.newAutoLayout()
@@ -40,7 +38,15 @@ class InputViewController: TemplateViewController {
 
     // MARK: - Override Methods
     override func configureConstraints() {
-        inputForm.autoPinEdgesToSuperviewSafeArea(with: .zero, excludingEdge: .bottom)
+        inputTextField.autoAlignAxis(toSuperviewMarginAxis: .vertical)
+        inputTextField.autoAlignAxis(toSuperviewMarginAxis: .horizontal)
+
+        kgLabel.autoPinEdge(.bottom, to: .bottom, of: inputTextField)
+        kgLabel.autoPinEdge(.left, to: .right, of: inputTextField, withOffset: 24.0)
+
+        OkButton.autoPinEdge(.top, to: .bottom, of: inputTextField, withOffset: 36.0)
+        OkButton.autoAlignAxis(toSuperviewMarginAxis: .vertical)
+        OkButton.autoSetDimensions(to: CGSize(width: 210.0, height: 60.0))
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -56,11 +62,9 @@ class InputViewController: TemplateViewController {
     }
 
     override func addSubviews(){
-        view.addSubview(inputForm)
-
-        inputForm.addArrangedSubview(inputTextField)
-        inputForm.addArrangedSubview(kgLabel)
-        inputForm.addArrangedSubview(OkButton)
+        view.addSubview(inputTextField)
+        view.addSubview(kgLabel)
+        view.addSubview(OkButton)
     }
 
     override func viewConfigurations() {
@@ -72,10 +76,8 @@ class InputViewController: TemplateViewController {
 
         kgLabel.text = "kg"
         
-        OkButton.setTitle("OK", for: .normal)
+        OkButton.setTitle("O K", for: .normal)
         OkButton.addTarget(self, action: #selector(didTapOkButton), for: .touchUpInside)
-
-        inputForm.axis = .vertical
 
         pickerViewConfiguration()
         pickerToolbarConfiguration()
