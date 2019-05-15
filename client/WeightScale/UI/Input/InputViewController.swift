@@ -25,7 +25,7 @@ class InputViewController: TemplateViewController {
         inputForm = UIStackView.newAutoLayout()
         inputTextField = UITextField.newAutoLayout()
         kgLabel = UILabel.newAutoLayout()
-        OkButton = UIButton(type: .system)
+        OkButton = UIButton.newAutoLayout()
 
         weightPickerToolbar = UIToolbar.newAutoLayout()
         weightPicker = WeightPickerView.newAutoLayout()
@@ -95,6 +95,8 @@ class InputViewController: TemplateViewController {
             = UIColor.picker.main
         weightPickerToolbar.barTintColor
             = UIColor.picker.bar
+
+        OkButton.applyStyle(.normal)
     }
 }
 

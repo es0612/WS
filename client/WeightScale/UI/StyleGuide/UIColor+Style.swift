@@ -33,4 +33,11 @@ extension UIColor {
         static let main
             = UIColor(red: 0.75, green: 1, blue: 0.79, alpha: 0.9)
     }
+
+    struct button {
+        static let border
+            = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+        static let shadow
+            = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+    }
 }
