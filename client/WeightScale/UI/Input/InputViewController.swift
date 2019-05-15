@@ -7,6 +7,7 @@ class InputViewController: TemplateViewController {
     private let weightRepository: WeightRepository
 
     // MARK: - Views
+    private let dateLabel: UILabel
     private let inputTextField: UITextField
     private let kgLabel: UILabel
     private let OkButton: UIButton
@@ -21,6 +22,7 @@ class InputViewController: TemplateViewController {
         self.router = router
         self.weightRepository = weightRepository
 
+        dateLabel = UILabel.newAutoLayout()
         inputTextField = UITextField.newAutoLayout()
         kgLabel = UILabel.newAutoLayout()
         OkButton = UIButton.newAutoLayout()
@@ -38,13 +40,22 @@ class InputViewController: TemplateViewController {
 
     // MARK: - Override Methods
     override func configureConstraints() {
-        inputTextField.autoAlignAxis(toSuperviewMarginAxis: .vertical)
-        inputTextField.autoAlignAxis(toSuperviewMarginAxis: .horizontal)
+        dateLabel.autoAlignAxis(toSuperviewMarginAxis: .vertical)
+        dateLabel.autoPinEdge(.bottom, to: .top, of: inputTextField, withOffset: -48.0)
 
-        kgLabel.autoPinEdge(.bottom, to: .bottom, of: inputTextField)
-        kgLabel.autoPinEdge(.left, to: .right, of: inputTextField, withOffset: 24.0)
+        inputTextField
+            .autoAlignAxis(toSuperviewMarginAxis: .vertical)
+        inputTextField
+            .autoAlignAxis(toSuperviewMarginAxis: .horizontal)
 
-        OkButton.autoPinEdge(.top, to: .bottom, of: inputTextField, withOffset: 36.0)
+        kgLabel.autoPinEdge(
+            .bottom, to: .bottom, of: inputTextField
+        )
+        kgLabel.autoPinEdge(
+            .left, to: .right, of: inputTextField, withOffset: 24.0
+        )
+
+        OkButton.autoPinEdge(.top, to: .bottom, of: inputTextField, withOffset: 48.0)
         OkButton.autoAlignAxis(toSuperviewMarginAxis: .vertical)
         OkButton.autoSetDimensions(to: CGSize(width: 210.0, height: 60.0))
     }
@@ -62,6 +73,7 @@ class InputViewController: TemplateViewController {
     }
 
     override func addSubviews(){
+        view.addSubview(dateLabel)
         view.addSubview(inputTextField)
         view.addSubview(kgLabel)
         view.addSubview(OkButton)
@@ -69,6 +81,8 @@ class InputViewController: TemplateViewController {
 
     override func viewConfigurations() {
         self.title = "入力"
+
+        dateLabel.text = DateManager.getToday()
 
         inputTextField.placeholder = "00.0"
         inputTextField.inputView = weightPicker
@@ -97,6 +111,9 @@ class InputViewController: TemplateViewController {
             = UIColor.picker.main
         weightPickerToolbar.barTintColor
             = UIColor.picker.bar
+
+        dateLabel.font = UIFont.title
+        dateLabel.textColor = UIColor.text.kg
 
         inputTextField.font = UIFont.textField
         inputTextField.textColor
