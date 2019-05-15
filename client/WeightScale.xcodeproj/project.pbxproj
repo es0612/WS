@@ -79,6 +79,7 @@
 		38BE15DA2285C40F00F97649 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15D92285C40F00F97649 /* DateManager.swift */; };
 		38BE15DC22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15DB22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift */; };
 		38BE15DE22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BE15DD22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift */; };
+		38E2C9B7228C3EAF005CC530 /* UIButton+ApplyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2C9B6228C3EAF005CC530 /* UIButton+ApplyStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,7 @@
 		38BE15D92285C40F00F97649 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		38BE15DB22882A3D00F97649 /* SettingVC+UIPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingVC+UIPickerViewDelegate.swift"; sourceTree = "<group>"; };
 		38BE15DD22882AB600F97649 /* SettingVC+UIPickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingVC+UIPickerViewDataSource.swift"; sourceTree = "<group>"; };
+		38E2C9B6228C3EAF005CC530 /* UIButton+ApplyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ApplyStyle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 		382836A722899A85009AB799 /* StyleGuide */ = {
 			isa = PBXGroup;
 			children = (
+				38E2C9B6228C3EAF005CC530 /* UIButton+ApplyStyle.swift */,
 				3898691822899E65002D9A38 /* UIColor+Style.swift */,
 				38986921228AF875002D9A38 /* UIFont+Style.swift */,
 				3898691A2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift */,
@@ -750,6 +753,7 @@
 				381D4F792270B28F009F7E53 /* SettingViewController.swift in Sources */,
 				382836A222898A24009AB799 /* TemplateView.swift in Sources */,
 				38BE15A6227A5E4800F97649 /* TemplateViewController.swift in Sources */,
+				38E2C9B7228C3EAF005CC530 /* UIButton+ApplyStyle.swift in Sources */,
 				3898691922899E65002D9A38 /* UIColor+Style.swift in Sources */,
 				38986922228AF875002D9A38 /* UIFont+Style.swift in Sources */,
 				38BE15BF227AD58F00F97649 /* UIImage+AssetIdentifier.swift in Sources */,
