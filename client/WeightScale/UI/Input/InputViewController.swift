@@ -90,6 +90,11 @@ class InputViewController: TemplateViewController {
 
     override func applyStyles() {
         view.backgroundColor = UIColor.background.main
+
+        weightPicker.backgroundColor
+            = UIColor.picker.main
+        weightPickerToolbar.barTintColor
+            = UIColor.picker.bar
     }
 }
 
