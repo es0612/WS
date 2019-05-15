@@ -139,7 +139,8 @@ class InputViewControllerSpec: QuickSpec {
                     }
 
                     it("メイン画面に遷移する") {
-                        expect(spyRouter.dismissInputScreen_wasCalled).to(beTrue())
+                        expect(spyRouter.dismissInputScreen_wasCalled)
+                            .to(beTrue())
                     }
                 }
 
@@ -156,7 +157,8 @@ class InputViewControllerSpec: QuickSpec {
                     }
 
                     it("メイン画面に遷移しない") {
-                        expect(spyRouter.dismissInputScreen_wasCalled).to(beFalse())
+                        expect(spyRouter.dismissInputScreen_wasCalled)
+                            .to(beFalse())
                     }
                 }
             }
