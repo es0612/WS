@@ -162,9 +162,11 @@ fileprivate extension InputViewController {
 extension InputViewController {
     @objc func didTapOkButton() {
         if let WeightString = inputTextField.text {
-            if let inputWeignt = Double(WeightString) {
-                weightRepository.saveData(weight: inputWeignt)
-                router.dismissInputScreen()
+            if !inputTextField.isFirstResponder {
+                if let inputWeignt = Double(WeightString) {
+                    weightRepository.saveData(weight: inputWeignt)
+                    router.dismissInputScreen()
+                }
             }
         }
     }
