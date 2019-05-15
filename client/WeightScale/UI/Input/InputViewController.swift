@@ -140,7 +140,8 @@ fileprivate extension InputViewController {
         )
 
         let doneButton = UIBarButtonItem(
-            barButtonSystemItem: .done,
+            title: "選択",
+            style: .done,
             target: self,
             action: #selector(didTapPickerDoneButton)
         )
