@@ -98,6 +98,16 @@ class InputViewController: TemplateViewController {
         weightPickerToolbar.barTintColor
             = UIColor.picker.bar
 
+        inputTextField.font = UIFont.textField
+        inputTextField.textColor
+            = UIColor.text.inputField
+
+        kgLabel.font = UIFont.title
+        kgLabel.textColor = UIColor.text.kg
+
+        navigationItem.leftBarButtonItem?.tintColor
+            = UIColor.text.cancel
+
         OkButton.applyStyle(.normal)
     }
 }
@@ -155,6 +165,7 @@ extension InputViewController {
     }
 
     @objc func didTapCancelButton() {
+        inputTextField.resignFirstResponder()
         router.dismissInputScreen()
     }
 }
