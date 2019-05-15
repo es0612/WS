@@ -20,7 +20,7 @@ class LocalRealmWrapper: RealmWrapper {
     func getAllData() -> [WeightData] {
         let weightDataList = realmDB
             .objects(WeightData.self)
-            .sorted(byKeyPath: "created", ascending: true)
+            .sorted(byKeyPath: "dateString", ascending: true)
 
         return Array(weightDataList)
     }
@@ -36,7 +36,7 @@ class LocalRealmWrapper: RealmWrapper {
     func getMostRecentData() -> WeightData? {
         let weightDataList = realmDB
             .objects(WeightData.self)
-            .sorted(byKeyPath: "created", ascending: false)
+            .sorted(byKeyPath: "dateString", ascending: false)
 
         return weightDataList.first
     }
