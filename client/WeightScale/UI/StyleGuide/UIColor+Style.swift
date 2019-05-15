@@ -11,6 +11,12 @@ extension UIColor {
     struct text {
         static let title
             = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
+        static let inputField
+            = UIColor(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)
+        static let kg
+            = UIColor(red: 0.74, green: 0.74, blue: 0.74, alpha: 1)
+        static let cancel
+            = UIColor(red: 0.46, green: 0.66, blue: 0.52, alpha: 1)
     }
 
     struct icon {
