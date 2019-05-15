@@ -28,7 +28,7 @@ class InputViewControllerSpec: QuickSpec {
 
             it("OKボタンが見える") {
                 expect(inputViewController
-                    .hasButton(withExactText: "OK"))
+                    .hasButton(withExactText: "O K"))
                     .to(beTrue())
             }
 
@@ -120,7 +120,7 @@ class InputViewControllerSpec: QuickSpec {
                     beforeEach {
                         inputTextField?.text = "50.0"
 
-                        inputViewController.tapButton(withExactText: "OK")
+                        inputViewController.tapButton(withExactText: "O K")
                     }
 
                     it("データを保存する") {
@@ -137,7 +137,7 @@ class InputViewControllerSpec: QuickSpec {
                     beforeEach {
                         inputTextField?.text = ""
 
-                        inputViewController.tapButton(withExactText: "OK")
+                        inputViewController.tapButton(withExactText: "O K")
                     }
 
                     it("データを保存しない") {
