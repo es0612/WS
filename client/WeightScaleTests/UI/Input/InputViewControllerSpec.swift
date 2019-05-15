@@ -111,6 +111,14 @@ class InputViewControllerSpec: QuickSpec {
                         .to(beAKindOf(UIPickerView.self))
                 }
 
+                it("pickerツールバーに選択ボタンが見える") {
+                    let selectButtonItem = inputTextField
+                        .inputAccessoryView?.findBarButtonItem(title: "選択")
+
+
+                    expect(selectButtonItem).notTo(beNil())
+                }
+
                 it("ピッカーの初期値に直近の体重が見える") {
                     let pickerView = inputTextField.inputView as? WeightPickerView
                     stubWeightRepository
