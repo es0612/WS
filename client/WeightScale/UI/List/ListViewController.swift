@@ -91,22 +91,26 @@ extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,numberOfRowsInSection section: Int)
         -> Int {
 
-        return weightDataList.count
+            return weightDataList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
         -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: String(describing: WeightListTableViewCell.self),
-            for: indexPath
-            ) as! WeightListTableViewCell
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: String(describing: WeightListTableViewCell.self),
+                for: indexPath
+                ) as! WeightListTableViewCell
 
-        cell.backgroundColor = UIColor.white
-        cell.textLabel?.text = weightDataList[indexPath.row].dateString
-        cell.detailTextLabel?.text = String(weightDataList[indexPath.row].weight)
+            cell.backgroundColor = UIColor.white
+            cell.textLabel?.text = weightDataList[indexPath.row].dateString
+            cell.detailTextLabel?.text = String(weightDataList[indexPath.row].weight)
 
-        return cell
+            if cell.textLabel?.text == DateManager.getToday() {
+                tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+            }
+
+            return cell
     }
 }
 

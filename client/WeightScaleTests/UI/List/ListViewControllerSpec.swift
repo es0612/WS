@@ -40,7 +40,7 @@ class ListViewControllerSpec: QuickSpec {
                         .checkInputOfToday_returnValue = true
 
                     let expectedWeightData = WeightData()
-                    expectedWeightData.dateString = "2019/5/1"
+                    expectedWeightData.dateString = "2019/05/01"
                     expectedWeightData.weight = 50.0
 
                     stubWeightRepository.loadData_returnValue =
@@ -67,7 +67,7 @@ class ListViewControllerSpec: QuickSpec {
                 it("体重データを読み込んで表示する") {
                     expect(stubWeightRepository.loadData_wasCalled)
                         .to(beTrue())
-                    expect(listViewController.hasLabel(withExactText: "2019/5/1"))
+                    expect(listViewController.hasLabel(withExactText: "2019/05/01"))
                         .to(beTrue())
                     expect(listViewController.hasLabel(withExactText: "50.0"))
                         .to(beTrue())
@@ -96,6 +96,59 @@ class ListViewControllerSpec: QuickSpec {
                     }
                 }
             }
+
+            describe("テーブルビューについて") {
+                var tableView: UITableView!
+
+                beforeEach {
+                    stubWeightRepository
+                        .checkInputOfToday_returnValue = true
+
+                    let expectedWeightData = WeightData()
+                    expectedWeightData.dateString = DateManager.getToday()
+                    expectedWeightData.weight = 1.0
+
+                    stubWeightRepository.loadData_returnValue =
+                        [expectedWeightData]
+
+                    listViewController = ListViewController(
+                        weightRepository: stubWeightRepository,
+                        router: spyRouter
+                    )
+
+                    listViewController.viewWillAppear(false)
+
+                    tableView = listViewController.view.findTableView()
+
+                }
+
+                it("テーブルが見える") {
+                    expect(tableView).notTo(beNil())
+                }
+
+                it("テーブルの１行目が選択された状態で見える") {
+                    let selectedCell = tableView?.visibleCells.first
+
+
+                    expect(selectedCell?.isSelected).to(beTrue())
+                }
+            }
         }
+    }
+}
+
+extension UIView {
+    public func findTableView() -> UITableView? {
+        for subview in subviews {
+            if let tableView = subview as? UITableView {
+                return tableView
+            }
+
+            if let tableView = subview.findTableView() {
+                return tableView
+            }
+        }
+
+        return nil
     }
 }
