@@ -5,8 +5,8 @@ import Quick
 
 class NavigationRouterSpec: QuickSpec {
     override func spec() {
-        describe("Navigation router に関するテスト") {
-            describe("tab barについてのテスト") {
+        describe("Navigation router（画面遷移）に関するテスト") {
+            describe("tab barについて") {
                 var tabBarController: UITabBarController!
 
                 beforeEach {
