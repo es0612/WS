@@ -20,6 +20,9 @@ class WeightPickerView: UIPickerView {
 
     // MARK: - Public Methods
     func selectRowFor(weight: Double) {
+        let defaultRow = 490
+        selectedRow = defaultRow
+        
         for row in 0 ..< Constants.pickerDataArray.count {
             let pickerWeight
                 = roundByFirstDecimalPlace(number: Constants.pickerDataArray[row])
