@@ -6,6 +6,8 @@ extension UIColor {
             = UIColor(red: 0.92, green: 1, blue: 0.95, alpha: 1)
         static let bar
             = UIColor(red: 0.41, green: 0.94, blue: 0.69, alpha: 1)
+        static let tableCell
+            = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
     }
 
     struct text {
@@ -17,6 +19,9 @@ extension UIColor {
             = UIColor(red: 0.74, green: 0.74, blue: 0.74, alpha: 1)
         static let cancel
             = UIColor(red: 0.46, green: 0.66, blue: 0.52, alpha: 1)
+
+        static let date
+            = UIColor(red: 0.56, green: 0.56, blue: 0.58, alpha: 1)
     }
 
     struct icon {

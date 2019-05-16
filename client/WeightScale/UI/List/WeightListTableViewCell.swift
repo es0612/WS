@@ -14,10 +14,15 @@ class WeightListTableViewCell: UITableViewCell {
     }
 
     func applyStyles() {
+        self.backgroundColor = UIColor.background.tableCell
+
         self.selectionStyle = .default
         let selectedView = UIView()
         selectedView.backgroundColor
             = UIColor.background.main
         self.selectedBackgroundView =  selectedView
+
+        self.textLabel?.textColor = UIColor.text.date
+        self.detailTextLabel?.textColor = UIColor.text.inputField
     }
 }

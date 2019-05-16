@@ -61,7 +61,9 @@ class ListViewController: TemplateViewController {
 
     override func applyStyles() {
         view.backgroundColor = UIColor.background.main
+
         weightListTableView.backgroundColor = UIColor.background.main
+        
         navigationItem.rightBarButtonItem?.tintColor = UIColor.icon.selected
     }
 }
@@ -102,7 +104,6 @@ extension ListViewController: UITableViewDataSource {
                 for: indexPath
                 ) as! WeightListTableViewCell
 
-            cell.backgroundColor = UIColor.white
             cell.textLabel?.text = weightDataList[indexPath.row].dateString
             cell.detailTextLabel?.text = String(weightDataList[indexPath.row].weight)
 
