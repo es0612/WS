@@ -13,16 +13,12 @@ class SettingViewControllerSpec: QuickSpec {
             beforeEach {
                 stubTargetWeightRepository
                     = StubTargetWeightRepository()
-                stubTargetWeightRepository
-                    .loadTargetWeight_returnValue = 50.0
 
                 settingViewController
                     = SettingViewController(
                         targetWeightRepository:
                         stubTargetWeightRepository
                 )
-
-                settingViewController.viewWillAppear(false)
             }
 
             it("タイトルが見える") {
@@ -31,6 +27,13 @@ class SettingViewControllerSpec: QuickSpec {
             }
 
             describe("個人設定について") {
+                beforeEach {
+                    stubTargetWeightRepository
+                        .loadTargetWeight_returnValue = 50.0
+
+                    settingViewController.viewWillAppear(false)
+                }
+
                 it("個人設定のラベルが見える") {
                     expect(settingViewController
                         .hasLabel(withExactText: "個人設定"))
@@ -104,6 +107,26 @@ class SettingViewControllerSpec: QuickSpec {
                         expect(stubTargetWeightRepository.saveTargetWeight_argutment_weight)
                             .to(equal(48.0))
                     }
+                }
+            }
+
+            describe("個人設定が未設定の場合") {
+                beforeEach {
+                    stubTargetWeightRepository
+                        .loadTargetWeight_returnValue = 0.0
+
+                    settingViewController.viewWillAppear(false)
+                }
+
+                it("ピッカーにデフォルト初期値が見える") {
+                    let textField = settingViewController
+                        .findTextField(withExactPlaceholderText: "Target Weight")
+                    let pickerView = textField?.inputView as? WeightPickerView
+
+
+                    expect(WeightPickerView.Constants
+                        .pickerDataArray[pickerView!.selectedRow])
+                        .to(equal(50.0))
                 }
             }
 
