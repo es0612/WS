@@ -130,7 +130,8 @@ class ListViewControllerSpec: QuickSpec {
                     let selectedCell = tableView?.visibleCells.first
 
 
-                    expect(selectedCell?.isSelected).to(beTrue())
+                    expect(selectedCell?.isSelected)
+                        .to(beTrue())
                 }
             }
         }
