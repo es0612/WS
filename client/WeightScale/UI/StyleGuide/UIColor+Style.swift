@@ -8,6 +8,8 @@ extension UIColor {
             = UIColor(red: 0.41, green: 0.94, blue: 0.69, alpha: 1)
         static let tableCell
             = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
+        static let tableSelectedCell
+            = UIColor(red: 0.88, green: 0.94, blue: 0.94, alpha: 0.5)
     }
 
     struct text {

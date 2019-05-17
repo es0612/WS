@@ -19,7 +19,7 @@ class WeightListTableViewCell: UITableViewCell {
         self.selectionStyle = .default
         let selectedView = UIView()
         selectedView.backgroundColor
-            = UIColor.background.main
+            = UIColor.background.tableSelectedCell
         self.selectedBackgroundView =  selectedView
 
         self.textLabel?.textColor = UIColor.text.date
