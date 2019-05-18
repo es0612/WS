@@ -106,6 +106,7 @@ extension ListViewController: UITableViewDataSource {
 
             cell.textLabel?.text = weightDataList[indexPath.row].dateString
             cell.detailTextLabel?.text = String(weightDataList[indexPath.row].weight)
+                + " kg"
 
             if cell.textLabel?.text == DateManager.getToday() {
                 tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
