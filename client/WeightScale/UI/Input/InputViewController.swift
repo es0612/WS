@@ -97,7 +97,7 @@ class InputViewController: TemplateViewController {
         pickerToolbarConfiguration()
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: "戻る",
+            title: "＜戻る",
             style: .plain,
             target: self,
             action: #selector(didTapCancelButton)

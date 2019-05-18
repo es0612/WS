@@ -69,7 +69,7 @@ class ListViewControllerSpec: QuickSpec {
                         .to(beTrue())
                     expect(listViewController.hasLabel(withExactText: "2019/05/01"))
                         .to(beTrue())
-                    expect(listViewController.hasLabel(withExactText: "50.0"))
+                    expect(listViewController.hasLabel(withExactText: "50.0 kg"))
                         .to(beTrue())
                 }
 

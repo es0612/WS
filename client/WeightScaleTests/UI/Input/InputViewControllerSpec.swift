@@ -63,7 +63,7 @@ class InputViewControllerSpec: QuickSpec {
                 }
 
                 it("キャンセルボタンが見える") {
-                    expect(barButtonItem!.title).to(equal("戻る"))
+                    expect(barButtonItem!.title).to(equal("＜戻る"))
                 }
 
                 it("キャンセルボタンを押すとピッカーが見えなくなる") {
