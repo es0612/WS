@@ -99,11 +99,38 @@ class GraphViewControllerSpec: QuickSpec {
                         .to(beTrue())
                 }
 
-                it("データがない旨を表示") {
+                it("体重データがない旨を表示") {
                     let chartView
                         = graphViewController.view.findLineChartView()
                     expect(chartView?.lineData?.entryCount)
                         .to(equal(0))
+                }
+            }
+
+            describe("体重データはあるが、目標体重が見設定の時") {
+                beforeEach {
+                    let expectedWeightData = WeightData()
+                    expectedWeightData.dateString = "2019/5/1"
+                    expectedWeightData.weight = 50.0
+
+                    stubWeightRepository.loadData_returnValue =
+                        [expectedWeightData]
+
+                    stubTargetWeightRepository
+                        .loadTargetWeight_returnValue = 0.0
+
+                    graphViewController = GraphViewController(
+                        weightRepository: stubWeightRepository,
+                        targetWeightRepository: stubTargetWeightRepository)
+
+                    graphViewController.viewWillAppear(false)
+                }
+
+                it("体重データのみ表示する") {
+                    let chartView
+                        = graphViewController.view.findLineChartView()
+                    expect(chartView?.lineData?.entryCount)
+                        .to(equal(1))
                 }
             }
         }
