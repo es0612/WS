@@ -15,7 +15,7 @@ final class WeightChartView: LineChartView {
     }
 
     func layoutConfiguration() {
-        extraTopOffset = 36.0
+        extraTopOffset = 24.0
         extraLeftOffset = 12.0
         extraRightOffset = 24.0
         extraBottomOffset = 18.0
@@ -53,13 +53,13 @@ final class WeightChartView: LineChartView {
         }
 
         let weightDataSet
-            = LineChartDataSet(entries: weightEntries, label: "my weight")
+            = LineChartDataSet(entries: weightEntries, label: "記録")
 
         weightDataSet.setColor(UIColor.graph.weightLine)
         weightDataSet.circleRadius = 6.0
         weightDataSet.setCircleColor(UIColor.graph.weightLine)
         weightDataSet.lineWidth = 6.0
-
+        weightDataSet.valueTextColor = UIColor.text.inputField
 
         var targetWeightEntries = [ChartDataEntry]()
         for (i, d) in dataForTargetWeight.enumerated() {
@@ -67,7 +67,7 @@ final class WeightChartView: LineChartView {
         }
 
         let targetWeightDataSet
-            = LineChartDataSet(entries: targetWeightEntries, label: "target Weight")
+            = LineChartDataSet(entries: targetWeightEntries, label: "目標体重")
 
         targetWeightDataSet.setColor(UIColor.graph.targetWeightLine)
         targetWeightDataSet.drawCirclesEnabled = false

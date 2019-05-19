@@ -41,7 +41,7 @@ class NavigationRouterSpec: QuickSpec {
 
                 it("リスト画面を再表示する") {
                     tabBarController.selectTab(withTitle: "グラフ")
-                    tabBarController.selectTab(withTitle: "リスト")
+                    tabBarController.selectTab(withTitle: "記録")
 
 
                     expect(tabBarController.displayedTab(isAKindOf: ListViewController.self))

@@ -32,7 +32,7 @@ class NavigationRouter: Router {
         listNavController.viewControllers = [listViewController]
 
         listNavController.tabBarItem = UITabBarItem(
-            title: "リスト", image: UIImage(assetIdentifier: .listIcon), selectedImage: nil
+            title: "記録", image: UIImage(assetIdentifier: .listIcon), selectedImage: nil
         )
 
         let graphViewController = GraphViewController(
