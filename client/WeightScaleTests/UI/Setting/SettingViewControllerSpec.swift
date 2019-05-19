@@ -48,7 +48,7 @@ class SettingViewControllerSpec: QuickSpec {
 
                 it("目標体重の数値が見える") {
                     expect(settingViewController
-                        .hasLabel(withExactText: "50.0"))
+                        .hasLabel(withExactText: "50.0 kg"))
                         .to(beTrue())
                 }
 
@@ -94,7 +94,7 @@ class SettingViewControllerSpec: QuickSpec {
                         textField?.inputAccessoryView?.findBarButtonItem(title: "OK")?.tap()
 
 
-                        expect(settingViewController.hasLabel(withExactText: "48.0"))
+                        expect(settingViewController.hasLabel(withExactText: "48.0 kg"))
                             .to(beTrue())
                     }
 

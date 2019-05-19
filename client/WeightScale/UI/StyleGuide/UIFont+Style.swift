@@ -10,6 +10,11 @@ extension UIFont {
         weight: UIFont.Weight.bold
     )
 
+    static let section = UIFont.systemFont(
+        ofSize: 14.0,
+        weight: UIFont.Weight.regular
+    )
+    
     static let header = UIFont.systemFont(
         ofSize: 16.0,
         weight: UIFont.Weight.regular
