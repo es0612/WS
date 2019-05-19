@@ -25,13 +25,9 @@ final class WeightChartView: LineChartView {
     }
 
     func axisConfiguration() {
-        xAxis.labelPosition = .bottom
+        xAxis.enabled = false
         rightAxis.enabled = false
 
-        xAxis.granularity = 1
-
-        let rotationAngle = 30
-        xAxis.labelRotationAngle = .init(rotationAngle)
     }
 
     func drawChart(weightDataList: [WeightData], targetWeight: Double) {
