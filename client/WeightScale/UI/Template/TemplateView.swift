@@ -14,6 +14,7 @@ class TemplateView: UIView {
 
         addSubviews()
         viewConfigurations()
+        applyStyles()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -51,5 +52,8 @@ class TemplateView: UIView {
     }
 
     func viewConfigurations() {
+    }
+
+    func applyStyles() {
     }
 }

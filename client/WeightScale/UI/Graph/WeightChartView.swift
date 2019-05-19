@@ -27,7 +27,7 @@ final class WeightChartView: LineChartView {
     func axisConfiguration() {
         xAxis.enabled = false
         rightAxis.enabled = false
-
+        leftAxis.labelTextColor = UIColor.text.inputField
     }
 
     func drawChart(weightDataList: [WeightData], targetWeight: Double) {
@@ -54,6 +54,8 @@ final class WeightChartView: LineChartView {
 
         let weightDataSet
             = LineChartDataSet(entries: weightEntries, label: "記録")
+        weightDataSet.drawFilledEnabled = true
+        weightDataSet.fillColor = UIColor.graph.weightFill
 
         weightDataSet.setColor(UIColor.graph.weightLine)
         weightDataSet.circleRadius = 6.0

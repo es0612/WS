@@ -6,9 +6,8 @@ class GraphViewController: TemplateViewController {
     private var targetWeightRepository: TargetWeightRepository
 
     // MARK: - Views
+    var targetWeightView: TargetWeightView
     var chartView: WeightChartView
-    var targetWeightLabel: UILabel
-    var targetWeightValueLabel: UILabel
 
     // MARK: - Initialization
     init(weightRepository: WeightRepository,
@@ -17,8 +16,7 @@ class GraphViewController: TemplateViewController {
         self.targetWeightRepository = targetWeightRepository
 
         chartView = WeightChartView.newAutoLayout()
-        targetWeightLabel = UILabel.newAutoLayout()
-        targetWeightValueLabel = UILabel.newAutoLayout()
+        targetWeightView = TargetWeightView()
 
         super.init()
     }
@@ -37,34 +35,26 @@ class GraphViewController: TemplateViewController {
             weightDataList: weightDataList, targetWeight: targetWeight
         )
 
-        targetWeightValueLabel.text = String(
-            format: "%.1f", targetWeight
-        )
+        targetWeightView.refreshData(targetWeight: targetWeight)
     }
 
     override func configureConstraints() {
-        chartView.autoPinEdgesToSuperviewSafeArea(
-            with: .zero, excludingEdge: .bottom
-        )
-
-        targetWeightLabel
-            .autoPinEdge(.top, to: .bottom, of: chartView, withOffset: 10.0)
-        targetWeightLabel
+        chartView
+            .autoPinEdge(toSuperviewSafeArea: .top, withInset: 12.0)
+        chartView
             .autoPinEdge(toSuperviewSafeArea: .left)
-        targetWeightLabel
+        chartView
             .autoPinEdge(toSuperviewSafeArea: .right)
-        targetWeightLabel
-            .autoPinEdge(toSuperviewSafeArea: .bottom, withInset: 10.0)
 
-
-        targetWeightValueLabel.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .left)
+        targetWeightView.autoPinEdge(.top, to: .bottom, of: chartView, withOffset: 12.0)
+        targetWeightView.autoPinEdge(toSuperviewSafeArea: .left)
+        targetWeightView.autoPinEdge(toSuperviewSafeArea: .right)
+        targetWeightView.autoPinEdge(toSuperviewSafeArea: .bottom, withInset: 24.0)
     }
 
     override func addSubviews(){
         view.addSubview(chartView)
-        view.addSubview(targetWeightLabel)
-        
-        targetWeightLabel.addSubview(targetWeightValueLabel)
+        view.addSubview(targetWeightView)
     }
 
     override func viewConfigurations() {
@@ -72,12 +62,10 @@ class GraphViewController: TemplateViewController {
         view.backgroundColor = .white
 
         chartView.chartViewConfiguration()
-
-        targetWeightLabel.text = "目標体重"
-
     }
 
     override func applyStyles() {
         view.backgroundColor = UIColor.background.main
+        targetWeightView.backgroundColor = UIColor.background.tableCell
     }
 }

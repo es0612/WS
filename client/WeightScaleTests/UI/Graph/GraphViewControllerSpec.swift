@@ -49,7 +49,7 @@ class GraphViewControllerSpec: QuickSpec {
                 it("目標体重の数値が見える") {
                     expect(stubTargetWeightRepository.loadTargetWeight_wasCalled)
                         .to(beTrue())
-                    expect(graphViewController.hasLabel(withExactText: "40.0"))
+                    expect(graphViewController.hasLabel(withExactText: "40.0 kg"))
                         .to(beTrue())
                 }
             }
