@@ -63,6 +63,42 @@ class RealmGenerator: QuickSpec {
                 expect(DBItems.count)
                     .to(equal(10))
             }
+
+            it("さらにデータを１０件生成する") {
+                let dataList = [
+                    ["2019/02/01", 60.0, Date()],
+                    ["2019/02/02", 60.5, Date()],
+                    ["2019/02/03", 60.1, Date()],
+                    ["2019/02/04", 60.9, Date()],
+                    ["2019/02/05", 59.2, Date()],
+                    ["2019/02/06", 60.0, Date()],
+                    ["2019/02/07", 60.1, Date()],
+                    ["2019/02/08", 60.1, Date()],
+                    ["2019/02/09", 60.7, Date()],
+                    ["2019/02/20", 62.2, Date()],
+                ]
+
+                var weightDataList: [WeightData] = []
+                for data in dataList {
+                    let weightData = WeightData()
+                    weightData.dateString = data[0] as! String
+                    weightData.weight = data[1] as! Double
+                    weightData.created = data[2] as! Date
+
+                    weightDataList.append(weightData)
+                }
+
+                try! realmDB.write{
+                    for weightData in weightDataList {
+                        realmDB.add(weightData, update: true)
+                    }
+                }
+
+                let DBItems = realmDB.objects(WeightData.self)
+
+                expect(DBItems.count)
+                    .to(equal(20))
+            }
         }
     }
 }
