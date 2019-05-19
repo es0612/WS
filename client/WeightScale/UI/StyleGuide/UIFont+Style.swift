@@ -9,4 +9,14 @@ extension UIFont {
         ofSize: 48.0,
         weight: UIFont.Weight.bold
     )
+
+    static let header = UIFont.systemFont(
+        ofSize: 16.0,
+        weight: UIFont.Weight.regular
+    )
+
+    static let value = UIFont.systemFont(
+        ofSize: 16.0,
+        weight: UIFont.Weight.semibold
+    )
 }

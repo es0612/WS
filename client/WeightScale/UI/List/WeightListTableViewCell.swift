@@ -27,6 +27,9 @@ class WeightListTableViewCell: UITableViewCell {
         self.selectedBackgroundView =  selectedView
 
         self.textLabel?.textColor = UIColor.text.date
+        self.textLabel?.font = UIFont.header
+
         self.detailTextLabel?.textColor = UIColor.text.inputField
+        self.detailTextLabel?.font = UIFont.value
     }
 }
