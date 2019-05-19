@@ -28,6 +28,7 @@ class PersonalSettingsSectionView: TemplateView {
         sectionLabel.autoPinEdge(toSuperviewEdge: .top)
         sectionLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 18.0)
 
+        backgroundView.autoSetDimension(.height, toSize: 36.0)
         backgroundView.autoPinEdge(.top, to: .bottom, of: sectionLabel)
         backgroundView.autoPinEdge(toSuperviewEdge: .left)
         backgroundView.autoPinEdge(toSuperviewEdge: .right)
