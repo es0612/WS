@@ -83,5 +83,11 @@ final class WeightChartView: LineChartView {
         }
 
         data = LineChartData(dataSets: dataSets)
+
+        drawAnimation()
+    }
+
+    func drawAnimation() {
+        animate(xAxisDuration: 1.0)
     }
 }
