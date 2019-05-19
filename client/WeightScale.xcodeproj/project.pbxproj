@@ -301,6 +301,7 @@
 			children = (
 				38B36732226CC6D30009E42F /* Application */,
 				38BE15AA227A801F00F97649 /* Components */,
+				3898691C228A2311002D9A38 /* Generator */,
 				38B36731226CC6C30009E42F /* UI */,
 			);
 			path = WeightScaleTests;
@@ -428,7 +429,6 @@
 		38BE15AA227A801F00F97649 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3898691C228A2311002D9A38 /* Generator */,
 				38BE15AB227A803500F97649 /* Router */,
 				38BE15CA227EAB1B00F97649 /* TargetWeight */,
 				38BE159B22793EAF00F97649 /* Weight */,
