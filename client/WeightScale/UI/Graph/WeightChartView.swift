@@ -77,7 +77,10 @@ final class WeightChartView: LineChartView {
 
         var dataSets = [LineChartDataSet]()
         dataSets.append(weightDataSet)
-        dataSets.append(targetWeightDataSet)
+
+        if targetWeight != 0.0 {
+            dataSets.append(targetWeightDataSet)
+        }
 
         data = LineChartData(dataSets: dataSets)
     }

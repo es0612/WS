@@ -10,7 +10,7 @@ class UserDefaultsGenerator: QuickSpec {
         ) {
             let userDefaults = UserDefaults.standard
 
-            xit("目標体重を設定する") {
+            it("目標体重を設定する") {
                 userDefaults.set(55.0, forKey: "target_weight")
 
                 let savedValue
@@ -19,7 +19,7 @@ class UserDefaultsGenerator: QuickSpec {
                 expect(savedValue).to(equal(55.0))
             }
 
-            xit("目標体重を削除する") {
+            it("目標体重を削除する") {
                 userDefaults.removeObject(forKey: "target_weight")
 
                 let savedValue
