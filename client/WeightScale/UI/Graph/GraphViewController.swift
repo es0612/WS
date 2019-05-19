@@ -52,22 +52,19 @@ class GraphViewController: TemplateViewController {
         targetWeightLabel
             .autoPinEdge(toSuperviewSafeArea: .left)
         targetWeightLabel
-            .autoPinEdge(toSuperviewSafeArea: .bottom)
-
-        targetWeightValueLabel
-            .autoPinEdge(.top, to: .bottom, of: chartView, withOffset: 10.0)
-        targetWeightValueLabel
-            .autoPinEdge(.left, to: .right, of: targetWeightLabel)
-        targetWeightValueLabel
             .autoPinEdge(toSuperviewSafeArea: .right)
-        targetWeightValueLabel
-            .autoPinEdge(toSuperviewSafeArea: .bottom)
+        targetWeightLabel
+            .autoPinEdge(toSuperviewSafeArea: .bottom, withInset: 10.0)
+
+
+        targetWeightValueLabel.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .left)
     }
 
     override func addSubviews(){
         view.addSubview(chartView)
         view.addSubview(targetWeightLabel)
-        view.addSubview(targetWeightValueLabel)
+        
+        targetWeightLabel.addSubview(targetWeightValueLabel)
     }
 
     override func viewConfigurations() {
