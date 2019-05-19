@@ -7,14 +7,18 @@ class NotificationSectionView: TemplateView {
     private let notificationSwitch: UISwitch
     private let notificationTimeButton: UIButton
     private let notificationTimeLabel: UILabel
+    private let backgroundViewForSwitch: UIView
+    private let backgroundViewForTime: UIView
 
     // MARK: - Initialization
     override init(frame: CGRect) {
         sectionLabel = UILabel.newAutoLayout()
         notificationOnOffLabel = UILabel.newAutoLayout()
         notificationSwitch = UISwitch.newAutoLayout()
-        notificationTimeButton = UIButton(type: .system)
+        notificationTimeButton = UIButton.newAutoLayout()
         notificationTimeLabel = UILabel.newAutoLayout()
+        backgroundViewForSwitch = UIView.newAutoLayout()
+        backgroundViewForTime = UIView.newAutoLayout()
 
         super.init(frame: frame)
     }
@@ -25,32 +29,49 @@ class NotificationSectionView: TemplateView {
 
     // MARK: - Override Methods
     override func configureConstraints() {
-        autoSetDimension(.height, toSize: 90.0)
+        autoSetDimension(.height, toSize: 108.0)
 
         sectionLabel.autoPinEdge(toSuperviewEdge: .top)
         sectionLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 18.0)
 
-        notificationOnOffLabel.autoPinEdge(.top, to: .bottom, of: sectionLabel, withOffset: 12.0)
-        notificationOnOffLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 18.0)
+        backgroundViewForSwitch.autoSetDimension(.height, toSize: 36.0)
+        backgroundViewForSwitch.autoPinEdge(.top, to: .bottom, of: sectionLabel)
+        backgroundViewForSwitch.autoPinEdge(toSuperviewEdge: .left)
+        backgroundViewForSwitch.autoPinEdge(toSuperviewEdge: .right)
 
-        notificationSwitch.autoPinEdge(.top, to: .bottom, of: sectionLabel, withOffset: 12.0)
-        notificationSwitch.autoPinEdge(toSuperviewEdge: .right, withInset: 36.0)
+        backgroundViewForTime.autoSetDimension(.height, toSize: 36.0)
+        backgroundViewForTime.autoPinEdge(.top, to: .bottom, of: backgroundViewForSwitch)
+        backgroundViewForTime.autoPinEdge(toSuperviewEdge: .left)
+        backgroundViewForTime.autoPinEdge(toSuperviewEdge: .right)
+        backgroundViewForTime.autoPinEdge(toSuperviewEdge: .bottom)
 
-        notificationTimeButton.autoPinEdge(.top, to: .bottom, of: notificationOnOffLabel, withOffset: 12.0)
-        notificationTimeButton.autoPinEdge(toSuperviewEdge: .left, withInset: 18.0)
-        notificationTimeButton.autoPinEdge(toSuperviewEdge: .right, withInset: 18.0)
+
+        notificationOnOffLabel.autoPinEdge(toSuperviewEdge: .top)
+        notificationOnOffLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 24.0)
+        notificationOnOffLabel.autoPinEdge(toSuperviewEdge: .bottom)
+
+        notificationSwitch.autoPinEdge(toSuperviewEdge: .right, withInset: 24.0)
+        notificationSwitch.autoAlignAxis(toSuperviewAxis: .horizontal)
+
+
+        notificationTimeButton.autoPinEdge(toSuperviewEdge: .top)
+        notificationTimeButton.autoPinEdge(toSuperviewEdge: .left, withInset: 24.0)
+        notificationTimeButton.autoPinEdge(toSuperviewEdge: .right, withInset: 24.0)
         notificationTimeButton.autoPinEdge(toSuperviewEdge: .bottom)
 
-        notificationTimeLabel.autoPinEdge(toSuperviewEdge: .right, withInset: 18.0)
+        notificationTimeLabel.autoPinEdge(toSuperviewEdge: .right)
         notificationTimeLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
     }
 
     override func addSubviews() {
         addSubview(sectionLabel)
-        addSubview(notificationOnOffLabel)
-        addSubview(notificationSwitch)
-        addSubview(notificationTimeButton)
+        addSubview(backgroundViewForSwitch)
+        addSubview(backgroundViewForTime)
 
+        backgroundViewForSwitch.addSubview(notificationOnOffLabel)
+        backgroundViewForSwitch.addSubview(notificationSwitch)
+
+        backgroundViewForTime.addSubview(notificationTimeButton)
         notificationTimeButton.addSubview(notificationTimeLabel)
     }
 
@@ -63,5 +84,26 @@ class NotificationSectionView: TemplateView {
         notificationTimeButton.contentHorizontalAlignment = .left
 
         notificationTimeLabel.text = "17:00"
+    }
+
+    override func applyStyles() {
+        sectionLabel.textColor = UIColor.text.date
+        sectionLabel.font = UIFont.section
+
+        backgroundViewForSwitch.backgroundColor = UIColor.background.tableCell
+        backgroundViewForTime.backgroundColor = UIColor.background.tableCell
+        backgroundViewForSwitch.layer.borderColor = UIColor.text.kg.cgColor
+
+        notificationOnOffLabel.textColor = UIColor.text.date
+        notificationOnOffLabel.font = UIFont.header
+
+        notificationSwitch.onTintColor = UIColor.background.bar
+
+        notificationTimeButton.setTitleColor(UIColor.text.date, for: .normal)
+        notificationTimeButton.titleLabel?.font = UIFont.header
+
+        notificationTimeLabel.textColor = UIColor.text.inputField
+        notificationTimeLabel.font = UIFont.value
+
     }
 }
