@@ -39,7 +39,9 @@ class SettingViewController: TemplateViewController{
     // MARK: - Override Methods
     override func configureConstraints() {
         settingStackView
-            .autoPinEdgesToSuperviewSafeArea(with: .zero, excludingEdge: .bottom)
+            .autoPinEdge(toSuperviewSafeArea: .top, withInset: 12.0)
+        settingStackView.autoPinEdge(toSuperviewSafeArea: .left)
+        settingStackView.autoPinEdge(toSuperviewSafeArea: .right)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -57,8 +59,10 @@ class SettingViewController: TemplateViewController{
         view.addSubview(textFieldForPicker)
         view.addSubview(settingStackView)
 
-        settingStackView.addArrangedSubview(personalSettingsSectionView)
-        settingStackView.addArrangedSubview(notificationSectionView)
+        settingStackView
+            .addArrangedSubview(personalSettingsSectionView)
+        settingStackView
+            .addArrangedSubview(notificationSectionView)
         settingStackView.axis = .vertical
     }
 
