@@ -61,7 +61,7 @@ class ListViewControllerSpec: QuickSpec {
 
                 it("タイトルが見える") {
                     expect(listViewController.title)
-                        .to(equal("リスト"))
+                        .to(equal("記録"))
                 }
 
                 it("体重データを読み込んで表示する") {

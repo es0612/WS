@@ -28,9 +28,9 @@ extension UIColor {
 
     struct icon {
         static let selected
-            = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1)
+            = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
         static let normal
-            = UIColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+            = UIColor(red: 0.46, green: 0.66, blue: 0.52, alpha: 1)
     }
 
     struct graph {

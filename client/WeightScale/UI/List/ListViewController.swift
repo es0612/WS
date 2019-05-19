@@ -46,7 +46,7 @@ class ListViewController: TemplateViewController {
     }
 
     override func viewConfigurations() {
-        title = "リスト"
+        title = "記録"
         view.backgroundColor = .white
 
         tableViewConfiguration()
