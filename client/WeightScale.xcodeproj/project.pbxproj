@@ -30,6 +30,7 @@
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
 		3891FD95226787BD005B186F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD94226787BD005B186F /* main.swift */; };
+		3895EE91229EC3D300FD1CD0 /* StubNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3895EE90229EC3D300FD1CD0 /* StubNotificationSender.swift */; };
 		3898691922899E65002D9A38 /* UIColor+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898691822899E65002D9A38 /* UIColor+Style.swift */; };
 		3898691B2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898691A2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift */; };
 		3898691E228A2336002D9A38 /* RealmGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898691D228A2336002D9A38 /* RealmGenerator.swift */; };
@@ -154,6 +155,7 @@
 		3891FD8522678294005B186F /* WeightScaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightScaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD8B22678294005B186F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3891FD94226787BD005B186F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3895EE90229EC3D300FD1CD0 /* StubNotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubNotificationSender.swift; sourceTree = "<group>"; };
 		3898691822899E65002D9A38 /* UIColor+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Style.swift"; sourceTree = "<group>"; };
 		3898691A2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+ApplyStyle.swift"; sourceTree = "<group>"; };
 		3898691D228A2336002D9A38 /* RealmGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGenerator.swift; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */,
+				3895EE90229EC3D300FD1CD0 /* StubNotificationSender.swift */,
 				38BE15C6227EA00200F97649 /* UIView+UIBarButtonItem.swift */,
 			);
 			path = Setting;
@@ -793,6 +796,7 @@
 				38BE15D72285903200F97649 /* RunLoop+advance.swift in Sources */,
 				381D4F7B2270B628009F7E53 /* SettingViewControllerSpec.swift in Sources */,
 				38B367242269E3E80009E42F /* SpyRouter.swift in Sources */,
+				3895EE91229EC3D300FD1CD0 /* StubNotificationSender.swift in Sources */,
 				38BE15A2227974DC00F97649 /* StubRealmWrapper.swift in Sources */,
 				38BE15CC227EAB2D00F97649 /* StubTargetWeightRepository.swift in Sources */,
 				38BE15D0227EAF9800F97649 /* StubUserDefaultsWrapper.swift in Sources */,

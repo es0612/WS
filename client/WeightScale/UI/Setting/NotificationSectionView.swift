@@ -1,5 +1,9 @@
 import UIKit
 
+protocol NotificationSectionViewDelegate {
+    func setGrant()
+}
+
 class NotificationSectionView: TemplateView {
     // MARK: - Views
     private let sectionLabel: UILabel
@@ -9,6 +13,9 @@ class NotificationSectionView: TemplateView {
     private let notificationTimeLabel: UILabel
     private let backgroundViewForSwitch: UIView
     private let backgroundViewForTime: UIView
+
+    // MARK: - public properties
+    var delegate: NotificationSectionViewDelegate? = nil
 
     // MARK: - Initialization
     override init(frame: CGRect) {
@@ -78,7 +85,9 @@ class NotificationSectionView: TemplateView {
     override func viewConfigurations() {
         sectionLabel.text = "通知"
 
-        notificationOnOffLabel.text = "ON/OFF"
+        notificationOnOffLabel.text = "通知OFF"
+
+        notificationSwitch.addTarget(self, action: #selector(didTapNotificationSwitch), for: .touchUpInside)
 
         notificationTimeButton.setTitle("通知時間", for: .normal)
         notificationTimeButton.contentHorizontalAlignment = .left
@@ -105,5 +114,16 @@ class NotificationSectionView: TemplateView {
         notificationTimeLabel.textColor = UIColor.text.inputField
         notificationTimeLabel.font = UIFont.value
 
+    }
+}
+
+extension NotificationSectionView {
+    @objc func didTapNotificationSwitch() {
+        if notificationSwitch.isOn {
+            notificationOnOffLabel.text = "通知ON"
+            delegate?.setGrant()
+        } else {
+            notificationOnOffLabel.text = "通知OFF"
+        }
     }
 }
