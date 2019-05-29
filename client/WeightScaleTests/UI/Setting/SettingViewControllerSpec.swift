@@ -9,15 +9,20 @@ class SettingViewControllerSpec: QuickSpec {
         describe("setting view controller に関するテスト") {
             var settingViewController: SettingViewController!
             var stubTargetWeightRepository: StubTargetWeightRepository!
+            var stubNotificationSender: StubNotificationSender!
 
             beforeEach {
                 stubTargetWeightRepository
                     = StubTargetWeightRepository()
 
+                stubNotificationSender = StubNotificationSender()
+
                 settingViewController
                     = SettingViewController(
                         targetWeightRepository:
-                        stubTargetWeightRepository
+                        stubTargetWeightRepository,
+                        notificationSender:
+                        stubNotificationSender
                 )
             }
 
@@ -139,15 +144,53 @@ class SettingViewControllerSpec: QuickSpec {
 
                 it("通知ON/OFFのラベルが見える") {
                     expect(settingViewController
-                        .hasLabel(withExactText: "ON/OFF"))
+                        .hasLabel(withExactText: "通知OFF"))
                         .to(beTrue())
                 }
 
                 it("通知ON/OFFスイッチが見える") {
-                    let notificationSwitch = settingViewController.findSwitch(colocatedWithUILabelWithExactText: "ON/OFF")
+                    let notificationSwitch = settingViewController.findSwitch(colocatedWithUILabelWithExactText: "通知OFF")
 
 
                     expect(notificationSwitch).notTo(beNil())
+                }
+
+                it("通知スイッチを押すとラベルがONに切り替わる") {
+                    settingViewController
+                        .tapSwitch(
+                            colocatedWithUILabelWithExactText: "通知OFF"
+                    )
+
+
+                    expect(settingViewController.hasLabel(withExactText: "通知ON"))
+                        .to(beTrue())
+                }
+
+                it("通知スイッチを2度押すとラベルがOFFに切り替わる") {
+                    settingViewController
+                        .tapSwitch(
+                            colocatedWithUILabelWithExactText: "通知OFF"
+                    )
+
+                    settingViewController
+                        .tapSwitch(
+                            colocatedWithUILabelWithExactText: "通知ON"
+                    )
+
+
+                    expect(settingViewController
+                        .hasLabel(withExactText: "通知OFF"))
+                        .to(beTrue())
+                }
+
+                it("通知スイッチを押すと権限を設定できる") {
+                    settingViewController
+                        .tapSwitch(
+                            colocatedWithUILabelWithExactText: "通知OFF"
+                    )
+
+
+                    expect(stubNotificationSender.grant_wasCalled).to(beTrue())
                 }
 
                 it("通知時間のラベル（ボタン）が見える") {
