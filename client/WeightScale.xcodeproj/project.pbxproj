@@ -31,6 +31,7 @@
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
 		3891FD95226787BD005B186F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD94226787BD005B186F /* main.swift */; };
 		3895EE91229EC3D300FD1CD0 /* StubNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3895EE90229EC3D300FD1CD0 /* StubNotificationSender.swift */; };
+		3895EE9422A0167300FD1CD0 /* LocalNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3895EE9322A0167300FD1CD0 /* LocalNotificationSender.swift */; };
 		3898691922899E65002D9A38 /* UIColor+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898691822899E65002D9A38 /* UIColor+Style.swift */; };
 		3898691B2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898691A2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift */; };
 		3898691E228A2336002D9A38 /* RealmGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898691D228A2336002D9A38 /* RealmGenerator.swift */; };
@@ -156,6 +157,7 @@
 		3891FD8B22678294005B186F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3891FD94226787BD005B186F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3895EE90229EC3D300FD1CD0 /* StubNotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubNotificationSender.swift; sourceTree = "<group>"; };
+		3895EE9322A0167300FD1CD0 /* LocalNotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationSender.swift; sourceTree = "<group>"; };
 		3898691822899E65002D9A38 /* UIColor+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Style.swift"; sourceTree = "<group>"; };
 		3898691A2289A583002D9A38 /* UINavigationBar+ApplyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+ApplyStyle.swift"; sourceTree = "<group>"; };
 		3898691D228A2336002D9A38 /* RealmGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGenerator.swift; sourceTree = "<group>"; };
@@ -311,6 +313,14 @@
 			path = WeightScaleTests;
 			sourceTree = "<group>";
 		};
+		3895EE9222A0165800FD1CD0 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				3895EE9322A0167300FD1CD0 /* LocalNotificationSender.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		3898691C228A2311002D9A38 /* Generator */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				38BE15D82285C3FC00F97649 /* Date */,
+				3895EE9222A0165800FD1CD0 /* Notification */,
 				38BE15A8227A7FF300F97649 /* Router */,
 				38BE15D1227EAFB400F97649 /* TargetWeight */,
 				38BE159E22793F7300F97649 /* Weight */,
@@ -752,6 +763,7 @@
 				3828369E22884EB1009AB799 /* InputVC+UIPickerViewDelegate.swift in Sources */,
 				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
 				38B3672C226CA2170009E42F /* ListViewController.swift in Sources */,
+				3895EE9422A0167300FD1CD0 /* LocalNotificationSender.swift in Sources */,
 				38BE15A422797B0400F97649 /* LocalRealmWrapper.swift in Sources */,
 				38BE15D3227EAFC500F97649 /* LocalTargetWeightRepository.swift in Sources */,
 				38BE15D5227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift in Sources */,

@@ -53,7 +53,8 @@ class NavigationRouter: Router {
         let settingViewController = SettingViewController(
             targetWeightRepository: LocalTargetWeightRepository(
                 userDefaultsWrapper: LocalUserDefaultsWrapper()
-            )
+            ),
+            notificationSender: LocalNotificationSender()
         )
 
         let settingNavController = UINavigationController()
