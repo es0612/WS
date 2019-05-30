@@ -7,7 +7,7 @@ protocol NotificationSender {
 class SettingViewController: TemplateViewController{
     // MARK: - Injected Dependencies
     private var targetWeightRepository: TargetWeightRepository
-    private var notificationSender: NotificationSender?
+    private var notificationSender: NotificationSender
 
     // MARK: - Views
     private let settingStackView: UIStackView
@@ -21,7 +21,7 @@ class SettingViewController: TemplateViewController{
 
     // MARK: - Initialization
     init(targetWeightRepository: TargetWeightRepository,
-         notificationSender: NotificationSender? = nil) {
+         notificationSender: NotificationSender) {
         self.targetWeightRepository = targetWeightRepository
         self.notificationSender = notificationSender
 
@@ -157,6 +157,6 @@ extension SettingViewController {
 
 extension SettingViewController: NotificationSectionViewDelegate {
     func setGrant() {
-        notificationSender?.grant()
+        notificationSender.grant()
     }
 }
