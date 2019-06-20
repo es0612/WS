@@ -1,9 +1,5 @@
 import UIKit
 
-protocol NotificationSender {
-    func grant()
-}
-
 class SettingViewController: TemplateViewController{
     // MARK: - Injected Dependencies
     private var targetWeightRepository: TargetWeightRepository
@@ -158,5 +154,9 @@ extension SettingViewController {
 extension SettingViewController: NotificationSectionViewDelegate {
     func setGrant() {
         notificationSender.grant()
+    }
+
+    func getSettings() -> AuthorizationStatus {
+        return notificationSender.getSettings()
     }
 }

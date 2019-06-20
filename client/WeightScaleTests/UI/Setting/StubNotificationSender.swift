@@ -5,4 +5,12 @@ class StubNotificationSender: NotificationSender{
     func grant() {
         grant_wasCalled = true
     }
+
+    private(set) var getStettings_wasCalled = false
+    var getSettings_returnValue: AuthorizationStatus
+        = .unknown
+    func getSettings() -> AuthorizationStatus {
+        getStettings_wasCalled = true
+        return getSettings_returnValue
+    }
 }
