@@ -158,37 +158,41 @@ class SettingViewControllerSpec: QuickSpec {
                     expect(notificationSwitch).notTo(beNil())
                 }
 
+                xit("通知許可設定によってスイッチが触れることがわかる") {
+
+                }
+
+                xit("保存された通知の状態が見える") {
+
+                }
+
                 describe("通知スイッチを押した場合") {
-                    beforeEach {
-                        settingViewController
-                            .tapSwitch(
-                                colocatedWithUILabelWithExactText: "通知OFF"
-                        )
-                    }
-
-                    it("スイッチがONに切り替わる") {
-                        expect(notificationSwitch.isOn).to(beTrue())
-                    }
-
-                    it("権限を設定できる") {
-                        expect(stubNotificationSender.grant_wasCalled)
-                            .to(beTrue())
-                    }
-
-                    it("権限設定を確認できる") {
-                        expect(stubNotificationSender.getStettings_wasCalled)
-                            .to(beTrue())
-                    }
-
                     context("通知が許可された場合") {
                         beforeEach {
                             stubNotificationSender.getSettings_returnValue = .authorized
+                            settingViewController
+                                .tapSwitch(
+                                    colocatedWithUILabelWithExactText: "通知OFF"
+                            )
+                        }
+
+                        it("スイッチがONに切り替わる") {
+                            expect(notificationSwitch.isOn).to(beTrue())
+                        }
+
+                        it("権限を設定できる") {
+                            expect(stubNotificationSender.grant_wasCalled)
+                                .to(beTrue())
+                        }
+
+                        it("権限設定を確認できる") {
+                            expect(stubNotificationSender.getStettings_wasCalled)
+                                .to(beTrue())
                         }
 
                         it("ラベルがONに切り替わる") {
                             expect(settingViewController.hasLabel(withExactText: "通知ON"))
                                 .to(beTrue())
-                            expect(notificationSwitch.isOn).to(beTrue())
                         }
 
                         it("2度押すとラベルがOFFに切り替わる") {
@@ -207,13 +211,25 @@ class SettingViewControllerSpec: QuickSpec {
                     context("通知が拒否された場合") {
                         beforeEach {
                             stubNotificationSender.getSettings_returnValue = .denied
+                            settingViewController
+                                .tapSwitch(
+                                    colocatedWithUILabelWithExactText: "通知OFF"
+                            )
                         }
 
-//                        xit("ラベルがOFFのまま") {
-//                            expect(settingViewController.hasLabel(withExactText: "通知OFF"))
-//                                .to(beTrue())
-//                            expect(notificationSwitch.isOn).to(beFalse())
-//                        }
+                        it("ラベルがOFFのまま") {
+                            expect(settingViewController.hasLabel(withExactText: "通知OFF"))
+                                .to(beTrue())
+                            expect(notificationSwitch.isOn).to(beFalse())
+                        }
+
+                        it("ラベルが切り替えられなくなる") {
+                            expect(notificationSwitch.isEnabled).to(beFalse())
+                        }
+
+                        xit("OSの設定を変えるようにアラート表示") {
+
+                        }
                     }
 
                 }
