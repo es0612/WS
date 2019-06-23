@@ -54,7 +54,7 @@ class LocalNotificationSender: NSObject, NotificationSender {
 //                            .rawValue)!
 //        }
 //        return status
-        return .unknown
+        return .authorized
     }
 }
 

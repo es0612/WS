@@ -121,9 +121,18 @@ class NotificationSectionView: TemplateView {
 extension NotificationSectionView {
     @objc func didTapNotificationSwitch() {
         if notificationSwitch.isOn {
-            notificationOnOffLabel.text = "通知ON"
+
             delegate?.setGrant()
+
             let authorizationStatus = delegate?.getSettings()
+            notificationSwitch.isEnabled = authorizationStatus?.isEnabled ?? false
+            notificationSwitch.setOn(authorizationStatus?.isEnabled ?? false, animated: false)
+
+            if authorizationStatus?.isEnabled ?? false {
+                notificationOnOffLabel.text = "通知ON"
+            } else {
+                notificationOnOffLabel.text = "通知OFF"
+            }
             
         } else {
             notificationOnOffLabel.text = "通知OFF"
