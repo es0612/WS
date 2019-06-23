@@ -1,9 +1,15 @@
 import UIKit
 
+protocol NotificationSwitchStatusRepository {
+    func saveData(value: Bool)
+    func loadData() -> Bool
+}
+
 class SettingViewController: TemplateViewController{
     // MARK: - Injected Dependencies
     private var targetWeightRepository: TargetWeightRepository
     private var notificationSender: NotificationSender
+    private var notificationSwitchStatusRepository: NotificationSwitchStatusRepository?
 
     // MARK: - Views
     private let settingStackView: UIStackView
@@ -17,9 +23,11 @@ class SettingViewController: TemplateViewController{
 
     // MARK: - Initialization
     init(targetWeightRepository: TargetWeightRepository,
-         notificationSender: NotificationSender) {
+         notificationSender: NotificationSender,
+         notificationSwitchStatusRepository: NotificationSwitchStatusRepository? = nil) {
         self.targetWeightRepository = targetWeightRepository
         self.notificationSender = notificationSender
+        self.notificationSwitchStatusRepository = notificationSwitchStatusRepository
 
         settingStackView = UIStackView.newAutoLayout()
 
@@ -158,5 +166,9 @@ extension SettingViewController: NotificationSectionViewDelegate {
 
     func getSettings() -> AuthorizationStatus {
         return notificationSender.getSettings()
+    }
+
+    func setNotificationSwitchValue(value: Bool) {
+        notificationSwitchStatusRepository?.saveData(value: value)
     }
 }

@@ -10,19 +10,23 @@ class SettingViewControllerSpec: QuickSpec {
             var settingViewController: SettingViewController!
             var stubTargetWeightRepository: StubTargetWeightRepository!
             var stubNotificationSender: StubNotificationSender!
+            var stubNotificationSwitchStatusRepository: StubNotificationSwitchStatusRepository!
 
             beforeEach {
                 stubTargetWeightRepository
                     = StubTargetWeightRepository()
-
                 stubNotificationSender = StubNotificationSender()
+                stubNotificationSwitchStatusRepository
+                    = StubNotificationSwitchStatusRepository()
 
                 settingViewController
                     = SettingViewController(
                         targetWeightRepository:
                         stubTargetWeightRepository,
                         notificationSender:
-                        stubNotificationSender
+                        stubNotificationSender,
+                        notificationSwitchStatusRepository:
+                        stubNotificationSwitchStatusRepository
                 )
             }
 
@@ -156,6 +160,7 @@ class SettingViewControllerSpec: QuickSpec {
 
                 it("通知ON/OFFスイッチが見える") {
                     expect(notificationSwitch).notTo(beNil())
+                    expect(notificationSwitch.isOff).to(beTrue())
                 }
 
                 xit("通知許可設定によってスイッチが触れることがわかる") {
@@ -193,6 +198,10 @@ class SettingViewControllerSpec: QuickSpec {
                         it("ラベルがONに切り替わる") {
                             expect(settingViewController.hasLabel(withExactText: "通知ON"))
                                 .to(beTrue())
+                        }
+
+                        it("スイッチの状態を保存できる") {
+                            expect(stubNotificationSwitchStatusRepository.saveData_argument_value).to(beTrue())
                         }
 
                         it("2度押すとラベルがOFFに切り替わる") {

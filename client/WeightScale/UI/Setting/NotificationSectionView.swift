@@ -3,6 +3,7 @@ import UIKit
 protocol NotificationSectionViewDelegate {
     func setGrant()
     func getSettings() -> AuthorizationStatus
+    func setNotificationSwitchValue(value: Bool)
 }
 
 class NotificationSectionView: TemplateView {
@@ -128,6 +129,8 @@ extension NotificationSectionView {
             notificationSwitch.isEnabled = authorizationStatus?.isEnabled ?? false
             notificationSwitch.setOn(authorizationStatus?.isEnabled ?? false, animated: false)
 
+            delegate?.setNotificationSwitchValue(value: authorizationStatus?.isEnabled ?? false)
+            
             if authorizationStatus?.isEnabled ?? false {
                 notificationOnOffLabel.text = "通知ON"
             } else {
