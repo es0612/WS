@@ -3,7 +3,7 @@ import UIKit
 protocol NotificationSectionViewDelegate {
     func setGrant()
     func getSettings() -> AuthorizationStatus
-    func setNotificationSwitchValue(value: Bool)
+    func saveNotificationSwitchValue(value: Bool)
 }
 
 class NotificationSectionView: TemplateView {
@@ -119,6 +119,7 @@ class NotificationSectionView: TemplateView {
     }
 }
 
+// MARK: - Action
 extension NotificationSectionView {
     @objc func didTapNotificationSwitch() {
         if notificationSwitch.isOn {
@@ -126,10 +127,14 @@ extension NotificationSectionView {
             delegate?.setGrant()
 
             let authorizationStatus = delegate?.getSettings()
-            notificationSwitch.isEnabled = authorizationStatus?.isEnabled ?? false
-            notificationSwitch.setOn(authorizationStatus?.isEnabled ?? false, animated: false)
+            notificationSwitch
+                .isEnabled = authorizationStatus?.isEnabled ?? false
+            notificationSwitch
+                .setOn(authorizationStatus?.isEnabled ?? false, animated: false)
 
-            delegate?.setNotificationSwitchValue(value: authorizationStatus?.isEnabled ?? false)
+            delegate?.saveNotificationSwitchValue(
+                value: authorizationStatus?.isEnabled ?? false
+            )
             
             if authorizationStatus?.isEnabled ?? false {
                 notificationOnOffLabel.text = "通知ON"
@@ -140,5 +145,12 @@ extension NotificationSectionView {
         } else {
             notificationOnOffLabel.text = "通知OFF"
         }
+    }
+}
+
+// MARK: - Public Methods
+extension NotificationSectionView {
+    func setNotificationSwitchValue(value: Bool) {
+        notificationSwitch.setOn(value, animated: false)
     }
 }

@@ -6,8 +6,10 @@ class StubNotificationSwitchStatusRepository: NotificationSwitchStatusRepository
         saveData_argument_value = value
     }
 
+    private(set) var loadData_wasCalled = false
     var loadData_returnValue = false
     func loadData() -> Bool {
+        loadData_wasCalled = true
         return loadData_returnValue
     }
 }

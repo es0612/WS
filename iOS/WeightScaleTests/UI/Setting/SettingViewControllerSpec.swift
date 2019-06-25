@@ -143,6 +143,13 @@ class SettingViewControllerSpec: QuickSpec {
                 var notificationSwitch: UISwitch!
 
                 beforeEach {
+                    stubNotificationSwitchStatusRepository
+                        .loadData_returnValue = false
+
+                    stubNotificationSender.getSettings_returnValue = .unknown
+
+                    settingViewController.viewWillAppear(false)
+
                     notificationSwitch = settingViewController.findSwitch(colocatedWithUILabelWithExactText: "通知OFF")
                 }
 
@@ -160,15 +167,18 @@ class SettingViewControllerSpec: QuickSpec {
 
                 it("通知ON/OFFスイッチが見える") {
                     expect(notificationSwitch).notTo(beNil())
+                }
+
+//                it("通知拒否の場合、注意文が出る") {
+//                    expect(stubNotificationSender.getStettings_wasCalled)
+//                        .to(beTrue())
+//
+//                }
+
+                it("保存された通知の状態が見える") {
+                    expect(stubNotificationSwitchStatusRepository.loadData_wasCalled)
+                        .to(beTrue())
                     expect(notificationSwitch.isOff).to(beTrue())
-                }
-
-                xit("通知許可設定によってスイッチが触れることがわかる") {
-
-                }
-
-                xit("保存された通知の状態が見える") {
-
                 }
 
                 describe("通知スイッチを押した場合") {
