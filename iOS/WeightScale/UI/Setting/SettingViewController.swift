@@ -64,6 +64,11 @@ class SettingViewController: TemplateViewController{
 
         personalSettingsSectionView
             .setValueLabel(value: String(format: "%.1f", targetWeight))
+
+        let notificationSwitchValue = notificationSwitchStatusRepository?.loadData() ?? false
+
+        notificationSectionView
+            .setNotificationSwitchValue(value: notificationSwitchValue)
     }
 
     override func addSubviews(){
@@ -168,7 +173,7 @@ extension SettingViewController: NotificationSectionViewDelegate {
         return notificationSender.getSettings()
     }
 
-    func setNotificationSwitchValue(value: Bool) {
+    func saveNotificationSwitchValue(value: Bool) {
         notificationSwitchStatusRepository?.saveData(value: value)
     }
 }
