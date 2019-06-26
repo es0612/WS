@@ -1,0 +1,2 @@
+clean:
+	@./gradlew clean
