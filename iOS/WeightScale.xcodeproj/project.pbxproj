@@ -27,6 +27,8 @@
 		382836A422898BCF009AB799 /* PersonalSettingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382836A322898BCF009AB799 /* PersonalSettingsSectionView.swift */; };
 		382836A62289947B009AB799 /* NotificationSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382836A52289947B009AB799 /* NotificationSectionView.swift */; };
 		382A531E22BF50E600ED36E2 /* StubNotificationSwitchStatusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A531D22BF50E600ED36E2 /* StubNotificationSwitchStatusRepository.swift */; };
+		382A532222C2645000ED36E2 /* LocalNotificationSwitchValueRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A532122C2645000ED36E2 /* LocalNotificationSwitchValueRepository.swift */; };
+		382A532522C4EC6200ED36E2 /* LocalNotificationSwitchValueRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A532422C4EC6200ED36E2 /* LocalNotificationSwitchValueRepositorySpec.swift */; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -150,6 +152,8 @@
 		382836A322898BCF009AB799 /* PersonalSettingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalSettingsSectionView.swift; sourceTree = "<group>"; };
 		382836A52289947B009AB799 /* NotificationSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSectionView.swift; sourceTree = "<group>"; };
 		382A531D22BF50E600ED36E2 /* StubNotificationSwitchStatusRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubNotificationSwitchStatusRepository.swift; sourceTree = "<group>"; };
+		382A532122C2645000ED36E2 /* LocalNotificationSwitchValueRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationSwitchValueRepository.swift; sourceTree = "<group>"; };
+		382A532422C4EC6200ED36E2 /* LocalNotificationSwitchValueRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationSwitchValueRepositorySpec.swift; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891FD7B22678294005B186F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -273,6 +277,14 @@
 			path = StyleGuide;
 			sourceTree = "<group>";
 		};
+		382A532322C4EC3C00ED36E2 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				382A532422C4EC6200ED36E2 /* LocalNotificationSwitchValueRepositorySpec.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		3891FD6822678292005B186F = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				3895EE9322A0167300FD1CD0 /* LocalNotificationSender.swift */,
+				382A532122C2645000ED36E2 /* LocalNotificationSwitchValueRepository.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -446,6 +459,7 @@
 		38BE15AA227A801F00F97649 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				382A532322C4EC3C00ED36E2 /* Notification */,
 				38BE15AB227A803500F97649 /* Router */,
 				38BE15CA227EAB1B00F97649 /* TargetWeight */,
 				38BE159B22793EAF00F97649 /* Weight */,
@@ -767,6 +781,7 @@
 				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
 				38B3672C226CA2170009E42F /* ListViewController.swift in Sources */,
 				3895EE9422A0167300FD1CD0 /* LocalNotificationSender.swift in Sources */,
+				382A532222C2645000ED36E2 /* LocalNotificationSwitchValueRepository.swift in Sources */,
 				38BE15A422797B0400F97649 /* LocalRealmWrapper.swift in Sources */,
 				38BE15D3227EAFC500F97649 /* LocalTargetWeightRepository.swift in Sources */,
 				38BE15D5227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift in Sources */,
@@ -804,6 +819,7 @@
 				381D4F7F22711E24009F7E53 /* GraphViewControllerSpec.swift in Sources */,
 				38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */,
 				3814998A226F4DA4001B2E71 /* ListViewControllerSpec.swift in Sources */,
+				382A532522C4EC6200ED36E2 /* LocalNotificationSwitchValueRepositorySpec.swift in Sources */,
 				38BE15CE227EAE9C00F97649 /* LocalTargetWeightRepositorySpec.swift in Sources */,
 				38BE159D22793F0A00F97649 /* LocalWeightRepositorySpec.swift in Sources */,
 				38B367282269E7F30009E42F /* NavigationRouterSpec.swift in Sources */,
