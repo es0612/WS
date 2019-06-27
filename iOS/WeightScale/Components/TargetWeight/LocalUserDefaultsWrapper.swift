@@ -16,7 +16,7 @@ class LocalUserDefaultsWrapper: UserDefaultsWrapper {
     }
 
     func saveData(key: String, value: Bool) {
-
+        userDefaults.set(value, forKey: key)
     }
 
     func loadData(key: String) -> Double {
@@ -24,6 +24,6 @@ class LocalUserDefaultsWrapper: UserDefaultsWrapper {
     }
 
     func loadData(key: String) -> Bool {
-        return false
+        return userDefaults.bool(forKey: key)
     }
 }
