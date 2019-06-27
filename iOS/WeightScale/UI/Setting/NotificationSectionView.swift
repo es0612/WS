@@ -144,6 +144,9 @@ extension NotificationSectionView {
             
         } else {
             notificationOnOffLabel.text = "通知OFF"
+            delegate?.saveNotificationSwitchValue(
+                value: false
+            )
         }
     }
 }
