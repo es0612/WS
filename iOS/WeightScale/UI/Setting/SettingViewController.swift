@@ -4,7 +4,7 @@ class SettingViewController: TemplateViewController{
     // MARK: - Injected Dependencies
     private var targetWeightRepository: TargetWeightRepository
     private var notificationSender: NotificationSender
-    private var notificationSwitchStatusRepository: NotificationSwitchStatusRepository?
+    private var notificationSwitchStatusRepository: NotificationSwitchStatusRepository
 
     // MARK: - Views
     private let settingStackView: UIStackView
@@ -19,7 +19,7 @@ class SettingViewController: TemplateViewController{
     // MARK: - Initialization
     init(targetWeightRepository: TargetWeightRepository,
          notificationSender: NotificationSender,
-         notificationSwitchStatusRepository: NotificationSwitchStatusRepository? = nil) {
+         notificationSwitchStatusRepository: NotificationSwitchStatusRepository) {
         self.targetWeightRepository = targetWeightRepository
         self.notificationSender = notificationSender
         self.notificationSwitchStatusRepository = notificationSwitchStatusRepository
@@ -60,7 +60,7 @@ class SettingViewController: TemplateViewController{
         personalSettingsSectionView
             .setValueLabel(value: String(format: "%.1f", targetWeight))
 
-        let notificationSwitchValue = notificationSwitchStatusRepository?.loadData() ?? false
+        let notificationSwitchValue = notificationSwitchStatusRepository.loadData()
 
         notificationSectionView
             .setNotificationSwitchValue(value: notificationSwitchValue)
@@ -169,6 +169,6 @@ extension SettingViewController: NotificationSectionViewDelegate {
     }
 
     func saveNotificationSwitchValue(value: Bool) {
-        notificationSwitchStatusRepository?.saveData(value: value)
+        notificationSwitchStatusRepository.saveData(value: value)
     }
 }

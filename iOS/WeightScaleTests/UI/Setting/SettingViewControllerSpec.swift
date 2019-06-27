@@ -225,6 +225,16 @@ class SettingViewControllerSpec: QuickSpec {
                                 .hasLabel(withExactText: "通知OFF"))
                                 .to(beTrue())
                         }
+
+                        it("2度押すとスイッチの状態を再度保存できる") {
+                            settingViewController
+                                .tapSwitch(
+                                    colocatedWithUILabelWithExactText: "通知ON"
+                            )
+
+
+                            expect(stubNotificationSwitchStatusRepository.saveData_CalledCount).to(equal(2))
+                        }
                     }
 
                     context("通知が拒否された場合") {
@@ -246,9 +256,9 @@ class SettingViewControllerSpec: QuickSpec {
                             expect(notificationSwitch.isEnabled).to(beFalse())
                         }
 
-                        xit("OSの設定を変えるようにアラート表示") {
-
-                        }
+//                        xit("OSの設定を変えるようにアラート表示") {
+//
+//                        }
                     }
 
                 }

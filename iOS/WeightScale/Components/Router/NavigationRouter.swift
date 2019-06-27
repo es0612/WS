@@ -54,7 +54,8 @@ class NavigationRouter: Router {
             targetWeightRepository: LocalTargetWeightRepository(
                 userDefaultsWrapper: LocalUserDefaultsWrapper()
             ),
-            notificationSender: LocalNotificationSender()
+            notificationSender: LocalNotificationSender(),
+            notificationSwitchStatusRepository: LocalNotificationSwitchValueRepository(userDefaultsWrapper: LocalUserDefaultsWrapper())
         )
 
         let settingNavController = UINavigationController()
