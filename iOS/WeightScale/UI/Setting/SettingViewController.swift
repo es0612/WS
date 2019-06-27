@@ -1,10 +1,5 @@
 import UIKit
 
-protocol NotificationSwitchStatusRepository {
-    func saveData(value: Bool)
-    func loadData() -> Bool
-}
-
 class SettingViewController: TemplateViewController{
     // MARK: - Injected Dependencies
     private var targetWeightRepository: TargetWeightRepository
