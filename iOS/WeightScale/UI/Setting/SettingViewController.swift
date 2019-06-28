@@ -64,6 +64,15 @@ class SettingViewController: TemplateViewController{
 
         notificationSectionView
             .setNotificationSwitchValue(value: notificationSwitchValue)
+
+
+        let authorizationStatus = notificationSender.getSettings()
+
+        if authorizationStatus.isEnabled == false {
+//            notificationSectionView.setNotificationSettingAlertLabel(value: "通知を受け取るにはOSの通知設定をONにしてください")
+        } else {
+            notificationSectionView.setNotificationSettingAlertLabel(value: "")
+        }
     }
 
     override func addSubviews(){
