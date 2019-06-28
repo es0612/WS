@@ -15,6 +15,7 @@ class NotificationSectionView: TemplateView {
     private let notificationTimeLabel: UILabel
     private let backgroundViewForSwitch: UIView
     private let backgroundViewForTime: UIView
+    private let notifcationSettingAlertLabel: UILabel
 
     // MARK: - public properties
     var delegate: NotificationSectionViewDelegate? = nil
@@ -28,6 +29,7 @@ class NotificationSectionView: TemplateView {
         notificationTimeLabel = UILabel.newAutoLayout()
         backgroundViewForSwitch = UIView.newAutoLayout()
         backgroundViewForTime = UIView.newAutoLayout()
+        notifcationSettingAlertLabel = UILabel.newAutoLayout()
 
         super.init(frame: frame)
     }
@@ -38,7 +40,7 @@ class NotificationSectionView: TemplateView {
 
     // MARK: - Override Methods
     override func configureConstraints() {
-        autoSetDimension(.height, toSize: 108.0)
+        autoSetDimension(.height, toSize: 144.0)
 
         sectionLabel.autoPinEdge(toSuperviewEdge: .top)
         sectionLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 18.0)
@@ -70,6 +72,12 @@ class NotificationSectionView: TemplateView {
 
         notificationTimeLabel.autoPinEdge(toSuperviewEdge: .right)
         notificationTimeLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
+
+        notifcationSettingAlertLabel.autoSetDimension(.height, toSize: 36.0)
+
+        notifcationSettingAlertLabel.autoPinEdge(.top, to: .bottom, of: backgroundViewForTime)
+        notifcationSettingAlertLabel.autoPinEdge(toSuperviewEdge: .left)
+        notifcationSettingAlertLabel.autoPinEdge(toSuperviewEdge: .right)
     }
 
     override func addSubviews() {
@@ -82,6 +90,8 @@ class NotificationSectionView: TemplateView {
 
         backgroundViewForTime.addSubview(notificationTimeButton)
         notificationTimeButton.addSubview(notificationTimeLabel)
+
+        addSubview(notifcationSettingAlertLabel)
     }
 
     override func viewConfigurations() {
@@ -115,6 +125,9 @@ class NotificationSectionView: TemplateView {
 
         notificationTimeLabel.textColor = UIColor.text.inputField
         notificationTimeLabel.font = UIFont.value
+
+        notifcationSettingAlertLabel.textColor = UIColor.text.inputField
+        notifcationSettingAlertLabel.font = UIFont.value
 
     }
 }
@@ -155,5 +168,9 @@ extension NotificationSectionView {
 extension NotificationSectionView {
     func setNotificationSwitchValue(value: Bool) {
         notificationSwitch.setOn(value, animated: false)
+    }
+
+    func setNotificationSettingAlertLabel(value: String) {
+        notifcationSettingAlertLabel.text = value
     }
 }

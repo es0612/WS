@@ -169,11 +169,15 @@ class SettingViewControllerSpec: QuickSpec {
                     expect(notificationSwitch).notTo(beNil())
                 }
 
-//                it("通知拒否の場合、注意文が出る") {
-//                    expect(stubNotificationSender.getStettings_wasCalled)
-//                        .to(beTrue())
-//
-//                }
+                it("通知許可設定を取得する") {
+                    expect(stubNotificationSender.getStettings_wasCalled)
+                        .to(beTrue())
+
+                }
+
+                xit("通知設定が未知の場合、注意文が見える") {
+                    expect(settingViewController.hasLabel(withExactText: "通知を受け取るにはOSの通知設定をONにしてください")).to(beTrue())
+                }
 
                 it("保存された通知の状態が見える") {
                     expect(stubNotificationSwitchStatusRepository.loadData_wasCalled)
@@ -255,10 +259,6 @@ class SettingViewControllerSpec: QuickSpec {
                         it("ラベルが切り替えられなくなる") {
                             expect(notificationSwitch.isEnabled).to(beFalse())
                         }
-
-//                        xit("OSの設定を変えるようにアラート表示") {
-//
-//                        }
                     }
 
                 }
@@ -271,6 +271,18 @@ class SettingViewControllerSpec: QuickSpec {
                 it("通知時間の時刻が見える") {
                     expect(settingViewController.hasLabel(withExactText: "17:00")).to(beTrue())
                 }
+            }
+
+            describe("通知許可設定になっている場合") {
+                beforeEach {
+                    stubNotificationSender.getSettings_returnValue = .authorized
+
+                    settingViewController.viewWillAppear(false)
+                }
+                it("注意文が見えない") {
+                    expect(settingViewController.hasLabel(withExactText: "通知を受け取るにはOSの通知設定をONにしてください")).to(beFalse())
+                }
+
             }
         }
     }
