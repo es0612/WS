@@ -22,6 +22,7 @@ protocol NotificationSender {
     func grant()
     func getSettings() -> AuthorizationStatus
     func sendNotification()
+    func stopNotification()
 }
 
 class LocalNotificationSender: NSObject, NotificationSender {
@@ -76,6 +77,11 @@ class LocalNotificationSender: NSObject, NotificationSender {
 
         let center = UNUserNotificationCenter.current()
         center.add(request, withCompletionHandler: nil)
+    }
+
+    func stopNotification() {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
     }
 }
 

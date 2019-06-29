@@ -241,7 +241,7 @@ class SettingViewControllerSpec: QuickSpec {
                                 }
 
                                 it("通知を送らないようにする") {
-
+                                    expect(stubNotificationSender.stopNotification_wasCalled).to(beTrue())
                                 }
                             }
                         }

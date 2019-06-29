@@ -18,4 +18,9 @@ class StubNotificationSender: NotificationSender{
     func sendNotification() {
         sendNotification_wasCalled = true
     }
+
+    private(set) var stopNotification_wasCalled = false
+    func stopNotification() {
+        stopNotification_wasCalled = true
+    }
 }

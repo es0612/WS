@@ -5,6 +5,7 @@ protocol NotificationSectionViewDelegate {
     func getSettings() -> AuthorizationStatus
     func saveNotificationSwitchValue(value: Bool)
     func sendNotification()
+    func stopNotification()
 }
 
 class NotificationSectionView: TemplateView {
@@ -98,8 +99,6 @@ class NotificationSectionView: TemplateView {
     override func viewConfigurations() {
         sectionLabel.text = "通知"
 
-        notificationOnOffLabel.text = "通知OFF"
-
         notificationSwitch.addTarget(self, action: #selector(didTapNotificationSwitch), for: .touchUpInside)
 
         notificationTimeButton.setTitle("通知時間", for: .normal)
@@ -163,6 +162,8 @@ extension NotificationSectionView {
             delegate?.saveNotificationSwitchValue(
                 value: false
             )
+
+            delegate?.stopNotification()
         }
     }
 }
@@ -171,6 +172,11 @@ extension NotificationSectionView {
 extension NotificationSectionView {
     func setNotificationSwitchValue(value: Bool) {
         notificationSwitch.setOn(value, animated: false)
+        if value == true {
+            notificationOnOffLabel.text = "通知ON"
+        } else {
+            notificationOnOffLabel.text = "通知OFF"
+        }
     }
 
     func setNotificationSettingAlertLabel(value: String) {
