@@ -186,81 +186,86 @@ class SettingViewControllerSpec: QuickSpec {
                 }
 
                 describe("通知スイッチを押した場合") {
-                    context("通知が許可された場合") {
-                        beforeEach {
-                            stubNotificationSender.getSettings_returnValue = .authorized
-                            settingViewController
-                                .tapSwitch(
-                                    colocatedWithUILabelWithExactText: "通知OFF"
-                            )
+                    describe("OFF -> ON") {
+                        context("通知が許可された場合") {
+                            beforeEach {
+                                stubNotificationSender.getSettings_returnValue = .authorized
+                                settingViewController
+                                    .tapSwitch(
+                                        colocatedWithUILabelWithExactText: "通知OFF"
+                                )
+                            }
+
+                            it("スイッチがONに切り替わる") {
+                                expect(notificationSwitch.isOn).to(beTrue())
+                            }
+
+                            it("権限を設定できる") {
+                                expect(stubNotificationSender.grant_wasCalled)
+                                    .to(beTrue())
+                            }
+
+                            it("権限設定を確認できる") {
+                                expect(stubNotificationSender.getStettings_wasCalled)
+                                    .to(beTrue())
+                            }
+
+                            it("ラベルがONに切り替わる") {
+                                expect(settingViewController.hasLabel(withExactText: "通知ON"))
+                                    .to(beTrue())
+                            }
+
+                            it("スイッチの状態を保存できる") {
+                                expect(stubNotificationSwitchStatusRepository.saveData_argument_value).to(beTrue())
+                            }
+
+                            it("通知を送るようにする") {
+                                expect(stubNotificationSender.sendNotification_wasCalled).to(beTrue())
+                            }
+
+                            describe("ON -> OFF") {
+                                beforeEach {
+                                    settingViewController
+                                        .tapSwitch(
+                                            colocatedWithUILabelWithExactText: "通知ON"
+                                    )
+                                }
+                                it("ラベルがOFFに切り替わる") {
+                                    expect(settingViewController
+                                        .hasLabel(withExactText: "通知OFF"))
+                                        .to(beTrue())
+                                }
+
+                                it("スイッチの状態を再度保存できる") {
+                                    expect(stubNotificationSwitchStatusRepository.saveData_CalledCount).to(equal(2))
+                                }
+
+                                it("通知を送らないようにする") {
+
+                                }
+                            }
                         }
 
-                        it("スイッチがONに切り替わる") {
-                            expect(notificationSwitch.isOn).to(beTrue())
-                        }
+                        context("通知が拒否された場合") {
+                            beforeEach {
+                                stubNotificationSender.getSettings_returnValue = .denied
+                                settingViewController
+                                    .tapSwitch(
+                                        colocatedWithUILabelWithExactText: "通知OFF"
+                                )
+                            }
 
-                        it("権限を設定できる") {
-                            expect(stubNotificationSender.grant_wasCalled)
-                                .to(beTrue())
-                        }
+                            it("ラベルがOFFのまま") {
+                                expect(settingViewController.hasLabel(withExactText: "通知OFF"))
+                                    .to(beTrue())
+                                expect(notificationSwitch.isOn).to(beFalse())
+                            }
 
-                        it("権限設定を確認できる") {
-                            expect(stubNotificationSender.getStettings_wasCalled)
-                                .to(beTrue())
-                        }
-
-                        it("ラベルがONに切り替わる") {
-                            expect(settingViewController.hasLabel(withExactText: "通知ON"))
-                                .to(beTrue())
-                        }
-
-                        it("スイッチの状態を保存できる") {
-                            expect(stubNotificationSwitchStatusRepository.saveData_argument_value).to(beTrue())
-                        }
-
-                        it("2度押すとラベルがOFFに切り替わる") {
-                            settingViewController
-                                .tapSwitch(
-                                    colocatedWithUILabelWithExactText: "通知ON"
-                            )
-
-
-                            expect(settingViewController
-                                .hasLabel(withExactText: "通知OFF"))
-                                .to(beTrue())
-                        }
-
-                        it("2度押すとスイッチの状態を再度保存できる") {
-                            settingViewController
-                                .tapSwitch(
-                                    colocatedWithUILabelWithExactText: "通知ON"
-                            )
-
-
-                            expect(stubNotificationSwitchStatusRepository.saveData_CalledCount).to(equal(2))
+                            it("ラベルが切り替えられなくなる") {
+                                expect(notificationSwitch.isEnabled).to(beFalse())
+                            }
                         }
                     }
-
-                    context("通知が拒否された場合") {
-                        beforeEach {
-                            stubNotificationSender.getSettings_returnValue = .denied
-                            settingViewController
-                                .tapSwitch(
-                                    colocatedWithUILabelWithExactText: "通知OFF"
-                            )
-                        }
-
-                        it("ラベルがOFFのまま") {
-                            expect(settingViewController.hasLabel(withExactText: "通知OFF"))
-                                .to(beTrue())
-                            expect(notificationSwitch.isOn).to(beFalse())
-                        }
-
-                        it("ラベルが切り替えられなくなる") {
-                            expect(notificationSwitch.isEnabled).to(beFalse())
-                        }
-                    }
-
                 }
 
                 it("通知時間のラベル（ボタン）が見える") {
