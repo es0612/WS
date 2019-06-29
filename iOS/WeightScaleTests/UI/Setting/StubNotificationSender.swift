@@ -13,4 +13,9 @@ class StubNotificationSender: NotificationSender{
         getStettings_wasCalled = true
         return getSettings_returnValue
     }
+
+    private(set) var sendNotification_wasCalled = false
+    func sendNotification() {
+        sendNotification_wasCalled = true
+    }
 }

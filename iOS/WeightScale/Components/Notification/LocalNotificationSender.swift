@@ -21,6 +21,7 @@ enum AuthorizationStatus: Int {
 protocol NotificationSender {
     func grant()
     func getSettings() -> AuthorizationStatus
+    func sendNotification()
 }
 
 class LocalNotificationSender: NSObject, NotificationSender {
@@ -43,18 +44,38 @@ class LocalNotificationSender: NSObject, NotificationSender {
     }
 
     func getSettings() -> AuthorizationStatus {
-//        let center = UNUserNotificationCenter.current()
-//        var status: AuthorizationStatus!
-//        center.getNotificationSettings()
-//            { notificationSettings in
-//                status = AuthorizationStatus
-//                    .init(
-//                        rawValue: notificationSettings
-//                            .authorizationStatus
-//                            .rawValue)!
-//        }
+        let center = UNUserNotificationCenter.current()
+        var status: AuthorizationStatus!
+        center.getNotificationSettings()
+            { notificationSettings in
+                status = AuthorizationStatus
+                    .init(
+                        rawValue: notificationSettings
+                            .authorizationStatus
+                            .rawValue)!
+        }
 //        return status
         return .authorized
+    }
+
+    func sendNotification() {
+        var notificationTime = DateComponents()
+        notificationTime.hour = 17
+        notificationTime.minute = 00
+        let trigger = UNCalendarNotificationTrigger(dateMatching: notificationTime, repeats: true)
+
+        let content = UNMutableNotificationContent()
+        content.title = "リマインダー"
+        content.body = "今日の体重を入力しましょう"
+        content.sound = UNNotificationSound.default
+
+
+        let request = UNNotificationRequest(
+            identifier: "uuid", content: content, trigger: trigger
+        )
+
+        let center = UNUserNotificationCenter.current()
+        center.add(request, withCompletionHandler: nil)
     }
 }
 

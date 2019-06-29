@@ -4,6 +4,7 @@ protocol NotificationSectionViewDelegate {
     func setGrant()
     func getSettings() -> AuthorizationStatus
     func saveNotificationSwitchValue(value: Bool)
+    func sendNotification()
 }
 
 class NotificationSectionView: TemplateView {
@@ -154,6 +155,8 @@ extension NotificationSectionView {
             } else {
                 notificationOnOffLabel.text = "通知OFF"
             }
+
+            delegate?.sendNotification()
             
         } else {
             notificationOnOffLabel.text = "通知OFF"
