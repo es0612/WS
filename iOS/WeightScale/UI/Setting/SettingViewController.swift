@@ -184,4 +184,8 @@ extension SettingViewController: NotificationSectionViewDelegate {
     func sendNotification() {
         notificationSender.sendNotification()
     }
+
+    func stopNotification() {
+        notificationSender.stopNotification()
+    }
 }
