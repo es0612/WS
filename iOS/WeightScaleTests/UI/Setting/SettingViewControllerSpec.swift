@@ -276,6 +276,47 @@ class SettingViewControllerSpec: QuickSpec {
                 it("通知時間の時刻が見える") {
                     expect(settingViewController.hasLabel(withExactText: "17:00")).to(beTrue())
                 }
+                xit("保存された通知時間を取得できる") {
+
+                }
+
+                describe("通知時間のpicker") {
+                    var textField: UITextField!
+                    var pickerView: UIDatePicker!
+
+                    beforeEach {
+                        textField = settingViewController
+                            .findTextField(withExactPlaceholderText: "Notification Time")
+                        pickerView = textField?.inputView as? UIDatePicker
+                    }
+
+                    it("通知時間を入力するtextFieldがあるが、画面上は見えない") {
+                        expect(settingViewController
+                            .hasTextField(withExactPlaceholderText: "Notification Time"))
+                            .to(beTrue())
+
+                        expect(textField.isHidden).to(beTrue())
+                    }
+
+                    it("通知時間をpickerで設定できる") {
+                        expect(textField?.inputView)
+                            .to(beAKindOf(UIDatePicker.self))
+                    }
+
+                    it("通知時間は時間で設定できる") {
+                        expect(pickerView.datePickerMode).to(equal(.time))
+                    }
+
+                    it("pickerにツールバーが見える") {
+                        expect(textField?.inputAccessoryView)
+                            .to(beAKindOf(UIToolbar.self))
+                    }
+
+                    xit("通知時間ラベルを更新できる") {
+                        settingViewController.tapButton(withExactText: "通知時間")
+                    }
+                }
+
             }
 
             describe("通知許可設定になっている場合") {
