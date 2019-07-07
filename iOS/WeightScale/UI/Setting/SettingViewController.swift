@@ -13,6 +13,10 @@ class SettingViewController: TemplateViewController{
     private let targetWeightPicker: WeightPickerView
     private let targetWeightPickerToolbar: UIToolbar
 
+    private let textFieldForTimePicker: UITextField
+    private let notificationTimePicker: UIDatePicker
+    private let notificationPickerToolbar: UIToolbar
+
     private let personalSettingsSectionView: PersonalSettingsSectionView
     private let notificationSectionView: NotificationSectionView
 
@@ -29,6 +33,10 @@ class SettingViewController: TemplateViewController{
         textFieldForPicker = UITextField.newAutoLayout()
         targetWeightPicker = WeightPickerView.newAutoLayout()
         targetWeightPickerToolbar = UIToolbar.newAutoLayout()
+
+        textFieldForTimePicker = UITextField.newAutoLayout()
+        notificationTimePicker = UIDatePicker.newAutoLayout()
+        notificationPickerToolbar = UIToolbar.newAutoLayout()
 
         personalSettingsSectionView
             = PersonalSettingsSectionView.newAutoLayout()
@@ -77,6 +85,8 @@ class SettingViewController: TemplateViewController{
 
     override func addSubviews(){
         view.addSubview(textFieldForPicker)
+        view.addSubview(textFieldForTimePicker)
+
         view.addSubview(settingStackView)
 
         settingStackView
@@ -94,6 +104,33 @@ class SettingViewController: TemplateViewController{
         pickerToolbarConfiguration()
 
         notificationSectionView.delegate = self
+
+        textFieldForTimePicker.placeholder = "Notification Time"
+        textFieldForTimePicker.isHidden = true
+        textFieldForTimePicker.inputView = notificationTimePicker
+        textFieldForTimePicker.inputAccessoryView = notificationPickerToolbar
+
+        notificationTimePicker.datePickerMode = .time
+
+        notificationPickerToolbar.autoresizingMask = .flexibleHeight
+        notificationPickerToolbar.barStyle = .default
+        notificationPickerToolbar.barTintColor = UIColor.lightGray
+        notificationPickerToolbar.isTranslucent = false
+
+        let flexSpace = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace, target: nil, action: nil
+        )
+
+        let doneButton = UIBarButtonItem(
+            title: "OK",
+            style: .done,
+            target: self,
+            action: #selector(didTapTimePickerOkButton)
+        )
+
+        doneButton.tintColor = UIColor.white
+
+        notificationPickerToolbar.items = [flexSpace, doneButton]
     }
 
     override func applyStyles() {
@@ -124,7 +161,6 @@ private extension SettingViewController {
     func pickerToolbarConfiguration() {
         targetWeightPickerToolbar.autoresizingMask = .flexibleHeight
         targetWeightPickerToolbar.barStyle = .default
-        targetWeightPickerToolbar.barTintColor = UIColor.lightGray
         targetWeightPickerToolbar.isTranslucent = false
 
         let flexSpace = UIBarButtonItem(
@@ -165,6 +201,14 @@ extension SettingViewController {
 
     @objc func didTapTargetWeightButton() {
         textFieldForPicker.becomeFirstResponder()
+    }
+
+    @objc func didTapNotificationTimeButton() {
+        textFieldForTimePicker.becomeFirstResponder()
+    }
+
+    @objc func didTapTimePickerOkButton() {
+        
     }
 }
 

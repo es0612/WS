@@ -42,8 +42,7 @@ class NotificationSectionView: TemplateView {
 
     // MARK: - Override Methods
     override func configureConstraints() {
-        autoSetDimension(.height, toSize: 144.0)
-
+        sectionLabel.autoSetDimension(.height, toSize: 36.0)
         sectionLabel.autoPinEdge(toSuperviewEdge: .top)
         sectionLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 18.0)
 
@@ -103,6 +102,11 @@ class NotificationSectionView: TemplateView {
 
         notificationTimeButton.setTitle("通知時間", for: .normal)
         notificationTimeButton.contentHorizontalAlignment = .left
+        notificationTimeButton.addTarget(
+            superview,
+            action: #selector(SettingViewController.didTapNotificationTimeButton),
+            for: .touchUpInside
+        )
 
         notificationTimeLabel.text = "17:00"
     }
