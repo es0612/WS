@@ -30,6 +30,8 @@
 		382A532222C2645000ED36E2 /* LocalNotificationSwitchValueRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A532122C2645000ED36E2 /* LocalNotificationSwitchValueRepository.swift */; };
 		382A532522C4EC6200ED36E2 /* LocalNotificationSwitchValueRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A532422C4EC6200ED36E2 /* LocalNotificationSwitchValueRepositorySpec.swift */; };
 		386BDC0722DC1F15002132B5 /* StubNotificationTimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BDC0622DC1F15002132B5 /* StubNotificationTimeRepository.swift */; };
+		386BDC0922DC425A002132B5 /* LocalNotificationTimeRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BDC0822DC425A002132B5 /* LocalNotificationTimeRepositorySpec.swift */; };
+		386BDC0B22DC4383002132B5 /* LocalNotificationTimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BDC0A22DC4383002132B5 /* LocalNotificationTimeRepository.swift */; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -156,6 +158,8 @@
 		382A532122C2645000ED36E2 /* LocalNotificationSwitchValueRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationSwitchValueRepository.swift; sourceTree = "<group>"; };
 		382A532422C4EC6200ED36E2 /* LocalNotificationSwitchValueRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationSwitchValueRepositorySpec.swift; sourceTree = "<group>"; };
 		386BDC0622DC1F15002132B5 /* StubNotificationTimeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubNotificationTimeRepository.swift; sourceTree = "<group>"; };
+		386BDC0822DC425A002132B5 /* LocalNotificationTimeRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationTimeRepositorySpec.swift; sourceTree = "<group>"; };
+		386BDC0A22DC4383002132B5 /* LocalNotificationTimeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationTimeRepository.swift; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891FD7B22678294005B186F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -283,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				382A532422C4EC6200ED36E2 /* LocalNotificationSwitchValueRepositorySpec.swift */,
+				386BDC0822DC425A002132B5 /* LocalNotificationTimeRepositorySpec.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 			children = (
 				3895EE9322A0167300FD1CD0 /* LocalNotificationSender.swift */,
 				382A532122C2645000ED36E2 /* LocalNotificationSwitchValueRepository.swift */,
+				386BDC0A22DC4383002132B5 /* LocalNotificationTimeRepository.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -527,8 +533,8 @@
 				381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */,
 				3895EE90229EC3D300FD1CD0 /* StubNotificationSender.swift */,
 				382A531D22BF50E600ED36E2 /* StubNotificationSwitchStatusRepository.swift */,
-				38BE15C6227EA00200F97649 /* UIView+UIBarButtonItem.swift */,
 				386BDC0622DC1F15002132B5 /* StubNotificationTimeRepository.swift */,
+				38BE15C6227EA00200F97649 /* UIView+UIBarButtonItem.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -785,6 +791,7 @@
 				38B3672C226CA2170009E42F /* ListViewController.swift in Sources */,
 				3895EE9422A0167300FD1CD0 /* LocalNotificationSender.swift in Sources */,
 				382A532222C2645000ED36E2 /* LocalNotificationSwitchValueRepository.swift in Sources */,
+				386BDC0B22DC4383002132B5 /* LocalNotificationTimeRepository.swift in Sources */,
 				38BE15A422797B0400F97649 /* LocalRealmWrapper.swift in Sources */,
 				38BE15D3227EAFC500F97649 /* LocalTargetWeightRepository.swift in Sources */,
 				38BE15D5227ECA6D00F97649 /* LocalUserDefaultsWrapper.swift in Sources */,
@@ -823,6 +830,7 @@
 				38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */,
 				3814998A226F4DA4001B2E71 /* ListViewControllerSpec.swift in Sources */,
 				382A532522C4EC6200ED36E2 /* LocalNotificationSwitchValueRepositorySpec.swift in Sources */,
+				386BDC0922DC425A002132B5 /* LocalNotificationTimeRepositorySpec.swift in Sources */,
 				38BE15CE227EAE9C00F97649 /* LocalTargetWeightRepositorySpec.swift in Sources */,
 				38BE159D22793F0A00F97649 /* LocalWeightRepositorySpec.swift in Sources */,
 				38B367282269E7F30009E42F /* NavigationRouterSpec.swift in Sources */,
@@ -832,11 +840,11 @@
 				38B367242269E3E80009E42F /* SpyRouter.swift in Sources */,
 				3895EE91229EC3D300FD1CD0 /* StubNotificationSender.swift in Sources */,
 				382A531E22BF50E600ED36E2 /* StubNotificationSwitchStatusRepository.swift in Sources */,
+				386BDC0722DC1F15002132B5 /* StubNotificationTimeRepository.swift in Sources */,
 				38BE15A2227974DC00F97649 /* StubRealmWrapper.swift in Sources */,
 				38BE15CC227EAB2D00F97649 /* StubTargetWeightRepository.swift in Sources */,
 				38BE15D0227EAF9800F97649 /* StubUserDefaultsWrapper.swift in Sources */,
 				38BE159A2279367100F97649 /* StubWeightRepository.swift in Sources */,
-				386BDC0722DC1F15002132B5 /* StubNotificationTimeRepository.swift in Sources */,
 				38BE15BA227AD3F200F97649 /* UITabBarController+displayedTab.swift in Sources */,
 				38BE15B8227AD39200F97649 /* UITabBarController+selectTab.swift in Sources */,
 				38BE15B4227AD25F00F97649 /* UIView+LineChartView.swift in Sources */,

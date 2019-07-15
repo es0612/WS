@@ -1,4 +1,5 @@
 @testable import WeightScale
+import Foundation
 
 class StubUserDefaultsWrapper: UserDefaultsWrapper {
 
@@ -14,6 +15,13 @@ class StubUserDefaultsWrapper: UserDefaultsWrapper {
     func saveData(key: String, value: Bool) {
         saveDataBool_argument_key = key
         saveDataBool_argument_value = value
+    }
+
+    private(set) var saveDataDate_argument_key: String = ""
+    private(set) var saveDataDate_argument_value: Date = Date()
+    func saveData(key: String, value: Date) {
+        saveDataDate_argument_key = key
+        saveDataDate_argument_value = value
     }
 
     private(set) var loadData_argument_key: String = ""

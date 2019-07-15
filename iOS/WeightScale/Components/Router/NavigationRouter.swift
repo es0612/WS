@@ -35,12 +35,14 @@ class NavigationRouter: Router {
             title: "記録", image: UIImage(assetIdentifier: .listIcon), selectedImage: nil
         )
 
+        let userDefaultWrapper = LocalUserDefaultsWrapper()
+
         let graphViewController = GraphViewController(
             weightRepository: LocalWeightRepository(
                 realmWrapper: LocalRealmWrapper()
             ),
             targetWeightRepository: LocalTargetWeightRepository(
-                userDefaultsWrapper: LocalUserDefaultsWrapper()
+                userDefaultsWrapper: userDefaultWrapper
             )
         )
 
@@ -55,7 +57,12 @@ class NavigationRouter: Router {
                 userDefaultsWrapper: LocalUserDefaultsWrapper()
             ),
             notificationSender: LocalNotificationSender(),
-            notificationSwitchStatusRepository: LocalNotificationSwitchValueRepository(userDefaultsWrapper: LocalUserDefaultsWrapper())
+            notificationSwitchStatusRepository: LocalNotificationSwitchValueRepository(
+                userDefaultsWrapper: userDefaultWrapper
+            ),
+            notificationTimeRepository: LocalNotificationTimeRepository(
+                userDefaultsWrapper: userDefaultWrapper
+            )
         )
 
         let settingNavController = UINavigationController()
