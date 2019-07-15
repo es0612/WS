@@ -186,4 +186,8 @@ extension NotificationSectionView {
     func setNotificationSettingAlertLabel(value: String) {
         notifcationSettingAlertLabel.text = value
     }
+
+    func setNotificationTimeLabel(value: String) {
+        notificationTimeLabel.text = value
+    }
 }

@@ -105,32 +105,10 @@ class SettingViewController: TemplateViewController{
 
         notificationSectionView.delegate = self
 
-        textFieldForTimePicker.placeholder = "Notification Time"
-        textFieldForTimePicker.isHidden = true
-        textFieldForTimePicker.inputView = notificationTimePicker
-        textFieldForTimePicker.inputAccessoryView = notificationPickerToolbar
-
+        textFieldForTimePickerConfiguration()
         notificationTimePicker.datePickerMode = .time
+        notificationPickerToolbarConfiguration()
 
-        notificationPickerToolbar.autoresizingMask = .flexibleHeight
-        notificationPickerToolbar.barStyle = .default
-        notificationPickerToolbar.barTintColor = UIColor.lightGray
-        notificationPickerToolbar.isTranslucent = false
-
-        let flexSpace = UIBarButtonItem(
-            barButtonSystemItem: .flexibleSpace, target: nil, action: nil
-        )
-
-        let doneButton = UIBarButtonItem(
-            title: "OK",
-            style: .done,
-            target: self,
-            action: #selector(didTapTimePickerOkButton)
-        )
-
-        doneButton.tintColor = UIColor.white
-
-        notificationPickerToolbar.items = [flexSpace, doneButton]
     }
 
     override func applyStyles() {
@@ -148,7 +126,6 @@ private extension SettingViewController {
     func textFieldForPickerConfiguration() {
         textFieldForPicker.placeholder = "Target Weight"
         textFieldForPicker.isHidden = true
-
         textFieldForPicker.inputView = targetWeightPicker
         textFieldForPicker.inputAccessoryView = targetWeightPickerToolbar
     }
@@ -173,10 +150,43 @@ private extension SettingViewController {
             target: self,
             action: #selector(didTapPickerDoneButton)
         )
-
         doneButton.tintColor = UIColor.white
 
         targetWeightPickerToolbar.items = [flexSpace, doneButton]
+    }
+
+    func textFieldForTimePickerConfiguration() {
+        textFieldForTimePicker.placeholder = "Notification Time"
+        textFieldForTimePicker.isHidden = true
+        textFieldForTimePicker.inputView = notificationTimePicker
+        textFieldForTimePicker.inputAccessoryView = notificationPickerToolbar
+    }
+
+    func notificationPickerToolbarConfiguration() {
+        notificationPickerToolbar.autoresizingMask = .flexibleHeight
+        notificationPickerToolbar.barStyle = .default
+        notificationPickerToolbar.barTintColor = UIColor.lightGray
+        notificationPickerToolbar.isTranslucent = false
+
+        let flexSpace = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace, target: nil, action: nil
+        )
+
+        let doneButton = UIBarButtonItem(
+            title: "OK",
+            style: .done,
+            target: self,
+            action: #selector(didTapTimePickerOkButton)
+        )
+        doneButton.tintColor = UIColor.white
+
+        notificationPickerToolbar.items = [flexSpace, doneButton]
+    }
+
+    func getDateString(date: Date) -> String {
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "HH:mm"
+        return dateformatter.string(from: date)
     }
 }
 
@@ -208,7 +218,9 @@ extension SettingViewController {
     }
 
     @objc func didTapTimePickerOkButton() {
-        
+        let dateString = getDateString(date: notificationTimePicker.date)
+
+        notificationSectionView.setNotificationTimeLabel(value: dateString)
     }
 }
 
