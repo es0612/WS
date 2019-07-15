@@ -189,4 +189,10 @@ extension NotificationSectionView {
     func setNotificationTimeLabel(value: String) {
         notificationTimeLabel.text = value
     }
+
+    func setNotification() {
+        if notificationSwitch.isOn {
+            delegate?.sendNotification()
+        }
+    }
 }

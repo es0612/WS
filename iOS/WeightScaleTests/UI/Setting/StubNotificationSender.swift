@@ -1,4 +1,5 @@
 @testable import WeightScale
+import Foundation
 
 class StubNotificationSender: NotificationSender{
     private(set) var grant_wasCalled = false
@@ -15,8 +16,10 @@ class StubNotificationSender: NotificationSender{
     }
 
     private(set) var sendNotification_wasCalled = false
-    func sendNotification() {
+    private(set) var sendNotification_argument_time = Date()
+    func sendNotification(time: Date) {
         sendNotification_wasCalled = true
+        sendNotification_argument_time = time
     }
 
     private(set) var stopNotification_wasCalled = false

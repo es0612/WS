@@ -231,6 +231,11 @@ class SettingViewControllerSpec: QuickSpec {
                                 expect(stubNotificationSender.sendNotification_wasCalled).to(beTrue())
                             }
 
+                            it("指定した時間に通知を送るようにする") {
+                                expect(stubNotificationSender.sendNotification_argument_time)
+                                    .to(equal(DateManager.convertStringToTime(string: "17:30")))
+                            }
+
                             describe("ON -> OFF") {
                                 beforeEach {
                                     settingViewController
@@ -337,6 +342,11 @@ class SettingViewControllerSpec: QuickSpec {
                     describe("OKボタンを押した時") {
                         beforeEach {
                             settingViewController
+                                .tapSwitch(
+                                    colocatedWithUILabelWithExactText: "通知OFF"
+                            )
+
+                            settingViewController
                                 .tapButton(withExactText: "通知時間")
 
                             pickerView.date = DateManager
@@ -355,6 +365,11 @@ class SettingViewControllerSpec: QuickSpec {
                         it("通知時間を保存できる") {
                             expect(stubNotificationTimeRepository.saveTime_argument_time)
                                 .to(equal(pickerView.date))
+                        }
+
+                        it("通知をセットする") {
+                            expect(stubNotificationSender.sendNotification_wasCalled)
+                                .to(beTrue())
                         }
 
                         xit("pickerが閉じる") {
