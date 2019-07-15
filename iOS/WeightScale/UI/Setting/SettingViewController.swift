@@ -247,6 +247,8 @@ extension SettingViewController {
         notificationSectionView
             .setNotificationTimeLabel(value: dateString)
         textFieldForTimePicker.resignFirstResponder()
+
+        notificationSectionView.setNotification()
     }
 }
 
@@ -264,7 +266,7 @@ extension SettingViewController: NotificationSectionViewDelegate {
     }
 
     func sendNotification() {
-        notificationSender.sendNotification()
+        notificationSender.sendNotification(time: notificationTimePicker.date)
     }
 
     func stopNotification() {

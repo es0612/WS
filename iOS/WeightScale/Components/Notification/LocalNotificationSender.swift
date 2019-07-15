@@ -21,7 +21,7 @@ enum AuthorizationStatus: Int {
 protocol NotificationSender {
     func grant()
     func getSettings() -> AuthorizationStatus
-    func sendNotification()
+    func sendNotification(time: Date)
     func stopNotification()
 }
 
@@ -59,10 +59,14 @@ class LocalNotificationSender: NSObject, NotificationSender {
         return .authorized
     }
 
-    func sendNotification() {
+    func sendNotification(time: Date) {
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: time)
+        let minute = calendar.component(.minute, from: time)
+
         var notificationTime = DateComponents()
-        notificationTime.hour = 17
-        notificationTime.minute = 00
+        notificationTime.hour = hour
+        notificationTime.minute = minute
         let trigger = UNCalendarNotificationTrigger(dateMatching: notificationTime, repeats: true)
 
         let content = UNMutableNotificationContent()
