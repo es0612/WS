@@ -62,6 +62,10 @@ final class WeightChartView: LineChartView {
         weightDataSet.setCircleColor(UIColor.graph.weightLine)
         weightDataSet.lineWidth = 6.0
         weightDataSet.valueTextColor = UIColor.text.inputField
+        if weightDataSet.count > 7 {
+            weightDataSet.drawValuesEnabled = false
+        }
+
 
         var targetWeightEntries = [ChartDataEntry]()
         for (i, d) in dataForTargetWeight.enumerated() {
