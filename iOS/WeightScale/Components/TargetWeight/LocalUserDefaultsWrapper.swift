@@ -6,6 +6,7 @@ protocol UserDefaultsWrapper {
     func saveData(key: String, value: Date)
     func loadData(key: String) -> Double
     func loadData(key: String) -> Bool
+    func loadData(key: String) -> Date?
 }
 
 class LocalUserDefaultsWrapper: UserDefaultsWrapper {
@@ -32,5 +33,9 @@ class LocalUserDefaultsWrapper: UserDefaultsWrapper {
 
     func loadData(key: String) -> Bool {
         return userDefaults.bool(forKey: key)
+    }
+
+    func loadData(key: String) -> Date? {
+        return userDefaults.object(forKey: key) as? Date
     }
 }

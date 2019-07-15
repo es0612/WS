@@ -151,6 +151,11 @@ class SettingViewControllerSpec: QuickSpec {
 
                     stubNotificationSender.getSettings_returnValue = .unknown
 
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat =  "HH:mm"
+                    let setDate = dateFormatter.date(from: "17:30")
+                    stubNotificationTimeRepository.loadTime_returnValue = setDate!
+
                     settingViewController.viewWillAppear(false)
 
                     notificationSwitch = settingViewController.findSwitch(colocatedWithUILabelWithExactText: "通知OFF")
@@ -277,7 +282,7 @@ class SettingViewControllerSpec: QuickSpec {
                 }
 
                 it("通知時間の時刻が見える") {
-                    expect(settingViewController.hasLabel(withExactText: "17:00")).to(beTrue())
+                    expect(settingViewController.hasLabel(withExactText: "17:30")).to(beTrue())
                 }
 
                 describe("通知時間のpicker") {
@@ -312,24 +317,30 @@ class SettingViewControllerSpec: QuickSpec {
                             .to(beAKindOf(UIToolbar.self))
                     }
 
-                    it("pickerにdefault初期値として17:00が見える") {
+                    describe("保存した通知時間を読み込む") {
+                        it("保存した値を取得できる") {
+                            expect(stubNotificationTimeRepository.loadTime_wasCalled).to(beTrue())
+                        }
 
+                        it("pickerに初期値として保存された値17:30が見える") {
+                            let dateformatter = DateFormatter()
+                            dateformatter.dateFormat = "HH:mm"
+                            let dateString = dateformatter
+                                .string(from: pickerView.date)
+
+
+                            expect(dateString).to(equal("17:30"))
+                        }
                     }
 
-                    it("pickerに初期値として保存された値17:30が見える") {
-
-                    }
 
                     describe("OKボタンを押した時") {
                         beforeEach {
                             settingViewController
                                 .tapButton(withExactText: "通知時間")
 
-
-                            let dateFormatter = DateFormatter()
-                            dateFormatter.dateFormat =  "HH:mm"
-                            let setDate = dateFormatter.date(from: "17:30")
-                            pickerView.date = setDate!
+                            pickerView.date = DateManager
+                                .convertStringToTime(string: "17:30")
 
 
                             textField?.inputAccessoryView?
@@ -361,6 +372,27 @@ class SettingViewControllerSpec: QuickSpec {
                 }
                 it("注意文が見えない") {
                     expect(settingViewController.hasLabel(withExactText: "通知を受け取るにはOSの通知設定をONにしてください")).to(beFalse())
+                }
+
+            }
+
+            describe("通知時間が保存されていない場合") {
+                beforeEach {
+                    stubNotificationTimeRepository.loadTime_returnValue = nil
+
+                    settingViewController.viewWillAppear(false)
+                }
+                it("pickerにdefault初期値として17:00が見える") {
+                    let textField = settingViewController
+                        .findTextField(
+                            withExactPlaceholderText: "Notification Time"
+                    )
+                    let pickerView = textField?.inputView as? UIDatePicker
+
+                    let dateString = DateManager
+                        .convertTimeToString(time: pickerView!.date)
+
+                    expect(dateString).to(equal("17:00"))
                 }
 
             }

@@ -64,25 +64,38 @@ class SettingViewController: TemplateViewController{
     override func viewWillAppear(_ animated: Bool) {
         let targetWeight
             = targetWeightRepository.loadTargetWeight()
-
         targetWeightPicker
             .selectRowFor(weight: targetWeight)
-
         personalSettingsSectionView
             .setValueLabel(value: String(format: "%.1f", targetWeight))
 
-        let notificationSwitchValue = notificationSwitchStatusRepository.loadData()
-
+        let notificationSwitchValue
+            = notificationSwitchStatusRepository.loadData()
         notificationSectionView
             .setNotificationSwitchValue(value: notificationSwitchValue)
 
 
         let authorizationStatus = notificationSender.getSettings()
-
         if authorizationStatus.isEnabled == false {
             notificationSectionView.setNotificationSettingAlertLabel(value: "通知を受け取るにはOSの通知設定をONにしてください")
         } else {
             notificationSectionView.setNotificationSettingAlertLabel(value: "")
+        }
+
+        if let notificationTime
+            = notificationTimeRepository.loadTime() {
+            notificationTimePicker
+                .setDate(notificationTime, animated: false)
+            notificationSectionView
+                .setNotificationTimeLabel(
+                    value: DateManager.convertTimeToString(time: notificationTime)
+            )
+        } else {
+            notificationTimePicker.setDate(
+                DateManager.convertStringToTime(string: "17:00"),
+                animated: false
+            )
+            notificationSectionView.setNotificationTimeLabel(value: "17:00")
         }
     }
 

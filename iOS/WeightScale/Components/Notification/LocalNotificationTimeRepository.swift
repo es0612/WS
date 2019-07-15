@@ -2,6 +2,7 @@ import Foundation
 
 protocol NotificationTimeRepository {
     func saveTime(time: Date)
+    func loadTime() -> Date?
 }
 
 class LocalNotificationTimeRepository: NotificationTimeRepository {
@@ -13,5 +14,9 @@ class LocalNotificationTimeRepository: NotificationTimeRepository {
 
     func saveTime(time: Date) {
         userDefaultsWrapper.saveData(key: "notification_time", value: time)
+    }
+
+    func loadTime() -> Date? {
+        return userDefaultsWrapper.loadData(key: "notification_time")
     }
 }
