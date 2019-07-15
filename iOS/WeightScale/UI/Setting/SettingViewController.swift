@@ -1,10 +1,15 @@
 import UIKit
 
+protocol NotificationTimeRepository {
+    func saveTime(time: Date)
+}
+
 class SettingViewController: TemplateViewController{
     // MARK: - Injected Dependencies
     private var targetWeightRepository: TargetWeightRepository
     private var notificationSender: NotificationSender
     private var notificationSwitchStatusRepository: NotificationSwitchStatusRepository
+    private var notificationTimeRepository: NotificationTimeRepository?
 
     // MARK: - Views
     private let settingStackView: UIStackView
@@ -23,10 +28,12 @@ class SettingViewController: TemplateViewController{
     // MARK: - Initialization
     init(targetWeightRepository: TargetWeightRepository,
          notificationSender: NotificationSender,
-         notificationSwitchStatusRepository: NotificationSwitchStatusRepository) {
+         notificationSwitchStatusRepository: NotificationSwitchStatusRepository,
+         notificationTimeRepository: NotificationTimeRepository? = nil) {
         self.targetWeightRepository = targetWeightRepository
         self.notificationSender = notificationSender
         self.notificationSwitchStatusRepository = notificationSwitchStatusRepository
+        self.notificationTimeRepository = notificationTimeRepository
 
         settingStackView = UIStackView.newAutoLayout()
 
@@ -218,9 +225,13 @@ extension SettingViewController {
     }
 
     @objc func didTapTimePickerOkButton() {
-        let dateString = getDateString(date: notificationTimePicker.date)
+        notificationTimeRepository?.saveTime(time: notificationTimePicker.date)
 
-        notificationSectionView.setNotificationTimeLabel(value: dateString)
+        let dateString
+            = getDateString(date: notificationTimePicker.date)
+        notificationSectionView
+            .setNotificationTimeLabel(value: dateString)
+        textFieldForTimePicker.resignFirstResponder()
     }
 }
 

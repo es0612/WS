@@ -11,6 +11,7 @@ class SettingViewControllerSpec: QuickSpec {
             var stubTargetWeightRepository: StubTargetWeightRepository!
             var stubNotificationSender: StubNotificationSender!
             var stubNotificationSwitchStatusRepository: StubNotificationSwitchStatusRepository!
+            var stubNotificationTimeRepository: StubNotificationTimeRepository!
 
             beforeEach {
                 stubTargetWeightRepository
@@ -18,6 +19,7 @@ class SettingViewControllerSpec: QuickSpec {
                 stubNotificationSender = StubNotificationSender()
                 stubNotificationSwitchStatusRepository
                     = StubNotificationSwitchStatusRepository()
+                stubNotificationTimeRepository = StubNotificationTimeRepository()
 
                 settingViewController
                     = SettingViewController(
@@ -26,7 +28,8 @@ class SettingViewControllerSpec: QuickSpec {
                         notificationSender:
                         stubNotificationSender,
                         notificationSwitchStatusRepository:
-                        stubNotificationSwitchStatusRepository
+                        stubNotificationSwitchStatusRepository,
+                        notificationTimeRepository: stubNotificationTimeRepository
                 )
             }
 
@@ -318,8 +321,9 @@ class SettingViewControllerSpec: QuickSpec {
                     }
 
                     describe("OKボタンを押した時") {
-                        it("通知時間ラベルを更新できる") {
-                            settingViewController.tapButton(withExactText: "通知時間")
+                        beforeEach {
+                            settingViewController
+                                .tapButton(withExactText: "通知時間")
 
 
                             let dateFormatter = DateFormatter()
@@ -330,18 +334,20 @@ class SettingViewControllerSpec: QuickSpec {
 
                             textField?.inputAccessoryView?
                                 .findBarButtonItem(title: "OK")?.tap()
+                        }
 
-
+                        it("通知時間ラベルを更新できる") {
                             expect(settingViewController
                                 .hasLabel(withExactText: "17:30")).to(beTrue())
                         }
 
                         it("通知時間を保存できる") {
-
+                            expect(stubNotificationTimeRepository.saveTime_argument_time)
+                                .to(equal(pickerView.date))
                         }
 
-                        it("pickerが閉じる") {
-
+                        xit("pickerが閉じる") {
+                            expect(textField.isFirstResponder).to(beFalse())
                         }
                     }
                 }
