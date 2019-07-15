@@ -37,4 +37,11 @@ class StubUserDefaultsWrapper: UserDefaultsWrapper {
         loadDataBool_argument_key = key
         return loadDataBool_returnValue
     }
+
+    private(set) var loadDataDate_argument_key: String = ""
+    var loadDataDate_returnValue: Date? = nil
+    func loadData(key: String) -> Date? {
+        loadDataDate_argument_key = key
+        return loadDataDate_returnValue
+    }
 }

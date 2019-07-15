@@ -108,7 +108,6 @@ class NotificationSectionView: TemplateView {
             for: .touchUpInside
         )
 
-        notificationTimeLabel.text = "17:00"
     }
 
     override func applyStyles() {
