@@ -118,9 +118,15 @@ class SettingViewController: TemplateViewController{
         view.backgroundColor = UIColor.background.main
 
         targetWeightPicker.backgroundColor
-            = UIColor.picker.main
+            = UIColor.background.main
         targetWeightPickerToolbar.barTintColor
-            = UIColor.picker.bar
+            = UIColor.background.bar
+
+        notificationTimePicker.backgroundColor
+            = UIColor.background.main
+        notificationPickerToolbar.barTintColor
+            = UIColor.background.bar
+
     }
 }
 

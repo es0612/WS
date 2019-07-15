@@ -108,9 +108,9 @@ class InputViewController: TemplateViewController {
         view.backgroundColor = UIColor.background.main
 
         weightPicker.backgroundColor
-            = UIColor.picker.main
+            = UIColor.background.main
         weightPickerToolbar.barTintColor
-            = UIColor.picker.bar
+            = UIColor.background.bar
 
         navigationItem.leftBarButtonItem?.tintColor
             = UIColor.text.cancel
