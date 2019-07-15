@@ -1,15 +1,11 @@
 import UIKit
 
-protocol NotificationTimeRepository {
-    func saveTime(time: Date)
-}
-
 class SettingViewController: TemplateViewController{
     // MARK: - Injected Dependencies
     private var targetWeightRepository: TargetWeightRepository
     private var notificationSender: NotificationSender
     private var notificationSwitchStatusRepository: NotificationSwitchStatusRepository
-    private var notificationTimeRepository: NotificationTimeRepository?
+    private var notificationTimeRepository: NotificationTimeRepository
 
     // MARK: - Views
     private let settingStackView: UIStackView
@@ -29,7 +25,7 @@ class SettingViewController: TemplateViewController{
     init(targetWeightRepository: TargetWeightRepository,
          notificationSender: NotificationSender,
          notificationSwitchStatusRepository: NotificationSwitchStatusRepository,
-         notificationTimeRepository: NotificationTimeRepository? = nil) {
+         notificationTimeRepository: NotificationTimeRepository) {
         self.targetWeightRepository = targetWeightRepository
         self.notificationSender = notificationSender
         self.notificationSwitchStatusRepository = notificationSwitchStatusRepository
@@ -225,7 +221,7 @@ extension SettingViewController {
     }
 
     @objc func didTapTimePickerOkButton() {
-        notificationTimeRepository?.saveTime(time: notificationTimePicker.date)
+        notificationTimeRepository.saveTime(time: notificationTimePicker.date)
 
         let dateString
             = getDateString(date: notificationTimePicker.date)
