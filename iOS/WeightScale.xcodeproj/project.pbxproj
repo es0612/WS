@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,12 @@
 		386BDC0722DC1F15002132B5 /* StubNotificationTimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BDC0622DC1F15002132B5 /* StubNotificationTimeRepository.swift */; };
 		386BDC0922DC425A002132B5 /* LocalNotificationTimeRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BDC0822DC425A002132B5 /* LocalNotificationTimeRepositorySpec.swift */; };
 		386BDC0B22DC4383002132B5 /* LocalNotificationTimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BDC0A22DC4383002132B5 /* LocalNotificationTimeRepository.swift */; };
+		388A35BD25CDF7B50019AAFE /* BrightFutures.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35B025CDF2110019AAFE /* BrightFutures.xcframework */; };
+		388A35BE25CDF7B50019AAFE /* BrightFutures.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35B025CDF2110019AAFE /* BrightFutures.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		388A35C025CDF7B70019AAFE /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35B425CDF2310019AAFE /* Charts.xcframework */; };
+		388A35C125CDF7B70019AAFE /* Charts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35B425CDF2310019AAFE /* Charts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		388A35C225CDF7B90019AAFE /* PureLayout.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35B725CDF2600019AAFE /* PureLayout.xcframework */; };
+		388A35C325CDF7B90019AAFE /* PureLayout.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35B725CDF2600019AAFE /* PureLayout.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -46,9 +52,6 @@
 		38986924228B063C002D9A38 /* UITabBar+ApplyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38986923228B063C002D9A38 /* UITabBar+ApplyStyle.swift */; };
 		38986926228B752B002D9A38 /* WeightChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38986925228B752B002D9A38 /* WeightChartView.swift */; };
 		38A1351222767C9C002C09CE /* UserNotificationsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A1351122767C9C002C09CE /* UserNotificationsSpec.swift */; };
-		38B367092268D1FB0009E42F /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367082268D1FB0009E42F /* BrightFutures.framework */; };
-		38B3670B2268D20B0009E42F /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670A2268D20B0009E42F /* Charts.framework */; };
-		38B3670D2268D22C0009E42F /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670C2268D22C0009E42F /* PureLayout.framework */; };
 		38B3670F2268D2BD0009E42F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670E2268D2BD0009E42F /* Nimble.framework */; };
 		38B367112268D2D10009E42F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367102268D2D10009E42F /* Quick.framework */; };
 		38B367132268D2FD0009E42F /* Succinct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367122268D2FD0009E42F /* Succinct.framework */; };
@@ -122,6 +125,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		388A35BF25CDF7B50019AAFE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				388A35C125CDF7B70019AAFE /* Charts.xcframework in Embed Frameworks */,
+				388A35BE25CDF7B50019AAFE /* BrightFutures.xcframework in Embed Frameworks */,
+				388A35C325CDF7B90019AAFE /* PureLayout.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38B367152268D4440009E42F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,6 +176,9 @@
 		386BDC0622DC1F15002132B5 /* StubNotificationTimeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubNotificationTimeRepository.swift; sourceTree = "<group>"; };
 		386BDC0822DC425A002132B5 /* LocalNotificationTimeRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationTimeRepositorySpec.swift; sourceTree = "<group>"; };
 		386BDC0A22DC4383002132B5 /* LocalNotificationTimeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationTimeRepository.swift; sourceTree = "<group>"; };
+		388A35B025CDF2110019AAFE /* BrightFutures.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrightFutures.xcframework; path = Carthage/Build/BrightFutures.xcframework; sourceTree = "<group>"; };
+		388A35B425CDF2310019AAFE /* Charts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Charts.xcframework; path = Carthage/Build/Charts.xcframework; sourceTree = "<group>"; };
+		388A35B725CDF2600019AAFE /* PureLayout.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PureLayout.xcframework; path = Carthage/Build/PureLayout.xcframework; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891FD7B22678294005B186F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -236,11 +255,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38B367092268D1FB0009E42F /* BrightFutures.framework in Frameworks */,
-				38B3670B2268D20B0009E42F /* Charts.framework in Frameworks */,
-				38B3670D2268D22C0009E42F /* PureLayout.framework in Frameworks */,
+				388A35C225CDF7B90019AAFE /* PureLayout.xcframework in Frameworks */,
 				381D4F84227204ED009F7E53 /* Realm.framework in Frameworks */,
 				381D4F8222720391009F7E53 /* RealmSwift.framework in Frameworks */,
+				388A35C025CDF7B70019AAFE /* Charts.xcframework in Frameworks */,
+				388A35BD25CDF7B50019AAFE /* BrightFutures.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +375,9 @@
 		38B367072268D1FB0009E42F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				388A35B725CDF2600019AAFE /* PureLayout.xcframework */,
+				388A35B425CDF2310019AAFE /* Charts.xcframework */,
+				388A35B025CDF2110019AAFE /* BrightFutures.xcframework */,
 				38B367082268D1FB0009E42F /* BrightFutures.framework */,
 				38B3670A2268D20B0009E42F /* Charts.framework */,
 				38B3670E2268D2BD0009E42F /* Nimble.framework */,
@@ -640,6 +662,7 @@
 				3891FD6E22678292005B186F /* Frameworks */,
 				3891FD6F22678292005B186F /* Resources */,
 				38B367062268D1870009E42F /* ShellScript */,
+				388A35BF25CDF7B50019AAFE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -676,7 +699,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Ema Shinya";
 				TargetAttributes = {
 					381D4F8822720656009F7E53 = {
@@ -749,9 +772,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/BrightFutures.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/PureLayout.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 			);
@@ -957,6 +977,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1018,6 +1039,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
