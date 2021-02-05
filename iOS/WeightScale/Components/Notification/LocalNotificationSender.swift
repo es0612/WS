@@ -46,16 +46,16 @@ class LocalNotificationSender: NSObject, NotificationSender {
 
     func getSettings() -> AuthorizationStatus {
         let center = UNUserNotificationCenter.current()
-        var status: AuthorizationStatus!
+        //        var status: AuthorizationStatus!
         center.getNotificationSettings()
-            { notificationSettings in
-                status = AuthorizationStatus
-                    .init(
-                        rawValue: notificationSettings
-                            .authorizationStatus
-                            .rawValue)!
+        { notificationSettings in
+            let _ = AuthorizationStatus
+                .init(
+                    rawValue: notificationSettings
+                        .authorizationStatus
+                        .rawValue)!
         }
-//        return status
+        //        return status
         return .authorized
     }
 
@@ -82,7 +82,7 @@ class LocalNotificationSender: NSObject, NotificationSender {
         let center = UNUserNotificationCenter.current()
         center.add(request, withCompletionHandler: nil)
     }
-
+    
     func stopNotification() {
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()

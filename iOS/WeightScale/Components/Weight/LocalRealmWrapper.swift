@@ -13,7 +13,7 @@ class LocalRealmWrapper: RealmWrapper {
 
     func putData(weightData: WeightData) {
         try! realmDB.write{
-            realmDB.add(weightData, update: true)
+            realmDB.add(weightData, update: .all)
         }
     }
 
