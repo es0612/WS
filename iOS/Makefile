@@ -24,6 +24,9 @@ bootstrap:
 update:
 	@carthage update --platform iOS --no-use-binaries --cache-builds
 
+xc:
+	@carthage update --platform ios --use-xcframeworks
+
 ci:
 	bootstrap unit-tests
 
