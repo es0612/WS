@@ -103,8 +103,8 @@ class SettingViewControllerSpec: QuickSpec {
                         stubTargetWeightRepository
                             .loadTargetWeight_returnValue = 48.0
 
-                        textField?.inputAccessoryView?.findBarButtonItem(title: "OK")?.tap()
-
+//                        textField?.inputAccessoryView?.findBarButtonItem(title: "OK")?.tap()
+                        textField?.inputAccessoryView?.findBarButtonItem(title: "OK")?.tapAndFireTargetAction()
 
                         expect(settingViewController.hasLabel(withExactText: "48.0 kg"))
                             .to(beTrue())
@@ -113,8 +113,8 @@ class SettingViewControllerSpec: QuickSpec {
                     it("目標体重を保存できる") {
                         settingViewController.tapButton(withExactText: "目標体重")
                         pickerView.selectRowFor(weight: 48.0)
-                        textField?.inputAccessoryView?.findBarButtonItem(title: "OK")?.tap()
-
+//                        textField?.inputAccessoryView?.findBarButtonItem(title: "OK")?.tap()
+                        textField?.inputAccessoryView?.findBarButtonItem(title: "OK")?.tapAndFireTargetAction()
 
                         expect(stubTargetWeightRepository.saveTargetWeight_argutment_weight)
                             .to(equal(48.0))
@@ -354,7 +354,8 @@ class SettingViewControllerSpec: QuickSpec {
 
 
                             textField?.inputAccessoryView?
-                                .findBarButtonItem(title: "OK")?.tap()
+//                                .findBarButtonItem(title: "OK")?.tap()
+                                .findBarButtonItem(title: "OK")?.tapAndFireTargetAction()
                         }
 
                         it("通知時間ラベルを更新できる") {

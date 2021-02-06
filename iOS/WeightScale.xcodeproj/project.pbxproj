@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		381103CF227311CB00A4D008 /* UserDefaultsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381103CE227311CB00A4D008 /* UserDefaultsSpec.swift */; };
-		381103D02273133300A4D008 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670E2268D2BD0009E42F /* Nimble.framework */; };
-		381103D12273134300A4D008 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367102268D2D10009E42F /* Quick.framework */; };
-		381103D32273136D00A4D008 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367102268D2D10009E42F /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		381103D42273137400A4D008 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B3670E2268D2BD0009E42F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		381103D622731BDD00A4D008 /* ChartsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381103D522731BDD00A4D008 /* ChartsSpec.swift */; };
 		381103D8227321DF00A4D008 /* RealmSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381103D7227321DF00A4D008 /* RealmSpec.swift */; };
 		3814998A226F4DA4001B2E71 /* ListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */; };
@@ -38,6 +34,21 @@
 		388A35C125CDF7B70019AAFE /* Charts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35B425CDF2310019AAFE /* Charts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		388A35C225CDF7B90019AAFE /* PureLayout.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35B725CDF2600019AAFE /* PureLayout.xcframework */; };
 		388A35C325CDF7B90019AAFE /* PureLayout.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35B725CDF2600019AAFE /* PureLayout.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		388A35CF25CDFF620019AAFE /* Nimble.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C425CDFADE0019AAFE /* Nimble.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		388A35D025CDFF690019AAFE /* Quick.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C825CDFAFE0019AAFE /* Quick.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		388A35D125CDFF6E0019AAFE /* Succinct.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C625CDFAF10019AAFE /* Succinct.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		388A35D525CE023E0019AAFE /* Nimble.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C425CDFADE0019AAFE /* Nimble.xcframework */; };
+		388A35D625CE02450019AAFE /* Quick.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C825CDFAFE0019AAFE /* Quick.xcframework */; };
+		388A35D725CE024A0019AAFE /* Succinct.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C625CDFAF10019AAFE /* Succinct.xcframework */; };
+		388A35D825CE03020019AAFE /* Nimble.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C425CDFADE0019AAFE /* Nimble.xcframework */; };
+		388A35D925CE03160019AAFE /* Quick.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C825CDFAFE0019AAFE /* Quick.xcframework */; };
+		388A35DA25CE031C0019AAFE /* Succinct.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C625CDFAF10019AAFE /* Succinct.xcframework */; };
+		388A35DB25CE1C9F0019AAFE /* Nimble.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C425CDFADE0019AAFE /* Nimble.xcframework */; };
+		388A35DC25CE1CA30019AAFE /* Quick.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C825CDFAFE0019AAFE /* Quick.xcframework */; };
+		388A35DD25CE1CA70019AAFE /* Succinct.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C625CDFAF10019AAFE /* Succinct.xcframework */; };
+		388A35DE25CE1D420019AAFE /* Nimble.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C425CDFADE0019AAFE /* Nimble.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		388A35DF25CE1D470019AAFE /* Quick.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C825CDFAFE0019AAFE /* Quick.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		388A35E025CE1D4B0019AAFE /* Succinct.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C625CDFAF10019AAFE /* Succinct.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -52,12 +63,6 @@
 		38986924228B063C002D9A38 /* UITabBar+ApplyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38986923228B063C002D9A38 /* UITabBar+ApplyStyle.swift */; };
 		38986926228B752B002D9A38 /* WeightChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38986925228B752B002D9A38 /* WeightChartView.swift */; };
 		38A1351222767C9C002C09CE /* UserNotificationsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A1351122767C9C002C09CE /* UserNotificationsSpec.swift */; };
-		38B3670F2268D2BD0009E42F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B3670E2268D2BD0009E42F /* Nimble.framework */; };
-		38B367112268D2D10009E42F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367102268D2D10009E42F /* Quick.framework */; };
-		38B367132268D2FD0009E42F /* Succinct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B367122268D2FD0009E42F /* Succinct.framework */; };
-		38B3671C22692F7B0009E42F /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B3670E2268D2BD0009E42F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		38B3671D22692F820009E42F /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367102268D2D10009E42F /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		38B3671E22692F870009E42F /* Succinct.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38B367122268D2FD0009E42F /* Succinct.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38B36720226931270009E42F /* InputViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3671F226931270009E42F /* InputViewControllerSpec.swift */; };
 		38B36722226931F40009E42F /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B36721226931F40009E42F /* InputViewController.swift */; };
 		38B367242269E3E80009E42F /* SpyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B367232269E3E80009E42F /* SpyRouter.swift */; };
@@ -120,8 +125,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				381103D42273137400A4D008 /* Nimble.framework in CopyFiles */,
-				381103D32273136D00A4D008 /* Quick.framework in CopyFiles */,
+				388A35E025CE1D4B0019AAFE /* Succinct.xcframework in CopyFiles */,
+				388A35DF25CE1D470019AAFE /* Quick.xcframework in CopyFiles */,
+				388A35DE25CE1D420019AAFE /* Nimble.xcframework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,22 +137,22 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				388A35C125CDF7B70019AAFE /* Charts.xcframework in Embed Frameworks */,
 				388A35BE25CDF7B50019AAFE /* BrightFutures.xcframework in Embed Frameworks */,
+				388A35C125CDF7B70019AAFE /* Charts.xcframework in Embed Frameworks */,
 				388A35C325CDF7B90019AAFE /* PureLayout.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38B367152268D4440009E42F /* CopyFiles */ = {
+		388A35CE25CDFF4E0019AAFE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				38B3671C22692F7B0009E42F /* Nimble.framework in CopyFiles */,
-				38B3671D22692F820009E42F /* Quick.framework in CopyFiles */,
-				38B3671E22692F870009E42F /* Succinct.framework in CopyFiles */,
+				388A35CF25CDFF620019AAFE /* Nimble.xcframework in CopyFiles */,
+				388A35D025CDFF690019AAFE /* Quick.xcframework in CopyFiles */,
+				388A35D125CDFF6E0019AAFE /* Succinct.xcframework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +185,9 @@
 		388A35B025CDF2110019AAFE /* BrightFutures.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrightFutures.xcframework; path = Carthage/Build/BrightFutures.xcframework; sourceTree = "<group>"; };
 		388A35B425CDF2310019AAFE /* Charts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Charts.xcframework; path = Carthage/Build/Charts.xcframework; sourceTree = "<group>"; };
 		388A35B725CDF2600019AAFE /* PureLayout.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PureLayout.xcframework; path = Carthage/Build/PureLayout.xcframework; sourceTree = "<group>"; };
+		388A35C425CDFADE0019AAFE /* Nimble.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Nimble.xcframework; path = Carthage/Build/Nimble.xcframework; sourceTree = "<group>"; };
+		388A35C625CDFAF10019AAFE /* Succinct.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Succinct.xcframework; path = Carthage/Build/Succinct.xcframework; sourceTree = "<group>"; };
+		388A35C825CDFAFE0019AAFE /* Quick.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Quick.xcframework; path = Carthage/Build/Quick.xcframework; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3891FD7422678292005B186F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3891FD7B22678294005B186F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -246,8 +255,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				381103D02273133300A4D008 /* Nimble.framework in Frameworks */,
-				381103D12273134300A4D008 /* Quick.framework in Frameworks */,
+				388A35DD25CE1CA70019AAFE /* Succinct.xcframework in Frameworks */,
+				388A35DC25CE1CA30019AAFE /* Quick.xcframework in Frameworks */,
+				388A35DB25CE1C9F0019AAFE /* Nimble.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,11 +265,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388A35BD25CDF7B50019AAFE /* BrightFutures.xcframework in Frameworks */,
+				388A35C025CDF7B70019AAFE /* Charts.xcframework in Frameworks */,
+				388A35D825CE03020019AAFE /* Nimble.xcframework in Frameworks */,
 				388A35C225CDF7B90019AAFE /* PureLayout.xcframework in Frameworks */,
+				388A35D925CE03160019AAFE /* Quick.xcframework in Frameworks */,
 				381D4F84227204ED009F7E53 /* Realm.framework in Frameworks */,
 				381D4F8222720391009F7E53 /* RealmSwift.framework in Frameworks */,
-				388A35C025CDF7B70019AAFE /* Charts.xcframework in Frameworks */,
-				388A35BD25CDF7B50019AAFE /* BrightFutures.xcframework in Frameworks */,
+				388A35DA25CE031C0019AAFE /* Succinct.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +280,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38B3670F2268D2BD0009E42F /* Nimble.framework in Frameworks */,
-				38B367112268D2D10009E42F /* Quick.framework in Frameworks */,
-				38B367132268D2FD0009E42F /* Succinct.framework in Frameworks */,
+				388A35D525CE023E0019AAFE /* Nimble.xcframework in Frameworks */,
+				388A35D625CE02450019AAFE /* Quick.xcframework in Frameworks */,
+				388A35D725CE024A0019AAFE /* Succinct.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,17 +388,20 @@
 		38B367072268D1FB0009E42F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				388A35B725CDF2600019AAFE /* PureLayout.xcframework */,
-				388A35B425CDF2310019AAFE /* Charts.xcframework */,
-				388A35B025CDF2110019AAFE /* BrightFutures.xcframework */,
 				38B367082268D1FB0009E42F /* BrightFutures.framework */,
+				388A35B025CDF2110019AAFE /* BrightFutures.xcframework */,
 				38B3670A2268D20B0009E42F /* Charts.framework */,
+				388A35B425CDF2310019AAFE /* Charts.xcframework */,
 				38B3670E2268D2BD0009E42F /* Nimble.framework */,
+				388A35C425CDFADE0019AAFE /* Nimble.xcframework */,
 				38B3670C2268D22C0009E42F /* PureLayout.framework */,
+				388A35B725CDF2600019AAFE /* PureLayout.xcframework */,
 				38B367102268D2D10009E42F /* Quick.framework */,
+				388A35C825CDFAFE0019AAFE /* Quick.xcframework */,
 				381D4F83227204ED009F7E53 /* Realm.framework */,
 				381D4F8122720391009F7E53 /* RealmSwift.framework */,
 				38B367122268D2FD0009E42F /* Succinct.framework */,
+				388A35C625CDFAF10019AAFE /* Succinct.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -680,7 +696,7 @@
 				3891FD8122678294005B186F /* Sources */,
 				3891FD8222678294005B186F /* Frameworks */,
 				3891FD8322678294005B186F /* Resources */,
-				38B367152268D4440009E42F /* CopyFiles */,
+				388A35CE25CDFF4E0019AAFE /* CopyFiles */,
 			);
 			buildRules = (
 			);

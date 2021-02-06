@@ -2,7 +2,7 @@ unit-tests:
 	@/usr/bin/time xcodebuild \
 	-project "WeightScale.xcodeproj" \
 	-scheme "WeightScale" \
-	-destination "platform=iOS Simulator,name=iPhone Xʀ,OS=latest" \
+	-destination "platform=iOS Simulator,name=iPhone 12,OS=latest" \
 	build test
 
 sort:
@@ -14,7 +14,7 @@ third-party-tests:
 	@/usr/bin/time xcodebuild \
 	-project "WeightScale.xcodeproj" \
 	-scheme "WeightScaleThirdPartyAPITests" \
-	-destination "platform=iOS Simulator,name=iPhone Xʀ,OS=latest" \
+	-destination "platform=iOS Simulator,name=iPhone 12,OS=latest" \
 	build test
 
 

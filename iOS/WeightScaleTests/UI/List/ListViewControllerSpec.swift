@@ -88,7 +88,8 @@ class ListViewControllerSpec: QuickSpec {
                     }
 
                     it("入力ボタンを押すと入力画面に遷移する") {
-                        barButtonItem?.tap()
+//                        barButtonItem?.tap()
+                        barButtonItem.tapAndFireTargetAction()
 
 
                         expect(spyRouter.showInputScreen_wasCalled)

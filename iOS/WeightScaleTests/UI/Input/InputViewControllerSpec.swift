@@ -67,15 +67,16 @@ class InputViewControllerSpec: QuickSpec {
                 }
 
                 it("キャンセルボタンを押すとピッカーが見えなくなる") {
-                    barButtonItem?.tap()
-
+//                    barButtonItem?.tap()
+                    barButtonItem.tapAndFireTargetAction()
 
                     expect(inputTextField.isFirstResponder)
                         .to(beFalse())
                 }
 
                 it("キャンセルボタンを押すとリスト画面が見える") {
-                    barButtonItem?.tap()
+//                    barButtonItem?.tap()
+                    barButtonItem.tapAndFireTargetAction()
 
 
                     expect(spyRouter.dismissInputScreen_wasCalled)

@@ -54,7 +54,7 @@ class RealmGenerator: QuickSpec {
 
                 try! realmDB.write{
                     for weightData in weightDataList {
-                        realmDB.add(weightData, update: true)
+                        realmDB.add(weightData, update: .all)
                     }
                 }
 
@@ -90,7 +90,7 @@ class RealmGenerator: QuickSpec {
 
                 try! realmDB.write{
                     for weightData in weightDataList {
-                        realmDB.add(weightData, update: true)
+                        realmDB.add(weightData, update: .all)
                     }
                 }
 

@@ -19,7 +19,7 @@ class RealmSpec: QuickSpec {
 
 
                 try! realmDB.write{
-                    realmDB.add(todaysWeight, update: true)
+                    realmDB.add(todaysWeight, update: .all)
                 }
 
                 let DBItems = realmDB.objects(WeightTest.self)
@@ -40,7 +40,7 @@ class RealmSpec: QuickSpec {
 
 
                 try! realmDB.write{
-                    realmDB.add(todaysWeight, update: true)
+                    realmDB.add(todaysWeight, update: .all)
                 }
 
                 let DBItems = realmDB.objects(WeightTest.self)
@@ -75,7 +75,7 @@ class RealmSpec: QuickSpec {
 
 
                 try! realmDB.write{
-                    realmDB.add(updateWeight, update: true)
+                    realmDB.add(updateWeight, update: .all)
                 }
 
                 DBItems = realmDB.objects(WeightTest.self).filter("id = 1")
