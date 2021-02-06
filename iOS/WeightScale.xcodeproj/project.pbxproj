@@ -34,10 +34,8 @@
 		388A35C125CDF7B70019AAFE /* Charts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35B425CDF2310019AAFE /* Charts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		388A35C225CDF7B90019AAFE /* PureLayout.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35B725CDF2600019AAFE /* PureLayout.xcframework */; };
 		388A35C325CDF7B90019AAFE /* PureLayout.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35B725CDF2600019AAFE /* PureLayout.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		388A35CF25CDFF620019AAFE /* Nimble.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C425CDFADE0019AAFE /* Nimble.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		388A35D025CDFF690019AAFE /* Quick.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C825CDFAFE0019AAFE /* Quick.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		388A35D125CDFF6E0019AAFE /* Succinct.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C625CDFAF10019AAFE /* Succinct.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		388A35D525CE023E0019AAFE /* Nimble.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C425CDFADE0019AAFE /* Nimble.xcframework */; };
 		388A35D625CE02450019AAFE /* Quick.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C825CDFAFE0019AAFE /* Quick.xcframework */; };
 		388A35D725CE024A0019AAFE /* Succinct.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C625CDFAF10019AAFE /* Succinct.xcframework */; };
 		388A35D825CE03020019AAFE /* Nimble.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C425CDFADE0019AAFE /* Nimble.xcframework */; };
@@ -49,6 +47,8 @@
 		388A35DE25CE1D420019AAFE /* Nimble.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C425CDFADE0019AAFE /* Nimble.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		388A35DF25CE1D470019AAFE /* Quick.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C825CDFAFE0019AAFE /* Quick.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		388A35E025CE1D4B0019AAFE /* Succinct.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C625CDFAF10019AAFE /* Succinct.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		388A35E125CF32690019AAFE /* Nimble.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 388A35C425CDFADE0019AAFE /* Nimble.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		388A35E225CF32700019AAFE /* Nimble.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A35C425CDFADE0019AAFE /* Nimble.xcframework */; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
 		3891FD7C22678294005B186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7B22678294005B186F /* Assets.xcassets */; };
 		3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3891FD7D22678294005B186F /* LaunchScreen.storyboard */; };
@@ -150,7 +150,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				388A35CF25CDFF620019AAFE /* Nimble.xcframework in CopyFiles */,
+				388A35E125CF32690019AAFE /* Nimble.xcframework in CopyFiles */,
 				388A35D025CDFF690019AAFE /* Quick.xcframework in CopyFiles */,
 				388A35D125CDFF6E0019AAFE /* Succinct.xcframework in CopyFiles */,
 			);
@@ -280,7 +280,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				388A35D525CE023E0019AAFE /* Nimble.xcframework in Frameworks */,
+				388A35E225CF32700019AAFE /* Nimble.xcframework in Frameworks */,
 				388A35D625CE02450019AAFE /* Quick.xcframework in Frameworks */,
 				388A35D725CE024A0019AAFE /* Succinct.xcframework in Frameworks */,
 			);
