@@ -3,7 +3,7 @@ import UIKit
 extension UIColor {
     struct background {
         static let main
-            = UIColor(red: 0.92, green: 1, blue: 0.95, alpha: 1)
+            = UIColor(red: 0.92, green: 0.98, blue: 0.95, alpha: 1)
         static let bar
             = UIColor(red: 0.41, green: 0.94, blue: 0.69, alpha: 1)
         static let tableCell

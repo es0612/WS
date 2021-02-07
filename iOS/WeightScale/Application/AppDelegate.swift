@@ -16,18 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-        ) -> Bool
+    ) -> Bool
     {
 
-        //        FirebaseApp.configure()
-                GADMobileAds.sharedInstance().start(completionHandler: nil)
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         window = UIWindow()
 
         router?.showMainTabBarScreen()
 
         window?.rootViewController = router?.rootViewController
         window?.makeKeyAndVisible()
-
+        
 
 
         return true

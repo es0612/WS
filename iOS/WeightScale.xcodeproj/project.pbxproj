@@ -257,13 +257,13 @@
 		3891FD6822678292005B186F = {
 			isa = PBXGroup;
 			children = (
-				3872F21325CFA8CD0005D91A /* GoogleService-Info.plist */,
 				38B367072268D1FB0009E42F /* Frameworks */,
 				ABD4C120BE1E610F1747D73D /* Pods */,
 				3891FD7222678292005B186F /* Products */,
 				3891FD7322678292005B186F /* WeightScale */,
 				3891FD8822678294005B186F /* WeightScaleTests */,
 				381D4F8A22720656009F7E53 /* WeightScaleThirdPartyAPITests */,
+				3872F21325CFA8CD0005D91A /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -333,10 +333,10 @@
 				3891FD7422678292005B186F /* AppDelegate.swift */,
 				3891FD7B22678294005B186F /* Assets.xcassets */,
 				3891FD8022678294005B186F /* Info.plist */,
-				3891FD7D22678294005B186F /* LaunchScreen.storyboard */,
-				3891FD94226787BD005B186F /* main.swift */,
 				3872F24925CFB8A40005D91A /* KeyManager.swift */,
 				3872F24E25CFB8D00005D91A /* Keys.plist */,
+				3891FD7D22678294005B186F /* LaunchScreen.storyboard */,
+				3891FD94226787BD005B186F /* main.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -703,10 +703,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3872F24F25CFB8D00005D91A /* Keys.plist in Resources */,
 				3891FD7C22678294005B186F /* Assets.xcassets in Resources */,
-				3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */,
 				3872F21425CFA8CD0005D91A /* GoogleService-Info.plist in Resources */,
+				3872F24F25CFB8D00005D91A /* Keys.plist in Resources */,
+				3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -862,6 +862,7 @@
 				382836A022884EC1009AB799 /* InputVC+UIPickerViewDataSource.swift in Sources */,
 				3828369E22884EB1009AB799 /* InputVC+UIPickerViewDelegate.swift in Sources */,
 				38B36722226931F40009E42F /* InputViewController.swift in Sources */,
+				3872F24A25CFB8A40005D91A /* KeyManager.swift in Sources */,
 				38B3672C226CA2170009E42F /* ListViewController.swift in Sources */,
 				3895EE9422A0167300FD1CD0 /* LocalNotificationSender.swift in Sources */,
 				382A532222C2645000ED36E2 /* LocalNotificationSwitchValueRepository.swift in Sources */,
@@ -881,7 +882,6 @@
 				382836A222898A24009AB799 /* TemplateView.swift in Sources */,
 				38BE15A6227A5E4800F97649 /* TemplateViewController.swift in Sources */,
 				38E2C9B7228C3EAF005CC530 /* UIButton+ApplyStyle.swift in Sources */,
-				3872F24A25CFB8A40005D91A /* KeyManager.swift in Sources */,
 				3898691922899E65002D9A38 /* UIColor+Style.swift in Sources */,
 				38986922228AF875002D9A38 /* UIFont+Style.swift in Sources */,
 				38BE15BF227AD58F00F97649 /* UIImage+AssetIdentifier.swift in Sources */,

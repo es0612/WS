@@ -33,23 +33,32 @@ final class WeightChartView: LineChartView {
     func drawChart(weightDataList: [WeightData], targetWeight: Double) {
         var dataForWeight: [Double] = []
         var daysForXAxis: [String] = []
+        var intervalList: [Double] = []
 
         var dataForTargetWeight: [Double] = []
+        var minValue: Double = -1.0
 
         weightDataList.forEach { weightData in
             dataForWeight.append(weightData.weight)
             daysForXAxis.append(weightData.dateString)
 
             dataForTargetWeight.append(targetWeight)
+
+            if minValue < 0 {
+                minValue = weightData.dateString.toDate(format: "yyyy/MM/dd")!.timeIntervalSince1970
+            }
+            intervalList.append(weightData.dateString.toDate(format: "yyyy/MM/dd")!.timeIntervalSince1970 - minValue)
+
         }
 
         xAxis.valueFormatter
             = IndexAxisValueFormatter(values: daysForXAxis)
 
+        //        setXformatter(minTimeInterval: intervalList[0])
 
         var weightEntries = [ChartDataEntry]()
         for (i, d) in dataForWeight.enumerated() {
-            weightEntries.append(ChartDataEntry(x: Double(i), y: d))
+            weightEntries.append(ChartDataEntry(x: intervalList[i], y: d))
         }
 
         let weightDataSet
@@ -62,14 +71,10 @@ final class WeightChartView: LineChartView {
         weightDataSet.setCircleColor(UIColor.graph.weightLine)
         weightDataSet.lineWidth = 6.0
         weightDataSet.valueTextColor = UIColor.text.inputField
-        if weightDataSet.count > 7 {
-            weightDataSet.drawValuesEnabled = false
-        }
-
 
         var targetWeightEntries = [ChartDataEntry]()
         for (i, d) in dataForTargetWeight.enumerated() {
-            targetWeightEntries.append(ChartDataEntry(x: Double(i), y: d))
+            targetWeightEntries.append(ChartDataEntry(x: intervalList[i], y: d))
         }
 
         let targetWeightDataSet
@@ -96,4 +101,47 @@ final class WeightChartView: LineChartView {
     func drawAnimation() {
         animate(xAxisDuration: 1.0)
     }
+
+    func setXformatter(minTimeInterval: Double) {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .none
+        formatter.locale = Locale.current
+        let xValueNumberFormatter = ChartXAxisFormatter(referenceTimeInterval: minTimeInterval, dateFormatter: formatter)
+        xAxis.valueFormatter = xValueNumberFormatter
+    }
+}
+
+extension String {
+    func toDate(format: String) ->Date? {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.dateFormat = format
+        return formatter.date(from: self)
+    }
+}
+
+class ChartXAxisFormatter: NSObject {
+    fileprivate var dateFormatter: DateFormatter?
+    fileprivate var referenceTimeInterval: TimeInterval?
+
+    convenience init(referenceTimeInterval: TimeInterval, dateFormatter: DateFormatter) {
+        self.init()
+        self.referenceTimeInterval = referenceTimeInterval
+        self.dateFormatter = dateFormatter
+    }
+}
+extension ChartXAxisFormatter: AxisValueFormatter {
+
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        guard let dateFormatter = dateFormatter,
+              let referenceTimeInterval = referenceTimeInterval
+        else {
+            return ""
+        }
+
+        let date = Date(timeIntervalSince1970: value + referenceTimeInterval)
+        return dateFormatter.string(from: date)
+    }
+
 }
