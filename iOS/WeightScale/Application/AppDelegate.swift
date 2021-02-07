@@ -1,4 +1,5 @@
 import UIKit
+import GoogleMobileAds
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -17,13 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
         ) -> Bool
     {
-        
+
+        //        FirebaseApp.configure()
+                GADMobileAds.sharedInstance().start(completionHandler: nil)
         window = UIWindow()
 
         router?.showMainTabBarScreen()
 
         window?.rootViewController = router?.rootViewController
         window?.makeKeyAndVisible()
+
+
 
         return true
     }

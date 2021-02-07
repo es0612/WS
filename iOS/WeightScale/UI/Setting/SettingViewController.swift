@@ -1,4 +1,5 @@
 import UIKit
+import GoogleMobileAds
 
 class SettingViewController: TemplateViewController{
     // MARK: - Injected Dependencies
@@ -20,6 +21,7 @@ class SettingViewController: TemplateViewController{
 
     private let personalSettingsSectionView: PersonalSettingsSectionView
     private let notificationSectionView: NotificationSectionView
+    private let bannerView: GADBannerView
 
     // MARK: - Initialization
     init(targetWeightRepository: TargetWeightRepository,
@@ -46,7 +48,30 @@ class SettingViewController: TemplateViewController{
         notificationSectionView
             = NotificationSectionView.newAutoLayout()
 
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+
         super.init()
+    }
+
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -89,7 +114,7 @@ class SettingViewController: TemplateViewController{
             notificationSectionView
                 .setNotificationTimeLabel(
                     value: DateManager.convertTimeToString(time: notificationTime)
-            )
+                )
         } else {
             notificationTimePicker.setDate(
                 DateManager.convertStringToTime(string: "17:00"),
@@ -110,6 +135,14 @@ class SettingViewController: TemplateViewController{
         settingStackView
             .addArrangedSubview(notificationSectionView)
         settingStackView.axis = .vertical
+
+        bannerView.adUnitID = KeyManager().getValue(key: "adUnitID")! as? String
+        //test
+        //        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        
+        addBannerViewToView(bannerView)
     }
 
     override func viewConfigurations() {
@@ -217,7 +250,7 @@ extension SettingViewController {
     @objc func didTapPickerDoneButton() {
         targetWeightRepository.saveTargetWeight(
             weight: WeightPickerView.Constants
-            .pickerDataArray[targetWeightPicker.selectedRow]
+                .pickerDataArray[targetWeightPicker.selectedRow]
         )
 
         personalSettingsSectionView
@@ -225,8 +258,8 @@ extension SettingViewController {
                 value: String(
                     format: "%.1f",
                     targetWeightRepository.loadTargetWeight()
+                )
             )
-        )
 
         textFieldForPicker.resignFirstResponder()
     }
