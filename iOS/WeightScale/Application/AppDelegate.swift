@@ -1,5 +1,6 @@
 import UIKit
-import GoogleMobileAds
+//import GoogleMobileAds
+import Firebase
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -19,7 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool
     {
 
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        FirebaseApp.configure()
+        
+        let adsInstance = GADMobileAds.sharedInstance()
+
+        adsInstance.start(completionHandler: nil)
+
         window = UIWindow()
 
         router?.showMainTabBarScreen()

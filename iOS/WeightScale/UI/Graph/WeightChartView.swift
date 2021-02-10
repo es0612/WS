@@ -102,14 +102,14 @@ final class WeightChartView: LineChartView {
         animate(xAxisDuration: 1.0)
     }
 
-    func setXformatter(minTimeInterval: Double) {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .none
-        formatter.timeStyle = .none
-        formatter.locale = Locale.current
-        let xValueNumberFormatter = ChartXAxisFormatter(referenceTimeInterval: minTimeInterval, dateFormatter: formatter)
-        xAxis.valueFormatter = xValueNumberFormatter
-    }
+//    func setXformatter(minTimeInterval: Double) {
+//        let formatter = DateFormatter()
+//        formatter.dateStyle = .none
+//        formatter.timeStyle = .none
+//        formatter.locale = Locale.current
+//        let xValueNumberFormatter = ChartXAxisFormatter(referenceTimeInterval: minTimeInterval, dateFormatter: formatter)
+//        xAxis.valueFormatter = xValueNumberFormatter as! IAxisValueFormatter
+//    }
 }
 
 extension String {
@@ -121,27 +121,27 @@ extension String {
     }
 }
 
-class ChartXAxisFormatter: NSObject {
-    fileprivate var dateFormatter: DateFormatter?
-    fileprivate var referenceTimeInterval: TimeInterval?
+//class ChartXAxisFormatter: NSObject {
+//    fileprivate var dateFormatter: DateFormatter?
+//    fileprivate var referenceTimeInterval: TimeInterval?
+//
+//    convenience init(referenceTimeInterval: TimeInterval, dateFormatter: DateFormatter) {
+//        self.init()
+//        self.referenceTimeInterval = referenceTimeInterval
+//        self.dateFormatter = dateFormatter
+//    }
+//}
 
-    convenience init(referenceTimeInterval: TimeInterval, dateFormatter: DateFormatter) {
-        self.init()
-        self.referenceTimeInterval = referenceTimeInterval
-        self.dateFormatter = dateFormatter
-    }
-}
-extension ChartXAxisFormatter: AxisValueFormatter {
-
-    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        guard let dateFormatter = dateFormatter,
-              let referenceTimeInterval = referenceTimeInterval
-        else {
-            return ""
-        }
-
-        let date = Date(timeIntervalSince1970: value + referenceTimeInterval)
-        return dateFormatter.string(from: date)
-    }
-
-}
+//extension ChartXAxisFormatter: IAxisValueFormatter {
+//
+//    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+//        guard let dateFormatter = dateFormatter,
+//              let referenceTimeInterval = referenceTimeInterval
+//        else {
+//            return ""
+//        }
+//
+//        let date = Date(timeIntervalSince1970: value + referenceTimeInterval)
+//        return dateFormatter.string(from: date)
+//    }
+//}

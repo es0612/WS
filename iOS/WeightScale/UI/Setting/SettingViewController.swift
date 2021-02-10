@@ -137,10 +137,14 @@ class SettingViewController: TemplateViewController{
         settingStackView.axis = .vertical
 
         bannerView.adUnitID = KeyManager().getValue(key: "adUnitID")! as? String
-        //test
-        //        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        // test
+        // bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+
         bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+
+        let request = GADRequest()
+//        request.testDevices = [ "66abb856b1a576893818584f9e9e634f" ]
+        bannerView.load(request)
         
         addBannerViewToView(bannerView)
     }

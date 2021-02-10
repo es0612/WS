@@ -11,6 +11,7 @@
 		381103CF227311CB00A4D008 /* UserDefaultsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381103CE227311CB00A4D008 /* UserDefaultsSpec.swift */; };
 		381103D622731BDD00A4D008 /* ChartsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381103D522731BDD00A4D008 /* ChartsSpec.swift */; };
 		381103D8227321DF00A4D008 /* RealmSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381103D7227321DF00A4D008 /* RealmSpec.swift */; };
+		3811AE7B25D15E8700DD3326 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3811AE7A25D15E8700DD3326 /* GoogleService-Info.plist */; };
 		3814998A226F4DA4001B2E71 /* ListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */; };
 		381D4F792270B28F009F7E53 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F782270B28F009F7E53 /* SettingViewController.swift */; };
 		381D4F7B2270B628009F7E53 /* SettingViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */; };
@@ -27,7 +28,6 @@
 		386BDC0722DC1F15002132B5 /* StubNotificationTimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BDC0622DC1F15002132B5 /* StubNotificationTimeRepository.swift */; };
 		386BDC0922DC425A002132B5 /* LocalNotificationTimeRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BDC0822DC425A002132B5 /* LocalNotificationTimeRepositorySpec.swift */; };
 		386BDC0B22DC4383002132B5 /* LocalNotificationTimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BDC0A22DC4383002132B5 /* LocalNotificationTimeRepository.swift */; };
-		3872F21425CFA8CD0005D91A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3872F21325CFA8CD0005D91A /* GoogleService-Info.plist */; };
 		3872F24A25CFB8A40005D91A /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872F24925CFB8A40005D91A /* KeyManager.swift */; };
 		3872F24F25CFB8D00005D91A /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3872F24E25CFB8D00005D91A /* Keys.plist */; };
 		3891FD7522678292005B186F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3891FD7422678292005B186F /* AppDelegate.swift */; };
@@ -107,6 +107,7 @@
 		381103CE227311CB00A4D008 /* UserDefaultsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSpec.swift; sourceTree = "<group>"; };
 		381103D522731BDD00A4D008 /* ChartsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsSpec.swift; sourceTree = "<group>"; };
 		381103D7227321DF00A4D008 /* RealmSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSpec.swift; sourceTree = "<group>"; };
+		3811AE7A25D15E8700DD3326 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WeightScale/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38149989226F4DA4001B2E71 /* ListViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerSpec.swift; sourceTree = "<group>"; };
 		381D4F782270B28F009F7E53 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		381D4F7A2270B628009F7E53 /* SettingViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -125,7 +126,6 @@
 		386BDC0622DC1F15002132B5 /* StubNotificationTimeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubNotificationTimeRepository.swift; sourceTree = "<group>"; };
 		386BDC0822DC425A002132B5 /* LocalNotificationTimeRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationTimeRepositorySpec.swift; sourceTree = "<group>"; };
 		386BDC0A22DC4383002132B5 /* LocalNotificationTimeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationTimeRepository.swift; sourceTree = "<group>"; };
-		3872F21325CFA8CD0005D91A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3872F24925CFB8A40005D91A /* KeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
 		3872F24E25CFB8D00005D91A /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		3891FD7122678292005B186F /* WeightScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,13 +257,13 @@
 		3891FD6822678292005B186F = {
 			isa = PBXGroup;
 			children = (
+				3811AE7A25D15E8700DD3326 /* GoogleService-Info.plist */,
 				38B367072268D1FB0009E42F /* Frameworks */,
 				ABD4C120BE1E610F1747D73D /* Pods */,
 				3891FD7222678292005B186F /* Products */,
 				3891FD7322678292005B186F /* WeightScale */,
 				3891FD8822678294005B186F /* WeightScaleTests */,
 				381D4F8A22720656009F7E53 /* WeightScaleThirdPartyAPITests */,
-				3872F21325CFA8CD0005D91A /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -704,7 +704,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3891FD7C22678294005B186F /* Assets.xcassets in Resources */,
-				3872F21425CFA8CD0005D91A /* GoogleService-Info.plist in Resources */,
+				3811AE7B25D15E8700DD3326 /* GoogleService-Info.plist in Resources */,
 				3872F24F25CFB8D00005D91A /* Keys.plist in Resources */,
 				3891FD7F22678294005B186F /* LaunchScreen.storyboard in Resources */,
 			);
@@ -1132,7 +1132,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = UUD4WPFJTD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1157,7 +1157,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = UUD4WPFJTD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
